@@ -16,14 +16,22 @@
           "format": [
             "cjs"
           ],
-          "bundle": false,
+          "bundle": true,
           "main": "apps/auth-service/src/main.ts",
           "tsConfig": "apps/auth-service/tsconfig.app.json",
           "assets": [
-            "apps/auth-service/src/assets"
+            "apps/auth-service/src/assets",
+            "apps/auth-service/src/swagger-output.json",
+            "apps/auth-service/src/utils/email-templates"
           ],
           "esbuildOptions": {
             "sourcemap": true,
+            "external": [
+              "@prisma/client",
+              ".prisma/client",
+              "./query_compiler_fast_bg.js",
+              "./query_compiler_fast_bg.wasm-base64.js"
+            ],
             "outExtension": {
               ".js": ".js"
             }
@@ -35,6 +43,12 @@
             "generateLockfile": true,
             "esbuildOptions": {
               "sourcemap": false,
+              "external": [
+                "@prisma/client",
+                ".prisma/client",
+                "./query_compiler_fast_bg.js",
+                "./query_compiler_fast_bg.wasm-base64.js"
+              ],
               "outExtension": {
                 ".js": ".js"
               }

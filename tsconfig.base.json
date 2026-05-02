@@ -8,6 +8,8 @@
     "lib": ["es2022"],
     "module": "nodenext",
     "moduleResolution": "nodenext",
+  "resolveJsonModule": true,
+  "allowSyntheticDefaultImports": true,
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
@@ -16,6 +18,12 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
+    "baseUrl": ".",
+    "paths": {
+      "@real-app/errorHandler": ["packages/errorHandler/index.ts"],
+      "@real-app/errorHandler/*": ["packages/errorHandler/*"],
+      "@real-app/*": ["packages/*/index.ts"]
+    },
     "customConditions": ["@real-app/source"]
   }
 }
