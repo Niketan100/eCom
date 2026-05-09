@@ -1,6 +1,7 @@
 import { Header } from '../shared/widget';
 import './global.css'
 import {Roboto, Poppins} from 'next/font/google'
+import Providers from './providers'
 
 export const metadata = {
   title: 'Eshop',
@@ -25,11 +26,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+     <Providers>
     <html lang="en">
+      
       <Header />
-      <body 
-        className={`${roboto.variable} ${poppins.variable}`} 
-      >{children}</body>
+     
+        <body className={`${roboto.variable} ${poppins.variable}`} >
+          {children}
+        </body>
     </html>
+      </Providers>
   )
 }

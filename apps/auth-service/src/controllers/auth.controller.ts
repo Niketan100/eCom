@@ -115,10 +115,9 @@ export const verifyUserForgotPassword = async (req : Request , res : Response , 
     await verifyUserForgotPasswordOtp(req,res,next, 'user');
 }
 
-
 export const resetUserPassword = async(req : Request , res : Response , next : NextFunction) => {
     try {
-        const { email, otp, newPassword } = req.body;
+        const { email, newPassword } = req.body;
 
         const user = await prisma.users.findUnique({
             where: {
@@ -129,9 +128,9 @@ export const resetUserPassword = async(req : Request , res : Response , next : N
             throw new ForbiddenError('User not found');
         }
 
-        await validateOtp(email, otp, () => {
-            throw new ForbiddenError('Invalid OTP');
-        }); 
+        // await validateOtp(email, otp, () => {
+        //     throw new ForbiddenError('Invalid OTP');
+        // }); 
 
         const hashed = await bcrypt.hash(newPassword, 10);
         await prisma.users.update({
@@ -151,3 +150,43 @@ export const resetUserPassword = async(req : Request , res : Response , next : N
     }
 }
      
+export const refreshToken = async (req : Request , res : Response , next : NextFunction) => {
+    try {
+        const refreshToken = req.cookies.refreshToken;
+        if (!refreshToken) {
+            throw new ForbiddenError('No refresh token provided');
+        }
+       
+        const decoded = jwt.verify(refreshToken, process.env.JWT_SECRET as string) as { id: string, role: string };
+        const user = await prisma.users.findUnique({
+            where: {
+                id: decoded.id
+            }
+        });
+        if(!user){
+            throw new ForbiddenError('unauthorized not found');
+        }
+
+        if(!decoded || decoded.role !== 'user'){
+            throw new ForbiddenError('Unauthorized');
+        }
+
+        const newAccessToken = jwt.sign({ id: user.id, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '15m' });
+        setCookie(res, 'accessToken', newAccessToken);
+
+        res.status(200).json({
+            message: 'Access token refreshed successfully'
+        });
+
+    }catch (error) {
+        next(error);
+    }
+}
+
+export const getUser = async(req : any , res : Response , next : NextFunction) =>{
+    const user = req.user;
+    const { password, ...safeUser } = user || {};
+    res.status(200).json({
+        user : safeUser
+    });
+}

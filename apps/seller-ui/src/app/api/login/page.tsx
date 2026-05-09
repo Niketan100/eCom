@@ -4,10 +4,9 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
-import GoogleSignInButton from '../../shared/widget/components/Google'
 import { useMutation } from '@tanstack/react-query'
-import axios, { AxiosError } from 'axios'
-import axiosInstance from '../../utils/axiosInstance'
+import axios, { AxiosError } from 'axios'   
+import axiosInstance from '../../../utils/axiosInstance'
 
 type Formdata = {
     email: string
@@ -106,7 +105,6 @@ const Login = () => {
                         SignUp
                     </Link>
                 </div>
-                <GoogleSignInButton />
             </form>
         </div>
     )

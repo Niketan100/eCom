@@ -6,7 +6,8 @@
     "dev": "npx nx run-many --target=serve --all",
     "build": "npx nx run-many --target=build --all",
     "test": "npx nx run-many --target=test --all",
-    "ui": "npx nx run user-ui:dev"
+    "ui": "npx nx run user-ui:dev",
+    "si" : "npx nx run seller-ui:dev"
   },
   "private": true,
   "dependencies": {

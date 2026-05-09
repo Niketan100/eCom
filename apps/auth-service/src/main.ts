@@ -28,10 +28,6 @@ app.use(cors({
 app.use(morgan('dev'));
 app.use(express.json({limit: '100mb'}));
 app.use(express.urlencoded({limit: '100mb', extended: true}));
-app.use(errorMiddleware);
-
-
-
 app.use(cookieParser());
 
 app.use(rateLimit({
@@ -45,6 +41,8 @@ app.use(rateLimit({
 
 app.use('/auth', authRoutes);
 app.use('/api-docs' , swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+app.use(errorMiddleware);
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 6001;

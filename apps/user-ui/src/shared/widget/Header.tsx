@@ -1,11 +1,18 @@
-import Link from 'next/dist/client/link'
+'use client'
+
+import Link from 'next/link'
 import React from 'react'
 import { HeaderBottom } from './HeaderBottom'
 import { ShoppingCart, Heart, Search , User } from 'lucide-react'
+import useUser  from './../../hooks/useUSer'
 
 
 export const Header = () => {
+    const { loggedInUser, isLoading } = useUser()
+    console.log(loggedInUser)
+
   return (
+    <>
     <div className='w-full bg-white'>
 
       <div className='w-[80%] py-5 m-auto flex justify-between items-center '>
@@ -23,14 +30,27 @@ export const Header = () => {
 
         </div>
 
-        <div className='flex items-center gap-8'>
-              <div className='flex items-center gap-2'>
-                  <Link href={'/login'} className='text-gray-600 hover:text-gray-800 transition-colors duration-300'>
-                      <User color='gray' />
-              </Link>
-              <Link href={'/register'} className='text-gray-600 hover:text-gray-800 transition-colors duration-300'>
-                  Register
-              </Link>
+                <div className='flex items-center gap-8'>
+                            <div className='flex items-center gap-2'>
+                                {isLoading ? (
+                                    <div className='text-gray-500 text-sm'>Loading...</div>
+                                ) : loggedInUser ? (
+                                    <div className='flex items-center gap-2 text-gray-700'>
+                                        <User color='gray' />
+                                        <span className='font-medium'>
+                                            {(loggedInUser as any)?.name || 'Account'}
+                                        </span>
+                                    </div>
+                                ) : (
+                                    <>
+                                        <Link href={'/login'} className='text-gray-600 hover:text-gray-800 transition-colors duration-300'>
+                                                <User color='gray' />
+                                        </Link>
+                                        <Link href={'/register'} className='text-gray-600 hover:text-gray-800 transition-colors duration-300'>
+                                                Register
+                                        </Link>
+                                    </>
+                                )}
 
               <Link href={'/wish-list'} className=' relative text-gray-600 hover:text-gray-800 transition-colors duration-300'>
                   <Heart color='red'/> 
@@ -53,6 +73,7 @@ export const Header = () => {
       
 
     </div>
+    </>
   )
 }
  
