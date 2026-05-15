@@ -11,7 +11,8 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.json",
-    "../../packages/**/*.ts"
+    "../../packages/**/*.ts",
+    "../../packages/**/*.d.ts"
   ],
   "exclude": [
     "out-tsc",

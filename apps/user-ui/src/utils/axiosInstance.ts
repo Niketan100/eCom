@@ -37,7 +37,11 @@ axiosInstance.interceptors.response.use(
     (response) => response,
     async (error) => {
         const originalRequest = error.config; 
-        if (error.response?.status === 401 && !originalRequest._retry) {
+        const status = error.response?.status;
+        const isAuthFailure = status === 401 || status === 403;
+        const isRefreshRequest = originalRequest?.url?.includes('/auth/refresh-token');
+
+        if (isAuthFailure && !originalRequest._retry && !isRefreshRequest) {
             if (isRefreshing) {
                 return new Promise((resolve) => {
                     subscribeRefreshToken(() => {

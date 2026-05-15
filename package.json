@@ -7,7 +7,7 @@
     "build": "npx nx run-many --target=build --all",
     "test": "npx nx run-many --target=test --all",
     "ui": "npx nx run user-ui:dev",
-    "si" : "npx nx run seller-ui:dev"
+    "si": "npx nx run seller-ui:dev"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +31,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.75.0",
+    "stripe": "^22.1.1",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
   },

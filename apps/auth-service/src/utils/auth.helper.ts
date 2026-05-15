@@ -9,14 +9,15 @@ import prisma from "@real-app/libs/prisma";
 export const validateRegistrationData = (data: any) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    const { username, email, password , phoneNumber, country } = data;
+    const { username, name, email, password , phoneNumber, country } = data;
+    const displayName = name || username;
 
-    if(!username || !email || !password) {
-        throw new ValidationError("Username, email, and password are required.");
+    if(!displayName || !email || !password) {
+        throw new ValidationError("Name, email, and password are required.");
     }
 
-    if (!phoneNumber || !country || !username) {
-        throw new ValidationError("Phone number, country, and username are required.");
+    if (!phoneNumber || !country || !displayName) {
+        throw new ValidationError("Phone number, country, and name are required.");
     }
     if (!emailRegex.test(email)) {
         throw new ValidationError("Invalid email format.");
@@ -46,8 +47,6 @@ export const sendOtp = async(name :string , email : string , template : string) 
 
     await redisClient.setex(`otp:${email}`, 300, otp); // OTP valid for 5 minutes
     await redisClient.setex(`otp_cooldown:${email}`, 60, 'true'); // Cooldown of 1 minute before requesting another OTP
-
-
 
     // Here you would typically send the OTP to the user's email using an email service
     console.log(`Sending OTP ${otp} to ${email} using template ${template}`);
@@ -97,13 +96,20 @@ export const forgotPassword = async (req : Request , res : Response , next : Nex
             email: email
         }
     });
-    if(!user){
-        throw new ForbiddenError('User not found');
+
+    const seller = role === 'seller' && await prisma.seller.findUnique({
+        where: {
+            email: email
+        }
+    });
+    
+    if(!user && !seller){
+        throw new ForbiddenError(' Not found');
     }
 
     await otpRestrictions(email);
     await trackOtpRequest(email);
-    await sendOtp(user.name, email, 'forgotPasswordTemplate');
+    await sendOtp(user ? user.name : seller ? seller.name : '', email, 'forgotPasswordTemplate');
     
     res.status(200).json({
         message: 'OTP sent to email'
@@ -124,8 +130,14 @@ export const verifyUserForgotPasswordOtp = async(req : Request , res : Response 
             email: email
         }
     });
-    if(!user){
-        throw new ForbiddenError('User not found');
+    const seller = role === 'seller' && await prisma.seller.findUnique({
+        where: {
+            email: email
+        }
+    });
+    
+    if(!user && !seller){
+        throw new ForbiddenError('User or seller not found');
     }
 
     const isValid = await validateOtp(email, otp, next);

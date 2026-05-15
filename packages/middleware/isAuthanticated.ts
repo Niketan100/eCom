@@ -1,47 +1,47 @@
-import { ForbiddenError } from "@real-app/errorHandler";
+
+import { UnauthorizedError } from "@real-app/errorHandler";
 import prisma from "@real-app/libs/prisma";
 import { NextFunction, Response } from "express";
 import jwt from "jsonwebtoken";
 
 
-export const isAuthanticated = async(req : any , res : Response , next : NextFunction) => { 
-     try{
+const isAuthenticated = async (req: any, res: Response, next: NextFunction) => {
+    try {
         const token = req.cookies?.accessToken || req.headers.authorization?.split(' ')[1];
 
-        if(!token){
-            throw new ForbiddenError('No Access Token was Found !');
-        }
-        
-        const decode = jwt.verify(token , process.env.JWT_SECRET as string) as {id : string , role : string};
-
-        if(!decode){
-            res.status(404).json({"Error" : "Could not Verify the token"});
-            throw new ForbiddenError("Error while decoding Token");
+        if (!token) {
+            return next(new UnauthorizedError('No access token found'));
         }
 
-        const user_id = decode.id;
+        const decode = jwt.verify(token, process.env.JWT_SECRET as string) as { id: string, role: string };
 
-        const user = await prisma.users.findUnique({
-            where :{
-                id : user_id
-            },
-            select : {
-                id: true,
-                name: true,
-                email: true,
-                createdAt: true,
-                updatedAt: true
-            }
-        });
+        if (decode.role === 'user') {
+            const user = await prisma.users.findUnique({ where: { id: decode.id } });
+            if (!user) return next(new UnauthorizedError('Invalid access token'));
+            req.user = user;
+            req.role = 'user';
 
-        if(!user){
-            res.status(404).json({"Error" : "User not Found!"})
-            throw new ForbiddenError("User not Found!");
+        } else if (decode.role === 'seller') {
+            const seller = await prisma.seller.findUnique({ where: { id: decode.id } });
+            if (!seller) return next(new UnauthorizedError('Invalid access token'));
+            req.user = seller;
+            req.role = 'seller';
+
+        } else {
+            return next(new UnauthorizedError('Invalid access token'));
         }
 
-        req.user = user;
         next();
-     }catch(err){
-        next(err);
-     }
-}
+
+    } catch (err) {
+        // ✅ JWT errors mapped to 401 so interceptor triggers refresh
+        if (err instanceof jwt.TokenExpiredError) {
+            return next(new UnauthorizedError('Token expired'));
+        }
+        if (err instanceof jwt.JsonWebTokenError) {
+            return next(new UnauthorizedError('Invalid token'));
+        }
+        next(err); // anything else → 500 is fine
+    }
+};
+export default isAuthenticated;
