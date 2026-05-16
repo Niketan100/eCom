@@ -2,8 +2,7 @@
 
 import Link from 'next/link'
 import React from 'react'
-import { HeaderBottom } from './HeaderBottom'
-import { ShoppingCart, Heart, Search , User } from 'lucide-react'
+import {  Search , User } from 'lucide-react'
 
 
 export const Header = ({seller  ,isLoading  ,error } : {seller : any ,isLoading : boolean ,error : any}) => {

@@ -3,7 +3,6 @@ import prisma from "./../../../../packages/libs/prisma";
 import { NextFunction, Request, Response } from "express";
 import slugify from "slugify";
 
-
 export const createProduct = async ( req: Request, res: Response, next: NextFunction) => {
 
    try {
@@ -55,6 +54,6 @@ export const createProduct = async ( req: Request, res: Response, next: NextFunc
       });
 
    } catch (error) {
-      next(error);
+      return next(error);
    }
 }
