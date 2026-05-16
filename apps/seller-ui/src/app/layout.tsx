@@ -1,5 +1,12 @@
 import './global.css';
 import Providers from './providers';
+import { Poppins } from 'next/font/google'; 
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
+})
 
 export const metadata = {
   title: 'Welcome to seller-ui',
@@ -13,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`min-h-screen ${poppins.variable} font-sans`}>
         <Providers>{children}</Providers>
       </body>
     </html>

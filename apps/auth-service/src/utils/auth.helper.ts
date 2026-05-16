@@ -3,7 +3,7 @@ import redisClient from "@real-app/libs/redis";
 import { sendMail } from "./sendMail";
 import { NextFunction } from "express";
 import { Request, Response } from "express";
-import prisma from "@real-app/libs/prisma";
+import prisma from '@real-app/libs/prisma';
 
 
 export const validateRegistrationData = (data: any) => {

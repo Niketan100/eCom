@@ -21,9 +21,9 @@ export const Header = ({seller  ,isLoading  ,error } : {seller : any ,isLoading 
             </Link> 
         </div>
         <div className='w-[50%] relative'>
-          <input type="text " placeholder='Search products...' className='border-2 h-[55px] font-poppins border-blue-500 py-2 px-4 w-[90%]  text-gray-6 00 focus:outline-none focus:ring-2 focus:ring-blue-500'  />
+          <input type="text " placeholder='Search products...' className='border-2 h-[55px] font-poppins  py-2 px-4 w-[90%]  text-gray-6 00 focus:outline-none focus:ring-2 focus:ring-blue-500'  />
 
-          <div className='w-[10%] cursor-pointer flex items-center justify-center h-[55px]  bg-blue-500 absolute top-0 right-0'> 
+          <div className='w-[10%] cursor-pointer flex items-center justify-center h-[55px]  bg-black absolute top-0 right-0'> 
               <Search color='white' />
           </div>
 
@@ -51,24 +51,12 @@ export const Header = ({seller  ,isLoading  ,error } : {seller : any ,isLoading 
                                     </>
                                 )}
 
-              <Link href={'/wish-list'} className=' relative text-gray-600 hover:text-gray-800 transition-colors duration-300'>
-                  <Heart color='red'/> 
-                  <div className='w-4 h-4  bg-red-500 rounded-full flex items-center justify-center absolute top-[-5px] right-[-4px] text-white text-xs font-bold'>
-                      3
-                  </div>
-              </Link>
-
-              <Link href={'/cart'} className=' relative text-gray-600 hover:text-gray-800 transition-colors duration-300'>
-                  <ShoppingCart color='gray'/>
-                  <div className='w-4 h-4  bg-red-500 rounded-full flex items-center justify-center absolute top-[-5px] right-[-4px] text-white text-xs font-bold'>
-                      2
-                  </div>  
-              </Link>
+            
               </div>
           </div>
       </div>
       <div className='border-b border-gray-200 w-full' />
-      <HeaderBottom />
+
       
 
     </div>

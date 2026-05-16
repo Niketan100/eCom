@@ -19,11 +19,11 @@
     "strict": true,
     "target": "es2022",
     "baseUrl": ".",
-    "paths": {
-      "@real-app/errorHandler": ["packages/errorHandler/index.ts"],
-      "@real-app/errorHandler/*": ["packages/errorHandler/*"],
-      "@real-app/*": ["packages/*/index.ts"]
-    },
+   "paths": {
+  "@real-app/libs/prisma": ["./packages/libs/prisma/index"],
+  "@real-app/libs/redis": ["./packages/libs/redis/index"],
+  "@real-app/errorHandler": ["./packages/errorHandler/index"]
+},
     "customConditions": ["@real-app/source"]
   }
 }
