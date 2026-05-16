@@ -1,6 +1,6 @@
 
 import { UnauthorizedError } from "@real-app/errorHandler";
-import prisma from "@real-app/libs/prisma";
+import prisma from "./../libs/prisma/index";
 import { NextFunction, Response } from "express";
 import jwt from "jsonwebtoken";
 

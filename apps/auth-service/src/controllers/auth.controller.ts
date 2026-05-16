@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { forgotPassword, sendOtp, validateRegistrationData } from "../utils/auth.helper";
-import prisma from './../../../../packages/libs/prisma'
+import prisma from "@real-app/libs/prisma";
 import { ForbiddenError } from "@real-app/errorHandler";
 import { otpRestrictions, trackOtpRequest, validateOtp, verifyUserForgotPasswordOtp } from "../utils/auth.helper";
 import bcrypt from 'bcrypt';
@@ -501,6 +501,12 @@ export const getSeller = async(req : any , res : Response , next : NextFunction)
             throw new ForbiddenError('Seller not found');
         }
 
+        const shopie = await prisma.shops.findUnique({
+            where: {
+                sellerId: seller.id
+            }
+        });
+
        
 
         res.status(200).json({
@@ -514,7 +520,8 @@ export const getSeller = async(req : any , res : Response , next : NextFunction)
                 address: seller.address,
                 city: seller.city,
                 state: seller.state,
-                postalCode: seller.postalCode
+                postalCode: seller.postalCode,
+                shop : seller.shopId ? shopie : null
             }
         });
 

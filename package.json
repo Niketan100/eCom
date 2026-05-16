@@ -7,7 +7,11 @@
     "build": "npx nx run-many --target=build --all",
     "test": "npx nx run-many --target=test --all",
     "ui": "npx nx run user-ui:dev",
-    "si": "npx nx run seller-ui:dev"
+    "si": "npx nx run seller-ui:dev",
+    "ps": "npx nx run product-ui:dev",
+    "as": "npx nx run auth-service:serve",
+    "ags": "npx nx run api-gateway:serve",
+    "pss": "npx nx run product-service:serve"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +27,7 @@
     "express-http-proxy": "^2.1.2",
     "express-rate-limit": "^8.4.1",
     "ioredis": "^5.10.1",
+    "jotai": "^2.20.0",
     "jsonwebtoken": "^9.0.3",
     "lucide-react": "^1.14.0",
     "morgan": "^1.10.1",
@@ -31,7 +36,9 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.75.0",
+    "slugify": "^1.6.9",
     "stripe": "^22.1.1",
+    "styled-components": "^6.4.1",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
   },
@@ -88,6 +95,8 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "my-app"
+    "my-app",
+    "product-service",
+    "product-service-e2e"
   ]
 }
