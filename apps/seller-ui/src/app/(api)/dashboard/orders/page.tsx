@@ -1,47 +1,51 @@
 'use client'
 
+import { useMutation } from '@tanstack/react-query';
+import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance';
+
 import React from 'react'
 
-const orders = [
-  {
-    id: '#ORD-1024',
-    customer: 'Rahul Sharma',
-    product: 'Wireless Headphones',
-    amount: '₹2,499',
-    status: 'Delivered',
-    payment: 'Paid',
-    date: 'Today',
-  },
-  {
-    id: '#ORD-1025',
-    customer: 'Priya Kapoor',
-    product: 'Gaming Mouse',
-    amount: '₹1,299',
-    status: 'Pending',
-    payment: 'Pending',
-    date: 'Yesterday',
-  },
-  {
-    id: '#ORD-1026',
-    customer: 'Aman Verma',
-    product: 'Smart Watch',
-    amount: '₹4,999',
-    status: 'Shipped',
-    payment: 'Paid',
-    date: '2 days ago',
-  },
-  {
-    id: '#ORD-1027',
-    customer: 'Neha Thakur',
-    product: 'Bluetooth Speaker',
-    amount: '₹1,899',
-    status: 'Cancelled',
-    payment: 'Refunded',
-    date: '4 days ago',
-  },
-]
-
 const OrdersPage = () => {
+
+  const orders :any[] = [];
+
+  const getOrders  = useMutation({
+    mutationFn: async () => {
+      const res = await axiosInstance.get('/products/get-orders')
+      return res.data
+    },
+    onSuccess: (data) => {
+      console.log('Orders Data:', data)
+    },
+    onError: (error) => {
+      console.error('Failed to fetch orders:', error)
+    }
+  })
+
+  if(getOrders.isSuccess){
+    orders.push(...getOrders.data.orders.map((order: any) => ({
+      id: order.id,
+      customer: order.user.name,
+      product: order.product.name,
+      amount: `₹${order.product.price.toFixed(2)}`,
+      payment: order.paymentStatus,
+      status: order.status,
+      date: new Date(order.createdAt).toLocaleDateString()
+    })))
+  }
+
+  React.useEffect(() => {
+    getOrders.mutate();
+  }, [])
+
+  const total_orders = getOrders.data?.count || 0;
+  const pending_orders = getOrders.data?.orders.filter((order: any) => order.status === 'Pending').length || 0;
+  const delivered_orders = getOrders.data?.orders.filter((order: any) => order.status === 'Delivered').length || 0;
+  const revenue = getOrders.data?.orders.reduce((acc: number, order: any) => acc + order.product.price, 0) || 0;
+  
+
+  
+
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>
 
@@ -73,7 +77,7 @@ const OrdersPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-black mt-2'>
-            324
+            {total_orders}
           </h2>
         </div>
 
@@ -83,7 +87,7 @@ const OrdersPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-yellow-600 mt-2'>
-            18
+            {pending_orders}
           </h2>
         </div>
 
@@ -93,7 +97,7 @@ const OrdersPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-green-600 mt-2'>
-            268
+            { delivered_orders}
           </h2>
         </div>
 
@@ -103,7 +107,7 @@ const OrdersPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-black mt-2'>
-            ₹48k
+            ₹{revenue.toFixed(2)}
           </h2>
         </div>
 

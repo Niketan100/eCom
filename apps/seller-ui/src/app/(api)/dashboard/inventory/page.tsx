@@ -1,43 +1,41 @@
 'use client'
-
 import React from 'react'
-
-const inventory = [
-  {
-    id: '#PRD-1001',
-    name: 'Wireless Headphones',
-    category: 'Electronics',
-    stock: 24,
-    price: '₹2,499',
-    status: 'In Stock',
-  },
-  {
-    id: '#PRD-1002',
-    name: 'Gaming Mouse',
-    category: 'Accessories',
-    stock: 6,
-    price: '₹1,299',
-    status: 'Low Stock',
-  },
-  {
-    id: '#PRD-1003',
-    name: 'Smart Watch',
-    category: 'Wearables',
-    stock: 0,
-    price: '₹4,999',
-    status: 'Out of Stock',
-  },
-  {
-    id: '#PRD-1004',
-    name: 'Bluetooth Speaker',
-    category: 'Audio',
-    stock: 15,
-    price: '₹1,899',
-    status: 'In Stock',
-  },
-]
+import { useMutation } from '@tanstack/react-query'
+import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance'
 
 const InventoryPage = () => {
+
+  const getInventoryMutation = useMutation({
+    mutationFn: async () => {
+      const res = await axiosInstance.get('/products/get-products')
+      return res.data
+    },
+    onSuccess: (data) => {
+      console.log('Inventory Data:', data)
+    },
+    onError: (error) => {
+      console.error('Failed to fetch inventory:', error)
+    }
+  })
+
+  let inventory: any[] = [];
+  const total_prodcuts = getInventoryMutation.data?.count || 0;
+
+    if (getInventoryMutation.isSuccess) {
+      inventory = getInventoryMutation.data.products.map((product: any) => ({
+        id: product.id,
+        name: product.name,
+        category: product.category,
+        price: `$${product.price.toFixed(2)}`,
+        stock: product.stock,
+        status: product.stock > 10 ? 'In Stock' : product.stock > 0 ? 'Low Stock' : 'Out of Stock'
+      }));
+    }
+
+   React.useEffect(() => {
+      getInventoryMutation.mutate()
+   }, [])
+
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>
 
@@ -69,7 +67,7 @@ const InventoryPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-black mt-2'>
-            48
+            {total_prodcuts}
           </h2>
         </div>
 
@@ -79,7 +77,7 @@ const InventoryPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-green-600 mt-2'>
-            38
+            {total_prodcuts - inventory.filter(product => product.status === 'Low Stock' || product.status === 'Out of Stock').length}
           </h2>
         </div>
 
@@ -89,7 +87,7 @@ const InventoryPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-yellow-600 mt-2'>
-            7
+            {inventory.filter(product => product.status === 'Low Stock').length}
           </h2>
         </div>
 
@@ -99,7 +97,7 @@ const InventoryPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-red-600 mt-2'>
-            3
+            {inventory.filter(product => product.status === 'Out of Stock').length}
           </h2>
         </div>
 
