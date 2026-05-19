@@ -1,30 +1,108 @@
-'use client'
+"use client"
 
 import React from 'react'
-import useSeller from './../../../../../../hooks/useSeller';
+import useSeller from '../../../../../../hooks/useSeller';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import axiosInstance from '../../../../../../utils/axiosInstance';
+import { useParams } from 'next/navigation';
 
 const EditProductPage = ({
     params,
 }: {
     params: { id: string }
 }) => {
+    const routeParams = useParams();
+    const id = Array.isArray(routeParams?.id) ? routeParams.id[0] : (routeParams?.id as string | undefined);
 
     const { seller, isLoading } = useSeller();
 
-    // fake product data
-    const product = {
-        id: params.id,
-        name: 'Wireless Headphones',
-        price: 2499,
-        quantity: 24,
-        category: 'Electronics',
-        brand: 'Sony',
-        sku: 'SKU-1024',
-        description:
-            'Premium wireless headphones with active noise cancellation and long battery backup.',
+    
+
+        const {
+            data,
+            isLoading: isProductLoading,
+            error: productError,
+        } = useQuery({
+        queryKey: ['product', id],
+        queryFn: async () => {
+            const response = await axiosInstance.get(`/products/${id}`)
+            return response.data
+        },
+        enabled: !!id,
+    })
+
+
+    const product = data?.product ?? data ?? null;
+
+    const [updated, setUpdated] = React.useState({
+        name: '',
+        description: '',
+        price: 0,
+        stock: 0,
+        category: '',
+    });
+
+    React.useEffect(() => {
+        if (!product) return;
+        setUpdated({
+            name: product?.name ?? '',
+            description: product?.description ?? '',
+            price: Number(product?.price ?? 0),
+            stock: Number(product?.stock ?? 0),
+            category: product?.category ?? '',
+        });
+    }, [product]);
+
+
+
+
+    if (!id) {
+        return (
+            <div className='flex justify-center items-center min-h-screen bg-[#f6f7fb]'>
+                <p className='text-gray-500 text-lg'>Product Id is missing.</p>
+            </div>
+        )
     }
 
-    if (isLoading) {
+
+    const {
+        mutate: updateProduct,
+        isPending: isUpdating,
+        isSuccess: isUpdateSuccess,
+        isError: isUpdateError,
+        error: updateError,
+    } = useMutation({
+        mutationFn: async (payload: any) => {
+            // backend route: POST /products/update/:id
+            const response = await axiosInstance.post(`/products/update/${id}`, payload)
+            return response.data
+        },
+    })
+
+    const handleClick = async  () =>{
+       updateProduct(updated);
+    }
+
+    if(isLoading){
+        return (
+            <div className='flex justify-center items-center min-h-screen bg-[#f6f7fb]'>
+                <div className='flex flex-col items-center gap-4'>
+
+                    <div className='w-10 h-10 border-4 border-gray-300 border-t-black rounded-full animate-spin'></div>
+
+                    <h1 className='text-gray-500 text-lg'>
+                        Loading Seller Info...
+                    </h1>
+
+                </div>
+            </div>
+        )
+    }
+
+  
+    // API shape has varied in this repo; normalize to a single `product` object
+
+    if (isLoading || isProductLoading) {
         return (
             <div className='flex justify-center items-center min-h-screen bg-[#f6f7fb]'>
                 <div className='flex flex-col items-center gap-4'>
@@ -36,6 +114,22 @@ const EditProductPage = ({
                     </h1>
 
                 </div>
+            </div>
+        )
+    }
+
+    if (productError) {
+        return (
+            <div className='flex justify-center items-center min-h-screen bg-[#f6f7fb]'>
+                <p className='text-red-500 text-lg'>Failed to load product.</p>
+            </div>
+        )
+    }
+
+    if (!product) {
+        return (
+            <div className='flex justify-center items-center min-h-screen bg-[#f6f7fb]'>
+                <p className='text-gray-500 text-lg'>Product not found.</p>
             </div>
         )
     }
@@ -69,13 +163,34 @@ const EditProductPage = ({
                             Delete Product
                         </button>
 
-                        <button className='bg-black text-white px-5 py-3 rounded-2xl font-medium hover:bg-[#111] transition-all duration-200'>
-                            Save Changes
+                        <button
+                            className={`bg-black text-white px-5 py-3 rounded-2xl font-medium transition-all duration-200 ${
+                                isUpdating ? 'opacity-60 cursor-not-allowed' : 'hover:bg-[#111]'
+                            }`}
+                            onClick={() => handleClick()}
+                            disabled={isUpdating}
+                        >
+                            {isUpdating ? 'Saving...' : 'Save Changes'}
                         </button>
 
                     </div>
 
                 </div>
+
+                {(isUpdateSuccess || isUpdateError) && (
+                    <div className='mb-6'>
+                        {isUpdateSuccess && (
+                            <div className='bg-green-50 text-green-700 border border-green-200 rounded-2xl px-4 py-3'>
+                                Product updated successfully.
+                            </div>
+                        )}
+                        {isUpdateError && (
+                            <div className='bg-red-50 text-red-700 border border-red-200 rounded-2xl px-4 py-3'>
+                                Failed to update product{updateError ? `: ${(updateError as any)?.message ?? ''}` : ''}.
+                            </div>
+                        )}
+                    </div>
+                )}
 
                 {/* Main Card */}
                 <div className='bg-white border border-gray-200 rounded-[32px] p-8 shadow-sm'>
@@ -95,6 +210,7 @@ const EditProductPage = ({
                                 <input
                                     type='text'
                                     defaultValue={product.name}
+                                    onChange={(e) => setUpdated((prev) => ({ ...prev, name: e.target.value }))}
                                     className='bg-[#f8f8f8] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all'
                                 />
 
@@ -110,6 +226,7 @@ const EditProductPage = ({
                                 <textarea
                                     rows={6}
                                     defaultValue={product.description}
+                                    onChange={(e) => setUpdated((prev) => ({ ...prev, description: e.target.value }))}
                                     className='bg-[#f8f8f8] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all resize-none'
                                 />
 
@@ -127,6 +244,7 @@ const EditProductPage = ({
                                     <input
                                         type='number'
                                         defaultValue={product.price}
+                                        onChange={(e) => setUpdated((prev) => ({ ...prev, price: Number(e.target.value) }))}
                                         className='bg-[#f8f8f8] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all'
                                     />
 
@@ -139,6 +257,7 @@ const EditProductPage = ({
                                     </label>
 
                                     <input
+                                    onChange={(e) => setUpdated((prev) => ({ ...prev, quantity: Number(e.target.value) }))}
                                         type='number'
                                         defaultValue={product.quantity}
                                         className='bg-[#f8f8f8] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all'
@@ -159,6 +278,7 @@ const EditProductPage = ({
 
                                     <select
                                         defaultValue={product.category}
+                                        onChange={(e) => setUpdated((prev) => ({ ...prev, category: e.target.value }))}
                                         className='bg-[#f8f8f8] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all'
                                     >
                                         <option>Electronics</option>

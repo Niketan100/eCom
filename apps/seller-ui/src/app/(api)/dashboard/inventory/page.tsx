@@ -2,7 +2,8 @@
 import React from 'react'
 import { useMutation } from '@tanstack/react-query'
 import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance'
-
+import { Link as Icon} from 'lucide-react'
+import Link from 'next/link'
 const InventoryPage = () => {
 
   const getInventoryMutation = useMutation({
@@ -234,9 +235,11 @@ const InventoryPage = () => {
                   <td className='py-5'>
                     <div className='flex justify-end gap-3'>
 
-                      <button className='bg-[#f3f4f6] text-black px-4 py-2 rounded-xl hover:bg-[#e5e7eb] transition-all duration-200'>
-                        Edit
-                      </button>
+                            <Link href={`/dashboard/manage-products/edit-product/${product.id}`}>
+                        <Icon className='inline-flex items-center gap-1' >
+                            
+                        </Icon>
+                            </Link>
 
                       <button className='bg-black text-white px-4 py-2 rounded-xl hover:bg-[#111] transition-all duration-200'>
                         Update Stock

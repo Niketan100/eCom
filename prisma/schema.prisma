@@ -129,18 +129,29 @@ model seller {
 }
 
 model products {
+
   id String @id @default(auto()) @map("_id") @db.ObjectId
 
   name String
+
   slug String @unique
 
   shortDescription String?
-  description      String
+
+  description String
+
+  // structured features/specifications
+  features Json?
+
+  // marketing bullet points
+  highlights String[]
 
   category String
-  brand    String?
 
-  price           Float
+  brand String?
+
+  price Float
+
   discountedPrice Float?
 
   stock Int @default(0)
@@ -149,20 +160,29 @@ model products {
 
   tags String[]
 
-  isActive   Boolean @default(true)
+  shippingWeight String?
+
+  warranty String?
+
+  isActive Boolean @default(true)
+
   isFeatured Boolean @default(false)
 
-  views      Int @default(0)
+  views Int @default(0)
+
   salesCount Int @default(0)
 
   averageRating Float @default(0)
-  reviewCount   Int   @default(0)
+
+  reviewCount Int @default(0)
 
   sellerId String @db.ObjectId
-  seller   seller @relation(fields: [sellerId], references: [id])
+
+  seller seller @relation(fields: [sellerId], references: [id])
 
   shopId String @db.ObjectId
-  shop   shops  @relation(fields: [shopId], references: [id])
+
+  shop shops @relation(fields: [shopId], references: [id])
 
   images productImages[]
 
@@ -177,11 +197,37 @@ model products {
   variants productVariants[]
 
   createdAt DateTime @default(now())
+
   updatedAt DateTime @updatedAt
 
   @@index([sellerId])
+
   @@index([shopId])
+
   @@index([category])
+
+}
+
+model productVariants {
+
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  productId String @db.ObjectId
+
+  // Color / Storage / Size
+  type String
+
+  // Black / 256GB / XL
+  value String
+
+  stock Int @default(0)
+
+  additionalPrice Float @default(0)
+
+  product products @relation(fields: [productId], references: [id])
+
+  createdAt DateTime @default(now())
+
 }
 
 model productImages {
@@ -216,22 +262,7 @@ model productReviews {
   @@index([productId])
 }
 
-model productVariants {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
 
-  productId String @db.ObjectId
-
-  name  String
-  value String
-
-  stock Int @default(0)
-
-  additionalPrice Float @default(0)
-
-  product products @relation(fields: [productId], references: [id])
-
-  createdAt DateTime @default(now())
-}
 
 model wishlist {
   id String @id @default(auto()) @map("_id") @db.ObjectId

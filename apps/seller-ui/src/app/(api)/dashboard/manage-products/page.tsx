@@ -2,47 +2,39 @@
 
 import Link from 'next/link'
 import React from 'react'
+import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance'
+import { useQuery } from '@tanstack/react-query'
 
-const products = [
-  {
-    id: '#PRD-1001',
-    name: 'Wireless Headphones',
-    category: 'Electronics',
-    price: '₹2,499',
-    stock: 24,
-    sales: 142,
-    status: 'Active',
-  },
-  {
-    id: '#PRD-1002',
-    name: 'Gaming Mouse',
-    category: 'Accessories',
-    price: '₹1,299',
-    stock: 6,
-    sales: 89,
-    status: 'Low Stock',
-  },
-  {
-    id: '#PRD-1003',
-    name: 'Smart Watch',
-    category: 'Wearables',
-    price: '₹4,999',
-    stock: 0,
-    sales: 212,
-    status: 'Out of Stock',
-  },
-  {
-    id: '#PRD-1004',
-    name: 'Bluetooth Speaker',
-    category: 'Audio',
-    price: '₹1,899',
-    stock: 15,
-    sales: 74,
-    status: 'Active',
-  },
-]
 
 const ManageProductsPage = () => {
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const response = await axiosInstance.get('/products/get-products')
+      return response.data
+    },
+  })  
+
+  if(isLoading) {
+    return (
+      <div className='min-h-screen flex items-center justify-center'>
+        <p className='text-gray-500 text-lg'>Loading products...</p>
+      </div>
+    )
+  }
+
+  if(error) {
+    return (
+      <div className='min-h-screen flex items-center justify-center'>
+        <p className='text-red-500 text-lg'>Failed to load products. Please try again.</p>
+      </div>
+    )
+  }
+
+
+  const products = data?.products || [];
+
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>
 
@@ -74,37 +66,37 @@ const ManageProductsPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-black mt-2'>
-            48
+            {products.length}
           </h2>
         </div>
 
         <div className='bg-white border border-gray-200 rounded-[28px] p-6 shadow-sm'>
           <p className='text-sm text-gray-500'>
-            Active Products
+            {products.filter((p: any) => p.status === 'Active').length} Active Products
           </p>
 
           <h2 className='text-3xl font-bold text-green-600 mt-2'>
-            38
+            {products.filter((p: any) => p.status === 'Active').length}
           </h2>
         </div>
 
         <div className='bg-white border border-gray-200 rounded-[28px] p-6 shadow-sm'>
           <p className='text-sm text-gray-500'>
-            Low Stock
+            {products.filter((p: any) => p.stock < 10).length} Low Stock
           </p>
 
           <h2 className='text-3xl font-bold text-yellow-600 mt-2'>
-            7
+            {products.filter((p: any) => p.stock < 10).length}
           </h2>
         </div>
 
         <div className='bg-white border border-gray-200 rounded-[28px] p-6 shadow-sm'>
           <p className='text-sm text-gray-500'>
-            Out of Stock
+            {products.filter((p: any) => p.stock === 0).length} Out of Stock
           </p>
 
           <h2 className='text-3xl font-bold text-red-600 mt-2'>
-            3
+            {products.filter((p: any) => p.stock === 0).length}
           </h2>
         </div>
 
@@ -148,7 +140,7 @@ const ManageProductsPage = () => {
         {/* Product Cards */}
         <div className='grid grid-cols-1 xl:grid-cols-2 gap-5'>
 
-          {products.map((product, index) => (
+          {products.map((product: any, index: number) => (
             <div
               key={index}
               className='bg-[#fcfcfc] border border-gray-200 rounded-[30px] p-5 hover:shadow-md transition-all duration-200'
@@ -230,12 +222,28 @@ const ManageProductsPage = () => {
 
               {/* Actions */}
               <div className='flex flex-wrap gap-3 mt-6'>
-
-                <button  className='flex-1 bg-black text-white py-3 rounded-2xl hover:bg-[#111] transition-all duration-200 font-medium'>
-                    <Link href={`/dashboard/manage-products/edit-product/:${product.id}`}>
+                {(() => {
+                  const editId = (product?.id ?? '').toString();
+                  const editHref = editId
+                    ? `/dashboard/manage-products/edit-product/${encodeURIComponent(editId)}`
+                    : '';
+                  return editHref ? (
+                    <Link
+                      href={`/dashboard/manage-products/edit-product/${product.id}`}
+                      className='flex-1 bg-black text-white py-3 rounded-2xl hover:bg-[#111] transition-all duration-200 font-medium text-center'
+                    >
                       Edit Product
                     </Link>
-                </button>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      className='flex-1 bg-gray-200 text-gray-500 py-3 rounded-2xl font-medium text-center cursor-not-allowed'
+                    >
+                      Edit Product
+                    </button>
+                  )
+                })()}
 
                 <button className='flex-1 bg-[#f3f4f6] text-black py-3 rounded-2xl hover:bg-[#e5e7eb] transition-all duration-200 font-medium'>
                   Update Stock

@@ -8,6 +8,7 @@ import jwt from 'jsonwebtoken';
 import { setCookie } from "../utils/cookies/setcookie";
 
 
+
 export const userRegister = async (req : Request , res : Response , next : NextFunction) => {
     try {
     validateRegistrationData(req.body);
@@ -527,6 +528,42 @@ export const getSeller = async(req : any , res : Response , next : NextFunction)
 
     }catch(err){
         next(err);
+    }
+}
+
+
+export const getComplaints = async (req : Request , res : Response , next : NextFunction) => {
+    try {
+        const seller = req.user as any;
+
+        if (!seller?.id) {
+            throw new ForbiddenError('Not Authorized');
+        }
+
+        const complaints = await prisma.complaints.findMany({
+            where: {
+                sellerId: seller.id,
+            },
+            include: {
+                user: {
+                    select: {
+                        id: true,
+                        name: true,
+                        email: true,
+                    },
+                },
+            },
+            orderBy: {
+                createdAt: 'desc',
+            },
+        });
+
+        return res.status(200).json({
+            status: 'good',
+            complaints,
+        });
+    } catch (error) {
+        return next(error);
     }
 }
 
