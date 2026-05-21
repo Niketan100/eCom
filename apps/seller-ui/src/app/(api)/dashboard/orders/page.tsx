@@ -38,13 +38,15 @@ const OrdersPage = () => {
     getOrders.mutate();
   }, [])
 
+  console.log('Orders:', orders)
+
   const total_orders = getOrders.data?.count || 0;
-  const pending_orders = getOrders.data?.orders.filter((order: any) => order.status === 'Pending').length || 0;
-  const delivered_orders = getOrders.data?.orders.filter((order: any) => order.status === 'Delivered').length || 0;
-  const revenue = getOrders.data?.orders.reduce((acc: number, order: any) => acc + order.product.price, 0) || 0;
+  const pending_orders = getOrders.data?.orders.filter((order: any) => order.status === 'PENDING').length || 0;
+  const delivered_orders = getOrders.data?.orders.filter((order: any) => order.status === 'DELIVERED').length || 0;
+  const delivered_orders_data = getOrders.data?.orders.filter((order: any) => order.status === 'DELIVERED') || [];
+  const revenue = delivered_orders_data.reduce((acc: number, order: any) => acc + (order.product?.price || 0), 0) || 0;
   
 
-  
 
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>

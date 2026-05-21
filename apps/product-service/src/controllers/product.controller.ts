@@ -308,6 +308,58 @@ export const getOrders = async(req : Request, res: Response, next: NextFunction)
    }
 }
 
+export const getSellerPayments = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const seller = (req as any).user;
+
+      if (!seller) {
+         return res.status(401).json({
+            success: false,
+            message: 'Unauthorized',
+         });
+      }
+
+      const payments = await prisma.payments.findMany({
+         where: {
+            order: {
+               sellerId: seller.id,
+            },
+         },
+         include: {
+            order: {
+               include: {
+                  product: {
+                     select: {
+                        id: true,
+                        name: true,
+                        price: true,
+                     },
+                  },
+                  user: {
+                     select: {
+                        id: true,
+                        name: true,
+                        email: true,
+                     },
+                  },
+               },
+            },
+         },
+         orderBy: {
+            createdAt: 'desc',
+         },
+      });
+
+      return res.status(200).json({
+         success: true,
+         count: payments.length,
+         payments,
+      });
+   } catch (err) {
+      return next(err);
+   }
+}
+
 export const getall = async(req: Request, res: Response, next: NextFunction) => {
    try{
       const products = await prisma.products.findMany({
@@ -555,3 +607,124 @@ export const updateProduct = async (req: Request, res: Response, next: NextFunct
    }
 }  
 
+
+export const placeOrder = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const { productId, variantId, quantity, address } = req.body;
+      const user = (req as any).user;
+
+      if (!user) {
+         return res.status(401).json({
+            message: 'Unauthorized'
+         });
+      }
+
+      if (!productId || !address) {
+         return res.status(400).json({ message: 'productId and address are required' });
+      }
+
+      const qty = Number(quantity);
+      if (!qty || qty <= 0) {
+         return res.status(400).json({ message: 'quantity must be a positive number' });
+      }
+
+      // Fetch product with the minimum data needed for order placement.
+      const product = await prisma.products.findUnique({
+         where: { id: productId },
+         select: {
+            id: true,
+            price: true,
+            discountedPrice: true,
+            stock: true,
+            sellerId: true,
+            variants: true,
+         }
+      });
+
+      if (!product) {
+         return res.status(404).json({ message: 'Product not found' });
+      }
+
+      // Determine pricing and stock source.
+      let unitPrice = Number(product.discountedPrice ?? product.price);
+      let stockField: 'product' | 'variant' = 'product';
+
+      if (variantId) {
+         const foundVariant = Array.isArray(product.variants)
+            ? (product.variants as any[]).find((v) => v?.id === variantId)
+            : null;
+
+         if (!foundVariant) {
+            return res.status(404).json({ message: 'Variant not found' });
+         }
+
+         if (Number(foundVariant.stock ?? 0) < qty) {
+            return res.status(400).json({ message: 'Insufficient variant stock' });
+         }
+
+         // If your variant has additionalPrice, apply it.
+         if (foundVariant?.additionalPrice != null) {
+            unitPrice += Number(foundVariant.additionalPrice);
+         }
+
+         stockField = 'variant';
+
+         // Decrement variant stock (variant is a separate model in schema, but here variants are stored on product;
+         // adjust below if you actually use productVariants model).
+         await prisma.products.update({
+            where: { id: productId },
+            data: {
+               variants: {
+                  updateMany: {
+                     where: { id: variantId },
+                     data: { stock: { decrement: qty } },
+                  },
+               },
+            } as any,
+         });
+      } else {
+         if (Number(product.stock ?? 0) < qty) {
+            return res.status(400).json({ message: 'Insufficient stock' });
+         }
+
+         await prisma.products.update({
+            where: { id: productId },
+            data: { stock: { decrement: qty } },
+         });
+      }
+
+      const total = unitPrice * qty;
+
+      // Create the order first.
+      const order = await prisma.orders.create({
+         data: {
+            productId,
+            userId: user.id,
+            sellerId: product.sellerId,
+            quantity: qty,
+            totalPrice: total,
+            shippingAddress: String(address),
+         },
+      });
+
+      // Cash on delivery: payment is PENDING until delivered/collected.
+      const payment = await prisma.payments.create({
+         data: {
+            orderId: order.id,
+            paymentMethod: 'COD',
+            amount: total,
+            status: 'PENDING',
+         },
+      });
+
+      return res.status(201).json({
+         message: 'Order placed successfully',
+         order,
+         payment,
+         meta: { stockSource: stockField },
+      });
+   } catch (error) {
+      console.log('Error placing order:', error);
+      return next(error);
+   }
+}

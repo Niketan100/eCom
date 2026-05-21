@@ -11,6 +11,9 @@ const BasicProductLayout = ({
    const [showDescription, setShowDescription] =
       React.useState(false)
 
+   const [quantity, setQuantity] =
+      React.useState(1)
+
    const shouldClampDescription =
       product.description?.length > 220
 
@@ -235,7 +238,7 @@ const BasicProductLayout = ({
 
                            {product.stock > 0
                               ? 'In Stock'
-                              : 'Out OfStock'}
+                              : 'Out Of Stock'}
 
                         </span>
 
@@ -249,46 +252,63 @@ const BasicProductLayout = ({
 
                      </div>
 
-                     {/* DESCRIPTION */}
+                     {/* QUANTITY */}
 
                      <div className='mt-10'>
 
                         <div className='flex items-center justify-between mb-4'>
 
                            <h3 className='text-2xl font-bold text-black'>
-                              Description
+                              Quantity
                            </h3>
 
-                           {
-                              shouldClampDescription && (
-
-                                 <button
-                                    onClick={() =>
-                                       setShowDescription(true)
-                                    }
-                                    className='text-sm font-semibold text-black hover:underline'
-                                 >
-
-                                    Read More
-
-                                 </button>
-
-                              )
-                           }
+                           <span className='text-gray-500'>
+                              Max:
+                              {' '}
+                              {product.stock}
+                           </span>
 
                         </div>
 
-                        <p
-                           className={`text-lg text-gray-600 leading-relaxed ${
-                              shouldClampDescription
-                                 ? 'line-clamp-5'
-                                 : ''
-                           }`}
-                        >
+                        <div className='flex items-center gap-4'>
 
-                           {product.description}
+                           <button
+                              onClick={() =>
+                                 setQuantity((prev) =>
+                                    prev > 1
+                                       ? prev - 1
+                                       : 1
+                                 )
+                              }
+                              className='w-14 h-14 rounded-2xl bg-[#f3f4f6] hover:bg-black hover:text-white transition-all text-2xl font-bold'
+                           >
 
-                        </p>
+                              -
+
+                           </button>
+
+                           <div className='w-20 h-14 rounded-2xl bg-[#f3f4f6] flex items-center justify-center text-xl font-semibold'>
+
+                              {quantity}
+
+                           </div>
+
+                           <button
+                              onClick={() =>
+                                 setQuantity((prev) =>
+                                    prev < product.stock
+                                       ? prev + 1
+                                       : prev
+                                 )
+                              }
+                              className='w-14 h-14 rounded-2xl bg-[#f3f4f6] hover:bg-black hover:text-white transition-all text-2xl font-bold'
+                           >
+
+                              +
+
+                           </button>
+
+                        </div>
 
                      </div>
 
@@ -301,7 +321,7 @@ const BasicProductLayout = ({
                      <div className='flex flex-col xl:flex-row gap-4'>
 
                         <Link
-                           href={`/checkout/${product.slug}`}
+                           href={`/checkout/${product.slug}?qty=${quantity}`}
                            className='flex-1'
                         >
 
@@ -327,120 +347,167 @@ const BasicProductLayout = ({
 
             </div>
 
-            {/* SECOND ROW */}
+            {/* PRODUCT DETAILS SECTION */}
 
-            <div className='grid grid-cols-1 xl:grid-cols-2 gap-8 mt-8'>
+            <div className='space-y-8 mt-8'>
 
-               {/* SHIPPING */}
+               {/* DESCRIPTION */}
 
                <div className='bg-white border border-gray-200 rounded-[40px] p-8 shadow-sm'>
 
-                  <div className='flex items-center justify-between mb-8'>
+                  <div className='flex items-center justify-between mb-6'>
 
                      <h2 className='text-3xl font-bold text-black'>
-                        Shipping Information
+                        Product Description
                      </h2>
 
-                     <div className='w-14 h-14 rounded-2xl bg-black text-white flex items-center justify-center text-2xl'>
+                     {
+                        shouldClampDescription && (
 
-                        🚚
+                           <button
+                              onClick={() =>
+                                 setShowDescription(true)
+                              }
+                              className='text-sm font-semibold text-black hover:underline'
+                           >
 
-                     </div>
+                              Expand
 
-                  </div>
+                           </button>
 
-                  <div className='space-y-5'>
-
-                     <div className='bg-[#f7f7f7] rounded-[28px] p-5'>
-
-                        <p className='text-sm text-gray-400'>
-                           Delivery
-                        </p>
-
-                        <h3 className='text-xl font-semibold text-black mt-2'>
-                           3 - 5 Business Days
-                        </h3>
-
-                     </div>
-
-                     <div className='bg-[#f7f7f7] rounded-[28px] p-5'>
-
-                        <p className='text-sm text-gray-400'>
-                           Warranty
-                        </p>
-
-                        <h3 className='text-xl font-semibold text-black mt-2'>
-                           {product.warranty || 'No Warranty'}
-                        </h3>
-
-                     </div>
-
-                     <div className='bg-[#f7f7f7] rounded-[28px] p-5'>
-
-                        <p className='text-sm text-gray-400'>
-                           Weight
-                        </p>
-
-                        <h3 className='text-xl font-semibold text-black mt-2'>
-                           {product.shippingWeight || 'N/A'}
-                        </h3>
-
-                     </div>
+                        )
+                     }
 
                   </div>
+
+                  <p
+                     className={`text-lg text-gray-600 leading-loose ${
+                        shouldClampDescription
+                           ? 'line-clamp-6'
+                           : ''
+                     }`}
+                  >
+
+                     {product.description}
+
+                  </p>
 
                </div>
 
-               {/* SELLER */}
+               {/* SHIPPING + SELLER */}
 
-               <div className='bg-white border border-gray-200 rounded-[40px] p-8 shadow-sm flex flex-col justify-between'>
+               <div className='grid grid-cols-1 xl:grid-cols-2 gap-8'>
 
-                  <div>
+                  {/* SHIPPING */}
+
+                  <div className='bg-white border border-gray-200 rounded-[40px] p-8 shadow-sm'>
 
                      <div className='flex items-center justify-between mb-8'>
 
                         <h2 className='text-3xl font-bold text-black'>
-                           Seller Information
+                           Shipping Information
                         </h2>
 
                         <div className='w-14 h-14 rounded-2xl bg-black text-white flex items-center justify-center text-2xl'>
+                           🚚
+                        </div>
 
-                           🏪
+                     </div>
+
+                     <div className='space-y-5'>
+
+                        <div className='bg-[#f7f7f7] rounded-[28px] p-5'>
+
+                           <p className='text-sm text-gray-400'>
+                              Delivery
+                           </p>
+
+                           <h3 className='text-xl font-semibold text-black mt-2'>
+                              3 - 5 Business Days
+                           </h3>
+
+                        </div>
+
+                        <div className='bg-[#f7f7f7] rounded-[28px] p-5'>
+
+                           <p className='text-sm text-gray-400'>
+                              Warranty
+                           </p>
+
+                           <h3 className='text-xl font-semibold text-black mt-2'>
+                              {product.warranty ||
+                                 'No Warranty'}
+                           </h3>
+
+                        </div>
+
+                        <div className='bg-[#f7f7f7] rounded-[28px] p-5'>
+
+                           <p className='text-sm text-gray-400'>
+                              Weight
+                           </p>
+
+                           <h3 className='text-xl font-semibold text-black mt-2'>
+                              {product.shippingWeight ||
+                                 'N/A'}
+                           </h3>
 
                         </div>
 
                      </div>
 
-                     <div className='flex items-center gap-5'>
+                  </div>
 
-                        <div className='w-24 h-24 rounded-[30px] bg-black text-white flex items-center justify-center text-4xl font-bold flex-shrink-0'>
+                  {/* SELLER */}
 
-                           {product?.shop?.name
-                              ?.charAt(0)
-                              ?.toUpperCase() || 'S'}
+                  <div className='bg-white border border-gray-200 rounded-[40px] p-8 shadow-sm flex flex-col justify-between'>
+
+                     <div>
+
+                        <div className='flex items-center justify-between mb-8'>
+
+                           <h2 className='text-3xl font-bold text-black'>
+                              Seller Information
+                           </h2>
+
+                           <div className='w-14 h-14 rounded-2xl bg-black text-white flex items-center justify-center text-2xl'>
+                              🏪
+                           </div>
 
                         </div>
 
-                        <div>
+                        <div className='flex items-center gap-5'>
 
-                           <h3 className='text-2xl font-bold text-black'>
-                              {product?.shop?.name ||
-                                 'Official Store'}
-                           </h3>
+                           <div className='w-24 h-24 rounded-[30px] bg-black text-white flex items-center justify-center text-4xl font-bold flex-shrink-0'>
 
-                           <p className='text-gray-500 mt-2'>
-                              Verified Marketplace Seller
-                           </p>
+                              {product?.shop?.name
+                                 ?.charAt(0)
+                                 ?.toUpperCase() || 'S'}
 
-                           <div className='flex items-center gap-3 mt-4'>
+                           </div>
 
-                              <span className='bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium'>
-                                 Trusted Seller
-                              </span>
+                           <div>
 
-                              <span className='text-gray-400 text-sm'>
-                                 ⭐ 4.8
-                              </span>
+                              <h3 className='text-2xl font-bold text-black'>
+                                 {product?.shop?.name ||
+                                    'Official Store'}
+                              </h3>
+
+                              <p className='text-gray-500 mt-2'>
+                                 Verified Marketplace Seller
+                              </p>
+
+                              <div className='flex items-center gap-3 mt-4'>
+
+                                 <span className='bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium'>
+                                    Trusted Seller
+                                 </span>
+
+                                 <span className='text-gray-400 text-sm'>
+                                    ⭐ 4.8
+                                 </span>
+
+                              </div>
 
                            </div>
 
@@ -448,13 +515,13 @@ const BasicProductLayout = ({
 
                      </div>
 
+                     <button className='w-full mt-10 border border-black text-black py-4 rounded-2xl font-semibold hover:bg-black hover:text-white transition-all'>
+
+                        Visit Store
+
+                     </button>
+
                   </div>
-
-                  <button className='w-full mt-10 border border-black text-black py-4 rounded-2xl font-semibold hover:bg-black hover:text-white transition-all'>
-
-                     Visit Store
-
-                  </button>
 
                </div>
 

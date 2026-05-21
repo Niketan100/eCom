@@ -8,6 +8,7 @@ import {  Search , User } from 'lucide-react'
 export const Header = ({seller  ,isLoading  ,error } : {seller : any ,isLoading : boolean ,error : any}) => {
    
     const loggedInUser = seller;
+    console.log(loggedInUser)
 
   return (
     <>

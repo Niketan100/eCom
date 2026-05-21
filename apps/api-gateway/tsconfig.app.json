@@ -20,9 +20,5 @@
     "src/**/*.spec.ts",
     "src/**/*.test.ts"
   ],
-  "references": [
-    {
-      "path": "../../packages/errorHandler/tsconfig.app.json"
-    }
-  ]
+  "references": []
 }

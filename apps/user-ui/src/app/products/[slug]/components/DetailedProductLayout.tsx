@@ -64,9 +64,9 @@ const DetailedProductLayout = ({
 
             </div>
 
-            {/* MAIN GRID */}
+            {/* HERO SECTION */}
 
-            <div className='grid grid-cols-1 2xl:grid-cols-[1.15fr_0.85fr] gap-8 items-start'>
+            <div className='grid grid-cols-1 2xl:grid-cols-[1.05fr_0.95fr] gap-8 items-start'>
 
                {/* LEFT SIDE */}
 
@@ -77,45 +77,6 @@ const DetailedProductLayout = ({
                   <ProductGallery
                      product={product}
                   />
-
-                  {/* DESCRIPTION */}
-
-                  <div className='bg-white border border-gray-200 rounded-[40px] p-8 shadow-sm'>
-
-                     <div className='mb-8'>
-
-                        <h2 className='text-3xl font-bold text-black'>
-                           Product Description
-                        </h2>
-
-                        <p className='text-gray-500 mt-2 text-lg'>
-                           Detailed information about this product
-                        </p>
-
-                     </div>
-
-                     <div className='prose prose-lg max-w-none text-gray-600 leading-relaxed'>
-
-                        <p className='whitespace-pre-line leading-loose text-lg'>
-
-                           {product.description}
-
-                        </p>
-
-                     </div>
-
-                  </div>
-
-                  {/* HIGHLIGHTS */}
-
-                  {product.highlights
-                     ?.length > 0 && (
-
-                     <ProductHighlights
-                        product={product}
-                     />
-
-                  )}
 
                   {/* SPECS */}
 
@@ -128,13 +89,22 @@ const DetailedProductLayout = ({
 
                   )}
 
+                  {/* HIGHLIGHTS */}
+
+                  {product.highlights
+                     ?.length > 0 && (
+
+                     <ProductHighlights
+                        product={product}
+                     />
+
+                  )}
+
                </div>
 
                {/* RIGHT SIDE */}
 
-               <div className='space-y-8 sticky top-6'>
-
-                  {/* PRODUCT CARD */}
+               <div className='sticky top-6'>
 
                   <div className='bg-white border border-gray-200 rounded-[40px] p-8 shadow-sm'>
 
@@ -178,9 +148,7 @@ const DetailedProductLayout = ({
 
                         <p className='text-xl text-gray-500 mt-5 leading-relaxed'>
 
-                           {
-                              product.shortDescription
-                           }
+                           {product.shortDescription}
 
                         </p>
 
@@ -188,8 +156,7 @@ const DetailedProductLayout = ({
 
                      {/* TAGS */}
 
-                     {product.tags
-                        ?.length > 0 && (
+                     {product.tags?.length > 0 && (
 
                         <div className='flex flex-wrap gap-3 mt-6'>
 
@@ -204,8 +171,7 @@ const DetailedProductLayout = ({
                                     className='bg-[#f3f4f6] text-gray-600 px-4 py-2 rounded-full text-sm'
                                  >
 
-                                    #
-                                    {tag}
+                                    #{tag}
 
                                  </span>
 
@@ -221,17 +187,13 @@ const DetailedProductLayout = ({
                      <div className='flex items-center gap-4 mt-8'>
 
                         <div className='flex text-yellow-500 text-2xl'>
-
                            ★★★★★
-
                         </div>
 
                         <span className='text-gray-500 text-lg'>
 
-                           {
-                              product.averageRating ||
-                              4.8
-                           }
+                           {product.averageRating ||
+                              4.8}
                            /5 Rating
 
                         </span>
@@ -239,10 +201,8 @@ const DetailedProductLayout = ({
                         <span className='text-gray-400'>
 
                            (
-                           {
-                              product.reviewCount ||
-                              0
-                           }
+                           {product.reviewCount ||
+                              0}
                            {' '}
                            reviews)
 
@@ -252,7 +212,7 @@ const DetailedProductLayout = ({
 
                      {/* PRICE */}
 
-                     <div className='mt-8'>
+                     <div className='mt-10'>
 
                         <div className='flex items-center gap-5 flex-wrap'>
 
@@ -346,15 +306,19 @@ const DetailedProductLayout = ({
                      {product.variants
                         ?.length > 0 && (
 
-                        <ProductVariants
-                           product={product}
-                           selectedVariant={
-                              selectedVariant
-                           }
-                           setSelectedVariant={
-                              setSelectedVariant
-                           }
-                        />
+                        <div className='mt-10'>
+
+                           <ProductVariants
+                              product={product}
+                              selectedVariant={
+                                 selectedVariant
+                              }
+                              setSelectedVariant={
+                                 setSelectedVariant
+                              }
+                           />
+
+                        </div>
 
                      )}
 
@@ -362,19 +326,30 @@ const DetailedProductLayout = ({
 
                      <div className='mt-10'>
 
-                        <h3 className='text-lg font-semibold text-black mb-4'>
+                        <div className='flex items-center justify-between mb-4'>
 
-                           Quantity
+                           <h3 className='text-2xl font-bold text-black'>
+                              Quantity
+                           </h3>
 
-                        </h3>
+                           <span className='text-gray-500'>
+                              Max:
+                              {' '}
+                              {product.stock}
+                           </span>
+
+                        </div>
 
                         <div className='flex items-center gap-4'>
 
                            <button
                               onClick={() =>
                                  setQuantity(
-                                    (prev) =>
-                                       prev > 1
+                                    (
+                                       prev
+                                    ) =>
+                                       prev >
+                                       1
                                           ? prev -
                                             1
                                           : 1
@@ -398,7 +373,9 @@ const DetailedProductLayout = ({
                            <button
                               onClick={() =>
                                  setQuantity(
-                                    (prev) =>
+                                    (
+                                       prev
+                                    ) =>
                                        prev <
                                        product.stock
                                           ? prev +
@@ -419,14 +396,12 @@ const DetailedProductLayout = ({
 
                      {/* TOTAL */}
 
-                     <div className='mt-8 bg-[#f7f7f7] rounded-[30px] p-6'>
+                     <div className='mt-10 bg-[#f7f7f7] rounded-[30px] p-6 border border-gray-200'>
 
                         <div className='flex items-center justify-between'>
 
                            <h3 className='text-xl font-semibold text-black'>
-
                               Total Price
-
                            </h3>
 
                            <h2 className='text-4xl font-bold text-black'>
@@ -443,10 +418,12 @@ const DetailedProductLayout = ({
 
                      {/* ACTIONS */}
 
-                     <div className='mt-8 flex flex-col xl:flex-row gap-4'>
+                     <div className='mt-10 flex flex-col xl:flex-row gap-4'>
 
                         <Link
-                           href={`/checkout/${product.slug}?qty=${quantity}`}
+                           href={`/checkout/${encodeURIComponent(product.slug)}?qty=${encodeURIComponent(
+                              String(quantity)
+                           )}&variant=${encodeURIComponent(selectedVariant?.id || '')}`}
                            className='flex-1'
                         >
 
@@ -468,27 +445,65 @@ const DetailedProductLayout = ({
 
                   </div>
 
-                  {/* SHIPPING */}
+               </div>
 
-                  <ProductShipping
-                     product={product}
-                  />
+            </div>
 
-                  {/* SELLER */}
+            {/* DESCRIPTION */}
 
-                  <ProductSeller
-                     product={product}
-                  />
+            <div className='mt-8'>
+
+               <div className='bg-white border border-gray-200 rounded-[40px] p-8 shadow-sm'>
+
+                  <div className='mb-8'>
+
+                     <h2 className='text-3xl font-bold text-black'>
+                        Product Description
+                     </h2>
+
+                     <p className='text-gray-500 mt-2 text-lg'>
+                        Detailed information about this product
+                     </p>
+
+                  </div>
+
+                  <div className='prose prose-lg max-w-none text-gray-600 leading-relaxed'>
+
+                     <p className='whitespace-pre-line leading-loose text-lg'>
+
+                        {product.description}
+
+                     </p>
+
+                  </div>
 
                </div>
 
             </div>
 
+            {/* SHIPPING + SELLER */}
+
+            <div className='grid grid-cols-1 xl:grid-cols-2 gap-8 mt-8'>
+
+               <ProductShipping
+                  product={product}
+               />
+
+               <ProductSeller
+                  product={product}
+               />
+
+            </div>
+
             {/* REVIEWS */}
 
-            <ProductReviews
-               product={product}
-            />
+            <div className='mt-8'>
+
+               <ProductReviews
+                  product={product}
+               />
+
+            </div>
 
          </div>
 

@@ -1,75 +1,42 @@
+"use client";
+
+import useOrder from 'apps/seller-ui/src/hooks/useOrder';
+import useProducts from 'apps/seller-ui/src/hooks/useProducts';
+import type { SellerProduct } from 'apps/seller-ui/src/hooks/useProducts'
+
+
 export default function SellerDashboard() {
+
+  const { orders, isLoading: ordersLoading, error: ordersError, revenue, total_orders, percentage_order_today, percentage_revenue_today, total_customers, percentage_customers_today } = useOrder();
+  const { products, lowStockProducts, isLoading: productsLoading, error: productsError } = useProducts();
   const stats = [
     {
       title: 'Total Revenue',
-      value: '₹48,320',
-      change: '+12% this month',
+      value: revenue ? `₹${revenue.toLocaleString()}` : '₹0',
+      change: percentage_revenue_today ? `+${percentage_revenue_today}% today` : 'No change today',
       icon: '💰',
     },
     {
       title: 'Orders',
-      value: '324',
-      change: '+18 new today',
+      value: total_orders ? total_orders.toString() : '0',
+      change: percentage_order_today ? `+${percentage_order_today}% today` : 'No change today',
       icon: '📦',
     },
     {
       title: 'Products',
-      value: '48',
-      change: '6 low stock',
+      value: products ? products.length.toString() : '0',
+      change: '',
       icon: '🛍️',
     },
     {
       title: 'Customers',
-      value: '1,204',
-      change: '+32 this week',
+      value: total_customers ? total_customers.toString() : '0',
+      change: `+${percentage_customers_today}% today`,
       icon: '👥',
     },
   ];
 
-  const orders = [
-    {
-      id: '#ORD-1024',
-      customer: 'Rahul Sharma',
-      amount: '₹2,400',
-      status: 'Delivered',
-    },
-    {
-      id: '#ORD-1025',
-      customer: 'Aman Verma',
-      amount: '₹1,250',
-      status: 'Pending',
-    },
-    {
-      id: '#ORD-1026',
-      customer: 'Priya Thakur',
-      amount: '₹4,100',
-      status: 'Shipped',
-    },
-    {
-      id: '#ORD-1027',
-      customer: 'Neha Kapoor',
-      amount: '₹899',
-      status: 'Cancelled',
-    },
-  ];
-
-  const products = [
-    {
-      name: 'Wireless Headphones',
-      stock: 24,
-      price: '₹2,999',
-    },
-    {
-      name: 'Smart Watch',
-      stock: 12,
-      price: '₹4,499',
-    },
-    {
-      name: 'Gaming Mouse',
-      stock: 8,
-      price: '₹1,299',
-    },
-  ];
+  const recentOrders = (orders ?? []).slice(0, 6);
 
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6 text-black'>
@@ -219,18 +186,31 @@ export default function SellerDashboard() {
             </div>
 
             <div className='flex flex-col gap-4'>
-              {orders.map((order, index) => (
+              {ordersLoading ? (
+                <div className='border border-gray-100 rounded-2xl p-4 text-sm text-gray-500'>
+                  Loading orders...
+                </div>
+              ) : ordersError ? (
+                <div className='border border-red-200 rounded-2xl p-4 text-sm text-red-600'>
+                  Failed to load orders.
+                </div>
+              ) : recentOrders.length === 0 ? (
+                <div className='border border-gray-100 rounded-2xl p-4 text-sm text-gray-500'>
+                  No orders yet.
+                </div>
+              ) : (
+                recentOrders.map((order: any, index: number) => (
                 <div
                   key={index}
                   className='flex items-center justify-between border border-gray-100 rounded-2xl p-4 hover:bg-[#fafafa] transition-all'
                 >
                   <div>
                     <h3 className='font-semibold'>
-                      {order.id}
+                      #{order.id}
                     </h3>
 
                     <p className='text-sm text-gray-500 mt-1'>
-                      {order.customer}
+                      {order.customer || 'Customer'}
                     </p>
                   </div>
 
@@ -240,11 +220,11 @@ export default function SellerDashboard() {
                     </h3>
 
                     <p className={`text-sm mt-1 ${
-                      order.status === 'Delivered'
+                      order.status === 'DELIVERED'
                         ? 'text-green-600'
-                        : order.status === 'Pending'
+                        : order.status === 'PENDING'
                         ? 'text-yellow-600'
-                        : order.status === 'Cancelled'
+                        : order.status === 'CANCELLED'
                         ? 'text-red-600'
                         : 'text-blue-600'
                     }`}>
@@ -252,7 +232,8 @@ export default function SellerDashboard() {
                     </p>
                   </div>
                 </div>
-              ))}
+              ))
+              )}
             </div>
           </div>
 
@@ -269,7 +250,20 @@ export default function SellerDashboard() {
             </div>
 
             <div className='flex flex-col gap-4'>
-              {products.map((product, index) => (
+              {productsLoading ? (
+                <div className='border border-gray-100 rounded-2xl p-4 text-sm text-gray-500'>
+                  Loading products...
+                </div>
+              ) : productsError ? (
+                <div className='border border-red-200 rounded-2xl p-4 text-sm text-red-600'>
+                  Failed to load products.
+                </div>
+              ) : (products?.length ?? 0) === 0 ? (
+                <div className='border border-gray-100 rounded-2xl p-4 text-sm text-gray-500'>
+                  No products found.
+                </div>
+              ) : (
+                products.slice(0, 6).map((product: SellerProduct, index: number) => (
                 <div
                   key={index}
                   className='flex items-center justify-between border border-gray-100 rounded-2xl p-4 hover:bg-[#fafafa] transition-all'
@@ -292,12 +286,19 @@ export default function SellerDashboard() {
 
                   <div>
                     <h3 className='font-semibold text-lg'>
-                      {product.price}
+                      ₹{Number(product.discountedPrice ?? product.price ?? 0).toLocaleString()}
                     </h3>
                   </div>
                 </div>
-              ))}
+              ))
+              )}
             </div>
+
+            {(lowStockProducts?.length ?? 0) > 0 && (
+              <p className='text-sm text-yellow-700 mt-5'>
+                Low stock: {lowStockProducts.length} item(s)
+              </p>
+            )}
           </div>
 
         </div>
