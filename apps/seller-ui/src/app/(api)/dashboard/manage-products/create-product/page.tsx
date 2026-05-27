@@ -6,7 +6,7 @@ import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance'
 
 import { useForm } from 'react-hook-form'
 
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQuery } from '@tanstack/react-query'
 
 type ProductFormData = {
 
@@ -17,6 +17,8 @@ type ProductFormData = {
    description: string
 
    category: string
+
+   subcategory: string
 
    brand: string
 
@@ -41,7 +43,9 @@ const CreateProductPage = () => {
    const {
       register,
       handleSubmit,
-      reset
+      reset,
+      setValue,
+      watch
    } = useForm<ProductFormData>()
 
    const [features, setFeatures] =
@@ -83,6 +87,9 @@ const CreateProductPage = () => {
 
             category:
                data.category,
+
+            subcategory:
+               data.subcategory || null,
 
             brand:
                data.brand,
@@ -154,6 +161,41 @@ const CreateProductPage = () => {
 
    }
 
+   const selectedCategory = watch('category') || ''
+   const selectedSubcategory = watch('subcategory') || ''
+
+
+   const getCategory = useQuery({
+      queryKey : ['getCategories'],
+      queryFn : async () => {
+         const res = await axiosInstance.get('/products/categories');
+         return res.data
+      }
+   })
+
+   const cate: string[] = getCategory.data?.categories || [];
+   const subcate: Record<string, string[]> = getCategory.data?.subcategories || {};
+
+   const availableSubcategories = selectedCategory ? (subcate[selectedCategory] || []) : [];
+
+   const handleCategorySelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      const nextCategory = e.target.value;
+      setValue('category', nextCategory)
+      // reset subcategory when category changes
+      setValue('subcategory', '')
+   }
+
+   const handleSubcategorySelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      setValue('subcategory', e.target.value)
+   }
+
+   // Ensure fields are registered even when controlled via setValue/watch.
+   React.useEffect(() => {
+      register('category')
+      register('subcategory')
+   }, [register])
+
+
    return (
 
       <div className='min-h-screen bg-[#f6f7fb] p-8'>
@@ -178,10 +220,17 @@ const CreateProductPage = () => {
                <button
                   form='create-product'
                   type='submit'
-                  className='bg-black text-white px-8 py-4 rounded-2xl'
+                  disabled={submitMutation.isPending}
+                  className={
+                     submitMutation.isPending
+                        ? 'bg-black/70 text-white px-8 py-4 rounded-2xl cursor-not-allowed'
+                        : 'bg-black text-white px-8 py-4 rounded-2xl'
+                  }
                >
 
-                  Publish Product
+                  {submitMutation.isPending
+                     ? 'Publishing…'
+                     : 'Publish Product'}
 
                </button>
 
@@ -652,14 +701,38 @@ const CreateProductPage = () => {
                         Organization
                      </h2>
 
-                     <input
-                        type='text'
-                        placeholder='Category'
+                     <select
                         className='w-full bg-[#f8f8f8] border border-gray-200 rounded-2xl px-5 py-4'
-                        {...register(
-                           'category'
-                        )}
-                     />
+                        value={selectedCategory}
+                        onChange={handleCategorySelect}
+                     >
+                        <option value=''>
+                           Select Category
+                        </option>
+                        {cate.map((c) => (
+                           <option key={c} value={c}>
+                              {c}
+                           </option>
+                        ))}
+                     </select>
+
+                     <select
+                        className='w-full bg-[#f8f8f8] border border-gray-200 rounded-2xl px-5 py-4'
+                        value={selectedSubcategory}
+                        onChange={handleSubcategorySelect}
+                        disabled={!selectedCategory}
+                     >
+                        <option value=''>
+                           {selectedCategory
+                              ? 'Select Subcategory'
+                              : 'Select category first'}
+                        </option>
+                        {availableSubcategories.map((sc) => (
+                           <option key={sc} value={sc}>
+                              {sc}
+                           </option>
+                        ))}
+                     </select>
 
                      <input
                         type='text'

@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createProduct, getall, getInventoryProducts, getOrders, getSellerPayments, getsingle, getsingleBySlug, placeOrder, updateProduct } from '../controllers/product.controller'
+import { createProduct, getall, getCategories, getInventoryProducts, getOrders, getSellerPayments, getsingle, getsingleBySlug, placeOrder, updateProduct , deleteProduct} from '../controllers/product.controller'
 import isAuthenticated from './../../../../packages/middleware/isAuthanticated';
 
 
@@ -11,8 +11,10 @@ router.get('/get-orders', isAuthenticated, getOrders);
 router.get('/payments/my', isAuthenticated, getSellerPayments);
 router.get('/get-all', getall);
 router.get('/slug/:slug', getsingleBySlug);
+router.get('/categories', getCategories)
 router.get('/:id',getsingle);
 router.post('/update/:id', isAuthenticated, updateProduct);
 router.post('/orders/place', isAuthenticated, placeOrder);
+router.delete('/delete/:id', isAuthenticated, deleteProduct);   
 
 export default router

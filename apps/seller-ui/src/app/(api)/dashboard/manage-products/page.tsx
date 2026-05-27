@@ -3,17 +3,41 @@
 import Link from 'next/link'
 import React from 'react'
 import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance'
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 
 
 const ManageProductsPage = () => {
 
+  const queryClient = useQueryClient()
+
+  const [page, setPage] = React.useState(1)
+  const [deletingId, setDeletingId] = React.useState<string | null>(null)
+  const limit = 10
+
+  const deleteMutation = useMutation({
+    mutationFn: async (productId: string) => {
+      await axiosInstance.delete(`/products/delete/${productId}`)
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['products'] })
+    },
+    onError: (err) => {
+      console.error('Failed to delete product:', err)
+    },
+    onSettled: () => {
+      setDeletingId(null)
+    },
+  })
+
   const { data, isLoading, error } = useQuery({
-    queryKey: ['products'],
+    queryKey: ['products', page, limit],
     queryFn: async () => {
-      const response = await axiosInstance.get('/products/get-products')
+      const response = await axiosInstance.get('/products/get-products', {
+        params: { page, limit },
+      })
       return response.data
     },
+    placeholderData: (prev) => prev,
   })  
 
   if(isLoading) {
@@ -33,7 +57,9 @@ const ManageProductsPage = () => {
   }
 
 
-  const products = data?.products || [];
+  const products = data?.products || []
+  const meta = data?.meta
+  const total = typeof data?.total === 'number' ? data.total : products.length
 
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>
@@ -51,9 +77,12 @@ const ManageProductsPage = () => {
           </p>
         </div>
 
-        <button className='bg-black text-white px-5 py-3 rounded-2xl font-medium hover:bg-[#111] transition-all duration-200 w-fit'>
+        <Link
+          href='/dashboard/manage-products/create-product'
+          className='bg-black text-white px-5 py-3 rounded-2xl font-medium hover:bg-[#111] transition-all duration-200 w-fit'
+        >
           + Add New Product
-        </button>
+        </Link>
 
       </div>
 
@@ -66,7 +95,7 @@ const ManageProductsPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-black mt-2'>
-            {products.length}
+            {total}
           </h2>
         </div>
 
@@ -136,6 +165,41 @@ const ManageProductsPage = () => {
           </div>
 
         </div>
+
+        {meta && (
+          <div className='flex items-center justify-between gap-4 mb-6'>
+            <p className='text-sm text-gray-500'>
+              Page {meta.page} of {meta.totalPages} • Total {meta.total}
+            </p>
+
+            <div className='flex items-center gap-3'>
+              <button
+                type='button'
+                disabled={!meta.hasPrev || isLoading}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                className={
+                  !meta.hasPrev || isLoading
+                    ? 'px-4 py-2 rounded-xl bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'px-4 py-2 rounded-xl bg-[#f3f4f6] hover:bg-[#e5e7eb]'
+                }
+              >
+                Prev
+              </button>
+              <button
+                type='button'
+                disabled={!meta.hasNext || isLoading}
+                onClick={() => setPage((p) => p + 1)}
+                className={
+                  !meta.hasNext || isLoading
+                    ? 'px-4 py-2 rounded-xl bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'px-4 py-2 rounded-xl bg-[#f3f4f6] hover:bg-[#e5e7eb]'
+                }
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Product Cards */}
         <div className='grid grid-cols-1 xl:grid-cols-2 gap-5'>
@@ -249,8 +313,24 @@ const ManageProductsPage = () => {
                   Update Stock
                 </button>
 
-                <button className='w-full bg-red-50 text-red-600 py-3 rounded-2xl hover:bg-red-100 transition-all duration-200 font-medium'>
-                  Delete Product
+                <button
+                  type='button'
+                  disabled={deleteMutation.isPending && deletingId === String(product.id)}
+                  onClick={() => {
+                    const ok = window.confirm('Delete this product? This action can\'t be undone.')
+                    if (!ok) return
+                    setDeletingId(String(product.id))
+                    deleteMutation.mutate(String(product.id))
+                  }}
+                  className={
+                    deleteMutation.isPending && deletingId === String(product.id)
+                      ? 'w-full bg-red-50/60 text-red-300 py-3 rounded-2xl cursor-not-allowed transition-all duration-200 font-medium'
+                      : 'w-full bg-red-50 text-red-600 py-3 rounded-2xl hover:bg-red-100 transition-all duration-200 font-medium'
+                  }
+                >
+                  {deleteMutation.isPending && deletingId === String(product.id)
+                    ? 'Deleting...'
+                    : 'Delete Product'}
                 </button>
 
               </div>

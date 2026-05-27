@@ -3,6 +3,32 @@ import prisma from "./../../../../packages/libs/prisma";
 import { NextFunction, Request, Response } from "express";
 import slugify from "slugify";
 
+const parsePagination = (req: Request, opts?: { defaultLimit?: number; maxLimit?: number }) => {
+   const defaultLimit = opts?.defaultLimit ?? 20;
+   const maxLimit = opts?.maxLimit ?? 50;
+
+   const pageRaw = Array.isArray(req.query.page) ? req.query.page[0] : req.query.page;
+   const limitRaw = Array.isArray(req.query.limit) ? req.query.limit[0] : req.query.limit;
+
+   const page = Math.max(1, Number(pageRaw ?? 1) || 1);
+   const limit = Math.min(maxLimit, Math.max(1, Number(limitRaw ?? defaultLimit) || defaultLimit));
+   const skip = (page - 1) * limit;
+
+   return { page, limit, skip };
+};
+
+const buildPaginationMeta = (args: { page: number; limit: number; total: number }) => {
+   const totalPages = Math.max(1, Math.ceil(args.total / args.limit));
+   return {
+      page: args.page,
+      limit: args.limit,
+      total: args.total,
+      totalPages,
+      hasPrev: args.page > 1,
+      hasNext: args.page < totalPages,
+   };
+};
+
 export const createProduct = async (
 
    req: Request,
@@ -19,6 +45,8 @@ export const createProduct = async (
          shortDescription,
          description,
          category,
+
+         subcategory,
          brand,
          price,
          discountedPrice,
@@ -116,6 +144,9 @@ export const createProduct = async (
                description,
 
                category,
+
+               // Optional for now; only persist if the schema supports it.
+               subcategory,
 
                brand,
 
@@ -226,31 +257,42 @@ export const getInventoryProducts = async (   req: Request, res: Response, next:
             message: 'Unauthorized'
          })
       }
-      const products = await prisma.products.findMany({
+      const { page, limit, skip } = parsePagination(req, { defaultLimit: 20, maxLimit: 50 });
 
-         where: {
-            sellerId: seller.id
-         },
-         select: {
-            id: true,
-            name: true,
-            stock: true,
-            price: true,
-            slug: true,
-            category: true,
-            salesCount: true,
-            isActive: true,
-            createdAt: true
-         },
-         orderBy: {
-            createdAt: 'desc'
-         }
-      })
+      const where = {
+         sellerId: seller.id
+      } as const;
+
+      const [total, products] = await Promise.all([
+         prisma.products.count({ where }),
+         prisma.products.findMany({
+
+            where,
+            select: {
+               id: true,
+               name: true,
+               stock: true,
+               price: true,
+               slug: true,
+               category: true,
+               salesCount: true,
+               isActive: true,
+               createdAt: true
+            },
+            orderBy: {
+               createdAt: 'desc'
+            },
+            skip,
+            take: limit,
+         }),
+      ]);
       console.log('Inventory products for seller', seller.id, products);
 
       return res.status(200).json({
          success: true,
          count: products.length,
+         total,
+         meta: buildPaginationMeta({ page, limit, total }),
          products
       })
       
@@ -274,33 +316,43 @@ export const getOrders = async(req : Request, res: Response, next: NextFunction)
             }
          )
       }
-      const orders = await prisma.orders.findMany({
+      const { page, limit, skip } = parsePagination(req, { defaultLimit: 20, maxLimit: 50 });
 
-         where: {
-            sellerId: seller.id
-         },
-         include: {
-            product: {
-               select: {
-                  name: true,
-                  price: true
+      const where = {
+         sellerId: seller.id
+      } as const;
+
+      const [total, orders] = await Promise.all([
+         prisma.orders.count({ where }),
+         prisma.orders.findMany({
+            where,
+            include: {
+               product: {
+                  select: {
+                     name: true,
+                     price: true
+                  }
+               },
+               user: {
+                  select: {
+                     name: true,
+                     email: true
+                  }
                }
             },
-            user: {
-               select: {
-                  name: true,
-                  email: true
-               }
-            }
-         },
-         orderBy: {
-            createdAt: 'desc'
-         }
-      })
+            orderBy: {
+               createdAt: 'desc'
+            },
+            skip,
+            take: limit,
+         }),
+      ]);
 
       return res.status(200).json({
          success: true,
          count: orders.length,
+         total,
+         meta: buildPaginationMeta({ page, limit, total }),
          orders
       })
    }catch(err){
@@ -319,12 +371,18 @@ export const getSellerPayments = async (req: Request, res: Response, next: NextF
          });
       }
 
-      const payments = await prisma.payments.findMany({
-         where: {
-            order: {
-               sellerId: seller.id,
-            },
+      const { page, limit, skip } = parsePagination(req, { defaultLimit: 20, maxLimit: 50 });
+
+      const where = {
+         order: {
+            sellerId: seller.id,
          },
+      } as const;
+
+      const [total, payments] = await Promise.all([
+         prisma.payments.count({ where }),
+         prisma.payments.findMany({
+         where,
          include: {
             order: {
                include: {
@@ -348,11 +406,16 @@ export const getSellerPayments = async (req: Request, res: Response, next: NextF
          orderBy: {
             createdAt: 'desc',
          },
-      });
+         skip,
+         take: limit,
+      }),
+      ]);
 
       return res.status(200).json({
          success: true,
          count: payments.length,
+         total,
+         meta: buildPaginationMeta({ page, limit, total }),
          payments,
       });
    } catch (err) {
@@ -362,28 +425,40 @@ export const getSellerPayments = async (req: Request, res: Response, next: NextF
 
 export const getall = async(req: Request, res: Response, next: NextFunction) => {
    try{
-      const products = await prisma.products.findMany({
-         where: {
-            isActive: true
-         },
-         select: {
-            id: true,
-            name: true,
-            price: true,
-            category: true,
-            stock: true,
-            createdAt: true,
-            slug: true
-         },
-         orderBy: {
-            createdAt: 'desc'
-         }
-      })
+      const { page, limit, skip } = parsePagination(req, { defaultLimit: 20, maxLimit: 50 });
+
+      const where = {
+         isActive: true
+      } as const;
+
+      const [total, products] = await Promise.all([
+         prisma.products.count({ where }),
+         prisma.products.findMany({
+            where,
+            select: {
+               id: true,
+               name: true,
+               description: true,
+               price: true,
+               category: true,
+               stock: true,
+               createdAt: true,
+               slug: true
+            },
+            orderBy: {
+               createdAt: 'desc'
+            },
+            skip,
+            take: limit,
+         }),
+      ]);
       console.log('All active products', products);
 
       return res.status(200).json({
          success: true,
          count: products.length,
+         total,
+         meta: buildPaginationMeta({ page, limit, total }),
          products
       })
    }catch(err){
@@ -398,11 +473,12 @@ export const getsingle = async(req: Request, res: Response, next: NextFunction) 
          where: {
             id
          },
-         select: {
+         select: { 
             id: true,
             name: true,
             slug: true,
             price: true,
+            subcategory : true,
             category: true,
             stock: true,
             description: true,
@@ -442,50 +518,59 @@ export const getsingleBySlug = async (
                slug
             },
 
-            include: {
+            select: {
+               id: true,
+               name: true,
+               slug: true,
+               shortDescription: true,
+               description: true,
+               category: true,
+               subcategory: true,
+               brand: true,
+               price: true,
+               discountedPrice: true,
+               stock: true,
+               tags: true,
+               shippingWeight: true,
+               warranty: true,
+               isFeatured: true,
+               averageRating: true,
+               reviewCount: true,
+               createdAt: true,
 
-               // product images
+               // relations
                images: true,
-
-               // variants
                variants: true,
-
-               // reviews with user
                reviews: {
                   include: {
                      user: {
                         select: {
                            id: true,
                            name: true,
-                           email: true
-                        }
-                     }
+                           email: true,
+                        },
+                     },
                   },
                   orderBy: {
-                     createdAt: 'desc'
-                  }
+                     createdAt: 'desc',
+                  },
                },
-
-               // seller info
                seller: {
                   select: {
                      id: true,
                      name: true,
-                     email: true
-                  }
+                     email: true,
+                  },
                },
-
-               // shop info
                shop: {
                   select: {
                      id: true,
                      name: true,
                      description: true,
-                     createdAt: true
-                  }
-               }
-
-            }
+                     createdAt: true,
+                  },
+               },
+            },
 
          })
 
@@ -725,6 +810,113 @@ export const placeOrder = async (req: Request, res: Response, next: NextFunction
       });
    } catch (error) {
       console.log('Error placing order:', error);
+      return next(error);
+   }
+}
+
+export const getCategories = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const config = await prisma.site_config.findFirst();
+
+      if(!config){
+         return res.status(404).json({
+            "message" : "Configuration Not Found "
+         })
+      }
+      return res.status(200).json({
+         success: true,
+         categories: config.categories,
+         subcategories: config.subcategories
+      })
+      
+   } catch (error) {
+      console.log('Error fetching categories:', error);
+      return next(error);
+   }
+}
+
+
+export const deleteProduct = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const { id } = req.params;
+      const seller = (req as any).user;
+
+      if (!seller) {
+         return res.status(401).json({
+            message: 'Unauthorized'
+         });
+      }
+
+      const existingProduct = await prisma.products.findUnique({
+         where: {
+            id
+         }
+      });
+
+      if (!existingProduct) {
+         return res.status(404).json({
+            message: 'Product not found'
+         });
+      }
+
+      if (existingProduct.sellerId !== seller.id) {
+         return res.status(403).json({
+            message: 'Forbidden'
+         });
+      }
+
+      // Prisma (MongoDB) doesn't automatically cascade deletes.
+      // Delete dependent records first to avoid required relation violations.
+      await prisma.$transaction(async (tx) => {
+         // Order matters: delete children → parent.
+         await tx.productVariants.deleteMany({
+            where: { productId: id },
+         });
+
+         await tx.productImages.deleteMany({
+            where: { productId: id },
+         });
+
+         await tx.productReviews.deleteMany({
+            where: { productId: id },
+         });
+
+         await tx.cartItems.deleteMany({
+            where: { productId: id },
+         });
+
+         await tx.wishlist.deleteMany({
+            where: { productId: id },
+         });
+
+         // If orders exist, product deletion can also fail due to required order->product relation.
+         // Payments depend on orders, so delete payments first.
+         const orderIds = await tx.orders.findMany({
+            where: { productId: id },
+            select: { id: true },
+         });
+         const orderIdList = orderIds.map((o) => o.id);
+
+         if (orderIdList.length > 0) {
+            await tx.payments.deleteMany({
+               where: { orderId: { in: orderIdList } },
+            });
+            await tx.orders.deleteMany({
+               where: { id: { in: orderIdList } },
+            });
+         }
+
+         await tx.products.delete({
+            where: { id },
+         });
+      });
+
+      return res.status(200).json({
+         message: 'Product deleted successfully'
+      });
+    
+   } catch (error) {
+      console.log('Error deleting product:', error);
       return next(error);
    }
 }

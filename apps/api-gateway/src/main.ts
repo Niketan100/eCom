@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 import cookieParser from 'cookie-parser';
+import initializeConfig from './libs/intialize_config';
 
 // errorMiddleware is loaded dynamically to avoid ESM/CommonJS interop issues
 
@@ -200,5 +201,10 @@ app.use((err: any, req: any, res: any, next: any) => {
 });
 
 app.listen(port, host, () => {
+    try {
+        initializeConfig();
+    } catch (error) {
+        console.error('Error initializing config:', error);
+    }
     console.log(`[ ready ] http://${host}:${port}`);
 });

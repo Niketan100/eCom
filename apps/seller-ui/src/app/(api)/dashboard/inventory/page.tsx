@@ -6,9 +6,13 @@ import { Link as Icon} from 'lucide-react'
 import Link from 'next/link'
 const InventoryPage = () => {
 
+  const [page, setPage] = React.useState(1)
+  const limit = 4
   const getInventoryMutation = useMutation({
     mutationFn: async () => {
-      const res = await axiosInstance.get('/products/get-products')
+      const res = await axiosInstance.get('/products/get-products', {
+        params: { page, limit },
+      })
       return res.data
     },
     onSuccess: (data) => {
@@ -21,6 +25,7 @@ const InventoryPage = () => {
 
   let inventory: any[] = [];
   const total_prodcuts = getInventoryMutation.data?.count || 0;
+  const meta = getInventoryMutation.data?.meta
 
     if (getInventoryMutation.isSuccess) {
       inventory = getInventoryMutation.data.products.map((product: any) => ({
@@ -35,7 +40,7 @@ const InventoryPage = () => {
 
    React.useEffect(() => {
       getInventoryMutation.mutate()
-   }, [])
+  }, [page])
 
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>
@@ -255,6 +260,36 @@ const InventoryPage = () => {
 
           </table>
 
+        </div>
+
+        {/* Pagination */}
+        <div className='flex items-center justify-between pt-6'>
+          <p className='text-sm text-gray-500'>
+            {meta ? (
+              <>
+                Page {meta.page} of {meta.totalPages} · Total {meta.total}
+              </>
+            ) : null}
+          </p>
+
+          <div className='flex items-center gap-3'>
+            <button
+              type='button'
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={getInventoryMutation.isPending || !meta?.hasPrev}
+              className='px-4 py-2 rounded-xl border border-gray-200 bg-white text-black disabled:opacity-50'
+            >
+              Prev
+            </button>
+            <button
+              type='button'
+              onClick={() => setPage((p) => p + 1)}
+              disabled={getInventoryMutation.isPending || !meta?.hasNext}
+              className='px-4 py-2 rounded-xl bg-black text-white disabled:opacity-50'
+            >
+              Next
+            </button>
+          </div>
         </div>
 
       </div>

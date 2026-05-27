@@ -147,6 +147,7 @@ model products {
   highlights String[]
 
   category String
+  subcategory String?
 
   brand String?
 
@@ -426,4 +427,14 @@ enum ComplaintStatus {
   IN_REVIEW
   RESOLVED
   REJECTED
+}
+
+// Note: `subcategory` is stored as a string (nullable) in MongoDB.
+// Keeping it as `String?` avoids runtime conversion errors when older records have null.
+
+
+model site_config {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  categories String[]
+  subcategories Json
 }

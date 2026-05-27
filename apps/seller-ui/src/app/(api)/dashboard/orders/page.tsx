@@ -7,11 +7,16 @@ import React from 'react'
 
 const OrdersPage = () => {
 
+  const [page, setPage] = React.useState(1)
+  const limit = 20
+
   const orders :any[] = [];
 
   const getOrders  = useMutation({
     mutationFn: async () => {
-      const res = await axiosInstance.get('/products/get-orders')
+      const res = await axiosInstance.get('/products/get-orders', {
+        params: { page, limit },
+      })
       return res.data
     },
     onSuccess: (data) => {
@@ -34,16 +39,18 @@ const OrdersPage = () => {
     })))
   }
 
+  const meta = getOrders.data?.meta
+
   React.useEffect(() => {
     getOrders.mutate();
-  }, [])
+  }, [page])
 
   console.log('Orders:', orders)
 
-  const total_orders = getOrders.data?.count || 0;
-  const pending_orders = getOrders.data?.orders.filter((order: any) => order.status === 'PENDING').length || 0;
-  const delivered_orders = getOrders.data?.orders.filter((order: any) => order.status === 'DELIVERED').length || 0;
-  const delivered_orders_data = getOrders.data?.orders.filter((order: any) => order.status === 'DELIVERED') || [];
+  const total_orders = getOrders.data?.total ?? getOrders.data?.count ?? 0;
+  const pending_orders = getOrders.data?.orders?.filter((order: any) => order.status === 'PENDING').length || 0;
+  const delivered_orders = getOrders.data?.orders?.filter((order: any) => order.status === 'DELIVERED').length || 0;
+  const delivered_orders_data = getOrders.data?.orders?.filter((order: any) => order.status === 'DELIVERED') || [];
   const revenue = delivered_orders_data.reduce((acc: number, order: any) => acc + (order.product?.price || 0), 0) || 0;
   
 
@@ -146,6 +153,33 @@ const OrdersPage = () => {
               <option>Cancelled</option>
             </select>
 
+          </div>
+
+          {/* Pagination */}
+          <div className='flex items-center gap-3'>
+            {meta ? (
+              <p className='text-sm text-gray-500 hidden md:block'>
+                Page {meta.page} of {meta.totalPages} · Total {meta.total}
+              </p>
+            ) : null}
+
+            <button
+              type='button'
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={getOrders.isPending || !meta?.hasPrev}
+              className='px-4 py-2 rounded-xl border border-gray-200 bg-white text-black disabled:opacity-50'
+            >
+              Prev
+            </button>
+
+            <button
+              type='button'
+              onClick={() => setPage((p) => p + 1)}
+              disabled={getOrders.isPending || !meta?.hasNext}
+              className='px-4 py-2 rounded-xl bg-black text-white disabled:opacity-50'
+            >
+              Next
+            </button>
           </div>
 
         </div>

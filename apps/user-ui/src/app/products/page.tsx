@@ -8,18 +8,23 @@ import axiosInstance from '../../utils/axiosInstance'
 
 const Page = () => {
 
+    const [page, setPage] = React.useState(1)
+    const limit = 20
+
     const {
         data,
         isLoading,
         isError
     } = useQuery({
 
-        queryKey: ['products'],
+        queryKey: ['products', page, limit],
 
         queryFn: async () => {
 
             const response =
-                await axiosInstance.get('/products/get-all')
+                await axiosInstance.get('/products/get-all', {
+                    params: { page, limit }
+                })
             return response.data
 
         }
@@ -27,6 +32,8 @@ const Page = () => {
     })
 
     const products = data?.products || []
+    console.log('Fetched Products:', products)
+    const meta = data?.meta
 
     if (isLoading) {
 
@@ -213,6 +220,39 @@ const Page = () => {
                             </Link>
 
                         ))}
+
+                    </div>
+
+                    {/* Pagination */}
+                    <div className='flex items-center justify-between mt-10'>
+
+                        <p className='text-sm text-gray-500'>
+                            {meta ? (
+                                <>
+                                    Page {meta.page} of {meta.totalPages} · Total {meta.total}
+                                </>
+                            ) : null}
+                        </p>
+
+                        <div className='flex items-center gap-3'>
+                            <button
+                                type='button'
+                                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                                disabled={isLoading || !meta?.hasPrev}
+                                className='px-5 py-3 rounded-2xl border border-gray-200 bg-white text-black disabled:opacity-50'
+                            >
+                                Prev
+                            </button>
+
+                            <button
+                                type='button'
+                                onClick={() => setPage((p) => p + 1)}
+                                disabled={isLoading || !meta?.hasNext}
+                                className='px-5 py-3 rounded-2xl bg-black text-white disabled:opacity-50'
+                            >
+                                Next
+                            </button>
+                        </div>
 
                     </div>
 

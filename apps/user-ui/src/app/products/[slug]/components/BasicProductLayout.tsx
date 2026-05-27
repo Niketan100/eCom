@@ -14,8 +14,10 @@ const BasicProductLayout = ({
    const [quantity, setQuantity] =
       React.useState(1)
 
-   const shouldClampDescription =
-      product.description?.length > 220
+   console.log('Product in BasicProductLayout:', product)
+
+   const shouldClampDescription = false;
+      // product.description?.length > 220
 
    return (
 

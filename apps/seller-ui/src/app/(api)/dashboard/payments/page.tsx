@@ -23,22 +23,36 @@ type SellerPayment = {
 type PaymentsResponse = {
   success: boolean
   count: number
+  total?: number
+  meta?: {
+    page: number
+    limit: number
+    total: number
+    totalPages: number
+    hasPrev: boolean
+    hasNext: boolean
+  }
   payments: SellerPayment[]
 }
 
 const PaymentsPage = () => {
   const [search, setSearch] = React.useState('')
   const [statusFilter, setStatusFilter] = React.useState<'ALL' | SellerPayment['status']>('ALL')
+  const [page, setPage] = React.useState(1)
+  const limit = 20
 
   const { data, isLoading, isError } = useQuery<PaymentsResponse>({
-    queryKey: ['seller-payments'],
+    queryKey: ['seller-payments', page, limit],
     queryFn: async () => {
-      const res = await axiosInstance.get('/products/payments/my')
+      const res = await axiosInstance.get('/products/payments/my', {
+        params: { page, limit },
+      })
       return res.data
     },
   })
 
   const payments = data?.payments ?? []
+  const meta = data?.meta
 
   const filteredPayments = React.useMemo(() => {
     const q = search.trim().toLowerCase()
@@ -322,6 +336,40 @@ const PaymentsPage = () => {
 
           </table>
 
+        </div>
+
+        {/* Pagination */}
+        <div className='flex items-center justify-between pt-6'>
+          <p className='text-sm text-gray-500'>
+            {meta ? (
+              <>
+                Page {meta.page} of {meta.totalPages} · Total {meta.total}
+              </>
+            ) : (
+              <>
+                Showing {payments.length}
+              </>
+            )}
+          </p>
+
+          <div className='flex items-center gap-3'>
+            <button
+              type='button'
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={isLoading || !meta?.hasPrev}
+              className='px-4 py-2 rounded-xl border border-gray-200 bg-white text-black disabled:opacity-50'
+            >
+              Prev
+            </button>
+            <button
+              type='button'
+              onClick={() => setPage((p) => p + 1)}
+              disabled={isLoading || !meta?.hasNext}
+              className='px-4 py-2 rounded-xl bg-black text-white disabled:opacity-50'
+            >
+              Next
+            </button>
+          </div>
         </div>
 
       </div>
