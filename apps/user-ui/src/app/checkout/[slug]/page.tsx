@@ -9,6 +9,7 @@ import { useParams, useSearchParams } from 'next/navigation'
 import { useMutation, useQuery } from '@tanstack/react-query'
 
 import axiosInstance from 'apps/user-ui/src/utils/axiosInstance'
+import PageShell from 'apps/user-ui/src/shared/components/PageShell'
 
 const Page = () => {
 
@@ -145,9 +146,9 @@ const Page = () => {
 
    return (
 
-      <div className='min-h-screen bg-[#f6f7fb] py-10 px-6'>
+      <PageShell>
 
-         <div className='max-w-7xl mx-auto'>
+         <div className='max-w-7xl mx-auto py-10'>
 
             {/* BREADCRUMB */}
 
@@ -531,7 +532,7 @@ const Page = () => {
 
          </div>
 
-      </div>
+      </PageShell>
 
    )
 

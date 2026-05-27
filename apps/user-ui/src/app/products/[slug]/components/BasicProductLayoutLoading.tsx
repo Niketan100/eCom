@@ -8,8 +8,7 @@ import Skeleton from 'apps/user-ui/src/shared/components/Skeleton'
 // Mirrors `BasicProductLayout` but uses skeleton blocks.
 const BasicProductLayoutLoading = () => {
   return (
-    <div className='min-h-screen bg-[#f6f7fb] py-10 px-6'>
-      <div className='max-w-7xl mx-auto'>
+    <div>
         {/* BREADCRUMB */}
         <div className='flex items-center gap-2 text-sm text-gray-500 mb-8'>
           <Link href='/products'>Products</Link>
@@ -98,7 +97,6 @@ const BasicProductLayoutLoading = () => {
             ))}
           </div>
         </div>
-      </div>
     </div>
   )
 }

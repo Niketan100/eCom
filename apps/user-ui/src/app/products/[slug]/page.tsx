@@ -10,6 +10,7 @@ import BasicProductLayout from './components/BasicProductLayout'
 
 import DetailedProductLayout from './components/DetailedProductLayout'
 import BasicProductLayoutLoading from './components/BasicProductLayoutLoading'
+import PageShell from 'apps/user-ui/src/shared/components/PageShell'
 
 const ProductPage = () => {
 
@@ -38,12 +39,16 @@ const ProductPage = () => {
    // Route-level skeleton is handled by `loading.tsx`.
    // Keep this only as a very small fallback.
    if (isLoading) {
-      return <BasicProductLayoutLoading/>
+      return (
+         <PageShell>
+            <BasicProductLayoutLoading />
+         </PageShell>
+      )
    }
 
    if (isError) {
       return (
-         <div className='min-h-screen bg-[#f6f7fb] py-10 px-6'>
+         <PageShell>
             <div className='max-w-3xl mx-auto bg-white border border-gray-200 rounded-2xl p-6'>
                <h1 className='text-2xl font-bold text-black'>
                   Couldn’t load product
@@ -55,20 +60,20 @@ const ProductPage = () => {
                   {String((error as any)?.message ?? error)}
                </pre>
             </div>
-         </div>
+         </PageShell>
       )
    }
 
    if (!data?.product) {
       return (
-         <div className='min-h-screen bg-[#f6f7fb] py-10 px-6'>
+         <PageShell>
             <div className='max-w-3xl mx-auto bg-white border border-gray-200 rounded-2xl p-6'>
                <h1 className='text-2xl font-bold text-black'>Product not found</h1>
                <p className='text-gray-600 mt-2'>
                   This product may have been removed or the link is incorrect.
                </p>
             </div>
-         </div>
+         </PageShell>
       )
    }
 
@@ -94,18 +99,14 @@ const ProductPage = () => {
 
       product?.shippingWeight
 
-   return isDetailedProduct ? (
-
-      <DetailedProductLayout
-         product={product}
-      />
-
-   ) : (
-
-      <BasicProductLayout
-         product={product}
-      />
-
+   return (
+      <PageShell>
+         {isDetailedProduct ? (
+            <DetailedProductLayout product={product} />
+         ) : (
+            <BasicProductLayout product={product} />
+         )}
+      </PageShell>
    )
 
 }

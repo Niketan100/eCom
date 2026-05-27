@@ -7,7 +7,24 @@ import jwt from "jsonwebtoken";
 
 const isAuthenticated = async (req: any, res: Response, next: NextFunction) => {
     try {
-        const token = req.cookies?.accessToken || req.headers.authorization?.split(' ')[1];
+        // Prefer Authorization header when present (helps for API tools).
+        const authHeaderToken = req.headers.authorization?.split(' ')[1];
+
+        // Cookie-based auth:
+        // We have two parallel sessions (user vs seller). If both cookies exist in the browser,
+        // blindly taking `accessToken || seller_accessToken` can authenticate the wrong role.
+        // So we pick the access token cookie that matches whichever refresh token cookie is present.
+        const hasUserRefresh = Boolean(req.cookies?.refreshToken);
+        const hasSellerRefresh = Boolean(req.cookies?.seller_refreshToken);
+
+        // If only one refresh token exists, that defines which session we should use.
+        // If both exist (rare but possible), prefer user by default to avoid seller routes leaking into user flows.
+        // (Seller-protected routes should additionally use `isSeller` middleware.)
+        const cookieToken = hasSellerRefresh && !hasUserRefresh
+            ? req.cookies?.seller_accessToken
+            : req.cookies?.accessToken;
+
+        const token = authHeaderToken || cookieToken;
 
         if (!token) {
             return next(new UnauthorizedError('No access token found'));

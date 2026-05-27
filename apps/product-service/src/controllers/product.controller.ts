@@ -3,6 +3,8 @@ import prisma from "./../../../../packages/libs/prisma";
 import { NextFunction, Request, Response } from "express";
 import slugify from "slugify";
 
+const isValidObjectId = (value: unknown) => /^[a-f0-9]{24}$/i.test(String(value || ''));
+
 const parsePagination = (req: Request, opts?: { defaultLimit?: number; maxLimit?: number }) => {
    const defaultLimit = opts?.defaultLimit ?? 20;
    const maxLimit = opts?.maxLimit ?? 50;
@@ -360,6 +362,110 @@ export const getOrders = async(req : Request, res: Response, next: NextFunction)
    }
 }
 
+export const getOrderByIdForSeller = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const seller = (req as any).user;
+      const { id } = req.params;
+
+      if (!seller?.id) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+      if (!isValidObjectId(id)) {
+         return res.status(400).json({ success: false, message: 'Invalid order id' });
+      }
+
+      const order = await prisma.orders.findFirst({
+         where: { id, sellerId: seller.id },
+         include: {
+            product: {
+               select: {
+                  id: true,
+                  name: true,
+                  slug: true,
+                  price: true,
+                  discountedPrice: true,
+               },
+            },
+            user: {
+               select: {
+                  id: true,
+                  name: true,
+                  email: true,
+               },
+            },
+            payment: true,
+         },
+      });
+
+      if (!order) {
+         return res.status(404).json({ success: false, message: 'Order not found' });
+      }
+
+      return res.status(200).json({ success: true, order });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const updateOrderStatusForSeller = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const seller = (req as any).user;
+      const { id } = req.params;
+      const { status } = req.body as { status?: string };
+
+      if (!seller?.id) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+      if (!isValidObjectId(id)) {
+         return res.status(400).json({ success: false, message: 'Invalid order id' });
+      }
+
+      const nextStatus = String(status || '').toUpperCase();
+      const allowed = ['CONFIRMED', 'SHIPPED', 'DELIVERED', 'CANCELLED'] as const;
+      if (!allowed.includes(nextStatus as any)) {
+         return res.status(400).json({ success: false, message: 'Invalid status' });
+      }
+
+      const existing = await prisma.orders.findFirst({ where: { id, sellerId: seller.id } });
+      if (!existing) {
+         return res.status(404).json({ success: false, message: 'Order not found' });
+      }
+
+      // basic transition rules
+      const current = String(existing.status || '').toUpperCase();
+      const transitions: Record<string, string[]> = {
+         PENDING: ['CONFIRMED', 'CANCELLED'],
+         CONFIRMED: ['SHIPPED', 'CANCELLED'],
+         SHIPPED: ['DELIVERED'],
+         DELIVERED: [],
+         CANCELLED: [],
+      };
+
+      if (!(transitions[current] || []).includes(nextStatus)) {
+         return res.status(400).json({
+            success: false,
+            message: `Invalid status transition: ${current} -> ${nextStatus}`,
+         });
+      }
+
+      const updated = await prisma.orders.update({
+         where: { id },
+         data: { status: nextStatus as any },
+         include: {
+            product: {
+               select: { id: true, name: true, slug: true, price: true, discountedPrice: true },
+            },
+            user: { select: { id: true, name: true, email: true } },
+            payment: true,
+         },
+      });
+
+      return res.status(200).json({ success: true, message: 'Order updated', order: updated });
+   } catch (err) {
+      return next(err);
+   }
+};
+
 export const getSellerPayments = async (req: Request, res: Response, next: NextFunction) => {
    try {
       const seller = (req as any).user;
@@ -469,6 +575,18 @@ export const getall = async(req: Request, res: Response, next: NextFunction) => 
 export const getsingle = async(req: Request, res: Response, next: NextFunction) => {
    try{
       const {id} = req.params;
+
+      // Prisma MongoDB expects @db.ObjectId strings for id fields.
+      // If a route collision happens (e.g. "/user-orders" accidentally hits "/:id"),
+      // Prisma will throw: "Malformed ObjectID ... got: 'user-orders'".
+      // Validate early so we return a clean 400 instead of a Prisma runtime error.
+      if (!/^[a-f0-9]{24}$/i.test(String(id))) {
+         return res.status(400).json({
+            success: false,
+            message: 'Invalid product id'
+         })
+      }
+
       const product = await prisma.products.findUnique({
          where: {
             id
@@ -920,3 +1038,336 @@ export const deleteProduct = async (req: Request, res: Response, next: NextFunct
       return next(error);
    }
 }
+
+
+export const getUserOrders = async(req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+
+      if (!user) {
+         return res.status(401).json({
+            message: 'Unauthorized'
+         });
+      }
+
+      // defensive logging to help debug missing orders / malformed ids
+      console.log('getUserOrders: incoming user:', {
+         id: user?.id,
+         email: user?.email,
+         role: (req as any).role,
+      });
+
+      // basic validation: user.id should be a non-empty string
+      if (!user.id || typeof user.id !== 'string' || user.id.trim().length === 0) {
+         console.log('getUserOrders: invalid user id, aborting');
+         return res.status(400).json({ success: false, message: 'Invalid user id' });
+      }
+
+      const orders = await prisma.orders.findMany({
+         where: {
+            userId: user.id
+         },
+         include: {
+            product: {
+               select: {
+                  id: true,
+                  name: true,
+                  price: true,
+                  discountedPrice: true,
+                  images: {
+                     select: {
+                        url: true,
+                     },
+                     take: 1,
+                  },
+               }
+            },
+            payment: true,
+            seller: {
+               select: {
+                  id: true,
+                  name: true,
+                  email: true
+               }
+            }
+         },
+         orderBy: {
+            createdAt: 'desc'
+         }
+      });
+
+   console.log('getUserOrders: found orders count =', orders?.length ?? 0);
+
+      return res.status(200).json({
+         success: true,
+         orders
+      });
+   } catch (error) {
+      console.log('Error fetching user orders:', error && (error as any).message ? (error as any).message : error);
+
+      // Handle malformed ObjectId errors explicitly (Prisma/Mongo)
+      const msg = (error as any)?.message || '';
+      if (/Malformed ObjectID|provided hex string representation must be exactly 12 bytes/i.test(msg)) {
+         return res.status(400).json({ success: false, message: 'Invalid user id format' });
+      }
+
+      return next(error);
+   }  
+}
+
+/*
+|--------------------------------------------------------------------------
+| CART + WISHLIST (USER)
+|--------------------------------------------------------------------------
+*/
+
+export const getMyWishlist = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+      if (!user?.id || !isValidObjectId(user.id)) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+
+      const items = await prisma.wishlist.findMany({
+         where: { userId: user.id },
+         include: {
+            product: {
+               select: {
+                  id: true,
+                  name: true,
+                  slug: true,
+                  price: true,
+                  discountedPrice: true,
+                  category: true,
+                  subcategory: true,
+                  stock: true,
+                  createdAt: true,
+               }
+            }
+         },
+         orderBy: { createdAt: 'desc' }
+      });
+
+      return res.status(200).json({ success: true, count: items.length, items });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const addToWishlist = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+      const { productId } = req.body as { productId?: string };
+
+      if (!user?.id || !isValidObjectId(user.id)) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+      if (!productId || !isValidObjectId(productId)) {
+         return res.status(400).json({ success: false, message: 'Invalid productId' });
+      }
+
+      const exists = await prisma.wishlist.findFirst({
+         where: { userId: user.id, productId }
+      });
+
+      if (exists) {
+         return res.status(200).json({ success: true, message: 'Already in wishlist' });
+      }
+
+      await prisma.wishlist.create({
+         data: { userId: user.id, productId }
+      });
+
+      return res.status(201).json({ success: true, message: 'Added to wishlist' });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const removeFromWishlist = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+      const { productId } = req.params;
+
+      if (!user?.id || !isValidObjectId(user.id)) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+      if (!productId || !isValidObjectId(productId)) {
+         return res.status(400).json({ success: false, message: 'Invalid productId' });
+      }
+
+      await prisma.wishlist.deleteMany({
+         where: { userId: user.id, productId }
+      });
+
+      return res.status(200).json({ success: true, message: 'Removed from wishlist' });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const getMyCart = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+      if (!user?.id || !isValidObjectId(user.id)) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+
+      const items = await prisma.cartItems.findMany({
+         where: { userId: user.id },
+         include: {
+            product: {
+               select: {
+                  id: true,
+                  name: true,
+                  slug: true,
+                  price: true,
+                  discountedPrice: true,
+                  category: true,
+                  subcategory: true,
+                  stock: true,
+               }
+            }
+         },
+         orderBy: { createdAt: 'desc' }
+      });
+
+      const totals = items.reduce(
+         (acc, item) => {
+            const unitPrice = (item.product as any)?.discountedPrice ?? (item.product as any)?.price ?? 0;
+            const qty = Number(item.quantity || 1);
+            acc.quantity += qty;
+            acc.subtotal += Number(unitPrice) * qty;
+            return acc;
+         },
+         { quantity: 0, subtotal: 0 }
+      );
+
+      return res.status(200).json({ success: true, count: items.length, items, totals });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const addToCart = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+      const { productId, quantity } = req.body as { productId?: string; quantity?: number };
+
+      if (!user?.id || !isValidObjectId(user.id)) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+      if (!productId || !isValidObjectId(productId)) {
+         return res.status(400).json({ success: false, message: 'Invalid productId' });
+      }
+
+      const qty = Math.max(1, Math.min(999, Number(quantity ?? 1)));
+
+      const product = await prisma.products.findUnique({ where: { id: productId }, select: { id: true, stock: true } });
+      if (!product) return res.status(404).json({ success: false, message: 'Product not found' });
+
+      const existing = await prisma.cartItems.findFirst({ where: { userId: user.id, productId } });
+      if (existing) {
+         const nextQty = Math.max(1, Math.min(999, (existing.quantity || 1) + qty));
+         await prisma.cartItems.update({ where: { id: existing.id }, data: { quantity: nextQty } });
+         return res.status(200).json({ success: true, message: 'Cart updated' });
+      }
+
+      await prisma.cartItems.create({ data: { userId: user.id, productId, quantity: qty } });
+      return res.status(201).json({ success: true, message: 'Added to cart' });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const updateCartItemQuantity = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+      const { productId } = req.params;
+      const { quantity } = req.body as { quantity?: number };
+
+      if (!user?.id || !isValidObjectId(user.id)) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+      if (!productId || !isValidObjectId(productId)) {
+         return res.status(400).json({ success: false, message: 'Invalid productId' });
+      }
+
+      const qty = Number(quantity);
+      if (!Number.isFinite(qty)) {
+         return res.status(400).json({ success: false, message: 'Invalid quantity' });
+      }
+
+      if (qty <= 0) {
+         await prisma.cartItems.deleteMany({ where: { userId: user.id, productId } });
+         return res.status(200).json({ success: true, message: 'Removed from cart' });
+      }
+
+      const existing = await prisma.cartItems.findFirst({ where: { userId: user.id, productId } });
+      if (!existing) return res.status(404).json({ success: false, message: 'Cart item not found' });
+
+      await prisma.cartItems.update({ where: { id: existing.id }, data: { quantity: Math.min(999, qty) } });
+      return res.status(200).json({ success: true, message: 'Quantity updated' });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const removeFromCart = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+      const { productId } = req.params;
+
+      if (!user?.id || !isValidObjectId(user.id)) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+      if (!productId || !isValidObjectId(productId)) {
+         return res.status(400).json({ success: false, message: 'Invalid productId' });
+      }
+
+      await prisma.cartItems.deleteMany({ where: { userId: user.id, productId } });
+      return res.status(200).json({ success: true, message: 'Removed from cart' });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const clearMyCart = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+      if (!user?.id || !isValidObjectId(user.id)) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+
+      await prisma.cartItems.deleteMany({ where: { userId: user.id } });
+      return res.status(200).json({ success: true, message: 'Cart cleared' });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const getCartCount = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+      if (!user?.id || !isValidObjectId(user.id)) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+      const count = await prisma.cartItems.count({ where: { userId: user.id } });
+      return res.status(200).json({ success: true, count });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const getWishlistCount = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const user = (req as any).user;
+      if (!user?.id || !isValidObjectId(user.id)) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+      const count = await prisma.wishlist.count({ where: { userId: user.id } });
+      return res.status(200).json({ success: true, count });
+   } catch (err) {
+      return next(err);
+   }
+};

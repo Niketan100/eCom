@@ -21,9 +21,7 @@ const BasicProductLayout = ({
 
    return (
 
-      <div className='min-h-screen bg-[#f6f7fb] py-10 px-6'>
-
-         <div className='max-w-7xl mx-auto'>
+      <div>
 
             {/* BREADCRUMB */}
 
@@ -565,8 +563,6 @@ const BasicProductLayout = ({
 
                )
             }
-
-         </div>
 
       </div>
 

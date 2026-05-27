@@ -153,7 +153,7 @@ export const resetUserPassword = async(req : Request , res : Response , next : N
      
 export const refreshToken = async (req : Request , res : Response , next : NextFunction) => {
     try {
-        const refreshToken = req.cookies.refreshToken;
+        const refreshToken = req.cookies.refreshToken || req.cookies.seller_refreshToken || req.headers.authorization?.split(' ')[1];
         if (!refreshToken) {
             throw new ForbiddenError('No refresh token provided');
         }
@@ -177,7 +177,11 @@ export const refreshToken = async (req : Request , res : Response , next : NextF
             }
 
             const newAccessToken = jwt.sign({ id: user.id, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '15m' });
+            const newRefreshToken = jwt.sign({ id: user.id, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
+
+            // Rotate both tokens so the browser always has a matching pair.
             setCookie(res, 'accessToken', newAccessToken);
+            setCookie(res, 'refreshToken', newRefreshToken);
         } else if (decoded.role === 'seller') {
             const seller = await prisma.seller.findUnique({
                 where: {
@@ -189,7 +193,10 @@ export const refreshToken = async (req : Request , res : Response , next : NextF
             }
 
             const newAccessToken = jwt.sign({ id: seller.id, role: 'seller' }, process.env.JWT_SECRET as string, { expiresIn: '15m' });
-            setCookie(res, 'accessToken', newAccessToken);
+            const newRefreshToken = jwt.sign({ id: seller.id, role: 'seller' }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
+
+            setCookie(res, 'seller_accessToken', newAccessToken);
+            setCookie(res, 'seller_refreshToken', newRefreshToken);
         } else {
             throw new ForbiddenError('Unauthorized');
         }
@@ -474,8 +481,8 @@ export const sellerLogin = async (req : Request , res : Response , next : NextFu
     }
     const accessToken = jwt.sign({ id: seller.id , role: 'seller'}, process.env.JWT_SECRET as string, { expiresIn: '15m' });
     const refreshToken = jwt.sign({ id: seller.id , role: 'seller'}, process.env.JWT_SECRET as string, { expiresIn: '7d' });
-   setCookie(res, 'refreshToken', refreshToken);
-   setCookie(res, 'accessToken', accessToken);
+   setCookie(res, 'seller_refreshToken', refreshToken);
+   setCookie(res, 'seller_accessToken', accessToken);
     
     res.status(200).json({
         message: 'Seller logged in successfully',

@@ -44,9 +44,7 @@ const DetailedProductLayout = ({
 
    return (
 
-      <div className='min-h-screen bg-[#f6f7fb] py-10 px-6'>
-
-         <div className='max-w-[1600px] mx-auto'>
+      <div>
 
             {/* BREADCRUMB */}
 
@@ -504,8 +502,6 @@ const DetailedProductLayout = ({
                />
 
             </div>
-
-         </div>
 
       </div>
 

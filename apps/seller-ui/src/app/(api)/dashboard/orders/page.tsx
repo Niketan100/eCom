@@ -1,7 +1,8 @@
 'use client'
 
-import { useMutation } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query'
 import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance';
+import Link from 'next/link';
 
 import React from 'react'
 
@@ -10,48 +11,62 @@ const OrdersPage = () => {
   const [page, setPage] = React.useState(1)
   const limit = 20
 
-  const orders :any[] = [];
-
-  const getOrders  = useMutation({
-    mutationFn: async () => {
+  const {
+    data,
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ['seller-orders', page, limit],
+    queryFn: async () => {
       const res = await axiosInstance.get('/products/get-orders', {
         params: { page, limit },
       })
-      return res.data
+      return res.data as {
+        success?: boolean
+        orders?: any[]
+        total?: number
+        count?: number
+        meta?: any
+      }
     },
-    onSuccess: (data) => {
-      console.log('Orders Data:', data)
-    },
-    onError: (error) => {
-      console.error('Failed to fetch orders:', error)
-    }
+    staleTime: 10_000,
   })
 
-  if(getOrders.isSuccess){
-    orders.push(...getOrders.data.orders.map((order: any) => ({
+  const rawOrders = data?.orders ?? []
+  const meta = data?.meta
+
+  const orders = React.useMemo(() => {
+    return rawOrders.map((order: any) => ({
       id: order.id,
-      customer: order.user.name,
-      product: order.product.name,
-      amount: `₹${order.product.price.toFixed(2)}`,
-      payment: order.paymentStatus,
+      customer: order.user?.name ?? '—',
+      customerEmail: order.user?.email,
+      product: order.product?.name ?? '—',
+      amount:
+        typeof order.totalPrice === 'number'
+          ? `₹${order.totalPrice.toFixed(2)}`
+          : `₹${(order.product?.price ?? 0).toFixed(2)}`,
+      payment: order.payment?.status ?? 'PENDING',
       status: order.status,
-      date: new Date(order.createdAt).toLocaleDateString()
-    })))
-  }
+      date: order.createdAt
+        ? new Date(order.createdAt).toLocaleDateString()
+        : '—',
+    }))
+  }, [rawOrders])
 
-  const meta = getOrders.data?.meta
-
-  React.useEffect(() => {
-    getOrders.mutate();
-  }, [page])
-
-  console.log('Orders:', orders)
-
-  const total_orders = getOrders.data?.total ?? getOrders.data?.count ?? 0;
-  const pending_orders = getOrders.data?.orders?.filter((order: any) => order.status === 'PENDING').length || 0;
-  const delivered_orders = getOrders.data?.orders?.filter((order: any) => order.status === 'DELIVERED').length || 0;
-  const delivered_orders_data = getOrders.data?.orders?.filter((order: any) => order.status === 'DELIVERED') || [];
-  const revenue = delivered_orders_data.reduce((acc: number, order: any) => acc + (order.product?.price || 0), 0) || 0;
+  const total_orders = data?.total ?? data?.count ?? 0
+  const pending_orders = rawOrders.filter((o: any) => o.status === 'PENDING').length
+  const delivered_orders = rawOrders.filter((o: any) => o.status === 'DELIVERED').length
+  const revenue = rawOrders
+    .filter((o: any) => o.status === 'DELIVERED')
+    .reduce(
+      (acc: number, o: any) =>
+        acc +
+        (typeof o.totalPrice === 'number'
+          ? o.totalPrice
+          : o.product?.price ?? 0),
+      0
+    )
   
 
 
@@ -166,7 +181,7 @@ const OrdersPage = () => {
             <button
               type='button'
               onClick={() => setPage((p) => Math.max(1, p - 1))}
-              disabled={getOrders.isPending || !meta?.hasPrev}
+              disabled={isLoading || !meta?.hasPrev}
               className='px-4 py-2 rounded-xl border border-gray-200 bg-white text-black disabled:opacity-50'
             >
               Prev
@@ -175,7 +190,7 @@ const OrdersPage = () => {
             <button
               type='button'
               onClick={() => setPage((p) => p + 1)}
-              disabled={getOrders.isPending || !meta?.hasNext}
+              disabled={isLoading || !meta?.hasNext}
               className='px-4 py-2 rounded-xl bg-black text-white disabled:opacity-50'
             >
               Next
@@ -185,7 +200,23 @@ const OrdersPage = () => {
         </div>
 
         {/* Table */}
-        <div className='overflow-x-auto'>
+        {isLoading ? (
+          <div className='py-16 text-center text-gray-500'>
+            Loading orders...
+          </div>
+        ) : isError ? (
+          <div className='py-16 text-center'>
+            <p className='text-red-600 font-semibold'>Failed to load orders</p>
+            <p className='text-gray-500 mt-2 text-sm'>
+              {String((error as any)?.message ?? error)}
+            </p>
+          </div>
+        ) : orders.length === 0 ? (
+          <div className='py-16 text-center text-gray-500'>
+            No orders found yet.
+          </div>
+        ) : (
+          <div className='overflow-x-auto'>
 
           <table className='w-full min-w-[900px]'>
 
@@ -244,6 +275,11 @@ const OrdersPage = () => {
                       <h3 className='font-medium text-black'>
                         {order.customer}
                       </h3>
+                      {order.customerEmail ? (
+                        <p className='text-xs text-gray-400 mt-1'>
+                          {order.customerEmail}
+                        </p>
+                      ) : null}
                     </div>
                   </td>
 
@@ -258,9 +294,9 @@ const OrdersPage = () => {
                   <td className='py-5'>
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                        order.payment === 'Paid'
+                        order.payment === 'PAID'
                           ? 'bg-green-100 text-green-700'
-                          : order.payment === 'Refunded'
+                          : order.payment === 'REFUNDED'
                           ? 'bg-red-100 text-red-700'
                           : 'bg-yellow-100 text-yellow-700'
                       }`}
@@ -272,11 +308,11 @@ const OrdersPage = () => {
                   <td className='py-5'>
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                        order.status === 'Delivered'
+                        order.status === 'DELIVERED'
                           ? 'bg-green-100 text-green-700'
-                          : order.status === 'Pending'
+                          : order.status === 'PENDING'
                           ? 'bg-yellow-100 text-yellow-700'
-                          : order.status === 'Cancelled'
+                          : order.status === 'CANCELLED'
                           ? 'bg-red-100 text-red-700'
                           : 'bg-blue-100 text-blue-700'
                       }`}
@@ -295,10 +331,11 @@ const OrdersPage = () => {
                       <button className='bg-[#f3f4f6] text-black px-4 py-2 rounded-xl hover:bg-[#e5e7eb] transition-all duration-200'>
                         View
                       </button>
-
-                      <button className='bg-black text-white px-4 py-2 rounded-xl hover:bg-[#111] transition-all duration-200'>
-                        Update
-                      </button>
+                        <Link href={`/dashboard/orders/${order.id}`}>
+                          <button className='bg-black text-white px-4 py-2 rounded-xl hover:bg-[#111] transition-all duration-200'>
+                            Update
+                          </button>
+                        </Link>
 
                     </div>
                   </td>
@@ -311,6 +348,7 @@ const OrdersPage = () => {
           </table>
 
         </div>
+        )}
 
       </div>
 

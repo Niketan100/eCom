@@ -50,22 +50,22 @@ app.use(express.urlencoded({
 
 app.use(cookieParser());
 
-app.use(rateLimit({
+// app.use(rateLimit({
 
-    windowMs: 15 * 60 * 1000,
+//     windowMs: 15 * 60 * 1000,
 
-    max: (req: any) => (
-        req.user ? 1000 : 100
-    ),
+//     max: (req: any) => (
+//         req.user ? 1000 : 100
+//     ),
 
-    message: 'Too many requests from this IP, please try again later.',
+//     message: 'Too many requests from this IP, please try again later.',
 
-    legacyHeaders: true,
+//     legacyHeaders: true,
 
-    keyGenerator: (req: any) =>
-        ipKeyGenerator(req.ip),
+//     keyGenerator: (req: any) =>
+//         ipKeyGenerator(req.ip),
 
-}));
+// }));
 
 /*
 |--------------------------------------------------------------------------
@@ -96,6 +96,21 @@ app.use(
 
         proxyReqPathResolver: (req) => {
             return `/auth${req.url}`;
+        },
+
+        // Important: forward Set-Cookie from auth-service so refreshed tokens
+        // actually reach the browser. Without this, UI will keep sending the
+        // old expired access token and loop on "Token expired".
+        userResHeaderDecorator(headers) {
+            return headers;
+        },
+
+        proxyReqOptDecorator: (proxyReqOpts, srcReq) => {
+            if (srcReq.headers && srcReq.headers.cookie) {
+                proxyReqOpts.headers = proxyReqOpts.headers || {};
+                proxyReqOpts.headers.cookie = srcReq.headers.cookie as string;
+            }
+            return proxyReqOpts;
         }
 
     })

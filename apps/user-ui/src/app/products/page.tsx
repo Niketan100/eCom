@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useQuery } from '@tanstack/react-query'
 
 import axiosInstance from '../../utils/axiosInstance'
+import PageShell from 'apps/user-ui/src/shared/components/PageShell'
 
 const Page = () => {
 
@@ -68,14 +69,12 @@ const Page = () => {
     }
 
     return (
-
-        <div className='min-h-screen bg-[#f6f7fb]'>
-
+        <PageShell>
             {/* HERO */}
 
-            <section className='px-6 py-16'>
+            <section className='py-16'>
 
-                <div className='max-w-7xl mx-auto'>
+                <div>
 
                     <div className='bg-black rounded-[40px] p-10 md:p-16 text-white overflow-hidden relative'>
 
@@ -107,9 +106,9 @@ const Page = () => {
 
             {/* PRODUCTS */}
 
-            <section className='px-6 pb-16'>
+            <section className='pb-16'>
 
-                <div className='max-w-7xl mx-auto'>
+                <div>
 
                     {/* HEADER */}
 
@@ -260,7 +259,7 @@ const Page = () => {
 
             </section>
 
-        </div>
+        </PageShell>
 
     )
 
