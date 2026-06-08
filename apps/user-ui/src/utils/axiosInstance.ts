@@ -8,6 +8,17 @@ const axiosInstance = axios.create({
     withCredentials : true
 });
 
+const baseURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+
+// Use a dedicated client for refresh to avoid interceptor recursion.
+const refreshClient = axios.create({
+    baseURL,
+    withCredentials: true,
+    headers: {
+        'Content-Type': 'application/json'
+    }
+});
+
 let isRefreshing = false;
 let refreshSubscribers: (() => void)[] = [];
 
@@ -40,6 +51,18 @@ axiosInstance.interceptors.response.use(
         const status = error.response?.status;
         const isAuthFailure = status === 401 || status === 403;
         const isRefreshRequest = originalRequest?.url?.includes('/auth/refresh-token');
+        const isSessionProbe = originalRequest?.url?.includes('/auth/logged-in-user');
+
+        // If refresh itself fails, don't try anything else here.
+        if (isAuthFailure && isRefreshRequest) {
+            return Promise.reject(error);
+        }
+
+        // If this is just a "who am I" probe, 401/403 simply means "not logged in".
+        // Don't attempt refresh or redirect loops on initial page load.
+        if (isAuthFailure && isSessionProbe) {
+            return Promise.reject(error);
+        }
 
         if (isAuthFailure && !originalRequest._retry && !isRefreshRequest) {
             if (isRefreshing) {
@@ -52,7 +75,7 @@ axiosInstance.interceptors.response.use(
             originalRequest._retry = true;
             isRefreshing = true;
             try {
-                await axiosInstance.post('/auth/refresh-token');
+                await refreshClient.post('/auth/refresh-token');
                 onRefreshed();
                 return axiosInstance(originalRequest);
             } catch (err) {

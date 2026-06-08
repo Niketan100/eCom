@@ -13,7 +13,6 @@ import Logo from '../widget/components/svgs/Logo'
 
 import {
   controllers,
-  events,
   items,
   manageShopItems,
   products,
@@ -21,14 +20,16 @@ import {
 
 const SidebarSection = ({ title, children }: any) => {
   return (
-    <div className='mb-7'>
-      <div className='px-4 mb-3'>
-        <h2 className='text-[11px] uppercase tracking-[0.22em] text-gray-500 font-semibold'>
+    <div className='mb-8'>
+      <div className='px-4 mb-3 flex items-center gap-3'>
+        <div className='h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent' />
+        <h2 className='text-[10px] uppercase tracking-[0.28em] text-gray-400 font-semibold'>
           {title}
         </h2>
+        <div className='h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent' />
       </div>
 
-      <div className='flex flex-col gap-1.5'>
+      <div className='flex flex-col gap-2'>
         {children}
       </div>
     </div>
@@ -54,17 +55,20 @@ const SidebarWrapper = () => {
         overflowY: 'auto',
         scrollbarWidth: 'none',
       }}
-      className='w-full bg-[#050505] border-r border-white/10 px-4 py-5 text-white'
+      className='relative w-full text-white px-5 py-6 bg-gradient-to-b from-[#050505] via-[#07070a] to-[#0b0f19]'
     >
 
+      {/* subtle edge glow */}
+      <div className='pointer-events-none absolute inset-y-0 right-0 w-px bg-gradient-to-b from-transparent via-[#d7ff3f]/20 to-transparent' />
+
       {/* Header */}
-      <div className='sticky top-0 z-50 bg-[#050505] pb-5'>
+  <div className='sticky top-0 z-50 bg-gradient-to-b from-[#050505] via-[#07070a] to-transparent pb-6 backdrop-blur supports-[backdrop-filter]:bg-[#050505]/70'>
 
         <Link
           href='/'
-          className='flex items-center gap-4 bg-[#0d0d0d] hover:bg-[#121212] transition-all duration-200 rounded-[30px] p-4 border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.35)]'
+          className='flex items-center gap-4 rounded-[28px] p-5 border border-white/10 shadow-[0_14px_50px_rgba(0,0,0,0.55)] transition-all duration-200 bg-white/[0.04] hover:bg-white/[0.06] hover:border-white/15'
         >
-          <div className='w-14 h-14 rounded-[20px] bg-white flex items-center justify-center flex-shrink-0'>
+          <div className='w-14 h-14 rounded-[18px] bg-white/90 flex items-center justify-center flex-shrink-0'>
             <Logo width={28} height={28} />
           </div>
 
@@ -73,16 +77,16 @@ const SidebarWrapper = () => {
               {seller?.name || 'Eshop Seller'}
             </h3>
 
-            <p className='text-sm text-gray-400 truncate mt-1'>
+            <p className='text-[13px] text-gray-400 truncate mt-1'>
               {seller?.shop?.category || 'Shop Category'}
             </p>
           </div>
         </Link>
 
         {/* Stats */}
-        <div className='grid grid-cols-2 gap-3 mt-4'>
+  <div className='grid grid-cols-2 gap-3 mt-4'>
 
-          <div className='bg-[#0d0d0d] border border-white/10 rounded-[24px] p-4 hover:bg-[#141414] transition-all'>
+          <div className='bg-white/[0.04] border border-white/10 rounded-[22px] p-4 hover:bg-white/[0.06] transition-all'>
             <p className='text-xs text-gray-500'>
               Revenue
             </p>
@@ -92,7 +96,7 @@ const SidebarWrapper = () => {
             </h3>
           </div>
 
-          <div className='bg-[#0d0d0d] border border-white/10 rounded-[24px] p-4 hover:bg-[#141414] transition-all'>
+          <div className='bg-white/[0.04] border border-white/10 rounded-[22px] p-4 hover:bg-white/[0.06] transition-all'>
             <p className='text-xs text-gray-500'>
               Orders
             </p>
@@ -106,7 +110,7 @@ const SidebarWrapper = () => {
       </div>
 
       {/* Navigation */}
-      <div className='mt-7'>
+  <div className='mt-7'>
 
         <SidebarSection title='Dashboard'>
           {items.map((item) => (
@@ -144,18 +148,6 @@ const SidebarWrapper = () => {
           ))}
         </SidebarSection>
 
-        <SidebarSection title='Events'>
-          {events.map((item) => (
-            <SideItems
-              key={item.title}
-              title={item.title}
-              icon={item.icon}
-              isActive={item.href === activeSidebar}
-              href={item.href}
-            />
-          ))}
-        </SidebarSection>
-
         <SidebarSection title='Controls'>
           {controllers.map((item) => (
             <SideItems
@@ -171,16 +163,22 @@ const SidebarWrapper = () => {
       </div>
 
       {/* Bottom Card */}
-      <div className='mt-10 bg-white rounded-[30px] p-6 text-black'>
-        <h3 className='font-bold text-lg'>
-          Boost Your Store 🚀
-        </h3>
+      <div className='mt-10 rounded-[26px] p-6 text-white border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-transparent shadow-[0_20px_60px_rgba(0,0,0,0.45)]'>
+        <div className='flex items-start justify-between gap-4'>
+          <div>
+            <h3 className='font-semibold text-[15px] tracking-tight'>
+              Boost your store
+            </h3>
+            <p className='text-[13px] text-gray-300 mt-2 leading-relaxed'>
+              Add more products and improve visibility to increase sales.
+            </p>
+          </div>
+          <div className='h-10 w-10 rounded-2xl bg-[#d7ff3f]/15 border border-[#d7ff3f]/25 flex items-center justify-center text-[#d7ff3f] flex-shrink-0'>
+            <span className='text-lg font-semibold'>+</span>
+          </div>
+        </div>
 
-        <p className='text-sm text-gray-600 mt-2 leading-relaxed'>
-          Add more products and improve your store visibility to increase sales.
-        </p>
-
-        <button className='w-full mt-5 bg-black text-white rounded-[18px] py-3.5 font-semibold hover:bg-[#111] transition-all duration-200'>
+        <button className='w-full mt-5 bg-white text-black rounded-[16px] py-3.5 font-semibold hover:bg-white/90 transition-all duration-200'>
           Upgrade Plan
         </button>
       </div>

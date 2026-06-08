@@ -73,7 +73,6 @@ const page = () => {
     })
 
     const orders = getOrders.data?.orders || []
-    console.log('Fetched orders:', orders)
 
     return (
         <PageShell>

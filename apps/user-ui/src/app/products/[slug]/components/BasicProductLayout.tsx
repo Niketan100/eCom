@@ -1,12 +1,51 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
+import axiosInstance from 'apps/user-ui/src/utils/axiosInstance'
+import { useStore } from 'apps/user-ui/src/store'
+import useUser from 'apps/user-ui/src/hooks/useUSer'
 
 const BasicProductLayout = ({
    product
 }: any) => {
+
+   const user = useUser();
+
+   const deviceInfo = navigator.userAgent;
+   const queryClient = useQueryClient()
+   const router = useRouter()
+
+   const Cart = useStore((state) => state.cart);
+
+   const wishList = useStore((state) => state.wishList);
+   console.log(wishList);
+
+   const addToCart = useStore((state) => state.addToCart)
+   const addToWishList = useStore((state) => state.addToWishList)
+   const removeFromCart = useStore((state) => state.removeFromCart)
+   const removeFromWishList = useStore((state) => state.removeFromWishList)
+
+   const isInCart = useStore((state) =>
+      state.cart.some(
+         (item) => item.id === product.id
+      )
+   )
+   const isInWishlist = useStore((state) =>
+      state.wishList.some(
+         (item) => item.id === product.id
+      )
+   )
+
+   useEffect(() => {
+      console.log('Wishlist updated:', wishList);
+      console.log('CArt' , Cart);
+   }, [addToWishList, removeFromWishList, wishList]);
+
 
    const [showDescription, setShowDescription] =
       React.useState(false)
@@ -14,7 +53,31 @@ const BasicProductLayout = ({
    const [quantity, setQuantity] =
       React.useState(1)
 
-   console.log('Product in BasicProductLayout:', product)
+   // const addToCartMutation = useMutation({
+   //    mutationFn: async () => {
+   //       await axiosInstance.post('/products/cart/add', {
+   //          productId: product.id,
+   //          quantity,
+   //       })
+   //    },
+   //    onSuccess: async () => {
+   //       await queryClient.invalidateQueries({ queryKey: ['cart'] })
+   //       await queryClient.invalidateQueries({ queryKey: ['cart-count'] })
+   //       router.push('/cart')
+   //    },
+   // })
+
+   // const addToWishlistMutation = useMutation({
+   //    mutationFn: async () => {
+   //       await axiosInstance.post('/products/wishlist/add', {
+   //          productId: product.id,
+   //       })
+   //    },
+   //    onSuccess: async () => {
+   //       await queryClient.invalidateQueries({ queryKey: ['wishlist'] })
+   //       await queryClient.invalidateQueries({ queryKey: ['wishlist-count'] })
+   //    },
+   // })
 
    const shouldClampDescription = false;
       // product.description?.length > 220
@@ -333,11 +396,35 @@ const BasicProductLayout = ({
 
                         </Link>
 
-                        <button className='flex-1 border border-black text-black py-5 rounded-2xl font-semibold hover:bg-black hover:text-white transition-all text-lg'>
+                       <button
+  onClick={() =>
+  
+  isInCart
+    ? removeFromCart(product.id)
+    : addToCart(product)
+}
+  
+  disabled={product.stock <= 0}
+  className='flex-1 bg-[#111] text-white py-5 rounded-2xl font-semibold hover:bg-black transition-all text-lg disabled:opacity-60'
+>
+  {product.stock <= 0
+    ? 'Out of Stock'
+    : isInCart
+      ? 'In Cart'
+      : 'Add To Cart'}
+</button>
 
-                           Add To Wishlist
+                      <button
+  onClick={() =>
+  isInWishlist
+    ? removeFromWishList(product.id)
+    : addToWishList(product)
 
-                        </button>
+  }
+  className='flex-1 border border-black text-black py-5 rounded-2xl font-semibold hover:bg-black hover:text-white transition-all text-lg disabled:opacity-60'
+>
+  {isInWishlist ? 'Saved' : 'Add To Wishlist'}
+</button>
 
                      </div>
 

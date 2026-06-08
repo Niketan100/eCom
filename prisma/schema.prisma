@@ -46,6 +46,8 @@ model users {
 
   productReviews productReviews[]
 
+  notificationsSent Notification[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -123,10 +125,62 @@ model seller {
   complaints complaints[]
   events     events[]
 
+  // Notifications received by this seller
+  notifications Notification[] @relation("SellerNotifications")
+
+  // Notifications sent/triggered by this seller (if applicable)
+  sentNotifications Notification[] @relation("NotificationFromSeller")
+
+  // Legacy inverse for Notification.sellerId -> Notification.seller (kept for backward compatibility)
+  legacyNotifications Notification[] @relation("NotificationLegacySeller")
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   shopId String? @unique @db.ObjectId
+}
+
+enum NotificationType {
+  ORDER_CREATED
+  PRODUCT_VIEWED
+}
+
+model Notification {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  // Receiver (who gets the notification)
+  toSellerId String @db.ObjectId
+  toSeller seller @relation("SellerNotifications", fields: [toSellerId], references: [id])
+
+  // Sender (who triggered/sent the notification)
+  // For example: user places an order -> fromUserId set; admin/seller action -> fromSellerId set.
+  fromUserId String? @db.ObjectId
+  user users? @relation(fields: [fromUserId], references: [id])
+
+  fromSellerId String? @db.ObjectId
+  fromSeller seller? @relation("NotificationFromSeller", fields: [fromSellerId], references: [id])
+
+  // Backward-compat: kept so existing code that filters by sellerId doesn't break immediately.
+  // Can be removed once all code is migrated to toSellerId.
+  sellerId String @db.ObjectId
+  seller seller @relation("NotificationLegacySeller", fields: [sellerId], references: [id])
+
+  type NotificationType
+
+  title String
+  message String
+
+  // Small structured payload for UI (orderId, productId, count, etc)
+  data Json?
+
+  readAt DateTime?
+  createdAt DateTime @default(now())
+
+  @@index([toSellerId])
+  @@index([sellerId])
+  @@index([sellerId, readAt])
+  @@index([toSellerId, readAt])
+  @@index([createdAt])
 }
 
 model products {

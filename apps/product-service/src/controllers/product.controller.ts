@@ -529,6 +529,60 @@ export const getSellerPayments = async (req: Request, res: Response, next: NextF
    }
 }
 
+export const getSellerPaymentById = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const seller = (req as any).user;
+
+      if (!seller) {
+         return res.status(401).json({ success: false, message: 'Unauthorized' });
+      }
+
+      const id = String(req.params.id || '').trim();
+      if (!id) {
+         return res.status(400).json({ success: false, message: 'Payment id is required' });
+      }
+
+      const payment = await prisma.payments.findFirst({
+         where: {
+            id,
+            order: {
+               sellerId: seller.id,
+            },
+         },
+         include: {
+            order: {
+               include: {
+                  product: {
+                     select: {
+                        id: true,
+                        name: true,
+                        slug: true,
+                        price: true,
+                        discountedPrice: true,
+                     },
+                  },
+                  user: {
+                     select: {
+                        id: true,
+                        name: true,
+                        email: true,
+                     },
+                  },
+               },
+            },
+         },
+      });
+
+      if (!payment) {
+         return res.status(404).json({ success: false, message: 'Payment not found' });
+      }
+
+      return res.status(200).json({ success: true, payment });
+   } catch (err) {
+      return next(err);
+   }
+}
+
 export const getall = async(req: Request, res: Response, next: NextFunction) => {
    try{
       const { page, limit, skip } = parsePagination(req, { defaultLimit: 20, maxLimit: 50 });
@@ -718,6 +772,69 @@ export const getsingleBySlug = async (
          }
 
       })
+
+      // Seller notifications: PRODUCT_VIEWED (rate-limited)
+      // Uses existing products.views and checks the last notification time to avoid spamming.
+      // Notes: Prisma Client might not be regenerated yet in this repo, so we use safe delegate fallbacks.
+      try {
+         const notificationDelegate = (prisma as any).notification ?? (prisma as any).Notification
+
+         if (notificationDelegate && product?.seller?.id) {
+            const now = new Date()
+            const throttleMs = 1000 * 60 * 60 // 1 hour
+
+            const last = await notificationDelegate.findFirst({
+               where: {
+                  sellerId: product.seller.id,
+                  type: 'PRODUCT_VIEWED',
+                  // data is JSON; Prisma Mongo supports path filters, but to stay compatible we keep this simple
+                  // and only throttle per seller for PRODUCT_VIEWED if JSON path filters aren't available.
+               },
+               orderBy: {
+                  createdAt: 'desc',
+               },
+               select: {
+                  createdAt: true,
+               },
+            })
+
+            const lastAt = last?.createdAt ? new Date(last.createdAt) : null
+            const shouldNotify = !lastAt || now.getTime() - lastAt.getTime() >= throttleMs
+
+            if (shouldNotify) {
+               // Get the new views count (already incremented just above)
+               const updated = await prisma.products.findUnique({
+                  where: { id: product.id },
+                  select: { views: true },
+               })
+
+               const views = (updated as any)?.views ?? null
+
+               await notificationDelegate.create({
+                  data: {
+                     // receiver
+                     toSellerId: product.seller.id,
+                     sellerId: product.seller.id,
+                     // sender unknown for anonymous product views
+                     fromUserId: null,
+                     fromSellerId: null,
+
+                     type: 'PRODUCT_VIEWED',
+                     title: 'Product viewed',
+                     message: `${product.name} was viewed${typeof views === 'number' ? ` (${views} total views)` : ''}.`,
+                     data: {
+                        productId: product.id,
+                        slug: product.slug,
+                        views,
+                     },
+                     readAt: null,
+                  },
+               })
+            }
+         }
+      } catch (e) {
+         console.log('Product view notification error:', e)
+      }
 
       return res.status(200).json({
 
@@ -910,6 +1027,32 @@ export const placeOrder = async (req: Request, res: Response, next: NextFunction
          },
       });
 
+      // Seller notification: new order
+      try {
+         const notificationClient = (prisma as any).notification ?? (prisma as any).Notification;
+         await notificationClient?.create?.({
+            data: {
+               // receiver
+               toSellerId: product.sellerId,
+               sellerId: product.sellerId,
+               // sender (the user who placed the order)
+               fromUserId: user.id,
+               fromSellerId: null,
+               type: 'ORDER_CREATED',
+               title: 'New order received',
+               message: `Order ${order.id} created for ${qty} item(s).`,
+               data: {
+                  orderId: order.id,
+                  productId,
+                  quantity: qty,
+                  total,
+               },
+            },
+         } as any);
+      } catch {
+         // don't block checkout if notifications fail
+      }
+
       // Cash on delivery: payment is PENDING until delivered/collected.
       const payment = await prisma.payments.create({
          data: {
@@ -931,6 +1074,199 @@ export const placeOrder = async (req: Request, res: Response, next: NextFunction
       return next(error);
    }
 }
+
+export const placeCartOrder = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { items, address } = req.body;
+
+    const user = (req as any).user;
+
+    if (!user) {
+      return res.status(401).json({
+        message: 'Unauthorized'
+      });
+    }
+
+    if (!items?.length) {
+      return res.status(400).json({
+        message: 'No items provided'
+      });
+    }
+
+    const orders = [];
+
+    for (const item of items) {
+      const product =
+        await prisma.products.findUnique({
+          where: {
+            id: item.productId
+          }
+        });
+
+      if (!product) {
+        continue;
+      }
+
+      if (product.stock < item.quantity) {
+        continue;
+      }
+
+      const totalPrice =
+        Number(
+          product.discountedPrice ??
+          product.price
+        ) * item.quantity;
+
+      await prisma.products.update({
+        where: {
+          id: product.id
+        },
+        data: {
+          stock: {
+            decrement: item.quantity
+          }
+        }
+      });
+
+      const order =
+        await prisma.orders.create({
+          data: {
+            productId: product.id,
+            sellerId: product.sellerId,
+            userId: user.id,
+            quantity: item.quantity,
+            totalPrice,
+            shippingAddress: address
+          }
+        });
+
+      await prisma.payments.create({
+        data: {
+          orderId: order.id,
+          paymentMethod: 'COD',
+          amount: totalPrice,
+          status: 'PENDING'
+        }
+      });
+
+      orders.push(order);
+    }
+
+    return res.status(201).json({
+      message: 'Orders created',
+      orders
+    });
+
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getMyNotifications = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const seller = (req as any).user;
+      if (!seller) return res.status(401).json({ success: false, message: 'Unauthorized' });
+
+      const notificationClient = (prisma as any).notification ?? (prisma as any).Notification;
+      if (!notificationClient) {
+         return res.status(501).json({ success: false, message: 'Notifications not available (Prisma client not regenerated yet)' });
+      }
+
+      const { page, limit, skip } = parsePagination(req, { defaultLimit: 20, maxLimit: 50 });
+      const [total, notifications] = await Promise.all([
+         notificationClient.count({ where: { sellerId: seller.id } } as any),
+         notificationClient.findMany({
+            where: { sellerId: seller.id } as any,
+            orderBy: { createdAt: 'desc' } as any,
+            skip,
+            take: limit,
+         } as any),
+      ]);
+
+      return res.status(200).json({
+         success: true,
+         total,
+         meta: buildPaginationMeta({ page, limit, total }),
+         notifications,
+      });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const getMyUnreadNotificationCount = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const seller = (req as any).user;
+      if (!seller) return res.status(401).json({ success: false, message: 'Unauthorized' });
+
+      const notificationClient = (prisma as any).notification ?? (prisma as any).Notification;
+      if (!notificationClient) {
+         return res.status(501).json({ success: false, message: 'Notifications not available (Prisma client not regenerated yet)' });
+      }
+
+      const count = await notificationClient.count({
+         where: { sellerId: seller.id, readAt: null } as any,
+      } as any);
+
+      return res.status(200).json({ success: true, count });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const markNotificationRead = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const seller = (req as any).user;
+      if (!seller) return res.status(401).json({ success: false, message: 'Unauthorized' });
+
+      const notificationClient = (prisma as any).notification ?? (prisma as any).Notification;
+      if (!notificationClient) {
+         return res.status(501).json({ success: false, message: 'Notifications not available (Prisma client not regenerated yet)' });
+      }
+
+      const id = String(req.params.id || '').trim();
+      if (!id) return res.status(400).json({ success: false, message: 'Notification id is required' });
+
+      // Only allow marking seller's own notification
+      const updated = await notificationClient.update({
+         where: { id } as any,
+         data: { readAt: new Date() } as any,
+      } as any);
+
+      if ((updated as any)?.sellerId && (updated as any).sellerId !== seller.id) {
+         return res.status(403).json({ success: false, message: 'Forbidden' });
+      }
+
+      return res.status(200).json({ success: true, notification: updated });
+   } catch (err) {
+      return next(err);
+   }
+};
+
+export const markAllNotificationsRead = async (req: Request, res: Response, next: NextFunction) => {
+   try {
+      const seller = (req as any).user;
+      if (!seller) return res.status(401).json({ success: false, message: 'Unauthorized' });
+
+      const notificationClient = (prisma as any).notification ?? (prisma as any).Notification;
+      if (!notificationClient) {
+         return res.status(501).json({ success: false, message: 'Notifications not available (Prisma client not regenerated yet)' });
+      }
+
+      const result = await notificationClient.updateMany({
+         where: { sellerId: seller.id, readAt: null } as any,
+         data: { readAt: new Date() } as any,
+      } as any);
+
+      return res.status(200).json({ success: true, updated: result?.count ?? 0 });
+   } catch (err) {
+      return next(err);
+   }
+};
 
 export const getCategories = async (req: Request, res: Response, next: NextFunction) => {
    try {

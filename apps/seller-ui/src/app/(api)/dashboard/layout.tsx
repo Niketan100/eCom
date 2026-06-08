@@ -4,16 +4,28 @@ import SidebarWrapper from 'apps/seller-ui/src/shared/components/SidebarWrapper'
 import React from 'react'
 import useSeller from './../../../hooks/useSeller';
 import { Header } from '../../widget'
+import { useRouter } from 'next/navigation'
 
 
 const Layout = ({children} : {children : React.ReactNode}) => {
   const {seller , isLoading, error} = useSeller();
+  const router = useRouter();
+
+  React.useEffect(() => {
+    if (!isLoading && !seller) {
+      router.replace('/login');
+    }
+  }, [isLoading, seller, router]);
+
+  if (!isLoading && !seller) {
+    return null;
+  }
   return (
     <div className='flex h-full min-h-screen'>
       
 
-      <aside className='w-[480px] min-w-[380px] max-w-[500px] border-2 border-r-slate-400  text-white p-4'>
-        <div className='sticky top-0 '>
+      <aside className='w-[420px] min-w-[380px] max-w-[480px] border-r border-white/10 text-white p-5 bg-[#050505]'>
+        <div className='sticky top-0'>
             
             <SidebarWrapper />
         </div>

@@ -88,7 +88,7 @@ export const userLogin = async (req : Request , res : Response , next : NextFunc
     if (!user || !decrypt) {
         throw new ForbiddenError('Invalid email or password');
     }
-    const accessToken = jwt.sign({ id: user.id , role: 'user'}, process.env.JWT_SECRET as string, { expiresIn: '15m' });
+    const accessToken = jwt.sign({ id: user.id , role: 'user'}, process.env.JWT_SECRET as string, { expiresIn: '7d' });
     const refreshToken = jwt.sign({ id: user.id , role: 'user'}, process.env.JWT_SECRET as string, { expiresIn: '7d' });
 
    setCookie(res, 'refreshToken', refreshToken);
@@ -176,7 +176,7 @@ export const refreshToken = async (req : Request , res : Response , next : NextF
                 throw new ForbiddenError('unauthorized not found');
             }
 
-            const newAccessToken = jwt.sign({ id: user.id, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '15m' });
+            const newAccessToken = jwt.sign({ id: user.id, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
             const newRefreshToken = jwt.sign({ id: user.id, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
 
             // Rotate both tokens so the browser always has a matching pair.
@@ -192,7 +192,7 @@ export const refreshToken = async (req : Request , res : Response , next : NextF
                 throw new ForbiddenError('unauthorized not found');
             }
 
-            const newAccessToken = jwt.sign({ id: seller.id, role: 'seller' }, process.env.JWT_SECRET as string, { expiresIn: '15m' });
+            const newAccessToken = jwt.sign({ id: seller.id, role: 'seller' }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
             const newRefreshToken = jwt.sign({ id: seller.id, role: 'seller' }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
 
             setCookie(res, 'seller_accessToken', newAccessToken);
@@ -479,7 +479,7 @@ export const sellerLogin = async (req : Request , res : Response , next : NextFu
     if (!seller || !decrypt) {
         throw new ForbiddenError('Invalid email or password');
     }
-    const accessToken = jwt.sign({ id: seller.id , role: 'seller'}, process.env.JWT_SECRET as string, { expiresIn: '15m' });
+    const accessToken = jwt.sign({ id: seller.id , role: 'seller'}, process.env.JWT_SECRET as string, { expiresIn: '7d' });
     const refreshToken = jwt.sign({ id: seller.id , role: 'seller'}, process.env.JWT_SECRET as string, { expiresIn: '7d' });
    setCookie(res, 'seller_refreshToken', refreshToken);
    setCookie(res, 'seller_accessToken', accessToken);

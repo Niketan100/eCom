@@ -10,8 +10,12 @@ const useSeller = () => {
                 const res = await axiosInstance.get('/auth/logged-in-seller')
                 return res.data?.seller ?? null
                } catch (err) {
+                // If not logged in, just return null so the dashboard layout can redirect.
+                if ((err as any)?.response?.status === 401 || (err as any)?.response?.status === 403) {
+                  return null
+                }
                 console.error('Error fetching dashboard data:', err)
-                throw new Error('Failed to fetch dashboard data')
+                throw err
                }
             },
 

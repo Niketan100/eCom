@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
 
 import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance'
 
@@ -36,6 +37,7 @@ type PaymentsResponse = {
 }
 
 const PaymentsPage = () => {
+  const router = useRouter()
   const [search, setSearch] = React.useState('')
   const [statusFilter, setStatusFilter] = React.useState<'ALL' | SellerPayment['status']>('ALL')
   const [page, setPage] = React.useState(1)
@@ -316,12 +318,22 @@ const PaymentsPage = () => {
 
                   <td className='py-5'>
                     <div className='flex justify-end gap-3'>
-
-                      <button className='bg-[#f3f4f6] text-black px-4 py-2 rounded-xl hover:bg-[#e5e7eb] transition-all duration-200'>
+                      <button
+                        type='button'
+                        onClick={() => {
+                          const url = `/dashboard/payments/${payment.id}/receipt`
+                          window.open(url, '_blank', 'noopener,noreferrer')
+                        }}
+                        className='bg-[#f3f4f6] text-black px-4 py-2 rounded-xl hover:bg-[#e5e7eb] transition-all duration-200'
+                      >
                         Receipt
                       </button>
 
-                      <button className='bg-black text-white px-4 py-2 rounded-xl hover:bg-[#111] transition-all duration-200'>
+                      <button
+                        type='button'
+                        onClick={() => router.push(`/dashboard/payments/${payment.id}`)}
+                        className='bg-black text-white px-4 py-2 rounded-xl hover:bg-[#111] transition-all duration-200'
+                      >
                         Details
                       </button>
 

@@ -105,7 +105,6 @@ const handlekeyBack = (index : number , e: React.KeyboardEvent<HTMLInputElement>
 
   const onsubmit = async (data: Formdata) => {
     setServerError(null)
-    console.log(data);
     try {
       await SignupMutation.mutateAsync(data);
     } catch (err: unknown) {

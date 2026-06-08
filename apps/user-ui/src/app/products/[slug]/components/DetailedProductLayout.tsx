@@ -2,7 +2,12 @@
 
 import React from 'react'
 
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
+import axiosInstance from 'apps/user-ui/src/utils/axiosInstance'
 
 import ProductGallery from './ProductGallery'
 
@@ -17,16 +22,81 @@ import ProductShipping from './ProductShipping'
 import ProductSeller from './ProductSeller'
 
 import ProductReviews from './ProductReviews'
+import { useEffect} from 'react'
+import { useStore } from 'apps/user-ui/src/store'
+import useUser from 'apps/user-ui/src/hooks/useUSer'
+import { useLocation } from 'apps/user-ui/src/hooks/useLocation'
 
 const DetailedProductLayout = ({
    product
 }: any) => {
+
+
+      const Cart = useStore((state) => state.cart);
+      const user = useUser();
+    
+       const { latitude, longitude } = useLocation();
+       const deviceInfo = navigator.userAgent;
+   
+      const wishList = useStore((state) => state.wishList);
+      console.log(wishList);
+   
+      const addToCart = useStore((state) => state.addToCart)
+      const addToWishList = useStore((state) => state.addToWishList)
+      const removeFromCart = useStore((state) => state.removeFromCart)
+      const removeFromWishList = useStore((state) => state.removeFromWishList)
+   
+      const isInCart = useStore((state) =>
+         state.cart.some(
+            (item) => item.id === product.id
+         )
+      )
+      const isInWishlist = useStore((state) =>
+         state.wishList.some(
+            (item) => item.id === product.id
+         )
+      )
+      useEffect(() => {
+         console.log('Wishlist updated:', wishList);
+         console.log('CArt' , Cart);
+      }, [addToWishList, removeFromWishList, wishList]);
+   
+
+   const queryClient = useQueryClient()
+   const router = useRouter()
 
    const [quantity, setQuantity] =
       React.useState(1)
 
    const [selectedVariant, setSelectedVariant] =
       React.useState<any>(null)
+
+   const addToCartMutation = useMutation({
+      mutationFn: async () => {
+         await axiosInstance.post('/products/cart/add', {
+            productId: product.id,
+            quantity,
+            variantId: selectedVariant?.id ?? undefined,
+         })
+      },
+      onSuccess: async () => {
+         await queryClient.invalidateQueries({ queryKey: ['cart'] })
+         await queryClient.invalidateQueries({ queryKey: ['cart-count'] })
+         router.push('/cart')
+      },
+   })
+
+   const addToWishlistMutation = useMutation({
+      mutationFn: async () => {
+         await axiosInstance.post('/products/wishlist/add', {
+            productId: product.id,
+         })
+      },
+      onSuccess: async () => {
+         await queryClient.invalidateQueries({ queryKey: ['wishlist'] })
+         await queryClient.invalidateQueries({ queryKey: ['wishlist-count'] })
+      },
+   })
 
    const finalPrice =
       product.discountedPrice ||
@@ -432,12 +502,52 @@ const DetailedProductLayout = ({
                            </button>
 
                         </Link>
+                        <button
+                         onClick={() =>
+    isInCart
+      ? removeFromCart(
+          product.id,
+          user,
+          `${latitude},${longitude}`,
+          JSON.stringify(deviceInfo)
+        )
+      : addToCart(
+          product,
+          user,
+          `${latitude},${longitude}`,
+          JSON.stringify(deviceInfo)
+        )
+  }
+  disabled={product.stock <= 0}
+  className='flex-1 bg-[#111] text-white py-5 rounded-2xl font-semibold hover:bg-black transition-all text-lg disabled:opacity-60'
+>
+  {product.stock <= 0
+    ? 'Out of Stock'
+    : isInCart
+      ? 'In Cart'
+      : 'Add To Cart'}
+</button>
 
-                        <button className='flex-1 border border-black text-black py-5 rounded-2xl font-semibold hover:bg-black hover:text-white transition-all duration-200 text-lg'>
-
-                           Add To Wishlist
-
-                        </button>
+                      <button
+  onClick={() =>
+    isInWishlist
+      ? removeFromWishList(
+          product.id,
+          user,
+          `${latitude},${longitude}`,
+          JSON.stringify(deviceInfo)
+        )
+      : addToWishList(
+          product,
+          user,
+          `${latitude},${longitude}`,
+          JSON.stringify(deviceInfo)
+        )
+  }
+  className='flex-1 border border-black text-black py-5 rounded-2xl font-semibold hover:bg-black hover:text-white transition-all text-lg disabled:opacity-60'
+>
+  {isInWishlist ? 'Saved' : 'Add To Wishlist'}
+</button>
 
                      </div>
 

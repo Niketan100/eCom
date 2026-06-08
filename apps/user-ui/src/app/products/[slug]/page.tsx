@@ -28,7 +28,6 @@ const ProductPage = () => {
 
          const response = await axiosInstance.get(`/products/slug/${slug}`)
          return response.data as { success?: boolean; product?: any }
-         console.log('API Response for product:', response.data)
 
       },
 
@@ -78,7 +77,6 @@ const ProductPage = () => {
    }
 
    const product = data?.product
-   console.log('Fetched Product is This baby:', product)
 
    const hasFeatures =
       Array.isArray(product?.features)
