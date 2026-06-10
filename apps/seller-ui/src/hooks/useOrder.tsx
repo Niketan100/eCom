@@ -19,7 +19,7 @@ const useOrder = () => {
       customer: order.user?.name,
       product: order.product?.name,
       amount: `₹${Number(order.product?.price || 0).toFixed(2)}`,
-      payment: order.paymentStatus,
+      payment: order.payment.status,
       status: order.status,
       date: new Date(order.createdAt).toLocaleDateString(),
     }))
@@ -29,7 +29,8 @@ const useOrder = () => {
   const pending_orders = data?.orders?.filter((order: any) => order.status === 'PENDING').length || 0;
   const delivered_orders = data?.orders?.filter((order: any) => order.status === 'DELIVERED').length || 0;
   const delivered_orders_data = data?.orders?.filter((order: any) => order.status === 'DELIVERED') || [];
-  const revenue = delivered_orders_data.reduce((acc: number, order: any) => acc + (order.product?.price || 0), 0) || 0;
+  const paid_orders_data = data?.orders?.filter((order: any) => order.payment.status === 'PAID') || [];  
+  const revenue = paid_orders_data.reduce((acc: number, order: any) => acc + (order.product?.price || 0), 0) || 0;
   const ordersToday = data?.orders?.filter((order: any) => {
     const orderDate = new Date(order.createdAt);
     const today = new Date();
@@ -44,6 +45,25 @@ const useOrder = () => {
   }).reduce((acc: number, order: any) => acc + (order.product?.price || 0), 0) || 0;
 
   const percentage_revenue_today = ((RevenueToday/revenue)*100).toFixed(2) || 0;
+const ordersCountDaywise = useMemo(() => {
+  if (!data?.orders) return [];
+
+  const grouped = data.orders.reduce(
+    (acc: Record<string, number>, order: any) => {
+      const dateKey = new Date(order.createdAt).toLocaleDateString();
+
+      acc[dateKey] = (acc[dateKey] || 0) + 1;
+
+      return acc;
+    },
+    {}
+  );
+
+  return Object.entries(grouped).map(([date, count]) => ({
+    date,
+    orders: Number(count),
+  }));
+}, [data?.orders]);
 
   const unique_customers = data?.orders?.reduce((acc: Set<string>, order: any) => {
     if (order.user?.name) {
@@ -72,11 +92,13 @@ const useOrder = () => {
         total_orders,
         pending_orders,
         delivered_orders,
+        paid_orders_data,
         revenue,
         percentage_order_today,
         percentage_revenue_today,
         total_customers,
-        percentage_customers_today
+        percentage_customers_today,
+        ordersCountDaywise
     }
   )
 }

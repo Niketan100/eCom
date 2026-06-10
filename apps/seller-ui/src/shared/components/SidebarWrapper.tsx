@@ -17,6 +17,8 @@ import {
   manageShopItems,
   products,
 } from '../../configs/constants'
+import { useQueries, useQuery } from '@tanstack/react-query'
+import useOrder from '../../hooks/useOrder'
 
 const SidebarSection = ({ title, children }: any) => {
   return (
@@ -44,6 +46,12 @@ const SidebarWrapper = () => {
   React.useEffect(() => {
     setActiveSidebar(pathname)
   }, [pathname, setActiveSidebar])
+
+  const {orders, revenue} = useOrder();
+  console.log('orders in sidebar', orders)
+  console.log('revenue in sidebar', revenue)
+
+  
 
   return (
     <Box
@@ -92,7 +100,7 @@ const SidebarWrapper = () => {
             </p>
 
             <h3 className='text-xl font-bold text-white mt-1'>
-              ₹48k
+              ₹ {revenue}
             </h3>
           </div>
 
@@ -102,7 +110,7 @@ const SidebarWrapper = () => {
             </p>
 
             <h3 className='text-xl font-bold text-white mt-1'>
-              324
+              {orders.length}
             </h3>
           </div>
 
@@ -148,40 +156,11 @@ const SidebarWrapper = () => {
           ))}
         </SidebarSection>
 
-        <SidebarSection title='Controls'>
-          {controllers.map((item) => (
-            <SideItems
-              key={item.title}
-              title={item.title}
-              icon={item.icon}
-              isActive={item.href === activeSidebar}
-              href={item.href}
-            />
-          ))}
-        </SidebarSection>
+     
 
       </div>
 
       {/* Bottom Card */}
-      <div className='mt-10 rounded-[26px] p-6 text-white border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-transparent shadow-[0_20px_60px_rgba(0,0,0,0.45)]'>
-        <div className='flex items-start justify-between gap-4'>
-          <div>
-            <h3 className='font-semibold text-[15px] tracking-tight'>
-              Boost your store
-            </h3>
-            <p className='text-[13px] text-gray-300 mt-2 leading-relaxed'>
-              Add more products and improve visibility to increase sales.
-            </p>
-          </div>
-          <div className='h-10 w-10 rounded-2xl bg-[#d7ff3f]/15 border border-[#d7ff3f]/25 flex items-center justify-center text-[#d7ff3f] flex-shrink-0'>
-            <span className='text-lg font-semibold'>+</span>
-          </div>
-        </div>
-
-        <button className='w-full mt-5 bg-white text-black rounded-[16px] py-3.5 font-semibold hover:bg-white/90 transition-all duration-200'>
-          Upgrade Plan
-        </button>
-      </div>
 
     </Box>
   )

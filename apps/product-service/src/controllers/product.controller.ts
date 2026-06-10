@@ -340,6 +340,11 @@ export const getOrders = async(req : Request, res: Response, next: NextFunction)
                      name: true,
                      email: true
                   }
+               },
+               payment :{
+                  select :{
+                     status : true
+                  }
                }
             },
             orderBy: {
@@ -450,7 +455,8 @@ export const updateOrderStatusForSeller = async (req: Request, res: Response, ne
 
       const updated = await prisma.orders.update({
          where: { id },
-         data: { status: nextStatus as any },
+         data: { status: nextStatus as any ,
+         },
          include: {
             product: {
                select: { id: true, name: true, slug: true, price: true, discountedPrice: true },
@@ -459,6 +465,13 @@ export const updateOrderStatusForSeller = async (req: Request, res: Response, ne
             payment: true,
          },
       });
+
+      if(nextStatus === "DELIVERED"){
+         await prisma.payments.update({
+            where: { orderId: id},
+            data: { status: 'PAID' },
+         });
+      }
 
       return res.status(200).json({ success: true, message: 'Order updated', order: updated });
    } catch (err) {

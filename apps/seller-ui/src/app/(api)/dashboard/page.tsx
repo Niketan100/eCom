@@ -1,13 +1,33 @@
 "use client";
 
+import { items } from 'apps/seller-ui/src/configs/constants';
 import useOrder from 'apps/seller-ui/src/hooks/useOrder';
 import useProducts from 'apps/seller-ui/src/hooks/useProducts';
 import type { SellerProduct } from 'apps/seller-ui/src/hooks/useProducts'
+import { NumericKeys } from 'node_modules/react-hook-form/dist/types/path/common';
+
 
 
 export default function SellerDashboard() {
 
-  const { orders, isLoading: ordersLoading, error: ordersError, revenue, total_orders, percentage_order_today, percentage_revenue_today, total_customers, percentage_customers_today } = useOrder();
+  const {
+  ordersCountDaywise = [],
+  orders,
+  isLoading: ordersLoading,
+  error: ordersError,
+  revenue,
+  total_orders,
+  percentage_order_today,
+  percentage_revenue_today,
+  total_customers,
+  percentage_customers_today,
+} = useOrder();
+
+const maxOrders = Math.max(
+  ...ordersCountDaywise.map((item: any) => item.orders),
+  1
+);
+
   const { products, lowStockProducts, isLoading: productsLoading, error: productsError } = useProducts();
   const stats = [
     {
@@ -99,35 +119,57 @@ export default function SellerDashboard() {
         <div className='grid grid-cols-1 xl:grid-cols-3 gap-6 mb-8'>
 
           {/* Sales Overview */}
-          <div className='xl:col-span-2 bg-white border border-gray-200 rounded-3xl p-6 shadow-sm'>
-            <div className='flex items-center justify-between mb-6'>
-              <div>
-                <h2 className='text-2xl font-semibold'>
-                  Sales Overview
-                </h2>
+         {/* Sales Overview */}
+<div className='xl:col-span-2 bg-white border border-gray-200 rounded-3xl p-6 shadow-sm'>
+  <div className='flex items-center justify-between mb-6'>
+    <div>
+      <h2 className='text-2xl font-semibold'>
+        Sales Overview
+      </h2>
 
-                <p className='text-gray-500 text-sm mt-1'>
-                  Monthly performance overview
-                </p>
-              </div>
+      <p className='text-gray-500 text-sm mt-1'>
+        Orders received per day
+      </p>
+    </div>
 
-              <button className='px-4 py-2 rounded-xl bg-[#f4f4f4] text-sm font-medium'>
-                This Month
-              </button>
-            </div>
+    <button className='px-4 py-2 rounded-xl bg-[#f4f4f4] text-sm font-medium'>
+      This Month
+    </button>
+  </div>
 
-            {/* Fake Chart */}
-            <div className='h-[320px] w-full flex items-end justify-between gap-4'>
-              {[40, 65, 30, 90, 55, 70, 85, 60].map((height, index) => (
-                <div
-                  key={index}
-                  className='flex-1 bg-black rounded-t-3xl opacity-90 hover:opacity-100 transition-all'
-                  style={{ height: `${height}%` }}
-                ></div>
-              ))}
-            </div>
-          </div>
+  <div className='h-[320px] flex items-end gap-3'>
+    {ordersCountDaywise.length > 0 ? (
+      ordersCountDaywise.map((item: any) => (
+        <div
+          key={item.date}
+          className='flex-1 flex flex-col items-center h-full justify-end'
+        >
+          <div
+            className='w-full bg-black rounded-t-3xl hover:opacity-80 transition-all'
+            style={{
+              height: `${Math.max(
+                (item.orders / maxOrders) * 100,
+                5
+              )}%`,
+            }}
+          />
 
+          <span className='text-xs font-medium mt-2'>
+            {item.orders}
+          </span>
+
+          <span className='text-[10px] text-gray-500 mt-1 text-center'>
+            {item.date}
+          </span>
+        </div>
+      ))
+    ) : (
+      <div className='flex items-center justify-center w-full h-full text-gray-500'>
+        No order data available
+      </div>
+    )}
+  </div>
+</div>
           {/* Quick Actions */}
           <div className='bg-white border border-gray-200 rounded-3xl p-6 shadow-sm'>
             <h2 className='text-2xl font-semibold mb-6'>
@@ -304,5 +346,6 @@ export default function SellerDashboard() {
         </div>
       </div>
     </div>
+    
   )
 }

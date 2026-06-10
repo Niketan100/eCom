@@ -35,6 +35,7 @@ const OrdersPage = () => {
 
   const rawOrders = data?.orders ?? []
   const meta = data?.meta
+  console.log('row orders', rawOrders)
 
   const orders = React.useMemo(() => {
     return rawOrders.map((order: any) => ({
@@ -58,7 +59,7 @@ const OrdersPage = () => {
   const pending_orders = rawOrders.filter((o: any) => o.status === 'PENDING').length
   const delivered_orders = rawOrders.filter((o: any) => o.status === 'DELIVERED').length
   const revenue = rawOrders
-    .filter((o: any) => o.status === 'DELIVERED')
+    .filter((o: any) => o.payment?.status === 'PAID')
     .reduce(
       (acc: number, o: any) =>
         acc +
@@ -69,7 +70,7 @@ const OrdersPage = () => {
     )
   
 
-
+    console.log(orders)
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>
 
