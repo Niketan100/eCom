@@ -60,7 +60,7 @@ export default function HomePage() {
 
                 <h1 className='mt-6 text-[42px] md:text-[56px] leading-[1.05] font-extrabold text-gray-900'>
                   Discover products that feel
-                  <span className='block bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 bg-clip-text text-transparent'>
+                  <span className='block bg-gradient-to-r from-[black] via-[#F97316] to-emerald-500 bg-clip-text text-transparent'>
                     truly premium.
                   </span>
                 </h1>
@@ -170,7 +170,7 @@ export default function HomePage() {
         <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5'>
           {categories.map((c) => (
             <Link
-              href={c.href}
+              href={`${c.href}?category=${encodeURIComponent(c.title)}`}
               key={c.title}
               className='group relative overflow-hidden rounded-[32px] bg-white border border-gray-200 shadow-sm p-6 hover:shadow-md transition-all duration-200'
             >

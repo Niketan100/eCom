@@ -28,7 +28,6 @@ const useUser = () => {
         queryFn: fetchUser,
         retry: 5,
         refetchOnWindowFocus: false,
-        staleTime: 5 * 60 * 1000, // 5 minutes
         select: (data) => data?.user ?? null
     });
     return { loggedInUser, isLoading, error };

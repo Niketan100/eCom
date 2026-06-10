@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import { errorMiddleware } from '../../../packages/errorHandler/error-middleware';
 import router from './routes/router';
 
+import { kafka } from '../../../packages/libs/kafka';
 
 
 
@@ -33,6 +34,23 @@ app.use(rateLimit({
 
 }));
 
+const con = async () =>{
+    try {
+        const producer = kafka.producer();
+
+await producer.connect();
+
+await producer.send({
+  topic: 'orders',
+  messages: [
+    { value: 'Product Service Created' }
+  ],
+});   
+} catch (error) {
+        console.error('Error connecting to Kafka:', error);     
+    }
+}
+
 
 
 app.use(errorMiddleware);
@@ -47,6 +65,7 @@ app.get('/', (req, res) => {
     res.send({ 'message': 'Hello API from Product Service'});
 });
 
-app.listen(port, host, () => {
+app.listen(port, host, async () => {
+    await con();
     console.log(`[ ready ] http://${host}:${port}`);
 });

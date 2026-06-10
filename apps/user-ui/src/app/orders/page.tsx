@@ -229,7 +229,7 @@ const page = () => {
                                         {/* Right */}
                                         <div className='md:text-right'>
                                             <p className='text-sm text-gray-500'>Total</p>
-                                            <p className='text-2xl font-extrabold text-black mt-1'>
+                                            <p className='text-2xl font-extrabold text-[#F97316] mt-1'>
                                                 ₹{formatMoney(total)}
                                             </p>
                                             <p className='text-xs text-gray-400 mt-2'>

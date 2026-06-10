@@ -1,9 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 import axiosInstance from '../../utils/axiosInstance'
 import { useStore } from '../../store'
+import router from 'next/router'
+import { QueryClient, useQueryClient } from '@tanstack/react-query'
 
 import { HeaderBottom } from './HeaderBottom'
 import {
@@ -17,36 +19,49 @@ import {
     UserPlus,
 } from 'lucide-react'
 import useUser  from './../../hooks/useUSer'
-import { useQuery } from '@tanstack/react-query'
-type CartItem = {
-  id: string
-  quantity: number
-  product: {
-    id: string
-    name: string
-    slug: string
-    price: number
-    discountedPrice?: number | null
-    stock: number
-  }
-}
-
+import { useMutation, useQuery } from '@tanstack/react-query'
 
 export const Header = () => {
+
+    
+    const queryClient = useQueryClient();
+
     const { loggedInUser, isLoading } = useUser()
         const [accountOpen, setAccountOpen] = React.useState(false)
         const [offersOpen, setOffersOpen] = React.useState(false)
 
-        React.useEffect(() => {
-            const onDocClick = () => {
-                setAccountOpen(false)
-                setOffersOpen(false)
-            }
+       
 
-            document.addEventListener('click', onDocClick)
-            return () => document.removeEventListener('click', onDocClick)
-        }, [])
+        const onAcountClick = (e: React.MouseEvent) => {
+            e.stopPropagation()
+            setAccountOpen((v) => !v)
+            setOffersOpen(false)
+        }
 
+        const onOffersClick = (e: React.MouseEvent) => {
+            e.stopPropagation()
+            setOffersOpen((v) => !v)
+            setAccountOpen(false)
+        }
+
+
+       const logoutMutation = useMutation({
+    mutationFn: async () => {
+        await axiosInstance.post('/auth/logout', {}, {
+            withCredentials: true,
+        });
+    },
+   onSuccess: async () => {
+            queryClient.setQueryData(['loggedInUser'], null);
+
+            await queryClient.invalidateQueries({
+                queryKey: ['loggedInUser'],
+            });
+
+            router.push('/login');
+},
+}
+);
 //     const cartQuery = useQuery({
 //     queryKey: ['cart'],
 //     queryFn: async () => {
@@ -55,7 +70,10 @@ export const Header = () => {
 //     },
 //   })
 
+
+
 //   const totals = cartQuery.data?.totals
+
     const Cart = useStore((state) => state.cart);
     const wishList = useStore((state) => state.wishList);
 
@@ -72,9 +90,9 @@ export const Header = () => {
             </Link> 
         </div>
         <div className='w-[50%] relative'>
-          <input type="text " placeholder='Search products...' className='border-2 h-[55px] font-poppins border-blue-500 py-2 px-4 w-[90%]  text-gray-6 00 focus:outline-none focus:ring-2 focus:ring-blue-500'  />
+          <input type="text " placeholder='Search products...' className='border-2 h-[55px] font-poppins border-[#F97316] py-2 px-4 w-[90%]  text-gray-6 00 focus:outline-none focus:ring-2 focus:ring-blue-500'  />
 
-          <div className='w-[10%] cursor-pointer flex items-center justify-center h-[55px]  bg-blue-500 absolute top-0 right-0'> 
+          <div className='w-[10%] cursor-pointer flex items-center justify-center h-[55px]  bg-[#F97316] absolute top-0 right-0'> 
               <Search color='white' />
           </div>
 
@@ -87,9 +105,7 @@ export const Header = () => {
                                                                 <button
                                                                     type='button'
                                                                     onClick={(e) => {
-                                                                        e.stopPropagation()
-                                                                        setOffersOpen((v) => !v)
-                                                                        setAccountOpen(false)
+                                                                        onOffersClick(e)
                                                                     }}
                                                                     className='flex items-center gap-2 rounded-xl border border-gray-200 px-3 py-2 text-gray-700 hover:bg-gray-50 transition-colors'
                                                                 >
@@ -177,6 +193,17 @@ export const Header = () => {
                                                                             >
                                                                                 <ShoppingCart className='h-4 w-4 text-gray-500' />
                                                                                 Cart
+                                                                            </Link>
+                                                                            <Link
+                                                                                href={'/#'}
+                                                                                 onClick={(e) => {
+                                                                                    e.preventDefault();
+                                                                                    logoutMutation.mutate();
+    }}
+                                                                                className='flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-gray-700 hover:bg-gray-50'
+                                                                            >
+                                                                                <Heart className='h-4 w-4 text-gray-500' />
+                                                                                SignOut
                                                                             </Link>
 
                                                                             <div className='h-px bg-gray-100 my-2' />

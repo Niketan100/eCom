@@ -1,7 +1,8 @@
 import { Router } from 'express';
-import { userLogin, userRegister, verifyUser , forgetPassword , verifyUserForgotPassword, resetUserPassword, refreshToken, getUser, registerSeller, verifySellerOtp, createSeller, createShop, stripeConnect, sellerLogin, getSeller, getComplaints } from '../controllers/auth.controller';
+import { userLogin, userRegister, verifyUser , forgetPassword , verifyUserForgotPassword, resetUserPassword, refreshToken, getUser, registerSeller, verifySellerOtp, createSeller, createShop, stripeConnect, sellerLogin, getSeller, getComplaints,  Userlogout } from '../controllers/auth.controller';
 import isSellerAuthanticated from 'packages/middleware/isSellerAuthenticated';
 import isUserAuthanticated from 'packages/middleware/isUserAuthenticated';
+
 
 const router = Router(); 
 
@@ -21,4 +22,6 @@ router.post('/stripe-connect', stripeConnect);
 router.post('/seller-login', sellerLogin);
 router.get('/logged-in-seller' , isSellerAuthanticated , getSeller);
 router.get('/complaints/get-complaints' , isSellerAuthanticated, getComplaints);
+router.post('/logout' ,Userlogout);
 export default router;
+    

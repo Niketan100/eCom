@@ -22,7 +22,7 @@ export default function WishListPage() {
         { items.length === 0 ? (
           <div className='bg-white border border-gray-200 rounded-[24px] p-10 text-center'>
             <p className='text-gray-600'>Your wishlist is empty.</p>
-            <Link href='/products' className='inline-block mt-4 px-5 py-3 rounded-2xl bg-black text-white'>
+            <Link href='/products' className='inline-block mt-4 px-5 py-3 rounded-2xl bg-[#F97316] text-white'>
               Browse products
             </Link>
           </div>

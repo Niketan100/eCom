@@ -32,13 +32,13 @@ const isAuthenticated = async (req: any, res: Response, next: NextFunction) => {
 
         const decode = jwt.verify(token, process.env.JWT_SECRET as string) as { id: string, role: string };
 
-        if (decode.role === 'user') {
+        if (decode.role === 'USER') {
             const user = await prisma.users.findUnique({ where: { id: decode.id } });
             if (!user) return next(new UnauthorizedError('Invalid access token'));
             req.user = user;
             req.role = 'user';
 
-        } else if (decode.role === 'seller') {
+        } else if (decode.role === 'SELLER') {
             const seller = await prisma.seller.findUnique({ where: { id: decode.id } });
             if (!seller) return next(new UnauthorizedError('Invalid access token'));
             req.user = seller;

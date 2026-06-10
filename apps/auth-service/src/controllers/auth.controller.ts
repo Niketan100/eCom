@@ -574,3 +574,30 @@ export const getComplaints = async (req : Request , res : Response , next : Next
     }
 }
 
+
+export const Userlogout = async (req: Request, res: Response, next: NextFunction) => {  
+
+    try{
+       
+            res.clearCookie('accessToken', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        });
+
+        res.clearCookie('refreshToken', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        });
+       
+
+        res.status(200).json({
+            message: 'Logged out successfully'
+        });
+    } catch (error) {
+        next(error);
+    }
+}
+
+

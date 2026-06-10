@@ -317,7 +317,7 @@ export default function CartPage() {
                     '/checkout/cart'
                   );
                 }}
-                className='px-5 py-3 rounded-2xl bg-black text-white disabled:opacity-50'
+                className='px-5 py-3 rounded-2xl bg-[#F97316] text-white disabled:opacity-50'
               >
                 <Link href='/checkout/cart'>
                 Proceed To Checkout

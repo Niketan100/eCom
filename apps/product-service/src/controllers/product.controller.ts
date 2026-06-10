@@ -582,49 +582,145 @@ export const getSellerPaymentById = async (req: Request, res: Response, next: Ne
       return next(err);
    }
 }
+export const getall = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { page, limit, skip } = parsePagination(req, {
+      defaultLimit: 20,
+      maxLimit: 50,
+    });
 
-export const getall = async(req: Request, res: Response, next: NextFunction) => {
-   try{
-      const { page, limit, skip } = parsePagination(req, { defaultLimit: 20, maxLimit: 50 });
+    const {
+      search,
+      categories,
+      minPrice,
+      maxPrice,
+      inStock,
+      sortBy,
+    } = req.query;
 
-      const where = {
-         isActive: true
-      } as const;
+    const where: any = {
+      isActive: true,
+    };
 
-      const [total, products] = await Promise.all([
-         prisma.products.count({ where }),
-         prisma.products.findMany({
-            where,
-            select: {
-               id: true,
-               name: true,
-               description: true,
-               price: true,
-               category: true,
-               stock: true,
-               createdAt: true,
-               slug: true
-            },
-            orderBy: {
-               createdAt: 'desc'
-            },
-            skip,
-            take: limit,
-         }),
-      ]);
-      console.log('All active products', products);
+    // Search
+    if (search) {
+      where.OR = [
+        {
+          name: {
+            contains: String(search),
+            mode: 'insensitive',
+          },
+        },
+        {
+          description: {
+            contains: String(search),
+            mode: 'insensitive',
+          },
+        },
+        {
+          category: {
+            contains: String(search),
+            mode: 'insensitive',
+          },
+        },
+      ];
+    }
 
-      return res.status(200).json({
-         success: true,
-         count: products.length,
-         total,
-         meta: buildPaginationMeta({ page, limit, total }),
-         products
-      })
-   }catch(err){
-      return next(err);
-   }
-}
+    // Categories
+    if (categories) {
+      const categoryArray = String(categories)
+        .split(',')
+        .map((c) => c.trim());
+
+      where.category = {
+        in: categoryArray,
+      };
+    }
+
+    // Stock
+    if (inStock === 'true') {
+      where.stock = {
+        gt: 0,
+      };
+    }
+
+    // Price
+    if (minPrice || maxPrice) {
+      where.price = {};
+
+      if (minPrice) {
+        where.price.gte = Number(minPrice);
+      }
+
+      if (maxPrice) {
+        where.price.lte = Number(maxPrice);
+      }
+    }
+
+    let orderBy: any = {
+      createdAt: 'desc',
+    };
+
+    switch (sortBy) {
+      case 'price-asc':
+        orderBy = { price: 'asc' };
+        break;
+
+      case 'price-desc':
+        orderBy = { price: 'desc' };
+        break;
+
+      case 'name-asc':
+        orderBy = { name: 'asc' };
+        break;
+
+      case 'newest':
+      default:
+        orderBy = { createdAt: 'desc' };
+    }
+
+    const [total, products] = await Promise.all([
+      prisma.products.count({ where }),
+
+      prisma.products.findMany({
+        where,
+        orderBy,
+        skip,
+        take: limit,
+
+        select: {
+          id: true,
+          name: true,
+          description: true,
+          price: true,
+          discountedPrice: true,
+          category: true,
+          stock: true,
+          slug: true,
+          createdAt: true,
+        },
+      }),
+    ]);
+
+    return res.status(200).json({
+      success: true,
+      total,
+      count: products.length,
+      meta: buildPaginationMeta({
+        page,
+        limit,
+        total,
+      }),
+      products,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
 
 export const getsingle = async(req: Request, res: Response, next: NextFunction) => {
    try{
@@ -1706,4 +1802,116 @@ export const getWishlistCount = async (req: Request, res: Response, next: NextFu
    } catch (err) {
       return next(err);
    }
+};
+
+export const getSuggestedProducts = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { category, subcategory } = req.query as {
+      category?: string;
+      subcategory?: string;
+    };
+
+    if (!category && !subcategory) {
+      return res.status(400).json({
+        success: false,
+        message:
+          'At least category or subcategory is required',
+      });
+    }
+
+    const where: any = {
+      stock: {
+        gt: 0,
+      },
+    };
+
+    if (subcategory) {
+      where.subcategory = subcategory;
+    } else if (category) {
+      where.category = category;
+    }
+
+    const products = await prisma.products.findMany({
+      where,
+      select: {
+        id: true,
+        name: true,
+        slug: true,
+        price: true,
+        discountedPrice: true,
+        category: true,
+        subcategory: true,
+        stock: true,
+        createdAt: true,
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+      take: 10,
+    });
+
+    return res.status(200).json({
+      success: true,
+      products,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const getSearchSuggestions = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { search, limit } = req.query as {
+      search?: string;
+      limit?: string;
+    };
+
+    const trimmed = search?.trim();
+
+    if (!trimmed) {
+      return res.status(400).json({
+        success: false,
+        message: 'Search is required',
+      });
+    }
+
+    const take = limit ? Math.min(Number(limit), 20) : 5;
+
+    const products = await prisma.products.findMany({
+      where: {
+        OR: [
+          { name: { contains: trimmed, mode: 'insensitive' } },
+          { description: { contains: trimmed, mode: 'insensitive' } },
+          { category: { contains: trimmed, mode: 'insensitive' } },
+          { tags: { has: trimmed } },          // if you have a tags[] field
+        ],
+      },
+      select: {
+        id: true,
+        name: true,
+        slug: true,
+        category: true,
+        price: true,
+        discountedPrice: true,
+        stock: true,
+      },
+      orderBy: { createdAt: 'desc' },
+      take,
+    });
+
+    return res.status(200).json({
+      success: true,
+      products,
+    });
+  } catch (err) {
+    next(err);
+  }
 };

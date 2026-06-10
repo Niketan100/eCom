@@ -4,9 +4,13 @@ import { AlignLeft, ChevronDown } from 'lucide-react';
 import {  useEffect, useState } from 'react';
 import { navItems } from '../../configs/constants';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 export const HeaderBottom = () => {
     const [show, setShow] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
+
+    const pathname = usePathname();
+    console.log(pathname)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,7 +27,7 @@ export const HeaderBottom = () => {
     <div className={`w-full bg-white py-3 transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 shadow-lg z-50' : 'relative'}`}>
         
         <div className={`w-[80%] m-auto flex gap-8 items-center justify-start relative ${isSticky ? 'pt-3' : 'py-0' }`}>
-            <div className={`w-[260px] ${isSticky ? '-mb-2' : 'cursor-pointer flex items-center justify-between px-5 h-[50px] bg-[skyblue]' } `} 
+            <div className={`w-[260px] ${isSticky ? '-mb-2' : 'cursor-pointer flex items-center justify-between px-5 h-[50px] bg-[#F97316]' } `} 
                 onClick={() => setShow(!show)}
             >
                 <div className='flex items-center gap-2'>
@@ -48,12 +52,20 @@ export const HeaderBottom = () => {
             {/* Navigaton LInks */}
             {
                  <div className='flex items-center'>
-                    {navItems.map((i:NavItemType , index : number) => (
-                        <Link href={i.href} className='px-5 font-medium text-lg  ' key={index}>
-                             {i.title}
-                        </Link>
-                    ))}
-                 </div>
+                {navItems.map((i: NavItemType, index: number) => (
+                    <Link
+                        href={i.href}
+                        key={index}
+                        className={`px-5 font-medium text-lg transition-colors ${
+                            pathname === i.href
+                                ? 'text-orange-500'
+                                : 'text-black hover:text-orange-500'
+                        }`}
+                    >
+                        {i.title}
+                    </Link>
+                ))}
+            </div>
             }
         </div>
     </div>

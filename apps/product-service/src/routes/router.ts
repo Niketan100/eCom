@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { createProduct, getall, getCategories, getInventoryProducts, getMyNotifications, getMyUnreadNotificationCount, getOrders, getSellerPaymentById, getSellerPayments, getsingle, getsingleBySlug, markAllNotificationsRead, markNotificationRead, placeOrder, updateProduct , deleteProduct, getUserOrders, getMyCart, addToCart, updateCartItemQuantity, removeFromCart, clearMyCart, getMyWishlist, addToWishlist, removeFromWishlist, getCartCount, getWishlistCount, getOrderByIdForSeller, updateOrderStatusForSeller, placeCartOrder } from '../controllers/product.controller'
+import { createProduct, getall, getCategories, getInventoryProducts, getMyNotifications, getMyUnreadNotificationCount, getOrders, getSellerPaymentById, getSellerPayments, getsingle, getsingleBySlug, markAllNotificationsRead, markNotificationRead, placeOrder, updateProduct , deleteProduct, getUserOrders, getMyCart, addToCart, updateCartItemQuantity, removeFromCart, clearMyCart, getMyWishlist, addToWishlist, removeFromWishlist, getCartCount, getWishlistCount, getOrderByIdForSeller, updateOrderStatusForSeller, placeCartOrder, getSearchSuggestions, getSuggestedProducts } from '../controllers/product.controller'
 import isSellerAuthenticated from './../../../../packages/middleware/isSellerAuthenticated';
 import isUserAuthenticated from './../../../../packages/middleware/isUserAuthenticated';
 
@@ -52,5 +52,8 @@ router.post('/orders/place', isUserAuthenticated, placeOrder);
 
 // Seller-only delete
 router.delete('/delete/:id', isSellerAuthenticated, deleteProduct);   
+router.get('/search-suggestions' , getSearchSuggestions);
+router.get('/suggestions', getSuggestedProducts);
+
 
 export default router

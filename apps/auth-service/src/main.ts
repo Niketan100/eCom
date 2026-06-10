@@ -9,6 +9,7 @@ import authRoutes from './routes/auth.routes';
 import swaggerUi from 'swagger-ui-express';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { kafka } from '../../../packages/libs/kafka';
 
  
 
@@ -39,6 +40,24 @@ app.use(rateLimit({
 
 }));
 
+const reciever = async () =>{
+    try {
+        const consumer = kafka.consumer({ groupId: 'auth-service-group' });
+        await consumer.connect();
+        await consumer.subscribe({ topic: 'orders', fromBeginning: true });
+
+        await consumer.run({
+            eachMessage: async ({ topic, partition, message } : {topic : any , partition : any, message : any  }) => {
+                console.log(`Received message: ${message.value?.toString()} from topic: ${topic}`);
+                // Handle the message as needed
+            },
+        });
+    } catch (error) {
+        console.error('Error connecting to Kafka:', error);     
+    }
+}
+
+
 app.use('/auth', authRoutes);
 app.use('/api-docs' , swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
@@ -53,5 +72,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, host, () => {
+    reciever();
     console.log(`[ ready ] http://${host}:${port}`);
 });

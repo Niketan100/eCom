@@ -495,7 +495,7 @@ const DetailedProductLayout = ({
                            className='flex-1'
                         >
 
-                           <button className='w-full bg-black text-white py-5 rounded-2xl font-semibold hover:bg-[#111] transition-all duration-200 text-lg'>
+                           <button className='w-full bg-[#F97316] text-white py-5 rounded-2xl font-semibold hover:bg-[#f59048] transition-all duration-200 text-lg'>
 
                               Buy Now
 
@@ -507,19 +507,15 @@ const DetailedProductLayout = ({
     isInCart
       ? removeFromCart(
           product.id,
-          user,
-          `${latitude},${longitude}`,
-          JSON.stringify(deviceInfo)
+        
         )
       : addToCart(
           product,
-          user,
-          `${latitude},${longitude}`,
-          JSON.stringify(deviceInfo)
+        
         )
   }
   disabled={product.stock <= 0}
-  className='flex-1 bg-[#111] text-white py-5 rounded-2xl font-semibold hover:bg-black transition-all text-lg disabled:opacity-60'
+  className='flex-1 bg-[#F97316] text-white py-5 rounded-2xl font-semibold hover:bg-[#f59048] transition-all text-lg disabled:opacity-60'
 >
   {product.stock <= 0
     ? 'Out of Stock'
@@ -533,18 +529,14 @@ const DetailedProductLayout = ({
     isInWishlist
       ? removeFromWishList(
           product.id,
-          user,
-          `${latitude},${longitude}`,
-          JSON.stringify(deviceInfo)
+        
         )
       : addToWishList(
           product,
-          user,
-          `${latitude},${longitude}`,
-          JSON.stringify(deviceInfo)
+         
         )
   }
-  className='flex-1 border border-black text-black py-5 rounded-2xl font-semibold hover:bg-black hover:text-white transition-all text-lg disabled:opacity-60'
+  className='flex-1 border border-[#F97316] text-[#F97316] py-5 rounded-2xl font-semibold hover:bg-[#F97316] hover:text-white transition-all text-lg disabled:opacity-60'
 >
   {isInWishlist ? 'Saved' : 'Add To Wishlist'}
 </button>
