@@ -11,26 +11,27 @@ services:
     startCommand: npx nx run auth-service:serve
     healthCheckPath: /auth/health
     envVars:
+      # Auth Service Specific
       - key: PORT
         value: 6001
       - key: HOST
         value: 0.0.0.0
       - key: NODE_ENV
         value: production
-      # MongoDB
+      # MongoDB (from root .env)
       - key: DATABASE_URL
         sync: false
-      # Redis Configuration
+      # Redis Configuration (from root .env)
       - key: REDIS_HOST
         sync: false
       - key: REDIS_PORT
         sync: false
       - key: REDIS_PASSWORD
         sync: false
-      # JWT
+      # JWT (from root .env)
       - key: JWT_SECRET
         sync: false
-      # Email Configuration
+      # Email Configuration (auth-service specific overrides)
       - key: EMAIL_HOST
         sync: false
       - key: EMAIL_PORT
@@ -40,6 +41,8 @@ services:
       - key: EMAIL_PASS
         sync: false
       - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_SERVICE
         sync: false
 
   # -----------------------------
@@ -54,21 +57,35 @@ services:
     startCommand: npx nx run product-service:serve
     healthCheckPath: /products
     envVars:
+      # Product Service Specific
       - key: PORT
         value: 7001
       - key: HOST
         value: 0.0.0.0
       - key: NODE_ENV
         value: production
-      # MongoDB
+      # MongoDB (from root .env)
       - key: DATABASE_URL
         sync: false
-      # Redis Configuration
+      # Redis Configuration (from root .env)
       - key: REDIS_HOST
         sync: false
       - key: REDIS_PORT
         sync: false
       - key: REDIS_PASSWORD
+        sync: false
+      # Email Configuration (if product-service sends emails)
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_PORT
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_SERVICE
         sync: false
 
   # -----------------------------
@@ -83,6 +100,7 @@ services:
     startCommand: npx nx run api-gateway:serve
     healthCheckPath: /gateway-health
     envVars:
+      # API Gateway Specific
       - key: PORT
         value: 8080
       - key: HOST
@@ -94,12 +112,25 @@ services:
         sync: false
       - key: PRODUCT_SERVICE_URL
         sync: false
-      # Redis Configuration (if gateway uses Redis)
+      # Redis Configuration (from root .env, if gateway uses Redis)
       - key: REDIS_HOST
         sync: false
       - key: REDIS_PORT
         sync: false
       - key: REDIS_PASSWORD
+        sync: false
+      # Email Configuration (if gateway sends emails)
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_PORT
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_SERVICE
         sync: false
 
   # -----------------------------
