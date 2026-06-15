@@ -1,0 +1,960 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.7.1",
+  "pathMappings": {
+    "@real-app/libs/prisma": [
+      "./packages/libs/prisma/index"
+    ],
+    "@real-app/libs/redis": [
+      "./packages/libs/redis/index"
+    ],
+    "@real-app/errorHandler": [
+      "./packages/errorHandler/index"
+    ]
+  },
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        },
+        "build": {
+          "targetName": "build",
+          "configName": "tsconfig.lib.json",
+          "buildDepsName": "build-deps",
+          "watchDepsName": "watch-deps"
+        }
+      }
+    },
+    {
+      "name": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    },
+    {
+      "name": "@nx/docker",
+      "version": "22.7.1",
+      "options": {
+        "buildTarget": {
+          "name": "docker:build"
+        },
+        "runTarget": {
+          "name": "docker:run"
+        }
+      }
+    },
+    {
+      "name": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps",
+        "serveStaticTargetName": "serve-static"
+      }
+    },
+    {
+      "name": "@nx/next/plugin",
+      "options": {
+        "startTargetName": "start",
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "serveStaticTargetName": "serve-static",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    }
+  ],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "hash": "12661216531628339028"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "14628879135028312356"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "4934098906304722861"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "17353202749638641195"
+      },
+      {
+        "file": "README.md",
+        "hash": "5465119543708020180"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "14236175072743533737"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "13737983450217408137"
+      },
+      {
+        "file": "nx.json",
+        "hash": "8732025309489780116"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "13775934028526544182"
+      },
+      {
+        "file": "package.json",
+        "hash": "16617642472577599058"
+      },
+      {
+        "file": "packages/libs/prisma/index.ts",
+        "hash": "14840617902918851863"
+      },
+      {
+        "file": "packages/libs/redis/index.ts",
+        "hash": "17557273196947334290"
+      },
+      {
+        "file": "packages/middleware/authorizedRoles.ts",
+        "hash": "3287948633510768806"
+      },
+      {
+        "file": "packages/middleware/express.d.ts",
+        "hash": "3272041670638597322"
+      },
+      {
+        "file": "packages/middleware/isAuthanticated.ts",
+        "hash": "17690169903771869667"
+      },
+      {
+        "file": "prisma.config.ts",
+        "hash": "12979995078497394287"
+      },
+      {
+        "file": "prisma/schema.prisma",
+        "hash": "15069794575010811213"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "14193060837719538723"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "4015715931918837086"
+      }
+    ],
+    "projectFileMap": {
+      "@real-app/auth-service-e2e": [
+        {
+          "file": "apps/auth-service-e2e/.spec.swcrc",
+          "hash": "18201067170784284381"
+        },
+        {
+          "file": "apps/auth-service-e2e/jest.config.cts",
+          "hash": "3366625332126977116"
+        },
+        {
+          "file": "apps/auth-service-e2e/package.json",
+          "hash": "15494474781284751877"
+        },
+        {
+          "file": "apps/auth-service-e2e/src/auth-service/auth-service.spec.ts",
+          "hash": "7531705588582374674",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/auth-service-e2e/src/support/global-setup.ts",
+          "hash": "3444053551545844372",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/auth-service-e2e/src/support/global-teardown.ts",
+          "hash": "18176614999450167852",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/auth-service-e2e/src/support/test-setup.ts",
+          "hash": "11749744855473391997",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/auth-service-e2e/tsconfig.json",
+          "hash": "10978558356039681413"
+        }
+      ],
+      "@real-app/errorHandler": [
+        {
+          "file": "packages/errorHandler/error-middleware.ts",
+          "hash": "12103438536361582717"
+        },
+        {
+          "file": "packages/errorHandler/index.ts",
+          "hash": "9286766345285097894"
+        },
+        {
+          "file": "packages/errorHandler/package.json",
+          "hash": "7629304636247686325"
+        },
+        {
+          "file": "packages/errorHandler/tsconfig.app.json",
+          "hash": "3679059425125306053"
+        },
+        {
+          "file": "packages/errorHandler/tsconfig.json",
+          "hash": "16148358976294854931"
+        }
+      ],
+      "@real-app/product-service-e2e": [
+        {
+          "file": "apps/product-service-e2e/.spec.swcrc",
+          "hash": "18201067170784284381"
+        },
+        {
+          "file": "apps/product-service-e2e/jest.config.cts",
+          "hash": "17052664794397136789"
+        },
+        {
+          "file": "apps/product-service-e2e/package.json",
+          "hash": "914135892224865006"
+        },
+        {
+          "file": "apps/product-service-e2e/src/product-service/product-service.spec.ts",
+          "hash": "7531705588582374674",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/src/support/global-setup.ts",
+          "hash": "3444053551545844372",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/src/support/global-teardown.ts",
+          "hash": "18176614999450167852",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/src/support/test-setup.ts",
+          "hash": "11749744855473391997",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/tsconfig.json",
+          "hash": "11909959594214012034"
+        }
+      ],
+      "@real-app/user-ui": [
+        {
+          "file": "apps/user-ui/.swcrc",
+          "hash": "17241768775822013643"
+        },
+        {
+          "file": "apps/user-ui/index.d.ts",
+          "hash": "17978550148300837039"
+        },
+        {
+          "file": "apps/user-ui/next-env.d.ts",
+          "hash": "373744204795424001"
+        },
+        {
+          "file": "apps/user-ui/next.config.js",
+          "hash": "227797574239823241",
+          "deps": [
+            "npm:@nx/next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/package.json",
+          "hash": "3613924752765074859",
+          "deps": [
+            "npm:next",
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "apps/user-ui/postcss.config.js",
+          "hash": "15972724582657845432"
+        },
+        {
+          "file": "apps/user-ui/public/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/user-ui/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/user-ui/src/app/api/hello/route.ts",
+          "hash": "481462152031695647"
+        },
+        {
+          "file": "apps/user-ui/src/app/forgot-password/page.tsx",
+          "hash": "4649952513433646093",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:react-hook-form",
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/global.css",
+          "hash": "9232295677464338735"
+        },
+        {
+          "file": "apps/user-ui/src/app/layout.tsx",
+          "hash": "4720681633137871060",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/login/page.tsx",
+          "hash": "5511535663732533455",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:react-hook-form",
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/page.tsx",
+          "hash": "14151039320638545998",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/providers.tsx",
+          "hash": "8749771535992140731",
+          "deps": [
+            "npm:react",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/signup/page.tsx",
+          "hash": "13558920817814316148",
+          "deps": [
+            "npm:react",
+            "npm:react-hook-form",
+            "npm:next",
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/configs/constants.tsx",
+          "hash": "15591390274093755179"
+        },
+        {
+          "file": "apps/user-ui/src/configs/global.d.ts",
+          "hash": "11586052414788854766"
+        },
+        {
+          "file": "apps/user-ui/src/hooks/useUSer.ts",
+          "hash": "17034608312231867422",
+          "deps": [
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/widget/Header.tsx",
+          "hash": "6188234711602189752",
+          "deps": [
+            "npm:next",
+            "npm:react",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/widget/HeaderBottom.tsx",
+          "hash": "13230172627114214128",
+          "deps": [
+            "npm:lucide-react",
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/widget/components/Google.tsx",
+          "hash": "10519962635409542581",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/widget/index.ts",
+          "hash": "1584108228806846271"
+        },
+        {
+          "file": "apps/user-ui/src/utils/axiosInstance.ts",
+          "hash": "16454833535637495078",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/user-ui/tailwind.config.js",
+          "hash": "12398554398836646438"
+        },
+        {
+          "file": "apps/user-ui/tsconfig.json",
+          "hash": "536004216477311739"
+        }
+      ],
+      "@real-app/product-service": [
+        {
+          "file": "apps/product-service/package.json",
+          "hash": "12599311706448231587",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/product-service/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/product-service/src/controllers/product.controller.ts",
+          "hash": "18021247273151821123",
+          "deps": [
+            "npm:express",
+            "npm:slugify"
+          ]
+        },
+        {
+          "file": "apps/product-service/src/main.ts",
+          "hash": "11222061846780603295",
+          "deps": [
+            "npm:express",
+            "npm:morgan",
+            "npm:cors",
+            "npm:express-rate-limit",
+            "npm:cookie-parser",
+            "@real-app/errorHandler"
+          ]
+        },
+        {
+          "file": "apps/product-service/src/routes/router.ts",
+          "hash": "1776243333362906293",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/product-service/src/utils/axios.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/product-service/tsconfig.app.json",
+          "hash": "18082590266009052527"
+        },
+        {
+          "file": "apps/product-service/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/product-service/tsconfig.spec.json",
+          "hash": "16878070754889354762"
+        },
+        {
+          "file": "apps/product-service/webpack.config.js",
+          "hash": "4623538111984081959",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
+        }
+      ],
+      "@real-app/api-gateway": [
+        {
+          "file": "apps/api-gateway/package.json",
+          "hash": "9626556262941411581",
+          "deps": [
+            "npm:cookie-parser",
+            "npm:cors",
+            "npm:express",
+            "npm:express-http-proxy",
+            "npm:express-rate-limit",
+            "npm:morgan"
+          ]
+        },
+        {
+          "file": "apps/api-gateway/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/api-gateway/src/main.ts",
+          "hash": "16472814882148279717",
+          "deps": [
+            "npm:express",
+            "npm:express-http-proxy",
+            "npm:morgan",
+            "npm:cors",
+            "npm:express-rate-limit",
+            "npm:cookie-parser",
+            "@real-app/errorHandler"
+          ]
+        },
+        {
+          "file": "apps/api-gateway/tsconfig.app.json",
+          "hash": "3272156257470559352"
+        },
+        {
+          "file": "apps/api-gateway/tsconfig.json",
+          "hash": "6240538891403235665"
+        },
+        {
+          "file": "apps/api-gateway/webpack.config.js",
+          "hash": "680275878011986087",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
+        }
+      ],
+      "@real-app/auth-service": [
+        {
+          "file": "apps/auth-service/.spec.swcrc",
+          "hash": "18201067170784284381"
+        },
+        {
+          "file": "apps/auth-service/Dockerfile",
+          "hash": "2181556219191779748"
+        },
+        {
+          "file": "apps/auth-service/jest.config.cts",
+          "hash": "12149352373767607146"
+        },
+        {
+          "file": "apps/auth-service/package.json",
+          "hash": "15953303062860786054",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/auth-service/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/auth-service/src/controllers/auth.controller.ts",
+          "hash": "4566365942534582658",
+          "deps": [
+            "npm:express",
+            "@real-app/errorHandler",
+            "npm:bcrypt",
+            "npm:jsonwebtoken",
+            [
+              "npm:stripe",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/auth-service/src/controllers/user.controller.ts",
+          "hash": "18164486227812464591"
+        },
+        {
+          "file": "apps/auth-service/src/main.ts",
+          "hash": "17348750978706257948",
+          "deps": [
+            "npm:express",
+            "npm:morgan",
+            "npm:cors",
+            "npm:express-rate-limit",
+            "npm:cookie-parser",
+            "@real-app/errorHandler",
+            "npm:swagger-ui-express"
+          ]
+        },
+        {
+          "file": "apps/auth-service/src/routes/auth.routes.ts",
+          "hash": "2514585780276478803",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/auth-service/src/swagger-output.json",
+          "hash": "13392626964818998511"
+        },
+        {
+          "file": "apps/auth-service/src/swagger.js",
+          "hash": "2524795188007250317",
+          "deps": [
+            "npm:swagger-autogen"
+          ]
+        },
+        {
+          "file": "apps/auth-service/src/utils/auth.helper.ts",
+          "hash": "8325262051288482273",
+          "deps": [
+            "@real-app/errorHandler",
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/auth-service/src/utils/cookies/setcookie.ts",
+          "hash": "1227050352156441383",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/auth-service/src/utils/email-templates/forgotPasswordTemplate.ejs",
+          "hash": "12779175957437841192"
+        },
+        {
+          "file": "apps/auth-service/src/utils/email-templates/otpTemplate.ejs",
+          "hash": "16235270666937968668"
+        },
+        {
+          "file": "apps/auth-service/src/utils/sendMail/index.ts",
+          "hash": "17022585924003399480",
+          "deps": [
+            "npm:nodemailer",
+            "npm:dotenv",
+            "npm:ejs"
+          ]
+        },
+        {
+          "file": "apps/auth-service/tsconfig.app.json",
+          "hash": "18180407285440011473"
+        },
+        {
+          "file": "apps/auth-service/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/auth-service/tsconfig.spec.json",
+          "hash": "3945537111522527339"
+        }
+      ],
+      "@real-app/seller-ui": [
+        {
+          "file": "apps/seller-ui/.swcrc",
+          "hash": "17241768775822013643"
+        },
+        {
+          "file": "apps/seller-ui/index.d.ts",
+          "hash": "17978550148300837039"
+        },
+        {
+          "file": "apps/seller-ui/next-env.d.ts",
+          "hash": "373744204795424001"
+        },
+        {
+          "file": "apps/seller-ui/next.config.js",
+          "hash": "227797574239823241",
+          "deps": [
+            "npm:@nx/next"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/package.json",
+          "hash": "12449536221774077332",
+          "deps": [
+            "npm:next",
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/postcss.config.js",
+          "hash": "15972724582657845432"
+        },
+        {
+          "file": "apps/seller-ui/public/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/seller-ui/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/dashboard/complaints/page.tsx",
+          "hash": "4485170711031344046",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/dashboard/inventory/page.tsx",
+          "hash": "16993080350772454463",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/dashboard/layout.tsx",
+          "hash": "13019402001600528182",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/dashboard/manage-products/create-product/page.tsx",
+          "hash": "446995919494417877",
+          "deps": [
+            "npm:react",
+            "npm:react-hook-form",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/dashboard/manage-products/edit-product/[id]/page.tsx",
+          "hash": "12661690478039080245",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/dashboard/manage-products/page.tsx",
+          "hash": "12478066927588157530",
+          "deps": [
+            "npm:next",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/dashboard/orders/page.tsx",
+          "hash": "13406854503838663633",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/dashboard/page.tsx",
+          "hash": "10710534659719073895"
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/dashboard/payments/page.tsx",
+          "hash": "6777249498518894856",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/login/page.tsx",
+          "hash": "15000401184801338806",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:react-hook-form",
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/signup/page.tsx",
+          "hash": "8251353869486844707",
+          "deps": [
+            "npm:react",
+            "npm:react-hook-form",
+            "npm:next",
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/(api)/sucess/page.tsx",
+          "hash": "8179995767017700281",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/api/login/page.tsx",
+          "hash": "12485200531683774708",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:react-hook-form",
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/api/signup/signup.tsx",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/seller-ui/src/app/global.css",
+          "hash": "9232295677464338735"
+        },
+        {
+          "file": "apps/seller-ui/src/app/layout.tsx",
+          "hash": "18108866499021946419",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/page.tsx",
+          "hash": "6225860158071648345",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/providers.tsx",
+          "hash": "16273884874133215694",
+          "deps": [
+            "npm:react",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/widget/Header.tsx",
+          "hash": "3851714072092108138",
+          "deps": [
+            "npm:next",
+            "npm:react",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/widget/HeaderBottom.tsx",
+          "hash": "15503850274033933765",
+          "deps": [
+            "npm:lucide-react",
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/widget/components/Google.tsx",
+          "hash": "10519962635409542581",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/app/widget/index.ts",
+          "hash": "1584108228806846271"
+        },
+        {
+          "file": "apps/seller-ui/src/configs/constants.tsx",
+          "hash": "17938078918098225011",
+          "deps": [
+            "npm:jotai"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/configs/global.d.ts",
+          "hash": "11586052414788854766"
+        },
+        {
+          "file": "apps/seller-ui/src/hooks/useSeller.tsx",
+          "hash": "13267655210134965609",
+          "deps": [
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/hooks/useSidebar.tsx",
+          "hash": "3278611565495519706",
+          "deps": [
+            "npm:jotai"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/shared/components/SidebarWrapper.tsx",
+          "hash": "4608576934733295639",
+          "deps": [
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/shared/components/box/index.tsx",
+          "hash": "11140348048646930835",
+          "deps": [
+            "npm:react",
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/shared/components/sidebar.items.tsx",
+          "hash": "11054141579893205597",
+          "deps": [
+            "npm:next",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/shared/components/sidebar.menu.tsx",
+          "hash": "1109210834705276863",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/shared/components/sidebar.style.tsx",
+          "hash": "3165011244555714206",
+          "deps": [
+            "npm:styled-components"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/shared/widget/components/Google.tsx",
+          "hash": "11692862089299239225",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/shared/widget/components/svgs/Logo.tsx",
+          "hash": "1469643375265680809",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/src/utils/axiosInstance.ts",
+          "hash": "1318645654921702327",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/seller-ui/tailwind.config.js",
+          "hash": "3129122625560306375"
+        },
+        {
+          "file": "apps/seller-ui/tsconfig.json",
+          "hash": "13060656758582712136"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "351665313044897696"
+}

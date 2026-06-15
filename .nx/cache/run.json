@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx run seller-ui:dev",
+    "startTime": "2026-06-14T08:26:45.220Z",
+    "endTime": "2026-06-14T08:44:07.147Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "@real-app/seller-ui:dev",
+      "target": "dev",
+      "projectName": "@real-app/seller-ui",
+      "hash": "5660072981865753996",
+      "startTime": "2026-06-14T08:26:45.551Z",
+      "endTime": "2026-06-14T08:44:07.141Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}
