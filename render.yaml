@@ -1,85 +1,170 @@
 services:
+  # -----------------------------
   # Auth Service
+  # -----------------------------
   - type: web
     name: auth-service
     env: node
     region: oregon
-    plan: free
-    buildCommand: npm install && npx prisma generate && npx nx run auth-service:build
+    plan: starter
+    buildCommand: npm ci && npx prisma generate && npx nx run auth-service:build
     startCommand: npx nx run auth-service:serve
     healthCheckPath: /auth/health
     envVars:
+      # Auth Service Specific
       - key: PORT
         value: 6001
       - key: HOST
         value: 0.0.0.0
       - key: NODE_ENV
         value: production
-      - key: JWT_SECRET
-        generateValue: true
+      # MongoDB (from root .env)
       - key: DATABASE_URL
         sync: false
+      # Redis Configuration (from root .env)
+      - key: REDIS_HOST
+        sync: false
+      - key: REDIS_PORT
+        sync: false
+      - key: REDIS_PASSWORD
+        sync: false
+      # JWT (from root .env)
+      - key: JWT_SECRET
+        sync: false
+      # Email Configuration (auth-service specific overrides)
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_PORT
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_SERVICE
+        sync: false
 
+  # -----------------------------
   # Product Service
+  # -----------------------------
   - type: web
     name: product-service
     env: node
     region: oregon
-    plan: free
-    buildCommand: npm install && npx prisma generate && npx nx run product-service:build
+    plan: starter
+    buildCommand: npm ci && npx prisma generate && npx nx run product-service:build
     startCommand: npx nx run product-service:serve
     healthCheckPath: /products
     envVars:
+      # Product Service Specific
       - key: PORT
         value: 7001
       - key: HOST
         value: 0.0.0.0
       - key: NODE_ENV
         value: production
+      # MongoDB (from root .env)
       - key: DATABASE_URL
         sync: false
+      # Redis Configuration (from root .env)
+      - key: REDIS_HOST
+        sync: false
+      - key: REDIS_PORT
+        sync: false
+      - key: REDIS_PASSWORD
+        sync: false
+      # Email Configuration (if product-service sends emails)
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_PORT
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_SERVICE
+        sync: false
 
+  # -----------------------------
   # API Gateway
+  # -----------------------------
   - type: web
     name: api-gateway
     env: node
     region: oregon
-    plan: free
-    buildCommand: npm install && npx nx run api-gateway:build
+    plan: starter
+    buildCommand: npm ci && npx nx run api-gateway:build
     startCommand: npx nx run api-gateway:serve
     healthCheckPath: /gateway-health
     envVars:
+      # API Gateway Specific
       - key: PORT
         value: 8080
       - key: HOST
         value: 0.0.0.0
       - key: NODE_ENV
         value: production
+      # Service URLs (update after deployment)
+      - key: AUTH_SERVICE_URL
+        sync: false
+      - key: PRODUCT_SERVICE_URL
+        sync: false
+      # Redis Configuration (from root .env, if gateway uses Redis)
+      - key: REDIS_HOST
+        sync: false
+      - key: REDIS_PORT
+        sync: false
+      - key: REDIS_PASSWORD
+        sync: false
+      # Email Configuration (if gateway sends emails)
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_PORT
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_SERVICE
+        sync: false
 
+  # -----------------------------
   # Seller UI (Next.js)
+  # -----------------------------
   - type: web
     name: seller-ui
     env: node
     region: oregon
-    plan: free
-    buildCommand: npm install && npx nx run seller-ui:build
+    plan: starter
+    buildCommand: npm ci && npx nx run seller-ui:build
     startCommand: npx nx run seller-ui:serve
     envVars:
       - key: PORT
         value: 3000
       - key: NODE_ENV
         value: production
+      - key: API_GATEWAY_URL
+        sync: false
 
+  # -----------------------------
   # User UI (Next.js)
+  # -----------------------------
   - type: web
     name: user-ui
     env: node
     region: oregon
-    plan: free
-    buildCommand: npm install && npx nx run user-ui:build
+    plan: starter
+    buildCommand: npm ci && npx nx run user-ui:build
     startCommand: npx nx run user-ui:serve
     envVars:
       - key: PORT
         value: 3001
       - key: NODE_ENV
         value: production
+      - key: API_GATEWAY_URL
+        sync: false

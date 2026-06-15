@@ -398,45 +398,80 @@ npx prisma generate --schema=./prisma/schema.prisma
 
 ## Environment Variables Summary
 
-### Auth Service
+Based on your actual `.env` files, here's what you need to configure in Render:
+
+### Root .env (Shared across services)
+These variables are in your root `.env` file and used by multiple services:
+
+```bash
+DATABASE_URL="mongodb+srv://your-app-cluster.mongodb.net/your-db?retryWrites=true&w=majority"
+REDIS_HOST="redis-host.example.io"
+REDIS_PORT=6379
+REDIS_PASSWORD="your-redis-password"
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_PORT=465
+EMAIL_USER="your-email@gmail.com"
+EMAIL_PASS="your-app-password"
+EMAIL_FROM="noreply@realapp.com"
+EMAIL_SERVICE="gmail"
+JWT_SECRET="your-super-secret-jwt-key-change-in-production"
 ```
+
+### Auth Service Specific (.env in apps/auth-service/)
+These override the root values for auth-service only:
+
+```bash
 PORT=6001
-HOST=0.0.0.0
-NODE_ENV=production
-JWT_SECRET=<generate-strong-secret>
-DATABASE_URL=mongodb+srv://...
+EMAIL_HOST="smtp.gmail.com"           # Can be different from root
+EMAIL_USER="niketankumar12345@gmail.com"  # Service-specific email
+EMAIL_PASS="twxz bzcy zdsj wkmt"      # App-specific password
+EMAIL_FROM="noreply@realapp.com"
+EMAIL_SERVICE="gmail"
 ```
 
-### Product Service
-```
-PORT=7001
-HOST=0.0.0.0
-NODE_ENV=production
-DATABASE_URL=mongodb+srv://...
-```
-
-### API Gateway
-```
+### API Gateway Specific (.env in apps/api-gateway/)
+```bash
 PORT=8080
-HOST=0.0.0.0
-NODE_ENV=production
+# Plus service URLs added after deployment:
 AUTH_SERVICE_URL=https://auth-service-xxx.onrender.com
 PRODUCT_SERVICE_URL=https://product-service-xxx.onrender.com
 ```
 
-### Seller UI
+### Product Service
+Uses root `.env` values plus:
+```bash
+PORT=7001
 ```
-PORT=3000
-NODE_ENV=production
+
+### Frontend Services (seller-ui, user-ui)
+```bash
+PORT=3000  # seller-ui
+PORT=3001  # user-ui
 NEXT_PUBLIC_API_URL=https://api-gateway-xxx.onrender.com
 ```
 
-### User UI
-```
-PORT=3001
-NODE_ENV=production
-NEXT_PUBLIC_API_URL=https://api-gateway-xxx.onrender.com
-```
+---
+
+## How to Add Environment Variables in Render
+
+### Method 1: Add After Blueprint Deployment (Recommended)
+
+1. **Deploy the Blueprint first** - It will create all services with placeholder variables
+2. **For each service**, go to Environment tab:
+   - Click on service → Environment → Add Environment Variable
+   - Add variables marked with `sync: false` in render.yaml
+   - Use your actual values from `.env` files
+
+### Method 2: Add During Manual Setup
+
+When creating services manually, add all environment variables in the configuration screen before clicking "Create Web Service".
+
+### Important Notes:
+
+- **`sync: false`** means the variable is NOT in render.yaml for security - you must add it manually
+- **Auth-service** has specific email credentials that override root values
+- **Other services** use root `.env` values unless they have their own `.env` file
+- **Never commit** actual passwords/secrets to git
 
 ---
 
