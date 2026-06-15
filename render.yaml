@@ -1,0 +1,96 @@
+services:
+  # PostgreSQL Database
+  - type: postgres
+    name: real-app-db
+    databaseName: realapp
+    region: oregon
+    plan: starter-0
+
+  # Auth Service
+  - type: web
+    name: auth-service
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npx nx run auth-service:build
+    startCommand: npx nx run auth-service:serve
+    healthCheckPath: /auth/health
+    envVars:
+      - key: PORT
+        value: 6001
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: real-app-db
+          property: connectionString
+
+  # Product Service
+  - type: web
+    name: product-service
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npx nx run product-service:build
+    startCommand: npx nx run product-service:serve
+    healthCheckPath: /products
+    envVars:
+      - key: PORT
+        value: 7001
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: real-app-db
+          property: connectionString
+
+  # API Gateway
+  - type: web
+    name: api-gateway
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npx nx run api-gateway:build
+    startCommand: npx nx run api-gateway:serve
+    healthCheckPath: /gateway-health
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_ENV
+        value: production
+
+  # Seller UI (Next.js)
+  - type: web
+    name: seller-ui
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npx nx run seller-ui:build
+    startCommand: npx nx run seller-ui:serve
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+
+  # User UI (Next.js)
+  - type: web
+    name: user-ui
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npx nx run user-ui:build
+    startCommand: npx nx run user-ui:serve
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: NODE_ENV
+        value: production
