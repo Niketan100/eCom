@@ -1,6 +1,6 @@
-# Deploy to Render - Complete Step-by-Step Guide
+# Deploy to Render - Complete Step-by-Step Guide (MongoDB + Prisma)
 
-This guide will help you deploy your Nx monorepo to Render. Your project consists of multiple services that need to be deployed separately.
+This guide will help you deploy your Nx monorepo to Render with **MongoDB Atlas** as your database. Your project uses Prisma with MongoDB, and the DATABASE_URL is stored in environment variables.
 
 ## Project Structure Overview
 
@@ -13,131 +13,178 @@ This guide will help you deploy your Nx monorepo to Render. Your project consist
 │   ├── seller-ui/            # Next.js - Port 3000
 │   └── user-ui/              # Next.js - Port 3001
 ├── packages/                  # Shared packages
-└── prisma/                    # Database schema
+├── prisma/                    # MongoDB schema (schema.prisma)
+└── prisma.config.ts           # Prisma configuration
 ```
 
-## Deployment Strategy
+## Important: MongoDB Setup Required
 
-Since Render deploys one service per web service instance, you'll need to deploy each app separately:
-
-1. **Auth Service** - Backend microservice
-2. **Product Service** - Backend microservice  
-3. **API Gateway** - Backend proxy service
-4. **Seller UI** - Next.js frontend
-5. **User UI** - Next.js frontend
-6. **PostgreSQL Database** - Managed database for Prisma
+Since you're using **MongoDB with Prisma**, you need to set up MongoDB Atlas separately (Render doesn't offer managed MongoDB). The DATABASE_URL from your .env file must be added to Render environment variables.
 
 ---
 
-## Step 1: Prepare Your Repository
+## Step 1: Set Up MongoDB Atlas (If Not Already Done)
 
-### 1.1 Create render.yaml file
+### 1.1 Create MongoDB Atlas Account
 
-Create a `render.yaml` file in your repository root (already created for you). This is a Blueprint that defines all services.
+1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register)
+2. Create a free account or sign in
+3. Create a new cluster (Free M0 tier available)
 
-### 1.2 Update package.json scripts
+### 1.2 Configure Database Access
 
-Your root package.json already has the necessary scripts. Ensure these are present:
+1. In Atlas Dashboard, go to **Database Access**
+2. Click **Add New Database User**
+3. Create username and password (save these!)
+4. Grant **Read and write to any database** permission
 
-```json
-{
-  "scripts": {
-    "build": "npx nx run-many --target=build --all",
-    "dev": "npx nx run-many --target=serve --all"
-  }
+### 1.3 Configure Network Access
+
+1. Go to **Network Access**
+2. Click **Add IP Address**
+3. Select **Allow Access from Anywhere** (0.0.0.0/0) for development
+   - For production, add specific IPs of Render services
+4. Click **Confirm**
+
+### 1.4 Get Connection String
+
+1. Go to **Database** → **Connect**
+2. Choose **Connect your application**
+3. Copy the connection string:
+   ```
+   mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/<database-name>?retryWrites=true&w=majority
+   ```
+4. Replace `<password>` with your actual password
+5. This is your `DATABASE_URL`
+
+---
+
+## Step 2: Prepare Your Repository
+
+### 2.1 Files Already Created
+
+The following files are ready in your repository:
+
+- `render.yaml` - Blueprint configuration for all services
+- `DEPLOYMENT_GUIDE.md` - This guide
+
+### 2.2 Verify Prisma Schema
+
+Your `prisma/schema.prisma` is configured for MongoDB:
+
+```prisma
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
 }
 ```
 
+### 2.3 Update .gitignore
+
+Ensure `.env` is in your `.gitignore` (never commit database credentials):
+
+```bash
+echo ".env" >> .gitignore
+```
+
 ---
 
-## Step 2: Create PostgreSQL Database on Render
+## Step 3: Deploy Using Render Blueprint (Recommended)
+
+### 3.1 Push Code to Git Repository
+
+```bash
+git add render.yaml DEPLOYMENT_GUIDE.md
+git commit -m "Add Render deployment configuration"
+git push origin main
+```
+
+### 3.2 Deploy with Blueprint
 
 1. Log in to [Render Dashboard](https://dashboard.render.com/)
-2. Click **New** → **PostgreSQL**
-3. Configure:
-   - **Name**: `real-app-db`
-   - **Database Name**: `realapp`
-   - **Region**: Choose closest to your users
-   - **Plan**: Free tier (or paid for production)
-4. Click **Create Database**
-5. **Save the connection string** - You'll need it for environment variables
+2. Click **New** → **Blueprint**
+3. Connect your GitHub repository
+4. Render will detect `render.yaml` automatically
+5. Click **Apply**
 
-The connection string will look like:
-```
-postgresql://user:password@hostname:5432/realapp
-```
+### 3.3 Add MongoDB Connection String
+
+After Blueprint creates services:
+
+1. Go to each backend service (auth-service, product-service)
+2. Click **Environment** tab
+3. Add environment variable:
+   - **Key**: `DATABASE_URL`
+   - **Value**: Your MongoDB Atlas connection string
+   ```
+   mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/realapp?retryWrites=true&w=majority
+   ```
+4. Click **Save Changes**
+5. Service will automatically redeploy
+
+**Services that need DATABASE_URL:**
+- auth-service
+- product-service
 
 ---
 
-## Step 3: Deploy Auth Service
+## Step 4: Manual Deployment (Alternative)
 
-### 3.1 Create Web Service
+If you prefer manual setup:
 
-1. In Render Dashboard, click **New** → **Web Service**
-2. Connect your GitHub repository
+### 4.1 Deploy Auth Service
+
+1. Click **New** → **Web Service**
+2. Connect your repository
 3. Configure:
 
 | Setting | Value |
 |---------|-------|
 | **Name** | `auth-service` |
-| **Region** | Same as database |
-| **Branch** | `main` (or your deployment branch) |
-| **Root Directory** | Leave blank |
+| **Region** | Choose closest to users |
+| **Branch** | `main` |
 | **Runtime** | `Node` |
-| **Build Command** | `npm install && npx nx run auth-service:build` |
+| **Build Command** | `npm install && npx prisma generate && npx nx run auth-service:build` |
 | **Start Command** | `npx nx run auth-service:serve` |
-| **Plan** | Free or appropriate tier |
+| **Plan** | Free |
 
-### 3.2 Add Environment Variables
-
-Click **Environment** tab and add:
-
+4. Add Environment Variables:
 ```
 PORT=6001
 HOST=0.0.0.0
-DATABASE_URL=postgresql://user:password@hostname:5432/realapp
-JWT_SECRET=your-super-secret-jwt-key-change-in-production
 NODE_ENV=production
+JWT_SECRET=your-super-secret-jwt-key-change-in-production
+DATABASE_URL=mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/realapp?retryWrites=true&w=majority
 ```
 
-### 3.3 Deploy
+5. Click **Create Web Service**
 
-Click **Create Web Service** - Render will build and deploy automatically.
-
----
-
-## Step 4: Deploy Product Service
-
-### 4.1 Create Web Service
+### 4.2 Deploy Product Service
 
 1. Click **New** → **Web Service**
-2. Connect the same repository
-3. Configure:
+2. Configure:
 
 | Setting | Value |
 |---------|-------|
 | **Name** | `product-service` |
-| **Region** | Same as other services |
-| **Branch** | `main` |
-| **Root Directory** | Leave blank |
-| **Runtime** | `Node` |
-| **Build Command** | `npm install && npx nx run product-service:build` |
+| **Region** | Same as auth-service |
+| **Build Command** | `npm install && npx prisma generate && npx nx run product-service:build` |
 | **Start Command** | `npx nx run product-service:serve` |
 
-### 4.2 Add Environment Variables
-
+3. Add Environment Variables:
 ```
 PORT=7001
 HOST=0.0.0.0
-DATABASE_URL=postgresql://user:password@hostname:5432/realapp
 NODE_ENV=production
+DATABASE_URL=mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/realapp?retryWrites=true&w=majority
 ```
 
----
-
-## Step 5: Deploy API Gateway
-
-### 5.1 Create Web Service
+### 4.3 Deploy API Gateway
 
 1. Click **New** → **Web Service**
 2. Configure:
@@ -145,41 +192,19 @@ NODE_ENV=production
 | Setting | Value |
 |---------|-------|
 | **Name** | `api-gateway` |
-| **Region** | Same as other services |
-| **Branch** | `main` |
-| **Runtime** | `Node` |
 | **Build Command** | `npm install && npx nx run api-gateway:build` |
 | **Start Command** | `npx nx run api-gateway:serve` |
 
-### 5.2 Add Environment Variables
-
+3. Add Environment Variables:
 ```
 PORT=8080
 HOST=0.0.0.0
+NODE_ENV=production
 AUTH_SERVICE_URL=https://auth-service-your-subdomain.onrender.com
 PRODUCT_SERVICE_URL=https://product-service-your-subdomain.onrender.com
-NODE_ENV=production
 ```
 
-**Important**: Replace the URLs with your actual deployed service URLs from Steps 3 & 4.
-
-### 5.3 Update CORS Settings
-
-After deployment, update the CORS configuration in `/apps/api-gateway/src/main.ts`:
-
-```typescript
-app.use(cors({
-    origin: ['https://seller-ui-your-subdomain.onrender.com', 'https://user-ui-your-subdomain.onrender.com'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
-}));
-```
-
----
-
-## Step 6: Deploy Seller UI (Next.js)
-
-### 6.1 Create Web Service
+### 4.4 Deploy Seller UI (Next.js)
 
 1. Click **New** → **Web Service**
 2. Configure:
@@ -187,25 +212,17 @@ app.use(cors({
 | Setting | Value |
 |---------|-------|
 | **Name** | `seller-ui` |
-| **Region** | Same as other services |
-| **Branch** | `main` |
-| **Runtime** | `Node` |
 | **Build Command** | `npm install && npx nx run seller-ui:build` |
 | **Start Command** | `npx nx run seller-ui:serve` |
 
-### 6.2 Add Environment Variables
-
+3. Add Environment Variables:
 ```
 PORT=3000
-NEXT_PUBLIC_API_URL=https://api-gateway-your-subdomain.onrender.com
 NODE_ENV=production
+NEXT_PUBLIC_API_URL=https://api-gateway-your-subdomain.onrender.com
 ```
 
----
-
-## Step 7: Deploy User UI (Next.js)
-
-### 7.1 Create Web Service
+### 4.5 Deploy User UI (Next.js)
 
 1. Click **New** → **Web Service**
 2. Configure:
@@ -213,219 +230,213 @@ NODE_ENV=production
 | Setting | Value |
 |---------|-------|
 | **Name** | `user-ui` |
-| **Region** | Same as other services |
-| **Branch** | `main` |
-| **Runtime** | `Node` |
 | **Build Command** | `npm install && npx nx run user-ui:build` |
 | **Start Command** | `npx nx run user-ui:serve` |
 
-### 7.2 Add Environment Variables
-
+3. Add Environment Variables:
 ```
 PORT=3001
-NEXT_PUBLIC_API_URL=https://api-gateway-your-subdomain.onrender.com
 NODE_ENV=production
+NEXT_PUBLIC_API_URL=https://api-gateway-your-subdomain.onrender.com
 ```
 
 ---
 
-## Step 8: Run Database Migrations
+## Step 5: Run Database Migrations
 
-After deploying the database and services:
+Since you're using MongoDB with Prisma:
 
-### Option A: Using Render Shell
+### Option A: Run Locally (Recommended)
 
-1. Go to your PostgreSQL database in Render
+```bash
+# Copy your MongoDB connection string
+export DATABASE_URL="mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/realapp?retryWrites=true&w=majority"
+
+# Generate Prisma Client
+npx prisma generate
+
+# For MongoDB, indexes are created automatically
+# No migrations needed like PostgreSQL
+```
+
+### Option B: Using Render Shell
+
+1. Go to any backend service in Render
 2. Click **Shell** tab
-3. Run migrations:
-
+3. Run:
 ```bash
-cd /workspace
-npx prisma migrate deploy
-npx prisma generate
-```
-
-### Option B: Local Migration
-
-```bash
-# Set your DATABASE_URL
-export DATABASE_URL="postgresql://user:password@hostname:5432/realapp"
-
-# Run migrations
-npx prisma migrate deploy
 npx prisma generate
 ```
 
 ---
 
-## Step 9: Update Service URLs
+## Step 6: Update Service URLs
 
 After all services are deployed:
 
-1. **Update API Gateway** with actual service URLs:
-   - Go to API Gateway service
-   - Update `AUTH_SERVICE_URL` and `PRODUCT_SERVICE_URL`
-   - Redeploy
-
-2. **Update Frontends** with API Gateway URL:
-   - Go to Seller UI and User UI
-   - Update `NEXT_PUBLIC_API_URL`
-   - Redeploy
-
-3. **Update CORS** in all backend services to allow production domains
+1. **Get Service URLs** from Render Dashboard
+2. **Update API Gateway** environment variables:
+   - `AUTH_SERVICE_URL`
+   - `PRODUCT_SERVICE_URL`
+3. **Update Frontends** environment variables:
+   - `NEXT_PUBLIC_API_URL` in both seller-ui and user-ui
+4. **Redeploy** services after updating URLs
 
 ---
 
-## Alternative: Using render.yaml (Blueprint)
+## Step 7: Update CORS Settings
 
-Instead of manual setup, you can use the `render.yaml` file provided. This automates the entire deployment:
+Update CORS configuration in your backend services to allow production domains:
 
-### Push render.yaml to your repository:
+### In `/apps/api-gateway/src/main.ts`:
+```typescript
+app.use(cors({
+    origin: [
+        'https://seller-ui-your-subdomain.onrender.com',
+        'https://user-ui-your-subdomain.onrender.com'
+    ],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
+```
+
+### In `/apps/auth-service/src/main.ts` and `/apps/product-service/src/main.ts`:
+```typescript
+app.use(cors({
+    origin: '*', // Or specify your frontend URLs
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+```
+
+---
+
+## render.yaml File Explanation
+
+Your `render.yaml` includes:
 
 ```yaml
 services:
-  # Auth Service
   - type: web
     name: auth-service
-    env: node
-    region: oregon
-    plan: free
-    buildCommand: npm install && npx nx run auth-service:build
+    buildCommand: npm install && npx prisma generate && npx nx run auth-service:build
     startCommand: npx nx run auth-service:serve
     envVars:
-      - key: PORT
-        value: 6001
-      - key: HOST
-        value: 0.0.0.0
-      - key: NODE_ENV
-        value: production
-      - key: JWT_SECRET
-        generateValue: true
       - key: DATABASE_URL
-        fromDatabase:
-          name: real-app-db
-          property: connectionString
-
-  # Product Service
-  - type: web
-    name: product-service
-    env: node
-    region: oregon
-    plan: free
-    buildCommand: npm install && npx nx run product-service:build
-    startCommand: npx nx run product-service:serve
-    envVars:
-      - key: PORT
-        value: 7001
-      - key: HOST
-        value: 0.0.0.0
-      - key: NODE_ENV
-        value: production
-      - key: DATABASE_URL
-        fromDatabase:
-          name: real-app-db
-          property: connectionString
-
-  # API Gateway
-  - type: web
-    name: api-gateway
-    env: node
-    region: oregon
-    plan: free
-    buildCommand: npm install && npx nx run api-gateway:build
-    startCommand: npx nx run api-gateway:serve
-    envVars:
-      - key: PORT
-        value: 8080
-      - key: HOST
-        value: 0.0.0.0
-      - key: NODE_ENV
-        value: production
-
-  # Seller UI
-  - type: web
-    name: seller-ui
-    env: node
-    region: oregon
-    plan: free
-    buildCommand: npm install && npx nx run seller-ui:build
-    startCommand: npx nx run seller-ui:serve
-    envVars:
-      - key: PORT
-        value: 3000
-      - key: NODE_ENV
-        value: production
-
-  # User UI
-  - type: web
-    name: user-ui
-    env: node
-    region: oregon
-    plan: free
-    buildCommand: npm install && npx nx run user-ui:build
-    startCommand: npx nx run user-ui:serve
-    envVars:
-      - key: PORT
-        value: 3001
-      - key: NODE_ENV
-        value: production
-
-databases:
-  - name: real-app-db
-    databaseName: realapp
-    region: oregon
+        sync: false  # Manually set in Render Dashboard
 ```
 
-Then in Render Dashboard:
-1. Click **New** → **Blueprint**
-2. Connect your repository
-3. Select the `render.yaml` file
-4. Click **Apply**
+**Key Points:**
+- `npx prisma generate` in build command generates Prisma Client for MongoDB
+- `sync: false` means DATABASE_URL must be manually added in Render Dashboard (for security)
+- Each service specifies correct PORT and HOST for containerized deployment
 
 ---
 
 ## Troubleshooting
 
-### Build Fails
+### Build Fails with Prisma Errors
 
-1. Check build logs in Render dashboard
-2. Ensure all dependencies are in package.json
-3. Try building locally: `npm run build`
+```bash
+# Ensure Prisma is installed
+npm list prisma @prisma/client
 
-### Service Won't Start
+# Regenerate Prisma Client locally
+npx prisma generate
 
-1. Check logs for errors
-2. Verify PORT environment variable is set
-3. Ensure HOST is set to `0.0.0.0` (not localhost)
+# Check schema is valid
+npx prisma validate
+```
 
 ### Database Connection Errors
 
-1. Verify DATABASE_URL is correct
-2. Ensure migrations are run
-3. Check database is in same region as services
+1. Verify MongoDB Atlas connection string is correct
+2. Check Network Access allows Render IPs (0.0.0.0/0)
+3. Ensure database user has correct permissions
+4. Test connection locally with same connection string
 
-### CORS Errors
+### Service Won't Start
+
+1. Check logs in Render dashboard
+2. Verify PORT environment variable matches service configuration
+3. Ensure HOST is set to `0.0.0.0`
+4. Check all dependencies are in package.json
+
+### CORS Errors in Browser
 
 1. Update CORS origins in backend services
 2. Include all frontend URLs
-3. Set `credentials: true` if using cookies
+3. Clear browser cache and cookies
+4. Check network tab for exact error message
 
-### Timeouts on Free Tier
+### Prisma Client Not Generated
 
-Free tier services spin down after inactivity. First request may take 30-50 seconds. Consider upgrading to paid tier for production.
+The build command includes `npx prisma generate`. If issues persist:
+
+```bash
+# In Render Shell or locally
+npx prisma generate --schema=./prisma/schema.prisma
+```
 
 ---
 
 ## Post-Deployment Checklist
 
-- [ ] All services are running (green status)
-- [ ] Database migrations completed
+- [ ] MongoDB Atlas cluster is running
+- [ ] Network Access allows Render IPs
+- [ ] DATABASE_URL added to auth-service and product-service
+- [ ] All services show green status in Render
+- [ ] Prisma Client generated successfully
 - [ ] Environment variables configured correctly
 - [ ] CORS settings updated for production URLs
 - [ ] API Gateway routing to correct service URLs
 - [ ] Frontends pointing to correct API Gateway URL
 - [ ] Health check endpoints responding
 - [ ] SSL certificates active (automatic on Render)
+
+---
+
+## Environment Variables Summary
+
+### Auth Service
+```
+PORT=6001
+HOST=0.0.0.0
+NODE_ENV=production
+JWT_SECRET=<generate-strong-secret>
+DATABASE_URL=mongodb+srv://...
+```
+
+### Product Service
+```
+PORT=7001
+HOST=0.0.0.0
+NODE_ENV=production
+DATABASE_URL=mongodb+srv://...
+```
+
+### API Gateway
+```
+PORT=8080
+HOST=0.0.0.0
+NODE_ENV=production
+AUTH_SERVICE_URL=https://auth-service-xxx.onrender.com
+PRODUCT_SERVICE_URL=https://product-service-xxx.onrender.com
+```
+
+### Seller UI
+```
+PORT=3000
+NODE_ENV=production
+NEXT_PUBLIC_API_URL=https://api-gateway-xxx.onrender.com
+```
+
+### User UI
+```
+PORT=3001
+NODE_ENV=production
+NEXT_PUBLIC_API_URL=https://api-gateway-xxx.onrender.com
+```
 
 ---
 
@@ -439,39 +450,47 @@ npx nx run api-gateway:build
 npx nx run seller-ui:build
 npx nx run user-ui:build
 
-# Serve specific service locally
-npx nx run auth-service:serve
-npx nx run product-service:serve
-npx nx run api-gateway:serve
-npx nx run seller-ui:dev
-npx nx run user-ui:dev
+# Generate Prisma Client
+npx prisma generate
+
+# Validate Prisma Schema
+npx prisma validate
+
+# Open Prisma Studio (local development)
+npx prisma studio
 
 # Run all services locally
 npm run dev
-
-# Database commands
-npx prisma generate
-npx prisma migrate dev
-npx prisma migrate deploy
-npx prisma studio
 ```
 
 ---
 
-## Cost Estimation (Free Tier)
+## Cost Estimation
 
-- 5 Web Services (Free): $0/month
-- 1 PostgreSQL Database (Free): $0/month
+- 5 Web Services (Free Tier): $0/month
+- MongoDB Atlas (M0 Free Tier): $0/month
 - **Total**: $0/month
 
-**Note**: Free tier services spin down after 15 minutes of inactivity. For production, consider:
-- Starter Web Services: $7/month each
-- Standard Database: Starting at $7/month
+**Note**: Free tier services spin down after 15 minutes of inactivity. For production:
+- Render Starter Web Services: $7/month each
+- MongoDB Atlas M10: Starting at $57/month
 
 ---
 
-## Support
+## Security Best Practices
+
+1. **Never commit .env file** - Contains sensitive DATABASE_URL
+2. **Use strong JWT_SECRET** - Use Render's generateValue feature
+3. **Restrict MongoDB Network Access** - Add specific IPs in production
+4. **Enable MongoDB Authentication** - Always use username/password
+5. **Use Environment Variables** - Never hardcode credentials
+6. **Regular Backups** - Enable MongoDB Atlas backups
+
+---
+
+## Support Resources
 
 - [Render Documentation](https://render.com/docs)
+- [Prisma MongoDB Guide](https://www.prisma.io/docs/reference/database-reference/connection-urls/mongodb)
+- [MongoDB Atlas Documentation](https://www.mongodb.com/docs/atlas/)
 - [Nx Documentation](https://nx.dev)
-- [Prisma Documentation](https://www.prisma.io/docs)
