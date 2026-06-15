@@ -92,6 +92,10 @@
     "typescript": "~5.9.2",
     "webpack-cli": "^5.1.4"
   },
+
+  "engines": {
+    "node": "22.x"
+  },
   "workspaces": [
     "apps/*",
     "packages/*",
