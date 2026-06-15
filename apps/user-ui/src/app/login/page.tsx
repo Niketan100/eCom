@@ -5,9 +5,10 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import Link from 'next/link'
 import GoogleSignInButton from '../../shared/widget/components/Google'
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios, { AxiosError } from 'axios'
 import axiosInstance from '../../utils/axiosInstance'
+import { QueryClient } from '@tanstack/react-query'
 
 type Formdata = {
     email: string
@@ -22,6 +23,8 @@ const Login = () => {
     const router = useRouter()
     const { register, handleSubmit, formState: { errors } } = useForm<Formdata>();
 
+    const queryClient = useQueryClient();
+
     const loginMutation = useMutation({
         mutationFn: async (data: Formdata) => {
             const res = await axiosInstance.post('/auth/login', data)
@@ -34,6 +37,10 @@ const Login = () => {
         setSuccessMessage(null)
         try {
             await loginMutation.mutateAsync(data)
+            await queryClient.refetchQueries({
+                queryKey: ['loggedInUser'],
+            });
+
             setSuccessMessage('Login successful! Redirecting...')
             setTimeout(() => router.push('/'), 800)
         } catch (err: unknown) {

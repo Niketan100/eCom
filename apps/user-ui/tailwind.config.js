@@ -12,8 +12,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './{src,pages,components,app}/**/*.{ts,tsx,js,jsx,html}',
-    './{src/**/*}.{ts,tsx,js,jsx,html}',
+    './src/**/*.{ts,tsx,js,jsx,html}',
      "./app/**/*.{js,ts,jsx,tsx,mdx}",
     '!./{src,pages,components,app}/**/*.{stories,spec}.{ts,tsx,js,jsx,html}',
 //     ...createGlobPatternsForDependencies(__dirname)

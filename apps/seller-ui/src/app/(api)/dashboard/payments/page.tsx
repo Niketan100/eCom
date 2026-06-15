@@ -1,47 +1,100 @@
 'use client'
 
 import React from 'react'
+import { useQuery } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
 
-const payments = [
-  {
-    id: '#PAY-3021',
-    customer: 'Rahul Sharma',
-    method: 'UPI',
-    amount: '₹2,499',
-    status: 'Completed',
-    order: '#ORD-1024',
-    date: 'Today',
-  },
-  {
-    id: '#PAY-3022',
-    customer: 'Priya Kapoor',
-    method: 'Credit Card',
-    amount: '₹1,299',
-    status: 'Pending',
-    order: '#ORD-1025',
-    date: 'Yesterday',
-  },
-  {
-    id: '#PAY-3023',
-    customer: 'Aman Verma',
-    method: 'Net Banking',
-    amount: '₹4,999',
-    status: 'Completed',
-    order: '#ORD-1026',
-    date: '2 days ago',
-  },
-  {
-    id: '#PAY-3024',
-    customer: 'Neha Thakur',
-    method: 'Wallet',
-    amount: '₹1,899',
-    status: 'Refunded',
-    order: '#ORD-1027',
-    date: '4 days ago',
-  },
-]
+import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance'
+
+type SellerPayment = {
+  id: string
+  orderId: string
+  amount: number
+  paymentMethod?: string | null
+  status: 'PENDING' | 'PAID' | 'FAILED' | 'REFUNDED'
+  createdAt: string
+  order?: {
+    id: string
+    status: string
+    user?: { id: string; name: string; email: string }
+    product?: { id: string; name: string; price: number }
+  }
+}
+
+type PaymentsResponse = {
+  success: boolean
+  count: number
+  total?: number
+  meta?: {
+    page: number
+    limit: number
+    total: number
+    totalPages: number
+    hasPrev: boolean
+    hasNext: boolean
+  }
+  payments: SellerPayment[]
+}
 
 const PaymentsPage = () => {
+  const router = useRouter()
+  const [search, setSearch] = React.useState('')
+  const [statusFilter, setStatusFilter] = React.useState<'ALL' | SellerPayment['status']>('ALL')
+  const [page, setPage] = React.useState(1)
+  const limit = 20
+
+  const { data, isLoading, isError } = useQuery<PaymentsResponse>({
+    queryKey: ['seller-payments', page, limit],
+    queryFn: async () => {
+      const res = await axiosInstance.get('/products/payments/my', {
+        params: { page, limit },
+      })
+      return res.data
+    },
+  })
+
+  const payments = data?.payments ?? []
+  const meta = data?.meta
+
+  const filteredPayments = React.useMemo(() => {
+    const q = search.trim().toLowerCase()
+    return payments.filter((p) => {
+      if (statusFilter !== 'ALL' && p.status !== statusFilter) return false
+
+      if (!q) return true
+
+      const customer = p.order?.user?.name ?? ''
+      const email = p.order?.user?.email ?? ''
+      const productName = p.order?.product?.name ?? ''
+
+      return (
+        p.id.toLowerCase().includes(q) ||
+        p.orderId.toLowerCase().includes(q) ||
+        customer.toLowerCase().includes(q) ||
+        email.toLowerCase().includes(q) ||
+        productName.toLowerCase().includes(q)
+      )
+    })
+  }, [payments, search, statusFilter])
+
+  const stats = React.useMemo(() => {
+    const totalRevenue = payments
+      .filter((p) => p.status === 'PAID')
+      .reduce((acc, p) => acc + (p.amount || 0), 0)
+    const successfulCount = payments.filter((p) => p.status === 'PAID').length
+    const pendingCount = payments.filter((p) => p.status === 'PENDING').length
+    const refundsAmount = payments
+      .filter((p) => p.status === 'REFUNDED')
+      .reduce((acc, p) => acc + (p.amount || 0), 0)
+
+    return {
+      totalRevenue,
+      successfulCount,
+      pendingCount,
+      refundsAmount,
+    }
+  }, [payments])
+
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>
 
@@ -73,7 +126,7 @@ const PaymentsPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-black mt-2'>
-            ₹48,320
+            ₹{stats.totalRevenue.toLocaleString()}
           </h2>
         </div>
 
@@ -83,7 +136,7 @@ const PaymentsPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-green-600 mt-2'>
-            268
+            {stats.successfulCount}
           </h2>
         </div>
 
@@ -93,7 +146,7 @@ const PaymentsPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-yellow-600 mt-2'>
-            18
+            {stats.pendingCount}
           </h2>
         </div>
 
@@ -103,7 +156,7 @@ const PaymentsPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-red-600 mt-2'>
-            ₹4,200
+            ₹{stats.refundsAmount.toLocaleString()}
           </h2>
         </div>
 
@@ -130,14 +183,21 @@ const PaymentsPage = () => {
             <input
               type='text'
               placeholder='Search payments...'
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
               className='bg-[#f7f7f7] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all'
             />
 
-            <select className='bg-[#f7f7f7] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all'>
-              <option>All Transactions</option>
-              <option>Completed</option>
-              <option>Pending</option>
-              <option>Refunded</option>
+            <select
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value as any)}
+              className='bg-[#f7f7f7] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all'
+            >
+              <option value='ALL'>All Transactions</option>
+              <option value='PAID'>Paid</option>
+              <option value='PENDING'>Pending</option>
+              <option value='FAILED'>Failed</option>
+              <option value='REFUNDED'>Refunded</option>
             </select>
 
           </div>
@@ -189,7 +249,26 @@ const PaymentsPage = () => {
 
             <tbody>
 
-              {payments.map((payment, index) => (
+              {isLoading ? (
+                <tr>
+                  <td colSpan={8} className='py-8 text-center text-gray-500'>
+                    Loading payments...
+                  </td>
+                </tr>
+              ) : isError ? (
+                <tr>
+                  <td colSpan={8} className='py-8 text-center text-red-600'>
+                    Failed to load payments.
+                  </td>
+                </tr>
+              ) : filteredPayments.length === 0 ? (
+                <tr>
+                  <td colSpan={8} className='py-8 text-center text-gray-500'>
+                    No payments found.
+                  </td>
+                </tr>
+              ) : (
+                filteredPayments.map((payment, index) => (
                 <tr
                   key={index}
                   className='border-b border-gray-100 hover:bg-[#fafafa] transition-all'
@@ -201,30 +280,32 @@ const PaymentsPage = () => {
 
                   <td className='py-5'>
                     <h3 className='font-medium text-black'>
-                      {payment.customer}
+                      {payment.order?.user?.name ?? 'Customer'}
                     </h3>
                   </td>
 
                   <td className='py-5 text-gray-600'>
-                    {payment.order}
+                    {payment.orderId}
                   </td>
 
                   <td className='py-5 text-gray-600'>
-                    {payment.method}
+                    {payment.paymentMethod ?? 'COD'}
                   </td>
 
                   <td className='py-5 font-semibold text-black'>
-                    {payment.amount}
+                    ₹{Number(payment.amount || 0).toLocaleString()}
                   </td>
 
                   <td className='py-5'>
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                        payment.status === 'Completed'
+                        payment.status === 'PAID'
                           ? 'bg-green-100 text-green-700'
-                          : payment.status === 'Pending'
+                          : payment.status === 'PENDING'
                           ? 'bg-yellow-100 text-yellow-700'
-                          : 'bg-red-100 text-red-700'
+                          : payment.status === 'REFUNDED'
+                          ? 'bg-red-100 text-red-700'
+                          : 'bg-gray-100 text-gray-700'
                       }`}
                     >
                       {payment.status}
@@ -232,17 +313,27 @@ const PaymentsPage = () => {
                   </td>
 
                   <td className='py-5 text-gray-500'>
-                    {payment.date}
+                    {new Date(payment.createdAt).toLocaleDateString()}
                   </td>
 
                   <td className='py-5'>
                     <div className='flex justify-end gap-3'>
-
-                      <button className='bg-[#f3f4f6] text-black px-4 py-2 rounded-xl hover:bg-[#e5e7eb] transition-all duration-200'>
+                      <button
+                        type='button'
+                        onClick={() => {
+                          const url = `/dashboard/payments/${payment.id}/receipt`
+                          window.open(url, '_blank', 'noopener,noreferrer')
+                        }}
+                        className='bg-[#f3f4f6] text-black px-4 py-2 rounded-xl hover:bg-[#e5e7eb] transition-all duration-200'
+                      >
                         Receipt
                       </button>
 
-                      <button className='bg-black text-white px-4 py-2 rounded-xl hover:bg-[#111] transition-all duration-200'>
+                      <button
+                        type='button'
+                        onClick={() => router.push(`/dashboard/payments/${payment.id}`)}
+                        className='bg-black text-white px-4 py-2 rounded-xl hover:bg-[#111] transition-all duration-200'
+                      >
                         Details
                       </button>
 
@@ -250,12 +341,47 @@ const PaymentsPage = () => {
                   </td>
 
                 </tr>
-              ))}
+              ))
+              )}
 
             </tbody>
 
           </table>
 
+        </div>
+
+        {/* Pagination */}
+        <div className='flex items-center justify-between pt-6'>
+          <p className='text-sm text-gray-500'>
+            {meta ? (
+              <>
+                Page {meta.page} of {meta.totalPages} · Total {meta.total}
+              </>
+            ) : (
+              <>
+                Showing {payments.length}
+              </>
+            )}
+          </p>
+
+          <div className='flex items-center gap-3'>
+            <button
+              type='button'
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={isLoading || !meta?.hasPrev}
+              className='px-4 py-2 rounded-xl border border-gray-200 bg-white text-black disabled:opacity-50'
+            >
+              Prev
+            </button>
+            <button
+              type='button'
+              onClick={() => setPage((p) => p + 1)}
+              disabled={isLoading || !meta?.hasNext}
+              className='px-4 py-2 rounded-xl bg-black text-white disabled:opacity-50'
+            >
+              Next
+            </button>
+          </div>
         </div>
 
       </div>

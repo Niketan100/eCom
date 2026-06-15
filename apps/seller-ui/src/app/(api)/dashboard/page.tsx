@@ -1,75 +1,62 @@
+"use client";
+
+import { items } from 'apps/seller-ui/src/configs/constants';
+import useOrder from 'apps/seller-ui/src/hooks/useOrder';
+import useProducts from 'apps/seller-ui/src/hooks/useProducts';
+import type { SellerProduct } from 'apps/seller-ui/src/hooks/useProducts'
+import { NumericKeys } from 'node_modules/react-hook-form/dist/types/path/common';
+
+
+
 export default function SellerDashboard() {
+
+  const {
+  ordersCountDaywise = [],
+  orders,
+  isLoading: ordersLoading,
+  error: ordersError,
+  revenue,
+  total_orders,
+  percentage_order_today,
+  percentage_revenue_today,
+  total_customers,
+  percentage_customers_today,
+} = useOrder();
+
+const maxOrders = Math.max(
+  ...ordersCountDaywise.map((item: any) => item.orders),
+  1
+);
+
+  const { products, lowStockProducts, isLoading: productsLoading, error: productsError } = useProducts();
   const stats = [
     {
       title: 'Total Revenue',
-      value: '₹48,320',
-      change: '+12% this month',
+      value: revenue ? `₹${revenue.toLocaleString()}` : '₹0',
+      change: percentage_revenue_today ? `+${percentage_revenue_today}% today` : 'No change today',
       icon: '💰',
     },
     {
       title: 'Orders',
-      value: '324',
-      change: '+18 new today',
+      value: total_orders ? total_orders.toString() : '0',
+      change: percentage_order_today ? `+${percentage_order_today}% today` : 'No change today',
       icon: '📦',
     },
     {
       title: 'Products',
-      value: '48',
-      change: '6 low stock',
+      value: products ? products.length.toString() : '0',
+      change: '',
       icon: '🛍️',
     },
     {
       title: 'Customers',
-      value: '1,204',
-      change: '+32 this week',
+      value: total_customers ? total_customers.toString() : '0',
+      change: `+${percentage_customers_today}% today`,
       icon: '👥',
     },
   ];
 
-  const orders = [
-    {
-      id: '#ORD-1024',
-      customer: 'Rahul Sharma',
-      amount: '₹2,400',
-      status: 'Delivered',
-    },
-    {
-      id: '#ORD-1025',
-      customer: 'Aman Verma',
-      amount: '₹1,250',
-      status: 'Pending',
-    },
-    {
-      id: '#ORD-1026',
-      customer: 'Priya Thakur',
-      amount: '₹4,100',
-      status: 'Shipped',
-    },
-    {
-      id: '#ORD-1027',
-      customer: 'Neha Kapoor',
-      amount: '₹899',
-      status: 'Cancelled',
-    },
-  ];
-
-  const products = [
-    {
-      name: 'Wireless Headphones',
-      stock: 24,
-      price: '₹2,999',
-    },
-    {
-      name: 'Smart Watch',
-      stock: 12,
-      price: '₹4,499',
-    },
-    {
-      name: 'Gaming Mouse',
-      stock: 8,
-      price: '₹1,299',
-    },
-  ];
+  const recentOrders = (orders ?? []).slice(0, 6);
 
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6 text-black'>
@@ -132,35 +119,57 @@ export default function SellerDashboard() {
         <div className='grid grid-cols-1 xl:grid-cols-3 gap-6 mb-8'>
 
           {/* Sales Overview */}
-          <div className='xl:col-span-2 bg-white border border-gray-200 rounded-3xl p-6 shadow-sm'>
-            <div className='flex items-center justify-between mb-6'>
-              <div>
-                <h2 className='text-2xl font-semibold'>
-                  Sales Overview
-                </h2>
+         {/* Sales Overview */}
+<div className='xl:col-span-2 bg-white border border-gray-200 rounded-3xl p-6 shadow-sm'>
+  <div className='flex items-center justify-between mb-6'>
+    <div>
+      <h2 className='text-2xl font-semibold'>
+        Sales Overview
+      </h2>
 
-                <p className='text-gray-500 text-sm mt-1'>
-                  Monthly performance overview
-                </p>
-              </div>
+      <p className='text-gray-500 text-sm mt-1'>
+        Orders received per day
+      </p>
+    </div>
 
-              <button className='px-4 py-2 rounded-xl bg-[#f4f4f4] text-sm font-medium'>
-                This Month
-              </button>
-            </div>
+    <button className='px-4 py-2 rounded-xl bg-[#f4f4f4] text-sm font-medium'>
+      This Month
+    </button>
+  </div>
 
-            {/* Fake Chart */}
-            <div className='h-[320px] w-full flex items-end justify-between gap-4'>
-              {[40, 65, 30, 90, 55, 70, 85, 60].map((height, index) => (
-                <div
-                  key={index}
-                  className='flex-1 bg-black rounded-t-3xl opacity-90 hover:opacity-100 transition-all'
-                  style={{ height: `${height}%` }}
-                ></div>
-              ))}
-            </div>
-          </div>
+  <div className='h-[320px] flex items-end gap-3'>
+    {ordersCountDaywise.length > 0 ? (
+      ordersCountDaywise.map((item: any) => (
+        <div
+          key={item.date}
+          className='flex-1 flex flex-col items-center h-full justify-end'
+        >
+          <div
+            className='w-full bg-black rounded-t-3xl hover:opacity-80 transition-all'
+            style={{
+              height: `${Math.max(
+                (item.orders / maxOrders) * 100,
+                5
+              )}%`,
+            }}
+          />
 
+          <span className='text-xs font-medium mt-2'>
+            {item.orders}
+          </span>
+
+          <span className='text-[10px] text-gray-500 mt-1 text-center'>
+            {item.date}
+          </span>
+        </div>
+      ))
+    ) : (
+      <div className='flex items-center justify-center w-full h-full text-gray-500'>
+        No order data available
+      </div>
+    )}
+  </div>
+</div>
           {/* Quick Actions */}
           <div className='bg-white border border-gray-200 rounded-3xl p-6 shadow-sm'>
             <h2 className='text-2xl font-semibold mb-6'>
@@ -219,18 +228,31 @@ export default function SellerDashboard() {
             </div>
 
             <div className='flex flex-col gap-4'>
-              {orders.map((order, index) => (
+              {ordersLoading ? (
+                <div className='border border-gray-100 rounded-2xl p-4 text-sm text-gray-500'>
+                  Loading orders...
+                </div>
+              ) : ordersError ? (
+                <div className='border border-red-200 rounded-2xl p-4 text-sm text-red-600'>
+                  Failed to load orders.
+                </div>
+              ) : recentOrders.length === 0 ? (
+                <div className='border border-gray-100 rounded-2xl p-4 text-sm text-gray-500'>
+                  No orders yet.
+                </div>
+              ) : (
+                recentOrders.map((order: any, index: number) => (
                 <div
                   key={index}
                   className='flex items-center justify-between border border-gray-100 rounded-2xl p-4 hover:bg-[#fafafa] transition-all'
                 >
                   <div>
                     <h3 className='font-semibold'>
-                      {order.id}
+                      #{order.id}
                     </h3>
 
                     <p className='text-sm text-gray-500 mt-1'>
-                      {order.customer}
+                      {order.customer || 'Customer'}
                     </p>
                   </div>
 
@@ -240,11 +262,11 @@ export default function SellerDashboard() {
                     </h3>
 
                     <p className={`text-sm mt-1 ${
-                      order.status === 'Delivered'
+                      order.status === 'DELIVERED'
                         ? 'text-green-600'
-                        : order.status === 'Pending'
+                        : order.status === 'PENDING'
                         ? 'text-yellow-600'
-                        : order.status === 'Cancelled'
+                        : order.status === 'CANCELLED'
                         ? 'text-red-600'
                         : 'text-blue-600'
                     }`}>
@@ -252,7 +274,8 @@ export default function SellerDashboard() {
                     </p>
                   </div>
                 </div>
-              ))}
+              ))
+              )}
             </div>
           </div>
 
@@ -269,7 +292,20 @@ export default function SellerDashboard() {
             </div>
 
             <div className='flex flex-col gap-4'>
-              {products.map((product, index) => (
+              {productsLoading ? (
+                <div className='border border-gray-100 rounded-2xl p-4 text-sm text-gray-500'>
+                  Loading products...
+                </div>
+              ) : productsError ? (
+                <div className='border border-red-200 rounded-2xl p-4 text-sm text-red-600'>
+                  Failed to load products.
+                </div>
+              ) : (products?.length ?? 0) === 0 ? (
+                <div className='border border-gray-100 rounded-2xl p-4 text-sm text-gray-500'>
+                  No products found.
+                </div>
+              ) : (
+                products.slice(0, 6).map((product: SellerProduct, index: number) => (
                 <div
                   key={index}
                   className='flex items-center justify-between border border-gray-100 rounded-2xl p-4 hover:bg-[#fafafa] transition-all'
@@ -292,16 +328,24 @@ export default function SellerDashboard() {
 
                   <div>
                     <h3 className='font-semibold text-lg'>
-                      {product.price}
+                      ₹{Number(product.discountedPrice ?? product.price ?? 0).toLocaleString()}
                     </h3>
                   </div>
                 </div>
-              ))}
+              ))
+              )}
             </div>
+
+            {(lowStockProducts?.length ?? 0) > 0 && (
+              <p className='text-sm text-yellow-700 mt-5'>
+                Low stock: {lowStockProducts.length} item(s)
+              </p>
+            )}
           </div>
 
         </div>
       </div>
     </div>
+    
   )
 }

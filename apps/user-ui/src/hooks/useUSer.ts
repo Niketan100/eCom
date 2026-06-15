@@ -26,9 +26,8 @@ const useUser = () => {
     const { isLoading, data: loggedInUser, error } = useQuery({
         queryKey: ['loggedInUser'],
         queryFn: fetchUser,
-        retry: 1,
+        retry: 5,
         refetchOnWindowFocus: false,
-        staleTime: 5 * 60 * 1000, // 5 minutes
         select: (data) => data?.user ?? null
     });
     return { loggedInUser, isLoading, error };

@@ -1,43 +1,47 @@
 'use client'
-
 import React from 'react'
-
-const inventory = [
-  {
-    id: '#PRD-1001',
-    name: 'Wireless Headphones',
-    category: 'Electronics',
-    stock: 24,
-    price: '₹2,499',
-    status: 'In Stock',
-  },
-  {
-    id: '#PRD-1002',
-    name: 'Gaming Mouse',
-    category: 'Accessories',
-    stock: 6,
-    price: '₹1,299',
-    status: 'Low Stock',
-  },
-  {
-    id: '#PRD-1003',
-    name: 'Smart Watch',
-    category: 'Wearables',
-    stock: 0,
-    price: '₹4,999',
-    status: 'Out of Stock',
-  },
-  {
-    id: '#PRD-1004',
-    name: 'Bluetooth Speaker',
-    category: 'Audio',
-    stock: 15,
-    price: '₹1,899',
-    status: 'In Stock',
-  },
-]
-
+import { useMutation } from '@tanstack/react-query'
+import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance'
+import { Link as Icon} from 'lucide-react'
+import Link from 'next/link'
 const InventoryPage = () => {
+
+  const [page, setPage] = React.useState(1)
+  const limit = 4
+  const getInventoryMutation = useMutation({
+    mutationFn: async () => {
+      const res = await axiosInstance.get('/products/get-products', {
+        params: { page, limit },
+      })
+      return res.data
+    },
+    onSuccess: (data) => {
+      console.log('Inventory Data:', data)
+    },
+    onError: (error) => {
+      console.error('Failed to fetch inventory:', error)
+    }
+  })
+
+  let inventory: any[] = [];
+  const total_prodcuts = getInventoryMutation.data?.count || 0;
+  const meta = getInventoryMutation.data?.meta
+
+    if (getInventoryMutation.isSuccess) {
+      inventory = getInventoryMutation.data.products.map((product: any) => ({
+        id: product.id,
+        name: product.name,
+        category: product.category,
+        price: `$${product.price.toFixed(2)}`,
+        stock: product.stock,
+        status: product.stock > 10 ? 'In Stock' : product.stock > 0 ? 'Low Stock' : 'Out of Stock'
+      }));
+    }
+
+   React.useEffect(() => {
+      getInventoryMutation.mutate()
+  }, [page])
+
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>
 
@@ -69,7 +73,7 @@ const InventoryPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-black mt-2'>
-            48
+            {total_prodcuts}
           </h2>
         </div>
 
@@ -79,7 +83,7 @@ const InventoryPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-green-600 mt-2'>
-            38
+            {total_prodcuts - inventory.filter(product => product.status === 'Low Stock' || product.status === 'Out of Stock').length}
           </h2>
         </div>
 
@@ -89,7 +93,7 @@ const InventoryPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-yellow-600 mt-2'>
-            7
+            {inventory.filter(product => product.status === 'Low Stock').length}
           </h2>
         </div>
 
@@ -99,7 +103,7 @@ const InventoryPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-red-600 mt-2'>
-            3
+            {inventory.filter(product => product.status === 'Out of Stock').length}
           </h2>
         </div>
 
@@ -236,9 +240,11 @@ const InventoryPage = () => {
                   <td className='py-5'>
                     <div className='flex justify-end gap-3'>
 
-                      <button className='bg-[#f3f4f6] text-black px-4 py-2 rounded-xl hover:bg-[#e5e7eb] transition-all duration-200'>
-                        Edit
-                      </button>
+                            <Link href={`/dashboard/manage-products/edit-product/${product.id}`}>
+                        <Icon className='inline-flex items-center gap-1' >
+                            
+                        </Icon>
+                            </Link>
 
                       <button className='bg-black text-white px-4 py-2 rounded-xl hover:bg-[#111] transition-all duration-200'>
                         Update Stock
@@ -254,6 +260,36 @@ const InventoryPage = () => {
 
           </table>
 
+        </div>
+
+        {/* Pagination */}
+        <div className='flex items-center justify-between pt-6'>
+          <p className='text-sm text-gray-500'>
+            {meta ? (
+              <>
+                Page {meta.page} of {meta.totalPages} · Total {meta.total}
+              </>
+            ) : null}
+          </p>
+
+          <div className='flex items-center gap-3'>
+            <button
+              type='button'
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={getInventoryMutation.isPending || !meta?.hasPrev}
+              className='px-4 py-2 rounded-xl border border-gray-200 bg-white text-black disabled:opacity-50'
+            >
+              Prev
+            </button>
+            <button
+              type='button'
+              onClick={() => setPage((p) => p + 1)}
+              disabled={getInventoryMutation.isPending || !meta?.hasNext}
+              className='px-4 py-2 rounded-xl bg-black text-white disabled:opacity-50'
+            >
+              Next
+            </button>
+          </div>
         </div>
 
       </div>

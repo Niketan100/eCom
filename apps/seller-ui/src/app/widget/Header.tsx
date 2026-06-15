@@ -3,11 +3,17 @@
 import Link from 'next/link'
 import React from 'react'
 import {  Search , User } from 'lucide-react'
+import { Bell } from 'lucide-react'
+import { useUnreadNotificationCount } from 'apps/seller-ui/src/hooks/useNotifications'
 
 
 export const Header = ({seller  ,isLoading  ,error } : {seller : any ,isLoading : boolean ,error : any}) => {
    
     const loggedInUser = seller;
+    console.log(loggedInUser)
+
+    const { data: unreadData } = useUnreadNotificationCount()
+    const unreadCount = unreadData?.unreadCount ?? 0
 
   return (
     <>
@@ -29,6 +35,20 @@ export const Header = ({seller  ,isLoading  ,error } : {seller : any ,isLoading 
         </div>
 
                 <div className='flex items-center gap-8'>
+
+                                                        <Link
+                                                            href={'/dashboard/notifications'}
+                                                            className='relative inline-flex items-center justify-center text-gray-600 hover:text-gray-800 transition-colors duration-200'
+                                                            aria-label='Notifications'
+                                                        >
+                                                            <Bell />
+                                                            {unreadCount > 0 && (
+                                                                <span className='absolute -top-2 -right-2 min-w-[18px] h-[18px] px-1 rounded-full bg-black text-white text-[11px] leading-[18px] text-center'>
+                                                                    {unreadCount > 99 ? '99+' : unreadCount}
+                                                                </span>
+                                                            )}
+                                                        </Link>
+
                             <div className='flex items-center gap-2'>
                                 {isLoading ? (
                                     <div className='text-gray-500 text-sm'>Loading...</div>

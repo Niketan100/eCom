@@ -6,7 +6,7 @@ const isSeller = async (req : Request , res : Response , next : NextFunction) =>
     try{
         
         const User = req.user as any;
-        if(User.role !== 'SELLER'){
+        if(User.role !== 'seller'){
             res.status(403).json({"Error" : "Forbidden Access !"});
             throw new ForbiddenError("Forbidden Access !");
         }

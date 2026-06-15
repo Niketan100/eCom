@@ -1,31 +1,43 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080',
+    baseURL : process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080',
+    headers : {     
+        'Content-Type' : 'application/json'
+    },
+    withCredentials : true
+});
+
+const baseURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+
+// Use a dedicated client for refresh to avoid interceptor recursion.
+const refreshClient = axios.create({
+    baseURL,
+    withCredentials: true,
     headers: {
         'Content-Type': 'application/json'
-    },
-    withCredentials: true
+    }
 });
 
 let isRefreshing = false;
-let refreshSubscribers: ((error: Error | null) => void)[] = [];
+let refreshSubscribers: (() => void)[] = [];
+
+// hanlde logout and infite loop
 
 const handleLogout = () => {
-    if (window.location.pathname !== '/login') {
+    if(window.location.pathname !== '/login'){
         window.location.href = '/login';
     }
-};
+}
 
-const subscribeRefreshToken = (cb: (error: Error | null) => void) => {
+const subscribeRefreshToken = (cb: () => void) => {
     refreshSubscribers.push(cb);
-};
+}
 
-// Notify all subscribers — pass error if refresh failed
-const onRefreshed = (error: Error | null = null) => {
-    refreshSubscribers.forEach((cb) => cb(error));
+const onRefreshed = () => {
+    refreshSubscribers.forEach((cb) => cb());
     refreshSubscribers = [];
-};
+}
 
 axiosInstance.interceptors.request.use(
     (config) => config,
@@ -35,43 +47,51 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
     (response) => response,
     async (error) => {
-        const originalRequest = error.config;
+        const originalRequest = error.config; 
+        const status = error.response?.status;
+        const isAuthFailure = status === 401 || status === 403;
+        const isRefreshRequest = originalRequest?.url?.includes('/auth/refresh-token');
+        const isSessionProbe = originalRequest?.url?.includes('/auth/logged-in-seller');
 
-        // ✅ Never try to refresh if the refresh endpoint itself failed
-        const isRefreshEndpoint = originalRequest.url?.includes('/auth/refresh-token');
+        // If refresh itself fails, don't try anything else here.
+        if (isAuthFailure && isRefreshRequest) {
+            return Promise.reject(error);
+        }
 
-        if (
-            (error.response?.status === 401 || error.response?.status === 403)
-            && !originalRequest._retry
-            && !isRefreshEndpoint  // ✅ add this
-        ) {
+        // For seller session probe, try ONE silent refresh (no redirect) so auto-login works after access expiry.
+        if (isAuthFailure && isSessionProbe && !originalRequest._retry && !isRefreshRequest) {
+            originalRequest._retry = true;
+            try {
+                await refreshClient.post('/auth/refresh-token');
+                return axiosInstance(originalRequest);
+            } catch {
+                return Promise.reject(error);
+            }
+        }
+
+        if (isAuthFailure && !originalRequest._retry && !isRefreshRequest) {
             if (isRefreshing) {
-                return new Promise((resolve, reject) => {
-                    subscribeRefreshToken((err) => {
-                        if (err) reject(err);
-                        else resolve(axiosInstance(originalRequest));
+                return new Promise((resolve) => {
+                    subscribeRefreshToken(() => {
+                        resolve(axiosInstance(originalRequest));
                     });
                 });
             }
-
             originalRequest._retry = true;
             isRefreshing = true;
-
             try {
-                await axiosInstance.post('/auth/refresh-token');
-                onRefreshed(null);
+                await refreshClient.post('/auth/refresh-token');
+                onRefreshed();
                 return axiosInstance(originalRequest);
             } catch (err) {
-                onRefreshed(err as Error);
                 handleLogout();
                 return Promise.reject(err);
             } finally {
                 isRefreshing = false;
             }
         }
-
         return Promise.reject(error);
     }
-);
+); 
 
 export default axiosInstance;

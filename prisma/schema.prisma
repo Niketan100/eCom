@@ -1,3 +1,4 @@
+
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
@@ -5,8 +6,10 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  url      = env("DATABASE_URL")
+  url     = env("DATABASE_URL")
+  relationMode = "prisma"
 }
+
 
 model Images {
   id String @id @default(auto()) @map("_id") @db.ObjectId
@@ -42,6 +45,8 @@ model users {
   cartItems cartItems[]
 
   productReviews productReviews[]
+
+  notificationsSent Notification[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -120,25 +125,89 @@ model seller {
   complaints complaints[]
   events     events[]
 
+  // Notifications received by this seller
+  notifications Notification[] @relation("SellerNotifications")
+
+  // Notifications sent/triggered by this seller (if applicable)
+  sentNotifications Notification[] @relation("NotificationFromSeller")
+
+  // Legacy inverse for Notification.sellerId -> Notification.seller (kept for backward compatibility)
+  legacyNotifications Notification[] @relation("NotificationLegacySeller")
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   shopId String? @unique @db.ObjectId
 }
 
+enum NotificationType {
+  ORDER_CREATED
+  PRODUCT_VIEWED
+}
+
+model Notification {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  // Receiver (who gets the notification)
+  toSellerId String @db.ObjectId
+  toSeller seller @relation("SellerNotifications", fields: [toSellerId], references: [id])
+
+  // Sender (who triggered/sent the notification)
+  // For example: user places an order -> fromUserId set; admin/seller action -> fromSellerId set.
+  fromUserId String? @db.ObjectId
+  user users? @relation(fields: [fromUserId], references: [id])
+
+  fromSellerId String? @db.ObjectId
+  fromSeller seller? @relation("NotificationFromSeller", fields: [fromSellerId], references: [id])
+
+  // Backward-compat: kept so existing code that filters by sellerId doesn't break immediately.
+  // Can be removed once all code is migrated to toSellerId.
+  sellerId String @db.ObjectId
+  seller seller @relation("NotificationLegacySeller", fields: [sellerId], references: [id])
+
+  type NotificationType
+
+  title String
+  message String
+
+  // Small structured payload for UI (orderId, productId, count, etc)
+  data Json?
+
+  readAt DateTime?
+  createdAt DateTime @default(now())
+
+  @@index([toSellerId])
+  @@index([sellerId])
+  @@index([sellerId, readAt])
+  @@index([toSellerId, readAt])
+  @@index([createdAt])
+}
+
 model products {
+
   id String @id @default(auto()) @map("_id") @db.ObjectId
 
   name String
+
   slug String @unique
 
   shortDescription String?
-  description      String
+
+  description String
+
+  // structured features/specifications
+  features Json?
+
+  // marketing bullet points
+  highlights String[]
 
   category String
-  brand    String?
+  subcategory String?
 
-  price           Float
+  brand String?
+
+  price Float
+
   discountedPrice Float?
 
   stock Int @default(0)
@@ -147,20 +216,29 @@ model products {
 
   tags String[]
 
-  isActive   Boolean @default(true)
+  shippingWeight String?
+
+  warranty String?
+
+  isActive Boolean @default(true)
+
   isFeatured Boolean @default(false)
 
-  views      Int @default(0)
+  views Int @default(0)
+
   salesCount Int @default(0)
 
   averageRating Float @default(0)
-  reviewCount   Int   @default(0)
+
+  reviewCount Int @default(0)
 
   sellerId String @db.ObjectId
-  seller   seller @relation(fields: [sellerId], references: [id])
+
+  seller seller @relation(fields: [sellerId], references: [id])
 
   shopId String @db.ObjectId
-  shop   shops  @relation(fields: [shopId], references: [id])
+
+  shop shops @relation(fields: [shopId], references: [id])
 
   images productImages[]
 
@@ -175,11 +253,37 @@ model products {
   variants productVariants[]
 
   createdAt DateTime @default(now())
+
   updatedAt DateTime @updatedAt
 
   @@index([sellerId])
+
   @@index([shopId])
+
   @@index([category])
+
+}
+
+model productVariants {
+
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  productId String @db.ObjectId
+
+  // Color / Storage / Size
+  type String
+
+  // Black / 256GB / XL
+  value String
+
+  stock Int @default(0)
+
+  additionalPrice Float @default(0)
+
+  product products @relation(fields: [productId], references: [id])
+
+  createdAt DateTime @default(now())
+
 }
 
 model productImages {
@@ -214,22 +318,7 @@ model productReviews {
   @@index([productId])
 }
 
-model productVariants {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
 
-  productId String @db.ObjectId
-
-  name  String
-  value String
-
-  stock Int @default(0)
-
-  additionalPrice Float @default(0)
-
-  product products @relation(fields: [productId], references: [id])
-
-  createdAt DateTime @default(now())
-}
 
 model wishlist {
   id String @id @default(auto()) @map("_id") @db.ObjectId
@@ -393,4 +482,14 @@ enum ComplaintStatus {
   IN_REVIEW
   RESOLVED
   REJECTED
+}
+
+// Note: `subcategory` is stored as a string (nullable) in MongoDB.
+// Keeping it as `String?` avoids runtime conversion errors when older records have null.
+
+
+model site_config {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  categories String[]
+  subcategories Json
 }

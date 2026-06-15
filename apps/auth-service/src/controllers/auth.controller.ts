@@ -8,6 +8,7 @@ import jwt from 'jsonwebtoken';
 import { setCookie } from "../utils/cookies/setcookie";
 
 
+
 export const userRegister = async (req : Request , res : Response , next : NextFunction) => {
     try {
     validateRegistrationData(req.body);
@@ -87,7 +88,7 @@ export const userLogin = async (req : Request , res : Response , next : NextFunc
     if (!user || !decrypt) {
         throw new ForbiddenError('Invalid email or password');
     }
-    const accessToken = jwt.sign({ id: user.id , role: 'user'}, process.env.JWT_SECRET as string, { expiresIn: '15m' });
+    const accessToken = jwt.sign({ id: user.id , role: 'user'}, process.env.JWT_SECRET as string, { expiresIn: '7d' });
     const refreshToken = jwt.sign({ id: user.id , role: 'user'}, process.env.JWT_SECRET as string, { expiresIn: '7d' });
 
    setCookie(res, 'refreshToken', refreshToken);
@@ -152,7 +153,7 @@ export const resetUserPassword = async(req : Request , res : Response , next : N
      
 export const refreshToken = async (req : Request , res : Response , next : NextFunction) => {
     try {
-        const refreshToken = req.cookies.refreshToken;
+        const refreshToken = req.cookies.refreshToken || req.cookies.seller_refreshToken || req.headers.authorization?.split(' ')[1];
         if (!refreshToken) {
             throw new ForbiddenError('No refresh token provided');
         }
@@ -175,8 +176,12 @@ export const refreshToken = async (req : Request , res : Response , next : NextF
                 throw new ForbiddenError('unauthorized not found');
             }
 
-            const newAccessToken = jwt.sign({ id: user.id, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '15m' });
+            const newAccessToken = jwt.sign({ id: user.id, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
+            const newRefreshToken = jwt.sign({ id: user.id, role: 'user' }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
+
+            // Rotate both tokens so the browser always has a matching pair.
             setCookie(res, 'accessToken', newAccessToken);
+            setCookie(res, 'refreshToken', newRefreshToken);
         } else if (decoded.role === 'seller') {
             const seller = await prisma.seller.findUnique({
                 where: {
@@ -187,8 +192,11 @@ export const refreshToken = async (req : Request , res : Response , next : NextF
                 throw new ForbiddenError('unauthorized not found');
             }
 
-            const newAccessToken = jwt.sign({ id: seller.id, role: 'seller' }, process.env.JWT_SECRET as string, { expiresIn: '15m' });
-            setCookie(res, 'accessToken', newAccessToken);
+            const newAccessToken = jwt.sign({ id: seller.id, role: 'seller' }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
+            const newRefreshToken = jwt.sign({ id: seller.id, role: 'seller' }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
+
+            setCookie(res, 'seller_accessToken', newAccessToken);
+            setCookie(res, 'seller_refreshToken', newRefreshToken);
         } else {
             throw new ForbiddenError('Unauthorized');
         }
@@ -471,10 +479,10 @@ export const sellerLogin = async (req : Request , res : Response , next : NextFu
     if (!seller || !decrypt) {
         throw new ForbiddenError('Invalid email or password');
     }
-    const accessToken = jwt.sign({ id: seller.id , role: 'seller'}, process.env.JWT_SECRET as string, { expiresIn: '15m' });
+    const accessToken = jwt.sign({ id: seller.id , role: 'seller'}, process.env.JWT_SECRET as string, { expiresIn: '7d' });
     const refreshToken = jwt.sign({ id: seller.id , role: 'seller'}, process.env.JWT_SECRET as string, { expiresIn: '7d' });
-   setCookie(res, 'refreshToken', refreshToken);
-   setCookie(res, 'accessToken', accessToken);
+   setCookie(res, 'seller_refreshToken', refreshToken);
+   setCookie(res, 'seller_accessToken', accessToken);
     
     res.status(200).json({
         message: 'Seller logged in successfully',
@@ -529,4 +537,67 @@ export const getSeller = async(req : any , res : Response , next : NextFunction)
         next(err);
     }
 }
+
+
+export const getComplaints = async (req : Request , res : Response , next : NextFunction) => {
+    try {
+        const seller = req.user as any;
+
+        if (!seller?.id) {
+            throw new ForbiddenError('Not Authorized');
+        }
+
+        const complaints = await prisma.complaints.findMany({
+            where: {
+                sellerId: seller.id,
+            },
+            include: {
+                user: {
+                    select: {
+                        id: true,
+                        name: true,
+                        email: true,
+                    },
+                },
+            },
+            orderBy: {
+                createdAt: 'desc',
+            },
+        });
+
+        return res.status(200).json({
+            status: 'good',
+            complaints,
+        });
+    } catch (error) {
+        return next(error);
+    }
+}
+
+
+export const Userlogout = async (req: Request, res: Response, next: NextFunction) => {  
+
+    try{
+       
+            res.clearCookie('accessToken', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        });
+
+        res.clearCookie('refreshToken', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        });
+       
+
+        res.status(200).json({
+            message: 'Logged out successfully'
+        });
+    } catch (error) {
+        next(error);
+    }
+}
+
 

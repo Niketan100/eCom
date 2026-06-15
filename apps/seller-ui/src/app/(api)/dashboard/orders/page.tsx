@@ -1,47 +1,76 @@
 'use client'
 
+import { useQuery } from '@tanstack/react-query'
+import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance';
+import Link from 'next/link';
+
 import React from 'react'
 
-const orders = [
-  {
-    id: '#ORD-1024',
-    customer: 'Rahul Sharma',
-    product: 'Wireless Headphones',
-    amount: '₹2,499',
-    status: 'Delivered',
-    payment: 'Paid',
-    date: 'Today',
-  },
-  {
-    id: '#ORD-1025',
-    customer: 'Priya Kapoor',
-    product: 'Gaming Mouse',
-    amount: '₹1,299',
-    status: 'Pending',
-    payment: 'Pending',
-    date: 'Yesterday',
-  },
-  {
-    id: '#ORD-1026',
-    customer: 'Aman Verma',
-    product: 'Smart Watch',
-    amount: '₹4,999',
-    status: 'Shipped',
-    payment: 'Paid',
-    date: '2 days ago',
-  },
-  {
-    id: '#ORD-1027',
-    customer: 'Neha Thakur',
-    product: 'Bluetooth Speaker',
-    amount: '₹1,899',
-    status: 'Cancelled',
-    payment: 'Refunded',
-    date: '4 days ago',
-  },
-]
-
 const OrdersPage = () => {
+
+  const [page, setPage] = React.useState(1)
+  const limit = 20
+
+  const {
+    data,
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ['seller-orders', page, limit],
+    queryFn: async () => {
+      const res = await axiosInstance.get('/products/get-orders', {
+        params: { page, limit },
+      })
+      return res.data as {
+        success?: boolean
+        orders?: any[]
+        total?: number
+        count?: number
+        meta?: any
+      }
+    },
+    staleTime: 10_000,
+  })
+
+  const rawOrders = data?.orders ?? []
+  const meta = data?.meta
+  console.log('row orders', rawOrders)
+
+  const orders = React.useMemo(() => {
+    return rawOrders.map((order: any) => ({
+      id: order.id,
+      customer: order.user?.name ?? '—',
+      customerEmail: order.user?.email,
+      product: order.product?.name ?? '—',
+      amount:
+        typeof order.totalPrice === 'number'
+          ? `₹${order.totalPrice.toFixed(2)}`
+          : `₹${(order.product?.price ?? 0).toFixed(2)}`,
+      payment: order.payment?.status ?? 'PENDING',
+      status: order.status,
+      date: order.createdAt
+        ? new Date(order.createdAt).toLocaleDateString()
+        : '—',
+    }))
+  }, [rawOrders])
+
+  const total_orders = data?.total ?? data?.count ?? 0
+  const pending_orders = rawOrders.filter((o: any) => o.status === 'PENDING').length
+  const delivered_orders = rawOrders.filter((o: any) => o.status === 'DELIVERED').length
+  const revenue = rawOrders
+    .filter((o: any) => o.payment?.status === 'PAID')
+    .reduce(
+      (acc: number, o: any) =>
+        acc +
+        (typeof o.totalPrice === 'number'
+          ? o.totalPrice
+          : o.product?.price ?? 0),
+      0
+    )
+  
+
+    console.log(orders)
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>
 
@@ -73,7 +102,7 @@ const OrdersPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-black mt-2'>
-            324
+            {total_orders}
           </h2>
         </div>
 
@@ -83,7 +112,7 @@ const OrdersPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-yellow-600 mt-2'>
-            18
+            {pending_orders}
           </h2>
         </div>
 
@@ -93,7 +122,7 @@ const OrdersPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-green-600 mt-2'>
-            268
+            { delivered_orders}
           </h2>
         </div>
 
@@ -103,7 +132,7 @@ const OrdersPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-black mt-2'>
-            ₹48k
+            ₹{revenue.toFixed(2)}
           </h2>
         </div>
 
@@ -142,10 +171,53 @@ const OrdersPage = () => {
 
           </div>
 
+          {/* Pagination */}
+          <div className='flex items-center gap-3'>
+            {meta ? (
+              <p className='text-sm text-gray-500 hidden md:block'>
+                Page {meta.page} of {meta.totalPages} · Total {meta.total}
+              </p>
+            ) : null}
+
+            <button
+              type='button'
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={isLoading || !meta?.hasPrev}
+              className='px-4 py-2 rounded-xl border border-gray-200 bg-white text-black disabled:opacity-50'
+            >
+              Prev
+            </button>
+
+            <button
+              type='button'
+              onClick={() => setPage((p) => p + 1)}
+              disabled={isLoading || !meta?.hasNext}
+              className='px-4 py-2 rounded-xl bg-black text-white disabled:opacity-50'
+            >
+              Next
+            </button>
+          </div>
+
         </div>
 
         {/* Table */}
-        <div className='overflow-x-auto'>
+        {isLoading ? (
+          <div className='py-16 text-center text-gray-500'>
+            Loading orders...
+          </div>
+        ) : isError ? (
+          <div className='py-16 text-center'>
+            <p className='text-red-600 font-semibold'>Failed to load orders</p>
+            <p className='text-gray-500 mt-2 text-sm'>
+              {String((error as any)?.message ?? error)}
+            </p>
+          </div>
+        ) : orders.length === 0 ? (
+          <div className='py-16 text-center text-gray-500'>
+            No orders found yet.
+          </div>
+        ) : (
+          <div className='overflow-x-auto'>
 
           <table className='w-full min-w-[900px]'>
 
@@ -204,6 +276,11 @@ const OrdersPage = () => {
                       <h3 className='font-medium text-black'>
                         {order.customer}
                       </h3>
+                      {order.customerEmail ? (
+                        <p className='text-xs text-gray-400 mt-1'>
+                          {order.customerEmail}
+                        </p>
+                      ) : null}
                     </div>
                   </td>
 
@@ -218,9 +295,9 @@ const OrdersPage = () => {
                   <td className='py-5'>
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                        order.payment === 'Paid'
+                        order.payment === 'PAID'
                           ? 'bg-green-100 text-green-700'
-                          : order.payment === 'Refunded'
+                          : order.payment === 'REFUNDED'
                           ? 'bg-red-100 text-red-700'
                           : 'bg-yellow-100 text-yellow-700'
                       }`}
@@ -232,11 +309,11 @@ const OrdersPage = () => {
                   <td className='py-5'>
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                        order.status === 'Delivered'
+                        order.status === 'DELIVERED'
                           ? 'bg-green-100 text-green-700'
-                          : order.status === 'Pending'
+                          : order.status === 'PENDING'
                           ? 'bg-yellow-100 text-yellow-700'
-                          : order.status === 'Cancelled'
+                          : order.status === 'CANCELLED'
                           ? 'bg-red-100 text-red-700'
                           : 'bg-blue-100 text-blue-700'
                       }`}
@@ -255,10 +332,11 @@ const OrdersPage = () => {
                       <button className='bg-[#f3f4f6] text-black px-4 py-2 rounded-xl hover:bg-[#e5e7eb] transition-all duration-200'>
                         View
                       </button>
-
-                      <button className='bg-black text-white px-4 py-2 rounded-xl hover:bg-[#111] transition-all duration-200'>
-                        Update
-                      </button>
+                        <Link href={`/dashboard/orders/${order.id}`}>
+                          <button className='bg-black text-white px-4 py-2 rounded-xl hover:bg-[#111] transition-all duration-200'>
+                            Update
+                          </button>
+                        </Link>
 
                     </div>
                   </td>
@@ -271,6 +349,7 @@ const OrdersPage = () => {
           </table>
 
         </div>
+        )}
 
       </div>
 

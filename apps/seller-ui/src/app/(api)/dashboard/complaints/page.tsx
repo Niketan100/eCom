@@ -1,38 +1,71 @@
 'use client'
 
+import { useQueries } from '@tanstack/react-query'
 import React from 'react'
+import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance'
 
-const complaints = [
-  {
-    id: '#CMP1021',
-    customer: 'Rahul Sharma',
-    subject: 'Received damaged product',
-    message:
-      'The package arrived damaged and the product inside was broken.',
-    status: 'Pending',
-    date: '2 hours ago',
-  },
-  {
-    id: '#CMP1022',
-    customer: 'Priya Kapoor',
-    subject: 'Refund not received',
-    message:
-      'I cancelled the order 5 days ago but still did not receive refund.',
-    status: 'Resolved',
-    date: 'Yesterday',
-  },
-  {
-    id: '#CMP1023',
-    customer: 'Aman Verma',
-    subject: 'Late delivery issue',
-    message:
-      'The delivery date has already passed and order is still not delivered.',
-    status: 'In Review',
-    date: '3 days ago',
-  },
-]
 
 const ComplaintsPage = () => {
+  const [search, setSearch] = React.useState('')
+  const [statusFilter, setStatusFilter] = React.useState<'all' | 'pending' | 'resolved'>('all')
+
+  const complaintsQuery = useQueries({
+    queries: [
+      {
+        queryKey: ['complaints'],
+        queryFn: async () => {
+          const response = await axiosInstance.get('auth/complaints/get-complaints')
+          return response.data
+        },
+      }
+    ]
+  })
+  const complaints = complaintsQuery[0].data?.complaints || [];
+  console.log('Fetched complaints:', complaints)
+  console.log(complaintsQuery);
+
+  const filteredComplaints = React.useMemo(() => {
+    const q = search.trim().toLowerCase()
+
+    return complaints.filter((c: any) => {
+      const status = String(c?.status ?? '').toLowerCase()
+      const matchesStatus = statusFilter === 'all' ? true : status === statusFilter
+
+      if (!q) return matchesStatus
+
+      const haystack = [
+        c?.subject,
+        c?.message,
+        c?.customer,
+        c?.id,
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase()
+
+      return matchesStatus && haystack.includes(q)
+    })
+  }, [complaints, search, statusFilter])
+
+   if(complaintsQuery[0].isLoading) {
+    return (
+      <div className='min-h-screen flex items-center justify-center'>
+        <p className='text-gray-500 text-lg'>Loading complaints...</p>
+      </div>
+    )
+  }
+
+  if(complaintsQuery[0].error) {
+    return (
+      <div className='min-h-screen flex items-center justify-center'>
+        <p className='text-red-500 text-lg'>Failed to load complaints. Please try again.</p>
+      </div>
+    )
+  }
+
+  const normalizeStatus = (value: any) => String(value ?? '').trim().toLowerCase();
+  
+         
   return (
     <div className='min-h-screen bg-[#f6f7fb] p-6'>
 
@@ -64,7 +97,7 @@ const ComplaintsPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-black mt-2'>
-            124
+            {complaints.length}
           </h2>
         </div>
 
@@ -74,7 +107,7 @@ const ComplaintsPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-yellow-600 mt-2'>
-            18
+            {complaints.filter((p: any) => normalizeStatus(p.status) === 'pending').length}
           </h2>
         </div>
 
@@ -84,7 +117,7 @@ const ComplaintsPage = () => {
           </p>
 
           <h2 className='text-3xl font-bold text-green-600 mt-2'>
-            106
+            {complaints.filter((p:any) => normalizeStatus(p.status) === 'resolved').length}
           </h2>
         </div>
 
@@ -105,17 +138,31 @@ const ComplaintsPage = () => {
             </p>
           </div>
 
-          <input
-            type='text'
-            placeholder='Search complaints...'
-            className='bg-[#f7f7f7] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all w-[260px]'
-          />
+          <div className='flex flex-col sm:flex-row gap-3 items-stretch sm:items-center'>
+            <input
+              type='text'
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder='Search complaints...'
+              className='bg-[#f7f7f7] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all w-[260px]'
+            />
+
+            <select
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value as any)}
+              className='bg-[#f7f7f7] border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black transition-all'
+            >
+              <option value='all'>All</option>
+              <option value='pending'>Pending</option>
+              <option value='resolved'>Resolved</option>
+            </select>
+          </div>
 
         </div>
 
         <div className='flex flex-col gap-5'>
 
-          {complaints.map((complaint, index) => (
+          {filteredComplaints.map((complaint:any, index:number) => (
             <div
               key={index}
               className='border border-gray-200 rounded-[28px] p-6 hover:shadow-md transition-all bg-[#fcfcfc]'
@@ -134,9 +181,9 @@ const ComplaintsPage = () => {
 
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                        complaint.status === 'Pending'
+                        normalizeStatus(complaint.status) === 'pending'
                           ? 'bg-yellow-100 text-yellow-700'
-                          : complaint.status === 'Resolved'
+                          : normalizeStatus(complaint.status) === 'resolved'
                           ? 'bg-green-100 text-green-700'
                           : 'bg-blue-100 text-blue-700'
                       }`}
@@ -151,7 +198,7 @@ const ComplaintsPage = () => {
                   </p>
 
                   <p className='text-sm text-gray-500'>
-                    Customer: {complaint.customer}
+                    Customer: {complaint?.user?.name || complaint?.user?.email || 'Unknown'}
                   </p>
 
                   <p className='text-gray-700 mt-4 leading-relaxed'>
@@ -164,7 +211,7 @@ const ComplaintsPage = () => {
                 <div className='flex flex-col gap-3 min-w-[180px]'>
 
                   <p className='text-sm text-gray-400 text-right'>
-                    {complaint.date}
+                    {complaint?.createdAt ? new Date(complaint.createdAt).toLocaleString() : ''}
                   </p>
 
                   <button className='bg-black text-white rounded-2xl py-3 px-5 hover:bg-[#111] transition-all duration-200'>
@@ -181,6 +228,12 @@ const ComplaintsPage = () => {
 
             </div>
           ))}
+
+          {filteredComplaints.length === 0 && (
+            <div className='text-center text-gray-500 py-10'>
+              No complaints match your filters.
+            </div>
+          )}
 
         </div>
 

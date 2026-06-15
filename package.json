@@ -3,9 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "npx nx run-many --target=serve --all",
+    "dev": "npm run prisma:generate && npx nx reset && npx nx run-many --target=serve --all",
+    "dev:clean": "npm run prisma:generate && npx nx reset && npx nx run-many --target=serve --all --skip-nx-cache",
     "build": "npx nx run-many --target=build --all",
     "test": "npx nx run-many --target=test --all",
+    "prisma:generate": "prisma generate",
     "ui": "npx nx run user-ui:dev",
     "si": "npx nx run seller-ui:dev",
     "ps": "npx nx run product-ui:dev",
@@ -29,6 +31,7 @@
     "ioredis": "^5.10.1",
     "jotai": "^2.20.0",
     "jsonwebtoken": "^9.0.3",
+    "kafkajs": "^2.2.4",
     "lucide-react": "^1.14.0",
     "morgan": "^1.10.1",
     "next": "~16.1.6",
@@ -40,7 +43,8 @@
     "stripe": "^22.1.1",
     "styled-components": "^6.4.1",
     "swagger-autogen": "^2.23.7",
-    "swagger-ui-express": "^5.0.1"
+    "swagger-ui-express": "^5.0.1",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@nx/docker": "22.7.1",
@@ -101,6 +105,7 @@
     "packages/*",
     "my-app",
     "product-service",
-    "product-service-e2e"
+    "product-service-e2e",
+    "kafka-service"
   ]
 }
