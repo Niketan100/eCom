@@ -2080,26 +2080,6 @@
     "type": "static"
   },
   {
-    "source": "npm:@emnapi/core",
-    "target": "npm:@emnapi/wasi-threads",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/core",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/runtime",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/wasi-threads",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
     "source": "npm:@emotion/is-prop-valid",
     "target": "npm:@emotion/memoize",
     "type": "static"
@@ -2172,56 +2152,6 @@
   {
     "source": "npm:@img/sharp-darwin-arm64",
     "target": "npm:@img/sharp-libvips-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@img/sharp-darwin-x64",
-    "target": "npm:@img/sharp-libvips-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@img/sharp-linux-arm",
-    "target": "npm:@img/sharp-libvips-linux-arm",
-    "type": "static"
-  },
-  {
-    "source": "npm:@img/sharp-linux-arm64",
-    "target": "npm:@img/sharp-libvips-linux-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@img/sharp-linux-ppc64",
-    "target": "npm:@img/sharp-libvips-linux-ppc64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@img/sharp-linux-riscv64",
-    "target": "npm:@img/sharp-libvips-linux-riscv64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@img/sharp-linux-s390x",
-    "target": "npm:@img/sharp-libvips-linux-s390x",
-    "type": "static"
-  },
-  {
-    "source": "npm:@img/sharp-linux-x64",
-    "target": "npm:@img/sharp-libvips-linux-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@img/sharp-linuxmusl-arm64",
-    "target": "npm:@img/sharp-libvips-linuxmusl-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@img/sharp-linuxmusl-x64",
-    "target": "npm:@img/sharp-libvips-linuxmusl-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@img/sharp-wasm32",
-    "target": "npm:@emnapi/runtime",
     "type": "static"
   },
   {
@@ -3586,102 +3516,7 @@
   },
   {
     "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-android-arm-eabi",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-android-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
     "target": "npm:@napi-rs/nice-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-freebsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-linux-arm-gnueabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-linux-arm64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-linux-arm64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-linux-ppc64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-linux-riscv64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-linux-s390x-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-linux-x64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-linux-x64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-openharmony-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-win32-arm64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-win32-ia32-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/nice",
-    "target": "npm:@napi-rs/nice-win32-x64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime",
-    "target": "npm:@emnapi/core",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime",
-    "target": "npm:@emnapi/runtime",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime",
-    "target": "npm:@tybys/wasm-util",
     "type": "static"
   },
   {
@@ -4857,51 +4692,6 @@
   {
     "source": "npm:nx@22.7.5",
     "target": "npm:@nx/nx-darwin-arm64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-darwin-x64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-freebsd-x64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm-gnueabihf@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm64-gnu@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm64-musl@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-x64-gnu@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-x64-musl@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-win32-arm64-msvc@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-win32-x64-msvc@22.7.5",
     "type": "static"
   },
   {
@@ -6600,51 +6390,6 @@
     "type": "static"
   },
   {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-darwin-x64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-freebsd-x64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm-gnueabihf@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm64-gnu@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm64-musl@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-x64-gnu@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-x64-musl@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-win32-arm64-msvc@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-win32-x64-msvc@22.7.5",
-    "type": "static"
-  },
-  {
     "source": "npm:@tybys/wasm-util@0.9.0",
     "target": "npm:tslib",
     "type": "static"
@@ -8102,51 +7847,6 @@
   {
     "source": "npm:nx@22.7.5",
     "target": "npm:@nx/nx-darwin-arm64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-darwin-x64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-freebsd-x64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm-gnueabihf@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm64-gnu@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm64-musl@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-x64-gnu@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-x64-musl@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-win32-arm64-msvc@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-win32-x64-msvc@22.7.5",
     "type": "static"
   },
   {
@@ -9665,51 +9365,6 @@
     "type": "static"
   },
   {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-darwin-x64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-freebsd-x64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm-gnueabihf@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm64-gnu@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm64-musl@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-x64-gnu@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-x64-musl@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-win32-arm64-msvc@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-win32-x64-msvc@22.7.5",
-    "type": "static"
-  },
-  {
     "source": "npm:@phenomnomnominal/tsquery@6.2.0",
     "target": "npm:typescript",
     "type": "static"
@@ -10820,51 +10475,6 @@
     "type": "static"
   },
   {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-darwin-x64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-freebsd-x64@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm-gnueabihf@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm64-gnu@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-arm64-musl@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-x64-gnu@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-linux-x64-musl@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-win32-arm64-msvc@22.7.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx@22.7.5",
-    "target": "npm:@nx/nx-win32-x64-msvc@22.7.5",
-    "type": "static"
-  },
-  {
     "source": "npm:string-width@4.2.3",
     "target": "npm:emoji-regex",
     "type": "static"
@@ -11295,56 +10905,6 @@
     "type": "static"
   },
   {
-    "source": "npm:@oxc-resolver/binding-wasm32-wasi",
-    "target": "npm:@emnapi/core@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@oxc-resolver/binding-wasm32-wasi",
-    "target": "npm:@emnapi/runtime@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@oxc-resolver/binding-wasm32-wasi",
-    "target": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/core@1.10.0",
-    "target": "npm:@emnapi/wasi-threads@1.2.1",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/core@1.10.0",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/runtime@1.10.0",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/wasi-threads@1.2.1",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "target": "npm:@emnapi/core@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "target": "npm:@emnapi/runtime@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "target": "npm:@tybys/wasm-util",
-    "type": "static"
-  },
-  {
     "source": "npm:@parcel/watcher",
     "target": "npm:detect-libc",
     "type": "static"
@@ -11366,67 +10926,7 @@
   },
   {
     "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-android-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
     "target": "npm:@parcel/watcher-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-freebsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-linux-arm-glibc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-linux-arm-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-linux-arm64-glibc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-linux-arm64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-linux-x64-glibc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-linux-x64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-win32-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-win32-ia32",
-    "type": "static"
-  },
-  {
-    "source": "npm:@parcel/watcher",
-    "target": "npm:@parcel/watcher-win32-x64",
     "type": "static"
   },
   {
@@ -11835,56 +11335,6 @@
     "type": "static"
   },
   {
-    "source": "npm:@rolldown/binding-wasm32-wasi",
-    "target": "npm:@emnapi/core@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rolldown/binding-wasm32-wasi",
-    "target": "npm:@emnapi/runtime@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rolldown/binding-wasm32-wasi",
-    "target": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/core@1.10.0",
-    "target": "npm:@emnapi/wasi-threads@1.2.1",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/core@1.10.0",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/runtime@1.10.0",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/wasi-threads@1.2.1",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "target": "npm:@emnapi/core@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "target": "npm:@emnapi/runtime@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "target": "npm:@tybys/wasm-util",
-    "type": "static"
-  },
-  {
     "source": "npm:@rollup/plugin-babel",
     "target": "npm:@babel/core",
     "type": "static"
@@ -12082,56 +11532,6 @@
   {
     "source": "npm:@rspack/binding",
     "target": "npm:@rspack/binding-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rspack/binding",
-    "target": "npm:@rspack/binding-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rspack/binding",
-    "target": "npm:@rspack/binding-linux-arm64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rspack/binding",
-    "target": "npm:@rspack/binding-linux-arm64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rspack/binding",
-    "target": "npm:@rspack/binding-linux-x64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rspack/binding",
-    "target": "npm:@rspack/binding-linux-x64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rspack/binding",
-    "target": "npm:@rspack/binding-wasm32-wasi",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rspack/binding",
-    "target": "npm:@rspack/binding-win32-arm64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rspack/binding",
-    "target": "npm:@rspack/binding-win32-ia32-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rspack/binding",
-    "target": "npm:@rspack/binding-win32-x64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@rspack/binding-wasm32-wasi",
-    "target": "npm:@napi-rs/wasm-runtime",
     "type": "static"
   },
   {
@@ -12575,61 +11975,6 @@
     "type": "static"
   },
   {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-linux-arm-gnueabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-linux-arm64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-linux-arm64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-linux-ppc64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-linux-s390x-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-linux-x64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-linux-x64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-win32-arm64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-win32-ia32-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:@swc/core",
-    "target": "npm:@swc/core-win32-x64-msvc",
-    "type": "static"
-  },
-  {
     "source": "npm:@swc/helpers",
     "target": "npm:tslib",
     "type": "static"
@@ -12677,11 +12022,6 @@
   {
     "source": "npm:@tokenizer/inflate",
     "target": "npm:token-types",
-    "type": "static"
-  },
-  {
-    "source": "npm:@tybys/wasm-util",
-    "target": "npm:tslib",
     "type": "static"
   },
   {
@@ -12952,56 +12292,6 @@
   {
     "source": "npm:@types/yargs",
     "target": "npm:@types/yargs-parser",
-    "type": "static"
-  },
-  {
-    "source": "npm:@unrs/resolver-binding-wasm32-wasi",
-    "target": "npm:@emnapi/core@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@unrs/resolver-binding-wasm32-wasi",
-    "target": "npm:@emnapi/runtime@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@unrs/resolver-binding-wasm32-wasi",
-    "target": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/core@1.10.0",
-    "target": "npm:@emnapi/wasi-threads@1.2.1",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/core@1.10.0",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/runtime@1.10.0",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@emnapi/wasi-threads@1.2.1",
-    "target": "npm:tslib",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "target": "npm:@emnapi/core@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "target": "npm:@emnapi/runtime@1.10.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:@napi-rs/wasm-runtime@1.1.5",
-    "target": "npm:@tybys/wasm-util",
     "type": "static"
   },
   {
@@ -15471,132 +14761,7 @@
   },
   {
     "source": "npm:esbuild",
-    "target": "npm:@esbuild/aix-ppc64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/android-arm",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/android-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/android-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
     "target": "npm:@esbuild/darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/freebsd-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/freebsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/linux-arm",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/linux-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/linux-ia32",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/linux-loong64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/linux-mips64el",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/linux-ppc64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/linux-riscv64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/linux-s390x",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/linux-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/netbsd-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/netbsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/openbsd-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/openbsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/openharmony-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/sunos-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/win32-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/win32-ia32",
-    "type": "static"
-  },
-  {
-    "source": "npm:esbuild",
-    "target": "npm:@esbuild/win32-x64",
     "type": "static"
   },
   {
@@ -16371,7 +15536,7 @@
   },
   {
     "source": "npm:fork-ts-checker-webpack-plugin",
-    "target": "npm:chokidar",
+    "target": "npm:chokidar@4.0.3",
     "type": "static"
   },
   {
@@ -16452,6 +15617,11 @@
   {
     "source": "npm:brace-expansion@1.1.15",
     "target": "npm:concat-map",
+    "type": "static"
+  },
+  {
+    "source": "npm:chokidar@4.0.3",
+    "target": "npm:readdirp@4.1.2",
     "type": "static"
   },
   {
@@ -18576,57 +17746,7 @@
   },
   {
     "source": "npm:lightningcss",
-    "target": "npm:lightningcss-android-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:lightningcss",
     "target": "npm:lightningcss-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:lightningcss",
-    "target": "npm:lightningcss-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:lightningcss",
-    "target": "npm:lightningcss-freebsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:lightningcss",
-    "target": "npm:lightningcss-linux-arm-gnueabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:lightningcss",
-    "target": "npm:lightningcss-linux-arm64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:lightningcss",
-    "target": "npm:lightningcss-linux-arm64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:lightningcss",
-    "target": "npm:lightningcss-linux-x64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:lightningcss",
-    "target": "npm:lightningcss-linux-x64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:lightningcss",
-    "target": "npm:lightningcss-win32-arm64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:lightningcss",
-    "target": "npm:lightningcss-win32-x64-msvc",
     "type": "static"
   },
   {
@@ -21275,51 +20395,6 @@
     "type": "static"
   },
   {
-    "source": "npm:nx",
-    "target": "npm:@nx/nx-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx",
-    "target": "npm:@nx/nx-freebsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx",
-    "target": "npm:@nx/nx-linux-arm-gnueabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx",
-    "target": "npm:@nx/nx-linux-arm64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx",
-    "target": "npm:@nx/nx-linux-arm64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx",
-    "target": "npm:@nx/nx-linux-x64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx",
-    "target": "npm:@nx/nx-linux-x64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx",
-    "target": "npm:@nx/nx-win32-arm64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:nx",
-    "target": "npm:@nx/nx-win32-x64-msvc",
-    "type": "static"
-  },
-  {
     "source": "npm:@emnapi/core@1.4.5",
     "target": "npm:@emnapi/wasi-threads@1.0.4",
     "type": "static"
@@ -21576,97 +20651,7 @@
   },
   {
     "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-android-arm-eabi",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-android-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
     "target": "npm:@oxc-resolver/binding-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-freebsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-linux-arm-gnueabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-linux-arm-musleabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-linux-arm64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-linux-arm64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-linux-ppc64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-linux-riscv64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-linux-riscv64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-linux-s390x-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-linux-x64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-linux-x64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-openharmony-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-wasm32-wasi",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-win32-arm64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:oxc-resolver",
-    "target": "npm:@oxc-resolver/binding-win32-x64-msvc",
     "type": "static"
   },
   {
@@ -22296,77 +21281,7 @@
   },
   {
     "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-android-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
     "target": "npm:@rolldown/binding-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-freebsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-linux-arm-gnueabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-linux-arm64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-linux-arm64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-linux-ppc64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-linux-s390x-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-linux-x64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-linux-x64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-openharmony-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-wasm32-wasi",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-win32-arm64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:rolldown",
-    "target": "npm:@rolldown/binding-win32-x64-msvc",
     "type": "static"
   },
   {
@@ -22376,127 +21291,7 @@
   },
   {
     "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-android-arm-eabi",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-android-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
     "target": "npm:@rollup/rollup-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-freebsd-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-freebsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-arm-gnueabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-arm-musleabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-arm64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-arm64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-loong64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-loong64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-ppc64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-ppc64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-riscv64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-riscv64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-s390x-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-x64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-linux-x64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-openbsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-openharmony-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-win32-arm64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-win32-ia32-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-win32-x64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:rollup",
-    "target": "npm:@rollup/rollup-win32-x64-msvc",
     "type": "static"
   },
   {
@@ -22586,7 +21381,7 @@
   },
   {
     "source": "npm:sass",
-    "target": "npm:chokidar@5.0.0",
+    "target": "npm:chokidar",
     "type": "static"
   },
   {
@@ -22641,152 +21436,7 @@
   },
   {
     "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-all-unknown",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-android-arm",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-android-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-android-riscv64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-android-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
     "target": "npm:sass-embedded-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-linux-arm",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-linux-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-linux-musl-arm",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-linux-musl-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-linux-musl-riscv64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-linux-musl-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-linux-riscv64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-linux-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-unknown-all",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-win32-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded",
-    "target": "npm:sass-embedded-win32-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded-all-unknown",
-    "target": "npm:sass@1.100.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:chokidar@5.0.0",
-    "target": "npm:readdirp@5.0.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass@1.100.0",
-    "target": "npm:chokidar@5.0.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass@1.100.0",
-    "target": "npm:immutable",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass@1.100.0",
-    "target": "npm:source-map-js",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass@1.100.0",
-    "target": "npm:@parcel/watcher",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass-embedded-unknown-all",
-    "target": "npm:sass@1.100.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:chokidar@5.0.0",
-    "target": "npm:readdirp@5.0.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass@1.100.0",
-    "target": "npm:chokidar@5.0.0",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass@1.100.0",
-    "target": "npm:immutable",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass@1.100.0",
-    "target": "npm:source-map-js",
-    "type": "static"
-  },
-  {
-    "source": "npm:sass@1.100.0",
-    "target": "npm:@parcel/watcher",
     "type": "static"
   },
   {
@@ -22817,11 +21467,6 @@
   {
     "source": "npm:sass-loader",
     "target": "npm:neo-async",
-    "type": "static"
-  },
-  {
-    "source": "npm:chokidar@5.0.0",
-    "target": "npm:readdirp@5.0.0",
     "type": "static"
   },
   {
@@ -23046,117 +21691,7 @@
   },
   {
     "source": "npm:sharp",
-    "target": "npm:@img/sharp-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
     "target": "npm:@img/sharp-libvips-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-libvips-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-libvips-linux-arm",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-libvips-linux-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-libvips-linux-ppc64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-libvips-linux-riscv64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-libvips-linux-s390x",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-libvips-linux-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-libvips-linuxmusl-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-libvips-linuxmusl-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-linux-arm",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-linux-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-linux-ppc64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-linux-riscv64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-linux-s390x",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-linux-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-linuxmusl-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-linuxmusl-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-wasm32",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-win32-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-win32-ia32",
-    "type": "static"
-  },
-  {
-    "source": "npm:sharp",
-    "target": "npm:@img/sharp-win32-x64",
     "type": "static"
   },
   {
@@ -24391,112 +22926,7 @@
   },
   {
     "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-android-arm-eabi",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-android-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
     "target": "npm:@unrs/resolver-binding-darwin-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-darwin-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-freebsd-x64",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-arm-gnueabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-arm-musleabihf",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-arm64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-arm64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-loong64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-loong64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-ppc64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-riscv64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-riscv64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-s390x-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-x64-gnu",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-linux-x64-musl",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-openharmony-arm64",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-wasm32-wasi",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-win32-arm64-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-win32-ia32-msvc",
-    "type": "static"
-  },
-  {
-    "source": "npm:unrs-resolver",
-    "target": "npm:@unrs/resolver-binding-win32-x64-msvc",
     "type": "static"
   },
   {
@@ -25517,6 +23947,16 @@
   {
     "source": "npm:yauzl",
     "target": "npm:pend",
+    "type": "static"
+  },
+  {
+    "source": "npm:zustand",
+    "target": "npm:@types/react",
+    "type": "static"
+  },
+  {
+    "source": "npm:zustand",
+    "target": "npm:react",
     "type": "static"
   }
 ]

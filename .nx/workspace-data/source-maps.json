@@ -1077,6 +1077,320 @@
       "nx/core/package-json"
     ]
   },
+  "apps/kafka-service": {
+    "root": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.dependsOn": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.cache": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.inputs": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.outputs": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.syncGenerators": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.executor": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options.cwd": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.options.command": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.technologies": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.technologies.0": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.description": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help.command": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "targets.typecheck.metadata.help.example": [
+      "apps/kafka-service/tsconfig.json",
+      "@nx/js/typescript"
+    ],
+    "name": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "tags": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:private": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageVersion": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.executor": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.outputs": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.defaultConfiguration": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.configurations": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.platform": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.outputPath": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.format": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.bundle": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.main": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.tsConfig": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.assets": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.esbuildOptions": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.configurations.development": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.configurations.production": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.configurations.production.esbuildOptions": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prune-lockfile": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prune-lockfile.dependsOn": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prune-lockfile.cache": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prune-lockfile.executor": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prune-lockfile.outputs": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prune-lockfile.options": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prune-lockfile.options.buildTarget": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.copy-workspace-modules": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.copy-workspace-modules.dependsOn": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.copy-workspace-modules.cache": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.copy-workspace-modules.outputs": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.copy-workspace-modules.executor": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.copy-workspace-modules.options": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.copy-workspace-modules.options.buildTarget": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prune": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prune.dependsOn": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.prune.executor": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.continuous": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.executor": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.defaultConfiguration": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.dependsOn": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.options": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.configurations": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.options.buildTarget": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.options.runBuildTargetDependencies": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.configurations.development": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.configurations.development.buildTarget": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.configurations.production": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.serve.configurations.production.buildTarget": [
+      "apps/kafka-service/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
   "apps/product-service": {
     "root": [
       "apps/product-service/package.json",

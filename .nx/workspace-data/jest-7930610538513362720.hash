@@ -1,5 +1,5 @@
 {
-  "15501827630838805553": {
+  "4435610817722243308": {
     "targets": {
       "test": {
         "command": "jest",
@@ -43,7 +43,7 @@
       }
     }
   },
-  "736113016395841268": {
+  "5032871310143531050": {
     "targets": {
       "test": {
         "command": "jest",
@@ -87,139 +87,7 @@
       }
     }
   },
-  "12258374147057755283": {
-    "targets": {
-      "test": {
-        "command": "jest",
-        "options": {
-          "cwd": "apps/auth-service",
-          "env": {
-            "TS_NODE_COMPILER_OPTIONS": "{\"moduleResolution\":\"node10\",\"module\":\"commonjs\",\"customConditions\":null}"
-          }
-        },
-        "metadata": {
-          "technologies": [
-            "jest"
-          ],
-          "description": "Run Jest Tests",
-          "help": {
-            "command": "npx jest --help",
-            "example": {
-              "options": {
-                "coverage": true
-              }
-            }
-          }
-        },
-        "cache": true,
-        "inputs": [
-          "default",
-          "^production",
-          "{workspaceRoot}/jest.preset.js",
-          {
-            "externalDependencies": [
-              "jest",
-              "@nx/jest",
-              "ts-jest",
-              "@swc/jest"
-            ]
-          }
-        ],
-        "outputs": [
-          "{projectRoot}/test-output/jest/coverage"
-        ]
-      }
-    }
-  },
-  "10265468370389865231": {
-    "targets": {
-      "test": {
-        "command": "jest",
-        "options": {
-          "cwd": "apps/auth-service",
-          "env": {
-            "TS_NODE_COMPILER_OPTIONS": "{\"moduleResolution\":\"node10\",\"module\":\"commonjs\",\"customConditions\":null}"
-          }
-        },
-        "metadata": {
-          "technologies": [
-            "jest"
-          ],
-          "description": "Run Jest Tests",
-          "help": {
-            "command": "npx jest --help",
-            "example": {
-              "options": {
-                "coverage": true
-              }
-            }
-          }
-        },
-        "cache": true,
-        "inputs": [
-          "default",
-          "^production",
-          "{workspaceRoot}/jest.preset.js",
-          {
-            "externalDependencies": [
-              "jest",
-              "@nx/jest",
-              "ts-jest",
-              "@swc/jest"
-            ]
-          }
-        ],
-        "outputs": [
-          "{projectRoot}/test-output/jest/coverage"
-        ]
-      }
-    }
-  },
-  "1747847225275310050": {
-    "targets": {
-      "test": {
-        "command": "jest",
-        "options": {
-          "cwd": "apps/auth-service",
-          "env": {
-            "TS_NODE_COMPILER_OPTIONS": "{\"moduleResolution\":\"node10\",\"module\":\"commonjs\",\"customConditions\":null}"
-          }
-        },
-        "metadata": {
-          "technologies": [
-            "jest"
-          ],
-          "description": "Run Jest Tests",
-          "help": {
-            "command": "npx jest --help",
-            "example": {
-              "options": {
-                "coverage": true
-              }
-            }
-          }
-        },
-        "cache": true,
-        "inputs": [
-          "default",
-          "^production",
-          "{workspaceRoot}/jest.preset.js",
-          {
-            "externalDependencies": [
-              "jest",
-              "@nx/jest",
-              "ts-jest",
-              "@swc/jest"
-            ]
-          }
-        ],
-        "outputs": [
-          "{projectRoot}/test-output/jest/coverage"
-        ]
-      }
-    }
-  },
-  "1502529310460388282": {
+  "16787968027238289544": {
     "targets": {
       "test": {
         "command": "jest",

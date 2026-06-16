@@ -1,80 +1,5 @@
 {
-  "12002023708746884569": {
-    "build": {
-      "command": "next build",
-      "options": {
-        "cwd": "apps/admin-ui",
-        "tty": false
-      },
-      "dependsOn": [
-        "^build"
-      ],
-      "cache": true,
-      "inputs": [
-        "default",
-        "^default",
-        {
-          "externalDependencies": [
-            "next"
-          ]
-        },
-        {
-          "dependentTasksOutputFiles": "**/*.d.ts",
-          "transitive": true
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}/apps/admin-ui/.next/!(cache)/**/*",
-        "{workspaceRoot}/apps/admin-ui/.next/!(cache)"
-      ],
-      "syncGenerators": [
-        "@nx/js:typescript-sync"
-      ]
-    },
-    "dev": {
-      "continuous": true,
-      "command": "next dev",
-      "options": {
-        "cwd": "apps/admin-ui"
-      },
-      "syncGenerators": [
-        "@nx/js:typescript-sync"
-      ]
-    },
-    "start": {
-      "continuous": true,
-      "command": "next start",
-      "options": {
-        "cwd": "apps/admin-ui"
-      },
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "serve-static": {
-      "continuous": true,
-      "command": "next start",
-      "options": {
-        "cwd": "apps/admin-ui"
-      },
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "build-deps": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "watch-deps": {
-      "continuous": true,
-      "dependsOn": [
-        "build-deps"
-      ],
-      "command": "npx nx watch --projects @real-app/admin-ui --includeDependentProjects -- npx nx build-deps @real-app/admin-ui"
-    }
-  },
-  "5645353214848345809": {
+  "12242286419821541596": {
     "build": {
       "command": "next build",
       "options": {
@@ -149,7 +74,7 @@
       "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
     }
   },
-  "8226494733984418944": {
+  "8272138936826675015": {
     "build": {
       "command": "next build",
       "options": {
@@ -224,7 +149,7 @@
       "command": "npx nx watch --projects @real-app/user-ui --includeDependentProjects -- npx nx build-deps @real-app/user-ui"
     }
   },
-  "13747060256159121397": {
+  "3166607682578009757": {
     "build": {
       "command": "next build",
       "options": {
@@ -299,7 +224,7 @@
       "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
     }
   },
-  "11417877806566060822": {
+  "17794142860464454639": {
     "build": {
       "command": "next build",
       "options": {
@@ -374,7 +299,7 @@
       "command": "npx nx watch --projects @real-app/user-ui --includeDependentProjects -- npx nx build-deps @real-app/user-ui"
     }
   },
-  "13170907924629968834": {
+  "9172112853253407266": {
     "build": {
       "command": "next build",
       "options": {
@@ -449,7 +374,7 @@
       "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
     }
   },
-  "12162835970678383151": {
+  "16465709635692503507": {
     "build": {
       "command": "next build",
       "options": {
@@ -524,11 +449,11 @@
       "command": "npx nx watch --projects @real-app/user-ui --includeDependentProjects -- npx nx build-deps @real-app/user-ui"
     }
   },
-  "2547748416971046392": {
+  "8126656426993410323": {
     "build": {
       "command": "next build",
       "options": {
-        "cwd": "apps/seller-ui",
+        "cwd": "apps/user-ui",
         "tty": false
       },
       "dependsOn": [
@@ -549,8 +474,8 @@
         }
       ],
       "outputs": [
-        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
-        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+        "{workspaceRoot}/apps/user-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/user-ui/.next/!(cache)"
       ],
       "syncGenerators": [
         "@nx/js:typescript-sync"
@@ -560,7 +485,7 @@
       "continuous": true,
       "command": "next dev",
       "options": {
-        "cwd": "apps/seller-ui"
+        "cwd": "apps/user-ui"
       },
       "syncGenerators": [
         "@nx/js:typescript-sync"
@@ -570,7 +495,7 @@
       "continuous": true,
       "command": "next start",
       "options": {
-        "cwd": "apps/seller-ui"
+        "cwd": "apps/user-ui"
       },
       "dependsOn": [
         "build"
@@ -580,7 +505,7 @@
       "continuous": true,
       "command": "next start",
       "options": {
-        "cwd": "apps/seller-ui"
+        "cwd": "apps/user-ui"
       },
       "dependsOn": [
         "build"
@@ -596,10 +521,10 @@
       "dependsOn": [
         "build-deps"
       ],
-      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+      "command": "npx nx watch --projects @real-app/user-ui --includeDependentProjects -- npx nx build-deps @real-app/user-ui"
     }
   },
-  "1140213899884759076": {
+  "5602609140004624973": {
     "build": {
       "command": "next build",
       "options": {

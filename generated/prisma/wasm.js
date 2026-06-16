@@ -178,19 +178,38 @@ exports.Prisma.SellerScalarFieldEnum = {
   shopId: 'shopId'
 };
 
+exports.Prisma.NotificationScalarFieldEnum = {
+  id: 'id',
+  toSellerId: 'toSellerId',
+  fromUserId: 'fromUserId',
+  fromSellerId: 'fromSellerId',
+  sellerId: 'sellerId',
+  type: 'type',
+  title: 'title',
+  message: 'message',
+  data: 'data',
+  readAt: 'readAt',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.ProductsScalarFieldEnum = {
   id: 'id',
   name: 'name',
   slug: 'slug',
   shortDescription: 'shortDescription',
   description: 'description',
+  features: 'features',
+  highlights: 'highlights',
   category: 'category',
+  subcategory: 'subcategory',
   brand: 'brand',
   price: 'price',
   discountedPrice: 'discountedPrice',
   stock: 'stock',
   sku: 'sku',
   tags: 'tags',
+  shippingWeight: 'shippingWeight',
+  warranty: 'warranty',
   isActive: 'isActive',
   isFeatured: 'isFeatured',
   views: 'views',
@@ -201,6 +220,16 @@ exports.Prisma.ProductsScalarFieldEnum = {
   shopId: 'shopId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ProductVariantsScalarFieldEnum = {
+  id: 'id',
+  productId: 'productId',
+  type: 'type',
+  value: 'value',
+  stock: 'stock',
+  additionalPrice: 'additionalPrice',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.ProductImagesScalarFieldEnum = {
@@ -219,16 +248,6 @@ exports.Prisma.ProductReviewsScalarFieldEnum = {
   comment: 'comment',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
-};
-
-exports.Prisma.ProductVariantsScalarFieldEnum = {
-  id: 'id',
-  productId: 'productId',
-  name: 'name',
-  value: 'value',
-  stock: 'stock',
-  additionalPrice: 'additionalPrice',
-  createdAt: 'createdAt'
 };
 
 exports.Prisma.WishlistScalarFieldEnum = {
@@ -306,6 +325,12 @@ exports.Prisma.CouponsScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.Site_configScalarFieldEnum = {
+  id: 'id',
+  categories: 'categories',
+  subcategories: 'subcategories'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -315,6 +340,11 @@ exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
+exports.NotificationType = exports.$Enums.NotificationType = {
+  ORDER_CREATED: 'ORDER_CREATED',
+  PRODUCT_VIEWED: 'PRODUCT_VIEWED'
+};
+
 exports.OrderStatus = exports.$Enums.OrderStatus = {
   PENDING: 'PENDING',
   CONFIRMED: 'CONFIRMED',
@@ -343,17 +373,19 @@ exports.Prisma.ModelName = {
   shopReviews: 'shopReviews',
   shops: 'shops',
   seller: 'seller',
+  Notification: 'Notification',
   products: 'products',
+  productVariants: 'productVariants',
   productImages: 'productImages',
   productReviews: 'productReviews',
-  productVariants: 'productVariants',
   wishlist: 'wishlist',
   cartItems: 'cartItems',
   orders: 'orders',
   payments: 'payments',
   complaints: 'complaints',
   events: 'events',
-  coupons: 'coupons'
+  coupons: 'coupons',
+  site_config: 'site_config'
 };
 
 /**

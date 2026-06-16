@@ -1,6 +1,0 @@
-> webpack-cli build --node-env=production
-
-[1m[31mERROR[39m[22m in [1m./src/main.ts[39m[22m [1m[32m10:27-76[39m[22m
-[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'packages/errorHandler/[1m[31merror[39m[22m[1m-middleware' in '/Users/niketan/Desktop/RealApp/apps/admin-service/src'[39m[22m
-
-webpack compiled with [1m[31m1 error[39m[22m (cbfd30b8a0c9685a)
