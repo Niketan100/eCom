@@ -1,8 +1,8 @@
 {
   "run": {
     "command": "nx run-many --target=serve --all",
-    "startTime": "2026-07-06T10:57:41.344Z",
-    "endTime": "2026-07-06T11:14:11.021Z",
+    "startTime": "2026-07-07T16:28:49.980Z",
+    "endTime": "2026-07-07T16:30:31.600Z",
     "inner": false
   },
   "tasks": [
@@ -11,8 +11,8 @@
       "target": "build",
       "projectName": "@real-app/kafka-service",
       "hash": "13596969760890437026",
-      "startTime": "2026-07-06T10:57:41.493Z",
-      "endTime": "2026-07-06T10:57:44.930Z",
+      "startTime": "2026-07-07T16:28:50.894Z",
+      "endTime": "2026-07-07T16:28:56.100Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0
@@ -22,19 +22,8 @@
       "target": "build",
       "projectName": "@real-app/auth-service",
       "hash": "9114332933742993055",
-      "startTime": "2026-07-06T10:57:41.493Z",
-      "endTime": "2026-07-06T10:57:49.463Z",
-      "params": "",
-      "cacheStatus": "cache-miss",
-      "status": 0
-    },
-    {
-      "taskId": "@real-app/product-service:build",
-      "target": "build",
-      "projectName": "@real-app/product-service",
-      "hash": "14840108872694688538",
-      "startTime": "2026-07-06T10:57:41.493Z",
-      "endTime": "2026-07-06T10:57:54.174Z",
+      "startTime": "2026-07-07T16:28:50.894Z",
+      "endTime": "2026-07-07T16:29:07.678Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0
@@ -44,8 +33,19 @@
       "target": "build",
       "projectName": "@real-app/api-gateway",
       "hash": "871547113785592147",
-      "startTime": "2026-07-06T10:57:44.947Z",
-      "endTime": "2026-07-06T10:57:54.381Z",
+      "startTime": "2026-07-07T16:28:56.156Z",
+      "endTime": "2026-07-07T16:29:15.150Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@real-app/product-service:build",
+      "target": "build",
+      "projectName": "@real-app/product-service",
+      "hash": "14840108872694688538",
+      "startTime": "2026-07-07T16:28:50.894Z",
+      "endTime": "2026-07-07T16:29:16.495Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0
@@ -55,8 +55,8 @@
       "target": "serve",
       "projectName": "@real-app/kafka-service",
       "hash": "18348883916237952317",
-      "startTime": "2026-07-06T10:57:44.945Z",
-      "endTime": "2026-07-06T11:14:11.019Z",
+      "startTime": "2026-07-07T16:28:56.156Z",
+      "endTime": "2026-07-07T16:30:31.598Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 1
@@ -66,19 +66,8 @@
       "target": "serve",
       "projectName": "@real-app/auth-service",
       "hash": "16008025812196425100",
-      "startTime": "2026-07-06T10:57:49.494Z",
-      "endTime": "2026-07-06T11:14:11.020Z",
-      "params": "",
-      "cacheStatus": "cache-miss",
-      "status": 1
-    },
-    {
-      "taskId": "@real-app/product-service:serve:development",
-      "target": "serve",
-      "projectName": "@real-app/product-service",
-      "hash": "6108731024540592997",
-      "startTime": "2026-07-06T10:57:54.184Z",
-      "endTime": "2026-07-06T11:14:11.020Z",
+      "startTime": "2026-07-07T16:29:07.714Z",
+      "endTime": "2026-07-07T16:30:31.599Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 1
@@ -88,8 +77,19 @@
       "target": "serve",
       "projectName": "@real-app/api-gateway",
       "hash": "13961978303105987428",
-      "startTime": "2026-07-06T10:57:54.390Z",
-      "endTime": "2026-07-06T11:14:11.020Z",
+      "startTime": "2026-07-07T16:29:15.160Z",
+      "endTime": "2026-07-07T16:30:31.599Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    },
+    {
+      "taskId": "@real-app/product-service:serve:development",
+      "target": "serve",
+      "projectName": "@real-app/product-service",
+      "hash": "6108731024540592997",
+      "startTime": "2026-07-07T16:29:16.512Z",
+      "endTime": "2026-07-07T16:30:31.599Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 1

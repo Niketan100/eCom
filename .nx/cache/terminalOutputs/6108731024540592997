@@ -1,74 +1,72 @@
 > nx run @real-app/product-service:serve:development
 
-[36m⠋[39m [2K[1G[36m⠙[39m [2K[1G[36m⠹[39m [2K[1G[36m⠸[39m [2K[1G[36m⠼[39m [2K[1G[36m⠴[39m [2K[1G[36m⠦[39m Creating project graph nodes with 7 plugins
+[36m⠋[39m Creating project graph nodes with 4 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 4 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 4 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/docker[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/docker[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/docker[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m [2K[1G[36m⠋[39m [2K[1G[36m⠙[39m [2K[1G[36m⠹[39m [2K[1G[36m⠸[39m [2K[1G[36m⠼[39m [2K[1G[36m⠴[39m [2K[1G[36m⠦[39m [2K[1G[36m⠧[39m [2K[1G[36m⠇[39m Creating project graph nodes with 7 plugins
   - @nx/js/typescript
   - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
   - nx/js/dependencies-and-lockfile
-  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 6 plugins
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 6 plugins
   - @nx/js/typescript
   - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 6 plugins
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 5 plugins
   - @nx/js/typescript
   - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 6 plugins
-  - @nx/js/typescript
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 4 plugins
   - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 4 plugins
-  - @nx/js/typescript
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 3 plugins
   - @nx/jest/plugin
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 3 plugins
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 3 plugins
   - @nx/jest/plugin
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 3 plugins
   - @nx/jest/plugin
-  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m [2K[1G[36m⠋[39m [2K[1G[36m⠙[39m [2K[1G[36m⠹[39m [2K[1G[36m⠸[39m [2K[1G[36m⠼[39m [2K[1G[36m⠴[39m Creating project graph nodes with 7 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile
-  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 3 plugins
   - @nx/jest/plugin
-  - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 3 plugins
   - @nx/jest/plugin
-  - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 3 plugins
   - @nx/jest/plugin
-  - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 3 plugins
   - @nx/jest/plugin
-  - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 3 plugins
   - @nx/jest/plugin
-  - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 2 plugins
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 2 plugins
   - @nx/jest/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph dependencies with nx/js/dependencies-and-lockfile[2K[1G
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph dependencies with nx/js/dependencies-and-lockfile[2K[1G
 [2m> [22m[2mnx run[22m @real-app/product-service:build  [2m[existing outputs match the cache, left as is][22m
 
 > webpack-cli build --node-env=production
@@ -82,7 +80,7 @@
 
 webpack compiled with [1m[33m2 warnings[39m[22m (97b142b10f8eddd8)
 
-[2m[32m————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+[2m[32m—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
 
 [7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project @real-app/product-service[39m
 
@@ -90,87 +88,49 @@ webpack compiled with [1m[33m2 warnings[39m[22m (97b142b10f8eddd8)
 
 [1m[31mStarting inspector on localhost:9229 failed: address already in use
 [39m[22m
-[1m[31m{"level":"WARN","timestamp":"2026-07-06T10:58:02.110Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
+[1m[31m{"level":"WARN","timestamp":"2026-07-07T16:29:30.642Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:02.300Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.405Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:02.301Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":351}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.407Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":324}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:02.302Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.407Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:02.302Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":337}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.408Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":308}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:02.643Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.720Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:02.644Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":654}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.721Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":668}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:02.656Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.734Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:02.656Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":704}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.735Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":580}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:03.302Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:32.323Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+{"level":"ERROR","timestamp":"2026-07-07T16:29:32.324Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":990}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:03.302Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":1530}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:32.410Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:03.365Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:32.410Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":1578}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:03.365Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":1336}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:33.331Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+{"level":"ERROR","timestamp":"2026-07-07T16:29:33.332Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":1678}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:04.706Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:33.992Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:04.707Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":2362}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:33.993Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":3416}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:04.836Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:35.015Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:04.836Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":3062}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:35.016Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":2944}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:07.076Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:37.414Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:07.077Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":4734}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:37.415Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":7032}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:07.902Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:37.963Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:07.902Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":6042}
-[39m[22m
-127.0.0.1 - - [06/Jul/2026:10:58:10 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-categories [33m400[0m 3.174 ms - 48[0m
-127.0.0.1 - - [06/Jul/2026:10:58:11 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-categories [33m400[0m 1.074 ms - 48[0m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:11.815Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:11.815Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":9194}
-[39m[22m
-[1m[31mKafkaJSNonRetriableError
-  Caused by: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
-    at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mapps/product-service/dist/webpack:/node_modules/[4mkafkajs[24m/src/network/connection.js:210:1[90m)[31m
-[90m    ... 3 lines matching cause stack trace ...[31m
-[90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
-  name: [32m'KafkaJSNumberOfRetriesExceeded'[31m,
-  retriable: [33mfalse[31m,
-  helpUrl: [90mundefined[31m,
-  retryCount: [33m5[31m,
-  retryTime: [33m9194[31m,
-  [cause]: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
-      at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mapps/product-service/dist/webpack:/node_modules/[4mkafkajs[24m/src/network/connection.js:210:1[90m)[31m
-  [90m    at TLSSocket.emit (node:events:519:28)[31m
-  [90m    at emitErrorNT (node:internal/streams/destroy:170:8)[31m
-  [90m    at emitErrorCloseNT (node:internal/streams/destroy:129:3)[31m
-  [90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
-    retriable: [33mtrue[31m,
-    helpUrl: [90mundefined[31m,
-    broker: [32m'kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456'[31m,
-    code: [32m'ENOTFOUND'[31m,
-    [cause]: [90mundefined[31m
-  }
-}
-[39m[22m
-127.0.0.1 - - [06/Jul/2026:10:58:12 +0000] "GET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest [36m304[0m 1474.103 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:10:58:13 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-categories [33m400[0m 0.767 ms - 48[0m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:13.948Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-06T10:58:13.948Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":13090}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:37.964Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":5954}
 [39m[22m
 [1m[31mError connecting to Kafka: KafkaJSNonRetriableError
   Caused by: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
@@ -181,7 +141,7 @@ webpack compiled with [1m[33m2 warnings[39m[22m (97b142b10f8eddd8)
   retriable: [33mfalse[31m,
   helpUrl: [90mundefined[31m,
   retryCount: [33m5[31m,
-  retryTime: [33m13090[31m,
+  retryTime: [33m5954[31m,
   [cause]: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
       at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mapps/product-service/dist/webpack:/node_modules/[4mkafkajs[24m/src/network/connection.js:210:1[90m)[31m
   [90m    at TLSSocket.emit (node:events:519:28)[31m
@@ -197,884 +157,31 @@ webpack compiled with [1m[33m2 warnings[39m[22m (97b142b10f8eddd8)
 }
 [39m[22m
 [ ready ] http://0.0.0.0:7001
-getUserOrders: incoming user: {
-  id: [32m'69fb5e51e47695755df7e538'[39m,
-  email: [32m'21bec100@nith.ac.in'[39m,
-  role: [32m'user'[39m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:44.451Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[39m[22m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:44.451Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":14014}
+[39m[22m
+[1m[31mKafkaJSNonRetriableError
+  Caused by: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
+    at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mapps/product-service/dist/webpack:/node_modules/[4mkafkajs[24m/src/network/connection.js:210:1[90m)[31m
+[90m    ... 3 lines matching cause stack trace ...[31m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
+  name: [32m'KafkaJSNumberOfRetriesExceeded'[31m,
+  retriable: [33mfalse[31m,
+  helpUrl: [90mundefined[31m,
+  retryCount: [33m5[31m,
+  retryTime: [33m14014[31m,
+  [cause]: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
+      at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mapps/product-service/dist/webpack:/node_modules/[4mkafkajs[24m/src/network/connection.js:210:1[90m)[31m
+  [90m    at TLSSocket.emit (node:events:519:28)[31m
+  [90m    at emitErrorNT (node:internal/streams/destroy:170:8)[31m
+  [90m    at emitErrorCloseNT (node:internal/streams/destroy:129:3)[31m
+  [90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
+    retriable: [33mtrue[31m,
+    helpUrl: [90mundefined[31m,
+    broker: [32m'kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456'[31m,
+    code: [32m'ENOTFOUND'[31m,
+    [cause]: [90mundefined[31m
+  }
 }
-getUserOrders: found orders count = [33m12[39m
-127.0.0.1 - - [06/Jul/2026:10:58:15 +0000] "GET /products/user-orders HTTP/1.1" 200 9302 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/user-orders [32m200[0m 950.845 ms - 9302[0m
-127.0.0.1 - - [06/Jul/2026:10:58:36 +0000] "GET /products/get-orders HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [33m401[0m 3.995 ms - 1663[0m
-127.0.0.1 - - [06/Jul/2026:10:58:36 +0000] "GET /products/notifications/unread-count HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [33m401[0m 0.857 ms - 1663[0m
-[1m[31mError: No access token found
-    at isSellerAuthenticated (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/packages/middleware/isSellerAuthenticated.ts:20:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:149:1)
-    at Route.dispatch (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:119:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at /Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:284:1
-    at Function.process_params (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:346:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:280:1)
-    at Function.handle (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:175:1)
-    at router (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:47:1)
-Error: No access token found
-    at isSellerAuthenticated (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/packages/middleware/isSellerAuthenticated.ts:20:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:149:1)
-    at Route.dispatch (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:119:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at /Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:284:1
-    at Function.process_params (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:346:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:280:1)
-    at Function.handle (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:175:1)
-    at router (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:47:1)
 [39m[22m
-127.0.0.1 - - [06/Jul/2026:10:58:36 +0000] "GET /products/get-products HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products [33m401[0m 1.349 ms - 1663[0m
-[1m[31mError: No access token found
-    at isSellerAuthenticated (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/packages/middleware/isSellerAuthenticated.ts:20:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:149:1)
-    at Route.dispatch (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:119:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at /Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:284:1
-    at Function.process_params (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:346:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:280:1)
-    at Function.handle (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:175:1)
-    at router (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:47:1)
-[39m[22m
-127.0.0.1 - - [06/Jul/2026:10:58:37 +0000] "GET /products/notifications/unread-count HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [33m401[0m 2.391 ms - 1663[0m
-[1m[31mError: No access token found
-    at isSellerAuthenticated (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/packages/middleware/isSellerAuthenticated.ts:20:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:149:1)
-    at Route.dispatch (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:119:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at /Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:284:1
-    at Function.process_params (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:346:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:280:1)
-    at Function.handle (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:175:1)
-    at router (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:47:1)
-[39m[22m
-127.0.0.1 - - [06/Jul/2026:10:58:37 +0000] "GET /products/get-products HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products [33m401[0m 1.942 ms - 1663[0m
-[1m[31mError: No access token found
-    at isSellerAuthenticated (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/packages/middleware/isSellerAuthenticated.ts:20:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:149:1)
-    at Route.dispatch (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:119:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at /Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:284:1
-    at Function.process_params (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:346:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:280:1)
-    at Function.handle (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:175:1)
-    at router (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:47:1)
-[39m[22m
-127.0.0.1 - - [06/Jul/2026:10:58:37 +0000] "GET /products/get-orders HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [33m401[0m 1.482 ms - 1663[0m
-[1m[31mError: No access token found
-    at isSellerAuthenticated (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/packages/middleware/isSellerAuthenticated.ts:20:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:149:1)
-    at Route.dispatch (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:119:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at /Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:284:1
-    at Function.process_params (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:346:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:280:1)
-    at Function.handle (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:175:1)
-    at router (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:47:1)
-[39m[22m
-127.0.0.1 - - [06/Jul/2026:10:58:38 +0000] "GET /products/get-products HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products [33m401[0m 1.214 ms - 1663[0m
-[1m[31mError: No access token found
-    at isSellerAuthenticated (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/packages/middleware/isSellerAuthenticated.ts:20:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:149:1)
-    at Route.dispatch (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:119:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at /Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:284:1
-    at Function.process_params (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:346:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:280:1)
-    at Function.handle (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:175:1)
-    at router (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:47:1)
-[39m[22m
-127.0.0.1 - - [06/Jul/2026:10:58:38 +0000] "GET /products/notifications/unread-count HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [33m401[0m 1.232 ms - 1663[0m
-[1m[31mError: No access token found
-    at isSellerAuthenticated (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/packages/middleware/isSellerAuthenticated.ts:20:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:149:1)
-    at Route.dispatch (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:119:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at /Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:284:1
-    at Function.process_params (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:346:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:280:1)
-    at Function.handle (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:175:1)
-    at router (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:47:1)
-[39m[22m
-127.0.0.1 - - [06/Jul/2026:10:58:38 +0000] "GET /products/get-products HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products [33m401[0m 1.777 ms - 1663[0m
-[1m[31mError: No access token found
-    at isSellerAuthenticated (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/packages/middleware/isSellerAuthenticated.ts:20:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:149:1)
-    at Route.dispatch (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/route.js:119:1)
-    at Layer.handle [as handle_request] (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/layer.js:95:1)
-    at /Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:284:1
-    at Function.process_params (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:346:1)
-    at next (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:280:1)
-    at Function.handle (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:175:1)
-    at router (/Users/niketan/Desktop/RealApp/apps/product-service/dist/webpack:/node_modules/express/lib/router/index.js:47:1)
-[39m[22m
-127.0.0.1 - - [06/Jul/2026:10:58:46 +0000] "GET /products/notifications/unread-count HTTP/1.1" 200 27 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [32m200[0m 174.656 ms - 27[0m
-[90mundefined[39m
-Inventory products for seller 6a0572d3b631df138ff64659 [
-  {
-    id: [32m'6a101434783b58cde1f52a64'[39m,
-    name: [32m'redis'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'redis'[39m,
-    category: [32m'Home & Kitchen'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T08:30:44.860Z[39m
-  },
-  {
-    id: [32m'6a0fdde64ffb4b7ead71e402'[39m,
-    name: [32m'CockRoach Party'[39m,
-    stock: [33m5[39m,
-    price: [33m12[39m,
-    slug: [32m'cockroach-party'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T04:39:02.956Z[39m
-  },
-  {
-    id: [32m'6a0c3e2d15904589b9b60bdb'[39m,
-    name: [32m'Auralux X9 Wireless Headphones'[39m,
-    stock: [33m47[39m,
-    price: [33m11999[39m,
-    slug: [32m'auralux-x9-wireless-headphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-19T10:40:45.621Z[39m
-  },
-  {
-    id: [32m'6a0989908eaad388cc30f18d'[39m,
-    name: [32m'Midnight Drift Hoodie'[39m,
-    stock: [33m23[39m,
-    price: [33m999[39m,
-    slug: [32m'midnight-drift-hoodie'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-17T09:25:36.102Z[39m
-  },
-  {
-    id: [32m'6a081f4eaf5d21e310f57a8d'[39m,
-    name: [32m'Wireless Heaphones'[39m,
-    stock: [33m12[39m,
-    price: [33m3000[39m,
-    slug: [32m'wireless-heaphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T07:39:58.662Z[39m
-  },
-  {
-    id: [32m'6a080c5f1a35ba8c2e0fce4a'[39m,
-    name: [32m'asd'[39m,
-    stock: [33m122[39m,
-    price: [33m132[39m,
-    slug: [32m'asd'[39m,
-    category: [32m'GAMING'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T06:19:11.924Z[39m
-  },
-  {
-    id: [32m'6a07f9a17174114886442685'[39m,
-    name: [32m'Apple Iphone 11 Pro Max'[39m,
-    stock: [33m100[39m,
-    price: [33m1200[39m,
-    slug: [32m'apple-iphone-11-pro-max'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T04:59:13.646Z[39m
-  }
-]
-127.0.0.1 - - [06/Jul/2026:10:58:46 +0000] "GET /products/get-products HTTP/1.1" 200 1561 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products [32m200[0m 747.997 ms - 1561[0m
-127.0.0.1 - - [06/Jul/2026:10:58:46 +0000] "GET /products/get-orders HTTP/1.1" 200 5728 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [32m200[0m 976.023 ms - 5728[0m
-[90mundefined[39m
-Inventory products for seller 6a0572d3b631df138ff64659 [
-  {
-    id: [32m'6a101434783b58cde1f52a64'[39m,
-    name: [32m'redis'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'redis'[39m,
-    category: [32m'Home & Kitchen'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T08:30:44.860Z[39m
-  },
-  {
-    id: [32m'6a0fdde64ffb4b7ead71e402'[39m,
-    name: [32m'CockRoach Party'[39m,
-    stock: [33m5[39m,
-    price: [33m12[39m,
-    slug: [32m'cockroach-party'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T04:39:02.956Z[39m
-  },
-  {
-    id: [32m'6a0c3e2d15904589b9b60bdb'[39m,
-    name: [32m'Auralux X9 Wireless Headphones'[39m,
-    stock: [33m47[39m,
-    price: [33m11999[39m,
-    slug: [32m'auralux-x9-wireless-headphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-19T10:40:45.621Z[39m
-  },
-  {
-    id: [32m'6a0989908eaad388cc30f18d'[39m,
-    name: [32m'Midnight Drift Hoodie'[39m,
-    stock: [33m23[39m,
-    price: [33m999[39m,
-    slug: [32m'midnight-drift-hoodie'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-17T09:25:36.102Z[39m
-  }
-]
-127.0.0.1 - - [06/Jul/2026:10:58:54 +0000] "GET /products/get-products?page=1&limit=4 HTTP/1.1" 200 956 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products?page=1&limit=4 [32m200[0m 200.796 ms - 956[0m
-[90mundefined[39m
-Inventory products for seller 6a0572d3b631df138ff64659 [
-  {
-    id: [32m'6a101434783b58cde1f52a64'[39m,
-    name: [32m'redis'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'redis'[39m,
-    category: [32m'Home & Kitchen'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T08:30:44.860Z[39m
-  },
-  {
-    id: [32m'6a0fdde64ffb4b7ead71e402'[39m,
-    name: [32m'CockRoach Party'[39m,
-    stock: [33m5[39m,
-    price: [33m12[39m,
-    slug: [32m'cockroach-party'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T04:39:02.956Z[39m
-  },
-  {
-    id: [32m'6a0c3e2d15904589b9b60bdb'[39m,
-    name: [32m'Auralux X9 Wireless Headphones'[39m,
-    stock: [33m47[39m,
-    price: [33m11999[39m,
-    slug: [32m'auralux-x9-wireless-headphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-19T10:40:45.621Z[39m
-  },
-  {
-    id: [32m'6a0989908eaad388cc30f18d'[39m,
-    name: [32m'Midnight Drift Hoodie'[39m,
-    stock: [33m23[39m,
-    price: [33m999[39m,
-    slug: [32m'midnight-drift-hoodie'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-17T09:25:36.102Z[39m
-  }
-]
-127.0.0.1 - - [06/Jul/2026:10:58:54 +0000] "GET /products/get-products?page=1&limit=4 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products?page=1&limit=4 [36m304[0m 216.550 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:10:58:58 +0000] "GET /products/get-orders?page=1&limit=20 HTTP/1.1" 200 5728 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders?page=1&limit=20 [32m200[0m 870.817 ms - 5728[0m
-127.0.0.1 - - [06/Jul/2026:10:59:03 +0000] "GET /products/payments/my?page=1&limit=20 HTTP/1.1" 200 8999 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/payments/my?page=1&limit=20 [32m200[0m 612.638 ms - 8999[0m
-127.0.0.1 - - [06/Jul/2026:10:59:11 +0000] "GET /products/payments/6a412b9a4ed565f274699f55 HTTP/1.1" 200 809 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/payments/6a412b9a4ed565f274699f55 [32m200[0m 505.129 ms - 809[0m
-127.0.0.1 - - [06/Jul/2026:10:59:22 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 203.808 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:10:59:26 +0000] "GET /products/payments/my?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/payments/my?page=1&limit=20 [36m304[0m 590.838 ms - -[0m
-[90mundefined[39m
-Inventory products for seller 6a0572d3b631df138ff64659 [
-  {
-    id: [32m'6a101434783b58cde1f52a64'[39m,
-    name: [32m'redis'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'redis'[39m,
-    category: [32m'Home & Kitchen'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T08:30:44.860Z[39m
-  },
-  {
-    id: [32m'6a0fdde64ffb4b7ead71e402'[39m,
-    name: [32m'CockRoach Party'[39m,
-    stock: [33m5[39m,
-    price: [33m12[39m,
-    slug: [32m'cockroach-party'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T04:39:02.956Z[39m
-  },
-  {
-    id: [32m'6a0c3e2d15904589b9b60bdb'[39m,
-    name: [32m'Auralux X9 Wireless Headphones'[39m,
-    stock: [33m47[39m,
-    price: [33m11999[39m,
-    slug: [32m'auralux-x9-wireless-headphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-19T10:40:45.621Z[39m
-  },
-  {
-    id: [32m'6a0989908eaad388cc30f18d'[39m,
-    name: [32m'Midnight Drift Hoodie'[39m,
-    stock: [33m23[39m,
-    price: [33m999[39m,
-    slug: [32m'midnight-drift-hoodie'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-17T09:25:36.102Z[39m
-  },
-  {
-    id: [32m'6a081f4eaf5d21e310f57a8d'[39m,
-    name: [32m'Wireless Heaphones'[39m,
-    stock: [33m12[39m,
-    price: [33m3000[39m,
-    slug: [32m'wireless-heaphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T07:39:58.662Z[39m
-  },
-  {
-    id: [32m'6a080c5f1a35ba8c2e0fce4a'[39m,
-    name: [32m'asd'[39m,
-    stock: [33m122[39m,
-    price: [33m132[39m,
-    slug: [32m'asd'[39m,
-    category: [32m'GAMING'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T06:19:11.924Z[39m
-  },
-  {
-    id: [32m'6a07f9a17174114886442685'[39m,
-    name: [32m'Apple Iphone 11 Pro Max'[39m,
-    stock: [33m100[39m,
-    price: [33m1200[39m,
-    slug: [32m'apple-iphone-11-pro-max'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T04:59:13.646Z[39m
-  }
-]
-127.0.0.1 - - [06/Jul/2026:10:59:33 +0000] "GET /products/get-products HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products [36m304[0m 223.513 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:10:59:33 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [36m304[0m 513.393 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:10:59:54 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-categories [33m400[0m 0.482 ms - 48[0m
-127.0.0.1 - - [06/Jul/2026:10:59:54 +0000] "GET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest [36m304[0m 174.450 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:10:59:55 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-categories [33m400[0m 0.565 ms - 48[0m
-127.0.0.1 - - [06/Jul/2026:10:59:58 +0000] "GET /products/slug/cockroach-party HTTP/1.1" 200 1232 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/slug/cockroach-party [32m200[0m 1339.632 ms - 1232[0m
-127.0.0.1 - - [06/Jul/2026:11:00:16 +0000] "GET /products/slug/cockroach-party HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/slug/cockroach-party [36m304[0m 1047.206 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:00:50 +0000] "POST /products/orders/place HTTP/1.1" 201 699 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mPOST /products/orders/place [32m201[0m 2910.582 ms - 699[0m
-getUserOrders: incoming user: {
-  id: [32m'69fb5e51e47695755df7e538'[39m,
-  email: [32m'21bec100@nith.ac.in'[39m,
-  role: [32m'user'[39m
-}
-getUserOrders: found orders count = [33m13[39m
-127.0.0.1 - - [06/Jul/2026:11:00:58 +0000] "GET /products/user-orders HTTP/1.1" 200 10124 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/user-orders [32m200[0m 664.984 ms - 10124[0m
-[90mundefined[39m
-127.0.0.1 - - [06/Jul/2026:11:01:11 +0000] "GET /products/notifications/unread-count HTTP/1.1" 200 27 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [32m200[0m 182.715 ms - 27[0m
-127.0.0.1 - - [06/Jul/2026:11:01:11 +0000] "GET /products/get-orders HTTP/1.1" 200 6244 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [32m200[0m 437.619 ms - 6244[0m
-Inventory products for seller 6a0572d3b631df138ff64659 [
-  {
-    id: [32m'6a101434783b58cde1f52a64'[39m,
-    name: [32m'redis'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'redis'[39m,
-    category: [32m'Home & Kitchen'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T08:30:44.860Z[39m
-  },
-  {
-    id: [32m'6a0fdde64ffb4b7ead71e402'[39m,
-    name: [32m'CockRoach Party'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'cockroach-party'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T04:39:02.956Z[39m
-  },
-  {
-    id: [32m'6a0c3e2d15904589b9b60bdb'[39m,
-    name: [32m'Auralux X9 Wireless Headphones'[39m,
-    stock: [33m47[39m,
-    price: [33m11999[39m,
-    slug: [32m'auralux-x9-wireless-headphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-19T10:40:45.621Z[39m
-  },
-  {
-    id: [32m'6a0989908eaad388cc30f18d'[39m,
-    name: [32m'Midnight Drift Hoodie'[39m,
-    stock: [33m23[39m,
-    price: [33m999[39m,
-    slug: [32m'midnight-drift-hoodie'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-17T09:25:36.102Z[39m
-  },
-  {
-    id: [32m'6a081f4eaf5d21e310f57a8d'[39m,
-    name: [32m'Wireless Heaphones'[39m,
-    stock: [33m12[39m,
-    price: [33m3000[39m,
-    slug: [32m'wireless-heaphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T07:39:58.662Z[39m
-  },
-  {
-    id: [32m'6a080c5f1a35ba8c2e0fce4a'[39m,
-    name: [32m'asd'[39m,
-    stock: [33m122[39m,
-    price: [33m132[39m,
-    slug: [32m'asd'[39m,
-    category: [32m'GAMING'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T06:19:11.924Z[39m
-  },
-  {
-    id: [32m'6a07f9a17174114886442685'[39m,
-    name: [32m'Apple Iphone 11 Pro Max'[39m,
-    stock: [33m100[39m,
-    price: [33m1200[39m,
-    slug: [32m'apple-iphone-11-pro-max'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T04:59:13.646Z[39m
-  }
-]
-127.0.0.1 - - [06/Jul/2026:11:01:12 +0000] "GET /products/get-products HTTP/1.1" 200 1561 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products [32m200[0m 705.816 ms - 1561[0m
-127.0.0.1 - - [06/Jul/2026:11:01:23 +0000] "GET /products/get-orders?page=1&limit=20 HTTP/1.1" 200 6244 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders?page=1&limit=20 [32m200[0m 490.150 ms - 6244[0m
-127.0.0.1 - - [06/Jul/2026:11:01:29 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 200 860 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [32m200[0m 448.768 ms - 860[0m
-getUserOrders: incoming user: {
-  id: [32m'69fb5e51e47695755df7e538'[39m,
-  email: [32m'21bec100@nith.ac.in'[39m,
-  role: [32m'user'[39m
-}
-getUserOrders: found orders count = [33m13[39m
-127.0.0.1 - - [06/Jul/2026:11:01:31 +0000] "GET /products/user-orders HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/user-orders [36m304[0m 603.119 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:01:36 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 270.969 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:01:36 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [36m304[0m 600.224 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:01:37 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [36m304[0m 925.256 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:01:45 +0000] "PATCH /products/orders/6a4b8ae034f8727d4a742e23/status HTTP/1.1" 200 888 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mPATCH /products/orders/6a4b8ae034f8727d4a742e23/status [32m200[0m 893.424 ms - 888[0m
-127.0.0.1 - - [06/Jul/2026:11:01:45 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 200 862 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [32m200[0m 435.484 ms - 862[0m
-127.0.0.1 - - [06/Jul/2026:11:01:45 +0000] "GET /products/get-orders HTTP/1.1" 200 6246 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [32m200[0m 437.195 ms - 6246[0m
-getUserOrders: incoming user: {
-  id: [32m'69fb5e51e47695755df7e538'[39m,
-  email: [32m'21bec100@nith.ac.in'[39m,
-  role: [32m'user'[39m
-}
-getUserOrders: found orders count = [33m13[39m
-127.0.0.1 - - [06/Jul/2026:11:01:48 +0000] "GET /products/user-orders HTTP/1.1" 200 10126 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/user-orders [32m200[0m 617.837 ms - 10126[0m
-127.0.0.1 - - [06/Jul/2026:11:01:53 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 200.339 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:01:53 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [36m304[0m 408.782 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:01:53 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [36m304[0m 451.676 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:01:55 +0000] "PATCH /products/orders/6a4b8ae034f8727d4a742e23/status HTTP/1.1" 200 886 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mPATCH /products/orders/6a4b8ae034f8727d4a742e23/status [32m200[0m 685.948 ms - 886[0m
-127.0.0.1 - - [06/Jul/2026:11:01:55 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 200 860 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [32m200[0m 384.109 ms - 860[0m
-127.0.0.1 - - [06/Jul/2026:11:01:56 +0000] "GET /products/get-orders HTTP/1.1" 200 6244 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [32m200[0m 374.813 ms - 6244[0m
-getUserOrders: incoming user: {
-  id: [32m'69fb5e51e47695755df7e538'[39m,
-  email: [32m'21bec100@nith.ac.in'[39m,
-  role: [32m'user'[39m
-}
-getUserOrders: found orders count = [33m13[39m
-127.0.0.1 - - [06/Jul/2026:11:01:58 +0000] "GET /products/user-orders HTTP/1.1" 200 10124 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/user-orders [32m200[0m 496.665 ms - 10124[0m
-127.0.0.1 - - [06/Jul/2026:11:02:01 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 168.784 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:02:01 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [36m304[0m 413.477 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:02:01 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [36m304[0m 419.827 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:02:03 +0000] "PATCH /products/orders/6a4b8ae034f8727d4a742e23/status HTTP/1.1" 200 888 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mPATCH /products/orders/6a4b8ae034f8727d4a742e23/status [32m200[0m 985.059 ms - 888[0m
-127.0.0.1 - - [06/Jul/2026:11:02:04 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 200 859 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [32m200[0m 419.466 ms - 859[0m
-127.0.0.1 - - [06/Jul/2026:11:02:04 +0000] "GET /products/get-orders HTTP/1.1" 200 6243 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [32m200[0m 424.015 ms - 6243[0m
-getUserOrders: incoming user: {
-  id: [32m'69fb5e51e47695755df7e538'[39m,
-  email: [32m'21bec100@nith.ac.in'[39m,
-  role: [32m'user'[39m
-}
-getUserOrders: found orders count = [33m13[39m
-127.0.0.1 - - [06/Jul/2026:11:02:08 +0000] "GET /products/user-orders HTTP/1.1" 200 10123 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/user-orders [32m200[0m 453.434 ms - 10123[0m
-127.0.0.1 - - [06/Jul/2026:11:02:17 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-categories [33m400[0m 0.543 ms - 48[0m
-127.0.0.1 - - [06/Jul/2026:11:02:17 +0000] "GET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest HTTP/1.1" 200 3016 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest [32m200[0m 127.855 ms - 3016[0m
-127.0.0.1 - - [06/Jul/2026:11:02:18 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-categories [33m400[0m 0.673 ms - 48[0m
-127.0.0.1 - - [06/Jul/2026:11:02:19 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 175.965 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:02:20 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [36m304[0m 569.268 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:02:20 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [36m304[0m 573.349 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:02:28 +0000] "GET /products/get-orders?page=1&limit=20 HTTP/1.1" 200 6243 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders?page=1&limit=20 [32m200[0m 354.284 ms - 6243[0m
-127.0.0.1 - - [06/Jul/2026:11:02:33 +0000] "GET /products/payments/my?page=1&limit=20 HTTP/1.1" 200 9786 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/payments/my?page=1&limit=20 [32m200[0m 386.945 ms - 9786[0m
-127.0.0.1 - - [06/Jul/2026:11:02:37 +0000] "GET /products/payments/6a4b8ae234f8727d4a742e25 HTTP/1.1" 200 859 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/payments/6a4b8ae234f8727d4a742e25 [32m200[0m 385.600 ms - 859[0m
-127.0.0.1 - - [06/Jul/2026:11:02:49 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 180.771 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:02:59 +0000] "GET /products/payments/my?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/payments/my?page=1&limit=20 [36m304[0m 373.793 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:03:14 +0000] "GET /products/get-orders?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders?page=1&limit=20 [36m304[0m 409.441 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:03:20 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 161.274 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:03:50 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 161.959 ms - -[0m
-[90mundefined[39m
-Inventory products for seller 6a0572d3b631df138ff64659 [
-  {
-    id: [32m'6a101434783b58cde1f52a64'[39m,
-    name: [32m'redis'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'redis'[39m,
-    category: [32m'Home & Kitchen'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T08:30:44.860Z[39m
-  },
-  {
-    id: [32m'6a0fdde64ffb4b7ead71e402'[39m,
-    name: [32m'CockRoach Party'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'cockroach-party'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T04:39:02.956Z[39m
-  },
-  {
-    id: [32m'6a0c3e2d15904589b9b60bdb'[39m,
-    name: [32m'Auralux X9 Wireless Headphones'[39m,
-    stock: [33m47[39m,
-    price: [33m11999[39m,
-    slug: [32m'auralux-x9-wireless-headphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-19T10:40:45.621Z[39m
-  },
-  {
-    id: [32m'6a0989908eaad388cc30f18d'[39m,
-    name: [32m'Midnight Drift Hoodie'[39m,
-    stock: [33m23[39m,
-    price: [33m999[39m,
-    slug: [32m'midnight-drift-hoodie'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-17T09:25:36.102Z[39m
-  },
-  {
-    id: [32m'6a081f4eaf5d21e310f57a8d'[39m,
-    name: [32m'Wireless Heaphones'[39m,
-    stock: [33m12[39m,
-    price: [33m3000[39m,
-    slug: [32m'wireless-heaphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T07:39:58.662Z[39m
-  },
-  {
-    id: [32m'6a080c5f1a35ba8c2e0fce4a'[39m,
-    name: [32m'asd'[39m,
-    stock: [33m122[39m,
-    price: [33m132[39m,
-    slug: [32m'asd'[39m,
-    category: [32m'GAMING'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T06:19:11.924Z[39m
-  },
-  {
-    id: [32m'6a07f9a17174114886442685'[39m,
-    name: [32m'Apple Iphone 11 Pro Max'[39m,
-    stock: [33m100[39m,
-    price: [33m1200[39m,
-    slug: [32m'apple-iphone-11-pro-max'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T04:59:13.646Z[39m
-  }
-]
-127.0.0.1 - - [06/Jul/2026:11:03:59 +0000] "GET /products/get-products HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products [36m304[0m 183.535 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:03:59 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [36m304[0m 392.957 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:04:20 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 167.394 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:04:26 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-categories [33m400[0m 0.453 ms - 48[0m
-127.0.0.1 - - [06/Jul/2026:11:04:26 +0000] "GET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest [36m304[0m 84.997 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:04:30 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-categories [33m400[0m 0.471 ms - 48[0m
-[90mundefined[39m
-Inventory products for seller 6a0572d3b631df138ff64659 [
-  {
-    id: [32m'6a101434783b58cde1f52a64'[39m,
-    name: [32m'redis'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'redis'[39m,
-    category: [32m'Home & Kitchen'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T08:30:44.860Z[39m
-  },
-  {
-    id: [32m'6a0fdde64ffb4b7ead71e402'[39m,
-    name: [32m'CockRoach Party'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'cockroach-party'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T04:39:02.956Z[39m
-  },
-  {
-    id: [32m'6a0c3e2d15904589b9b60bdb'[39m,
-    name: [32m'Auralux X9 Wireless Headphones'[39m,
-    stock: [33m47[39m,
-    price: [33m11999[39m,
-    slug: [32m'auralux-x9-wireless-headphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-19T10:40:45.621Z[39m
-  },
-  {
-    id: [32m'6a0989908eaad388cc30f18d'[39m,
-    name: [32m'Midnight Drift Hoodie'[39m,
-    stock: [33m23[39m,
-    price: [33m999[39m,
-    slug: [32m'midnight-drift-hoodie'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-17T09:25:36.102Z[39m
-  },
-  {
-    id: [32m'6a081f4eaf5d21e310f57a8d'[39m,
-    name: [32m'Wireless Heaphones'[39m,
-    stock: [33m12[39m,
-    price: [33m3000[39m,
-    slug: [32m'wireless-heaphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T07:39:58.662Z[39m
-  },
-  {
-    id: [32m'6a080c5f1a35ba8c2e0fce4a'[39m,
-    name: [32m'asd'[39m,
-    stock: [33m122[39m,
-    price: [33m132[39m,
-    slug: [32m'asd'[39m,
-    category: [32m'GAMING'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T06:19:11.924Z[39m
-  },
-  {
-    id: [32m'6a07f9a17174114886442685'[39m,
-    name: [32m'Apple Iphone 11 Pro Max'[39m,
-    stock: [33m100[39m,
-    price: [33m1200[39m,
-    slug: [32m'apple-iphone-11-pro-max'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T04:59:13.646Z[39m
-  }
-]
-127.0.0.1 - - [06/Jul/2026:11:04:52 +0000] "GET /products/get-products HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products [36m304[0m 280.904 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:04:52 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 352.313 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:04:53 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [36m304[0m 558.794 ms - -[0m
-[90mundefined[39m
-127.0.0.1 - - [06/Jul/2026:11:04:56 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/notifications/unread-count [36m304[0m 138.563 ms - -[0m
-Inventory products for seller 6a0572d3b631df138ff64659 [
-  {
-    id: [32m'6a101434783b58cde1f52a64'[39m,
-    name: [32m'redis'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'redis'[39m,
-    category: [32m'Home & Kitchen'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T08:30:44.860Z[39m
-  },
-  {
-    id: [32m'6a0fdde64ffb4b7ead71e402'[39m,
-    name: [32m'CockRoach Party'[39m,
-    stock: [33m0[39m,
-    price: [33m12[39m,
-    slug: [32m'cockroach-party'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-22T04:39:02.956Z[39m
-  },
-  {
-    id: [32m'6a0c3e2d15904589b9b60bdb'[39m,
-    name: [32m'Auralux X9 Wireless Headphones'[39m,
-    stock: [33m47[39m,
-    price: [33m11999[39m,
-    slug: [32m'auralux-x9-wireless-headphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-19T10:40:45.621Z[39m
-  },
-  {
-    id: [32m'6a0989908eaad388cc30f18d'[39m,
-    name: [32m'Midnight Drift Hoodie'[39m,
-    stock: [33m23[39m,
-    price: [33m999[39m,
-    slug: [32m'midnight-drift-hoodie'[39m,
-    category: [32m'Fashion'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-17T09:25:36.102Z[39m
-  },
-  {
-    id: [32m'6a081f4eaf5d21e310f57a8d'[39m,
-    name: [32m'Wireless Heaphones'[39m,
-    stock: [33m12[39m,
-    price: [33m3000[39m,
-    slug: [32m'wireless-heaphones'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T07:39:58.662Z[39m
-  },
-  {
-    id: [32m'6a080c5f1a35ba8c2e0fce4a'[39m,
-    name: [32m'asd'[39m,
-    stock: [33m122[39m,
-    price: [33m132[39m,
-    slug: [32m'asd'[39m,
-    category: [32m'GAMING'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T06:19:11.924Z[39m
-  },
-  {
-    id: [32m'6a07f9a17174114886442685'[39m,
-    name: [32m'Apple Iphone 11 Pro Max'[39m,
-    stock: [33m100[39m,
-    price: [33m1200[39m,
-    slug: [32m'apple-iphone-11-pro-max'[39m,
-    category: [32m'electronics'[39m,
-    salesCount: [33m0[39m,
-    isActive: [33mtrue[39m,
-    createdAt: [35m2026-05-16T04:59:13.646Z[39m
-  }
-]
-127.0.0.1 - - [06/Jul/2026:11:04:56 +0000] "GET /products/get-products HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-products [36m304[0m 154.579 ms - -[0m
-127.0.0.1 - - [06/Jul/2026:11:04:56 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
-[0mGET /products/get-orders [36m304[0m 348.361 ms - -[0m
