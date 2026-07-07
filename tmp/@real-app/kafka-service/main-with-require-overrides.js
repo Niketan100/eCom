@@ -52,4 +52,4 @@ function isFile(s) {
 }
 
 // Call the user-defined main.
-module.exports = require('./kafka-service/src/main.js');
+module.exports = require('./apps/kafka-service/src/main.js');

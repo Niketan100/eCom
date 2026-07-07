@@ -1,10 +1,8 @@
 "use client";
 
-import { items } from 'apps/seller-ui/src/configs/constants';
 import useOrder from 'apps/seller-ui/src/hooks/useOrder';
 import useProducts from 'apps/seller-ui/src/hooks/useProducts';
 import type { SellerProduct } from 'apps/seller-ui/src/hooks/useProducts'
-import { NumericKeys } from 'node_modules/react-hook-form/dist/types/path/common';
 
 
 

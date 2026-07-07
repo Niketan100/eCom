@@ -1,0 +1,142 @@
+version: "3.9"
+
+services:
+
+  mongodb:
+    image: mongo:8
+    container_name: mongodb
+    restart: unless-stopped
+
+    ports:
+      - "27017:27017"
+
+    volumes:
+      - mongo_data:/data/db
+
+    networks:
+      - ecommerce
+
+  redis:
+    image: redis:7-alpine
+
+    container_name: redis
+
+    restart: unless-stopped
+
+    ports:
+      - "6379:6379"
+
+    networks:
+      - ecommerce
+
+  api-gateway:
+
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+
+    command: npx nx serve api-gateway
+
+    ports:
+      - "8080:8080"
+
+    depends_on:
+      - auth-service
+      - product-service
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    networks:
+      - ecommerce
+
+  auth-service:
+
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+
+    command: npx nx serve auth-service
+
+    ports:
+      - "6001:6001"
+
+    depends_on:
+      - mongodb
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    networks:
+      - ecommerce
+
+  product-service:
+
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+
+    command: npx nx serve product-service
+
+    ports:
+      - "7001:7001"
+
+    depends_on:
+      - mongodb
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    networks:
+      - ecommerce
+
+  seller-ui:
+
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+
+    command: npx nx serve seller-ui
+
+    ports:
+      - "3001:3000"
+
+    depends_on:
+      - api-gateway
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    networks:
+      - ecommerce
+
+  user-ui:
+
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+
+    command: npx nx serve user-ui
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - api-gateway
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    networks:
+      - ecommerce
+
+volumes:
+  mongo_data:
+
+networks:
+  ecommerce:

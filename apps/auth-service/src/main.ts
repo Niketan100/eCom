@@ -11,7 +11,6 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import { kafka } from '../../../packages/libs/kafka';
 
- 
 
 const app = express();
 
@@ -21,7 +20,7 @@ const swaggerDocument = JSON.parse(
 
 app.use(morgan('combined'));
 app.use(cors({
-    origin: 'http://localhost:3000', // Adjust this to your frontend URL
+    origin: ['http://localhost:3000','http://localhost:3001' ], // Adjust this to your frontend URL
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }));
@@ -70,8 +69,10 @@ const port = process.env.PORT ? Number(process.env.PORT) : 6001;
 app.get('/', (req, res) => {
     res.send({ 'message': 'Hello API from Auth Service'});
 });
+	
 
 app.listen(port, host, () => {
     reciever();
     console.log(`[ ready ] http://${host}:${port}`);
 });
+

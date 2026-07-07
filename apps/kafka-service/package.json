@@ -12,15 +12,15 @@
         "defaultConfiguration": "production",
         "options": {
           "platform": "node",
-          "outputPath": "kafka-service/dist",
+          "outputPath": "apps/kafka-service/dist",
           "format": [
             "cjs"
           ],
           "bundle": false,
-          "main": "kafka-service/src/main.ts",
-          "tsConfig": "kafka-service/tsconfig.app.json",
+          "main": "apps/kafka-service/src/main.ts",
+          "tsConfig": "apps/kafka-service/tsconfig.app.json",
           "assets": [
-            "kafka-service/src/assets"
+            "apps/kafka-service/src/assets"
           ],
           "esbuildOptions": {
             "sourcemap": true,
@@ -48,8 +48,8 @@
         "cache": true,
         "executor": "@nx/js:prune-lockfile",
         "outputs": [
-          "{workspaceRoot}/kafka-service/dist/package.json",
-          "{workspaceRoot}/kafka-service/dist/package-lock.json"
+          "{workspaceRoot}/apps/kafka-service/dist/package.json",
+          "{workspaceRoot}/apps/kafka-service/dist/package-lock.json"
         ],
         "options": {
           "buildTarget": "build"
@@ -61,7 +61,7 @@
         ],
         "cache": true,
         "outputs": [
-          "{workspaceRoot}/kafka-service/dist/workspace_modules"
+          "{workspaceRoot}/apps/kafka-service/dist/workspace_modules"
         ],
         "executor": "@nx/js:copy-workspace-modules",
         "options": {

@@ -548,6 +548,7 @@
             "cache": true,
             "inputs": [
               "{projectRoot}/package.json",
+              "{workspaceRoot}/tsconfig.base.json",
               "{projectRoot}/tsconfig.json",
               "{projectRoot}/tsconfig.app.json",
               "{projectRoot}/src/**/*.ts",
@@ -561,8 +562,21 @@
               }
             ],
             "outputs": [
+              "{projectRoot}/**/*.js",
+              "{projectRoot}/**/*.cjs",
+              "{projectRoot}/**/*.mjs",
+              "{projectRoot}/**/*.jsx",
+              "{projectRoot}/**/*.js.map",
+              "{projectRoot}/**/*.jsx.map",
+              "{projectRoot}/**/*.d.ts",
+              "{projectRoot}/**/*.d.cts",
+              "{projectRoot}/**/*.d.mts",
+              "{projectRoot}/**/*.d.ts.map",
+              "{projectRoot}/**/*.d.cts.map",
+              "{projectRoot}/**/*.d.mts.map",
               "{projectRoot}/tsconfig.tsbuildinfo",
               "{projectRoot}/dist/**/*.{d.ts,d.cts,d.mts}",
+              "{projectRoot}/dist/**/*.{d.ts,d.cts,d.mts}.map",
               "{projectRoot}/dist/tsconfig.app.tsbuildinfo"
             ],
             "syncGenerators": [
@@ -594,15 +608,15 @@
             "defaultConfiguration": "production",
             "options": {
               "platform": "node",
-              "outputPath": "kafka-service/dist",
+              "outputPath": "apps/kafka-service/dist",
               "format": [
                 "cjs"
               ],
               "bundle": false,
-              "main": "kafka-service/src/main.ts",
-              "tsConfig": "kafka-service/tsconfig.app.json",
+              "main": "apps/kafka-service/src/main.ts",
+              "tsConfig": "apps/kafka-service/tsconfig.app.json",
               "assets": [
-                "kafka-service/src/assets"
+                "apps/kafka-service/src/assets"
               ],
               "esbuildOptions": {
                 "sourcemap": true,
@@ -647,8 +661,8 @@
             "cache": true,
             "executor": "@nx/js:prune-lockfile",
             "outputs": [
-              "{workspaceRoot}/kafka-service/dist/package.json",
-              "{workspaceRoot}/kafka-service/dist/package-lock.json"
+              "{workspaceRoot}/apps/kafka-service/dist/package.json",
+              "{workspaceRoot}/apps/kafka-service/dist/package-lock.json"
             ],
             "options": {
               "buildTarget": "build"
@@ -662,7 +676,7 @@
             ],
             "cache": true,
             "outputs": [
-              "{workspaceRoot}/kafka-service/dist/workspace_modules"
+              "{workspaceRoot}/apps/kafka-service/dist/workspace_modules"
             ],
             "executor": "@nx/js:copy-workspace-modules",
             "options": {
@@ -15706,12 +15720,12 @@
       },
       {
         "source": "@real-app/user-ui",
-        "target": "npm:axios",
+        "target": "npm:react-hook-form",
         "type": "static"
       },
       {
         "source": "@real-app/user-ui",
-        "target": "npm:react-hook-form",
+        "target": "npm:axios",
         "type": "static"
       },
       {
@@ -36174,5 +36188,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1781586506469
+  "computedAt": 1783441243831
 }

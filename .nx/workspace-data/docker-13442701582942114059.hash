@@ -1,5 +1,5 @@
 {
-  "12078030718433627839apps/auth-service/Dockerfile": {
+  "5111421951071817069apps/auth-service/Dockerfile": {
     "targets": {
       "docker:build": {
         "dependsOn": [

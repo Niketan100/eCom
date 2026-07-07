@@ -15,7 +15,7 @@ const app = express();
 
 app.use(morgan('combined'));
 app.use(cors({
-    origin: 'http://localhost:3000', // Adjust this to your frontend URL
+    origin: ['http://localhost:3000','http://localhost:3001' ], // Adjust this to your frontend URL
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }));

@@ -5,17 +5,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import { useStore } from '../../store';
-import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
-import axiosInstance from '../../utils/axiosInstance';
 
-type Product = {
-id: string;
-name: string;
-price: number;
-discountedPrice?: number;
-quantity: number;
-};
+
+
 
 
 export default function CartPage() {

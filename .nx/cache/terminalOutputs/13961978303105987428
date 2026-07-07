@@ -1,0 +1,839 @@
+> nx run @real-app/api-gateway:serve:development
+
+[36m⠋[39m [2K[1G[36m⠙[39m [2K[1G[36m⠹[39m [2K[1G[36m⠸[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 4 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m [2K[1G[36m⠼[39m [2K[1G[36m⠋[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠙[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠹[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠸[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠼[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠴[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 5 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 5 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 5 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 5 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 5 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m [2K[1G[36m⠸[39m [2K[1G
+[2m> [22m[2mnx run[22m @real-app/api-gateway:build  [2m[existing outputs match the cache, left as is][22m
+
+> webpack-cli build --node-env=production
+
+[1m[33mWARNING[39m[22m in [1m../../generated/prisma/runtime/library.js[39m[22m
+[1mModule Warning (from ../../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/niketan/Desktop/RealApp/generated/prisma/runtime/library.js.map' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/niketan/Desktop/RealApp/generated/prisma/runtime/library.js.map'[39m[22m
+
+webpack compiled with [1m[33m1 warning[39m[22m (160dd9fb70d91889)
+
+[2m[32m————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project @real-app/api-gateway[39m
+
+[2mNx read the output from the cache instead of running the command for 1 out of 1 tasks.[22m
+
+[1m[31mStarting inspector on localhost:9229 failed: address already in use
+[39m[22m
+[ ready ] http://0.0.0.0:8080
+127.0.0.1 - - [06/Jul/2026:10:58:02 +0000] "OPTIONS /auth/login HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+Configuration already exists.
+127.0.0.1 - - [06/Jul/2026:10:58:04 +0000] "POST /auth/login HTTP/1.1" 200 132 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/login [32m200[0m 1162.415 ms - 132[0m
+127.0.0.1 - - [06/Jul/2026:10:58:04 +0000] "GET /auth/logged-in-user HTTP/1.1" 200 185 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [32m200[0m 111.911 ms - 185[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-categories
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-categories
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest
+127.0.0.1 - - [06/Jul/2026:10:58:10 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-categories [33m400[0m 16.425 ms - 48[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-categories
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-categories
+127.0.0.1 - - [06/Jul/2026:10:58:11 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-categories [33m400[0m 5.145 ms - 48[0m
+127.0.0.1 - - [06/Jul/2026:10:58:12 +0000] "GET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest [36m304[0m 1489.930 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-categories
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-categories
+127.0.0.1 - - [06/Jul/2026:10:58:13 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-categories [33m400[0m 6.793 ms - 48[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/user-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/user-orders
+127.0.0.1 - - [06/Jul/2026:10:58:15 +0000] "GET /products/user-orders HTTP/1.1" 200 9302 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/user-orders [32m200[0m 954.788 ms - 9302[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products
+127.0.0.1 - - [06/Jul/2026:10:58:36 +0000] "GET /auth/logged-in-seller HTTP/1.1" 401 64 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [33m401[0m 25.426 ms - 64[0m
+127.0.0.1 - - [06/Jul/2026:10:58:36 +0000] "GET /products/get-orders HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [33m401[0m 28.973 ms - 1663[0m
+127.0.0.1 - - [06/Jul/2026:10:58:36 +0000] "GET /products/notifications/unread-count HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [33m401[0m 28.499 ms - 1663[0m
+127.0.0.1 - - [06/Jul/2026:10:58:36 +0000] "GET /products/get-products HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products [33m401[0m 27.012 ms - 1663[0m
+127.0.0.1 - - [06/Jul/2026:10:58:37 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 109.666 ms - 49[0m
+127.0.0.1 - - [06/Jul/2026:10:58:37 +0000] "GET /auth/logged-in-seller HTTP/1.1" 401 64 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [33m401[0m 2.511 ms - 64[0m
+127.0.0.1 - - [06/Jul/2026:10:58:37 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 839.221 ms - 49[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+127.0.0.1 - - [06/Jul/2026:10:58:37 +0000] "GET /products/notifications/unread-count HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [33m401[0m 8.244 ms - 1663[0m
+127.0.0.1 - - [06/Jul/2026:10:58:37 +0000] "GET /products/get-products HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products [33m401[0m 13.482 ms - 1663[0m
+127.0.0.1 - - [06/Jul/2026:10:58:37 +0000] "GET /products/get-orders HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [33m401[0m 16.395 ms - 1663[0m
+127.0.0.1 - - [06/Jul/2026:10:58:38 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 372.574 ms - 49[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+127.0.0.1 - - [06/Jul/2026:10:58:38 +0000] "GET /products/get-products HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products [33m401[0m 5.104 ms - 1663[0m
+127.0.0.1 - - [06/Jul/2026:10:58:38 +0000] "GET /products/notifications/unread-count HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [33m401[0m 9.575 ms - 1663[0m
+127.0.0.1 - - [06/Jul/2026:10:58:38 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 97.023 ms - 49[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products
+127.0.0.1 - - [06/Jul/2026:10:58:38 +0000] "GET /products/get-products HTTP/1.1" 401 1663 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products [33m401[0m 6.019 ms - 1663[0m
+127.0.0.1 - - [06/Jul/2026:10:58:41 +0000] "OPTIONS /auth/seller-login HTTP/1.1" 204 0 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+127.0.0.1 - - [06/Jul/2026:10:58:41 +0000] "POST /auth/seller-login HTTP/1.1" 200 131 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/seller-login [32m200[0m 225.664 ms - 131[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products
+127.0.0.1 - - [06/Jul/2026:10:58:46 +0000] "GET /products/notifications/unread-count HTTP/1.1" 200 27 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [32m200[0m 186.601 ms - 27[0m
+127.0.0.1 - - [06/Jul/2026:10:58:46 +0000] "GET /auth/logged-in-seller HTTP/1.1" 200 566 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [32m200[0m 215.140 ms - 566[0m
+127.0.0.1 - - [06/Jul/2026:10:58:46 +0000] "GET /products/get-products HTTP/1.1" 200 1561 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products [32m200[0m 763.426 ms - 1561[0m
+127.0.0.1 - - [06/Jul/2026:10:58:46 +0000] "GET /products/get-orders HTTP/1.1" 200 5728 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [32m200[0m 985.404 ms - 5728[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products?page=1&limit=4
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products?page=1&limit=4
+127.0.0.1 - - [06/Jul/2026:10:58:54 +0000] "GET /products/get-products?page=1&limit=4 HTTP/1.1" 200 956 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products?page=1&limit=4 [32m200[0m 207.123 ms - 956[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products?page=1&limit=4
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products?page=1&limit=4
+127.0.0.1 - - [06/Jul/2026:10:58:54 +0000] "GET /products/get-products?page=1&limit=4 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products?page=1&limit=4 [36m304[0m 220.850 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders?page=1&limit=20
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders?page=1&limit=20
+127.0.0.1 - - [06/Jul/2026:10:58:58 +0000] "GET /products/get-orders?page=1&limit=20 HTTP/1.1" 200 5728 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders?page=1&limit=20 [32m200[0m 879.719 ms - 5728[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/payments/my?page=1&limit=20
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/payments/my?page=1&limit=20
+127.0.0.1 - - [06/Jul/2026:10:59:03 +0000] "GET /products/payments/my?page=1&limit=20 HTTP/1.1" 200 8999 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/payments/my?page=1&limit=20 [32m200[0m 622.752 ms - 8999[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/payments/6a412b9a4ed565f274699f55
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/payments/6a412b9a4ed565f274699f55
+127.0.0.1 - - [06/Jul/2026:10:59:11 +0000] "GET /products/payments/6a412b9a4ed565f274699f55 HTTP/1.1" 200 809 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/payments/6a412b9a4ed565f274699f55 [32m200[0m 514.661 ms - 809[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+127.0.0.1 - - [06/Jul/2026:10:59:22 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 210.830 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/payments/my?page=1&limit=20
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/payments/my?page=1&limit=20
+127.0.0.1 - - [06/Jul/2026:10:59:26 +0000] "GET /products/payments/my?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/payments/my?page=1&limit=20 [36m304[0m 595.333 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:10:59:29 +0000] "GET /auth/complaints/get-complaints HTTP/1.1" 200 33 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/complaints/get-complaints [32m200[0m 236.133 ms - 33[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+127.0.0.1 - - [06/Jul/2026:10:59:33 +0000] "GET /products/get-products HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products [36m304[0m 229.390 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:10:59:33 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [36m304[0m 518.006 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-categories
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-categories
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest
+127.0.0.1 - - [06/Jul/2026:10:59:54 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-categories [33m400[0m 4.958 ms - 48[0m
+127.0.0.1 - - [06/Jul/2026:10:59:54 +0000] "GET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest [36m304[0m 180.735 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-categories
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-categories
+127.0.0.1 - - [06/Jul/2026:10:59:55 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-categories [33m400[0m 4.612 ms - 48[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/slug/cockroach-party
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/slug/cockroach-party
+127.0.0.1 - - [06/Jul/2026:10:59:58 +0000] "GET /products/slug/cockroach-party HTTP/1.1" 200 1232 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/slug/cockroach-party [32m200[0m 1345.771 ms - 1232[0m
+127.0.0.1 - - [06/Jul/2026:10:59:58 +0000] "GET /auth/logged-in-user HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [36m304[0m 120.901 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/slug/cockroach-party
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/slug/cockroach-party
+127.0.0.1 - - [06/Jul/2026:11:00:16 +0000] "GET /products/slug/cockroach-party HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/slug/cockroach-party [36m304[0m 1054.170 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:00:47 +0000] "OPTIONS /products/orders/place HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/place
+Method: POST
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/place
+127.0.0.1 - - [06/Jul/2026:11:00:50 +0000] "POST /products/orders/place HTTP/1.1" 201 699 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /products/orders/place [32m201[0m 2915.670 ms - 699[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/user-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/user-orders
+127.0.0.1 - - [06/Jul/2026:11:00:58 +0000] "GET /products/user-orders HTTP/1.1" 200 10124 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/user-orders [32m200[0m 668.747 ms - 10124[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products
+127.0.0.1 - - [06/Jul/2026:11:01:11 +0000] "GET /auth/logged-in-seller HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [36m304[0m 194.276 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:01:11 +0000] "GET /products/notifications/unread-count HTTP/1.1" 200 27 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [32m200[0m 193.784 ms - 27[0m
+127.0.0.1 - - [06/Jul/2026:11:01:11 +0000] "GET /products/get-orders HTTP/1.1" 200 6244 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [32m200[0m 447.237 ms - 6244[0m
+127.0.0.1 - - [06/Jul/2026:11:01:12 +0000] "GET /products/get-products HTTP/1.1" 200 1561 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products [32m200[0m 716.392 ms - 1561[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders?page=1&limit=20
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders?page=1&limit=20
+127.0.0.1 - - [06/Jul/2026:11:01:23 +0000] "GET /products/get-orders?page=1&limit=20 HTTP/1.1" 200 6244 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders?page=1&limit=20 [32m200[0m 495.102 ms - 6244[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23
+127.0.0.1 - - [06/Jul/2026:11:01:29 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 200 860 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [32m200[0m 453.851 ms - 860[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/user-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/user-orders
+127.0.0.1 - - [06/Jul/2026:11:01:31 +0000] "GET /products/user-orders HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/user-orders [36m304[0m 606.037 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23
+127.0.0.1 - - [06/Jul/2026:11:01:36 +0000] "GET /auth/logged-in-seller HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [36m304[0m 240.040 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:01:36 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 293.303 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:01:36 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [36m304[0m 624.767 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:01:37 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [36m304[0m 950.585 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:01:44 +0000] "OPTIONS /products/orders/6a4b8ae034f8727d4a742e23/status HTTP/1.1" 204 0 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23/status
+Method: PATCH
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23/status
+127.0.0.1 - - [06/Jul/2026:11:01:45 +0000] "PATCH /products/orders/6a4b8ae034f8727d4a742e23/status HTTP/1.1" 200 888 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPATCH /products/orders/6a4b8ae034f8727d4a742e23/status [32m200[0m 898.197 ms - 888[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23
+127.0.0.1 - - [06/Jul/2026:11:01:45 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 200 862 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [32m200[0m 438.479 ms - 862[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+127.0.0.1 - - [06/Jul/2026:11:01:45 +0000] "GET /products/get-orders HTTP/1.1" 200 6246 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [32m200[0m 441.343 ms - 6246[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/user-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/user-orders
+127.0.0.1 - - [06/Jul/2026:11:01:48 +0000] "GET /products/user-orders HTTP/1.1" 200 10126 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/user-orders [32m200[0m 621.760 ms - 10126[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23
+127.0.0.1 - - [06/Jul/2026:11:01:53 +0000] "GET /auth/logged-in-seller HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [36m304[0m 207.281 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:01:53 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 210.638 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:01:53 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [36m304[0m 420.041 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:01:53 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [36m304[0m 459.860 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:01:54 +0000] "OPTIONS /products/orders/6a4b8ae034f8727d4a742e23/status HTTP/1.1" 204 0 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23/status
+Method: PATCH
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23/status
+127.0.0.1 - - [06/Jul/2026:11:01:55 +0000] "PATCH /products/orders/6a4b8ae034f8727d4a742e23/status HTTP/1.1" 200 886 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPATCH /products/orders/6a4b8ae034f8727d4a742e23/status [32m200[0m 688.940 ms - 886[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23
+127.0.0.1 - - [06/Jul/2026:11:01:55 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 200 860 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [32m200[0m 387.275 ms - 860[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+127.0.0.1 - - [06/Jul/2026:11:01:56 +0000] "GET /products/get-orders HTTP/1.1" 200 6244 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [32m200[0m 378.875 ms - 6244[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/user-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/user-orders
+127.0.0.1 - - [06/Jul/2026:11:01:58 +0000] "GET /products/user-orders HTTP/1.1" 200 10124 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/user-orders [32m200[0m 502.339 ms - 10124[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23
+127.0.0.1 - - [06/Jul/2026:11:02:01 +0000] "GET /auth/logged-in-seller HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [36m304[0m 171.782 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:02:01 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 174.708 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:02:01 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [36m304[0m 420.727 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:02:01 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [36m304[0m 425.103 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:02:02 +0000] "OPTIONS /products/orders/6a4b8ae034f8727d4a742e23/status HTTP/1.1" 204 0 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23/status
+Method: PATCH
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23/status
+127.0.0.1 - - [06/Jul/2026:11:02:03 +0000] "PATCH /products/orders/6a4b8ae034f8727d4a742e23/status HTTP/1.1" 200 888 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPATCH /products/orders/6a4b8ae034f8727d4a742e23/status [32m200[0m 989.148 ms - 888[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23
+127.0.0.1 - - [06/Jul/2026:11:02:04 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 200 859 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [32m200[0m 422.337 ms - 859[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+127.0.0.1 - - [06/Jul/2026:11:02:04 +0000] "GET /products/get-orders HTTP/1.1" 200 6243 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [32m200[0m 426.707 ms - 6243[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/user-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/user-orders
+127.0.0.1 - - [06/Jul/2026:11:02:08 +0000] "GET /products/user-orders HTTP/1.1" 200 10123 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/user-orders [32m200[0m 462.362 ms - 10123[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-categories
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-categories
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest
+127.0.0.1 - - [06/Jul/2026:11:02:17 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-categories [33m400[0m 4.999 ms - 48[0m
+127.0.0.1 - - [06/Jul/2026:11:02:17 +0000] "GET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest HTTP/1.1" 200 3016 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest [32m200[0m 134.176 ms - 3016[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-categories
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-categories
+127.0.0.1 - - [06/Jul/2026:11:02:18 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-categories [33m400[0m 3.952 ms - 48[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/orders/6a4b8ae034f8727d4a742e23
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/orders/6a4b8ae034f8727d4a742e23
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+127.0.0.1 - - [06/Jul/2026:11:02:19 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 183.834 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:02:19 +0000] "GET /auth/logged-in-seller HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [36m304[0m 204.211 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:02:20 +0000] "GET /products/orders/6a4b8ae034f8727d4a742e23 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/orders/6a4b8ae034f8727d4a742e23 [36m304[0m 583.322 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:02:20 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [36m304[0m 585.771 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders?page=1&limit=20
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders?page=1&limit=20
+127.0.0.1 - - [06/Jul/2026:11:02:28 +0000] "GET /products/get-orders?page=1&limit=20 HTTP/1.1" 200 6243 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders?page=1&limit=20 [32m200[0m 357.664 ms - 6243[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/payments/my?page=1&limit=20
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/payments/my?page=1&limit=20
+127.0.0.1 - - [06/Jul/2026:11:02:33 +0000] "GET /products/payments/my?page=1&limit=20 HTTP/1.1" 200 9786 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/payments/my?page=1&limit=20 [32m200[0m 390.329 ms - 9786[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/payments/6a4b8ae234f8727d4a742e25
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/payments/6a4b8ae234f8727d4a742e25
+127.0.0.1 - - [06/Jul/2026:11:02:37 +0000] "GET /products/payments/6a4b8ae234f8727d4a742e25 HTTP/1.1" 200 859 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/payments/6a4b8ae234f8727d4a742e25 [32m200[0m 389.549 ms - 859[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+127.0.0.1 - - [06/Jul/2026:11:02:49 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 187.495 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/payments/my?page=1&limit=20
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/payments/my?page=1&limit=20
+127.0.0.1 - - [06/Jul/2026:11:02:59 +0000] "GET /products/payments/my?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/payments/my?page=1&limit=20 [36m304[0m 379.572 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders?page=1&limit=20
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders?page=1&limit=20
+127.0.0.1 - - [06/Jul/2026:11:03:14 +0000] "GET /products/get-orders?page=1&limit=20 HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders?page=1&limit=20 [36m304[0m 413.303 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+127.0.0.1 - - [06/Jul/2026:11:03:20 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 164.147 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+127.0.0.1 - - [06/Jul/2026:11:03:50 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 169.648 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+127.0.0.1 - - [06/Jul/2026:11:03:59 +0000] "GET /products/get-products HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products [36m304[0m 187.991 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:03:59 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [36m304[0m 397.846 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+127.0.0.1 - - [06/Jul/2026:11:04:20 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 171.982 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-categories
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-categories
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest
+127.0.0.1 - - [06/Jul/2026:11:04:26 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-categories [33m400[0m 5.154 ms - 48[0m
+127.0.0.1 - - [06/Jul/2026:11:04:26 +0000] "GET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-all?page=1&limit=20&search=&minPrice=0&maxPrice=99999&inStock=false&sortBy=newest [36m304[0m 90.105 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:04:29 +0000] "OPTIONS /auth/logout HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+127.0.0.1 - - [06/Jul/2026:11:04:29 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/logout [32m200[0m 7.033 ms - 37[0m
+127.0.0.1 - - [06/Jul/2026:11:04:29 +0000] "GET /auth/logged-in-user HTTP/1.1" 401 64 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [33m401[0m 2.958 ms - 64[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-categories
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-categories
+127.0.0.1 - - [06/Jul/2026:11:04:30 +0000] "GET /products/get-categories HTTP/1.1" 400 48 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-categories [33m400[0m 3.790 ms - 48[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+127.0.0.1 - - [06/Jul/2026:11:04:52 +0000] "GET /auth/logged-in-seller HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [36m304[0m 247.023 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:04:52 +0000] "GET /products/get-products HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products [36m304[0m 302.746 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:04:52 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 365.781 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:04:53 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [36m304[0m 575.253 ms - -[0m
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-orders
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-orders
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/notifications/unread-count
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/notifications/unread-count
+━━━━━━━━━━━━━━━━━━━
+PRODUCT SERVICE HIT
+Original URL: /products/get-products
+Method: GET
+━━━━━━━━━━━━━━━━━━━
+Forwarding To: http://localhost:7001/products/get-products
+127.0.0.1 - - [06/Jul/2026:11:04:56 +0000] "GET /auth/logged-in-seller HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [36m304[0m 137.439 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:04:56 +0000] "GET /products/notifications/unread-count HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/notifications/unread-count [36m304[0m 146.136 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:04:56 +0000] "GET /products/get-products HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-products [36m304[0m 161.208 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:04:56 +0000] "GET /products/get-orders HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mGET /products/get-orders [36m304[0m 356.857 ms - -[0m
+127.0.0.1 - - [06/Jul/2026:11:05:26 +0000] "OPTIONS /auth/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+127.0.0.1 - - [06/Jul/2026:11:05:45 +0000] "POST /auth/register HTTP/1.1" 500 65 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/register [31m500[0m 18758.835 ms - 65[0m
+127.0.0.1 - - [06/Jul/2026:11:06:56 +0000] "OPTIONS /auth/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+127.0.0.1 - - [06/Jul/2026:11:07:09 +0000] "POST /auth/register HTTP/1.1" 500 65 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/register [31m500[0m 13342.369 ms - 65[0m
+127.0.0.1 - - [06/Jul/2026:11:09:42 +0000] "OPTIONS /auth/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+127.0.0.1 - - [06/Jul/2026:11:09:58 +0000] "POST /auth/register HTTP/1.1" 500 65 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/register [31m500[0m 15476.139 ms - 65[0m
+127.0.0.1 - - [06/Jul/2026:11:12:17 +0000] "OPTIONS /auth/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+127.0.0.1 - - [06/Jul/2026:11:12:46 +0000] "POST /auth/register HTTP/1.1" 500 65 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+[0mPOST /auth/register [31m500[0m 29427.613 ms - 65[0m
