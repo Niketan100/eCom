@@ -2,7 +2,6 @@ import express from 'express';
 import proxy from 'express-http-proxy';
 import morgan from 'morgan';
 import cors from 'cors';
-import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 import cookieParser from 'cookie-parser';
 import initializeConfig from './libs/intialize_config';
 
@@ -207,13 +206,6 @@ app.get('/', (_, res) => {
 const host = process.env.HOST ?? '0.0.0.0';
 const port = process.env.PORT ? Number(process.env.PORT) : 8080;
 
-// Use a simple error middleware that will always be present. This avoids
-// runtime failures caused by ESM/CommonJS interop in the packages during dev.
-app.use((err: any, req: any, res: any, next: any) => {
-    console.error('Unhandled error:', err && err.stack ? err.stack : err);
-    if (res.headersSent) return next(err);
-    res.status(500).json({ success: false, message: 'Internal Server Error' });
-});
 
 app.listen(port, host, () => {
     try {

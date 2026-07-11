@@ -162,7 +162,7 @@ export const Header = () => {
                                                                     <ChevronDown className='h-4 w-4 text-gray-500' />
                                                                 </button>
 
-                                                                {accountOpen && (
+                                                                {accountOpen &&  (
                                                                     <div
                                                                         onClick={(e) => e.stopPropagation()}
                                                                         className='absolute right-0 mt-2 w-[280px] rounded-2xl border border-gray-200 bg-white shadow-lg overflow-hidden z-50'
@@ -171,8 +171,12 @@ export const Header = () => {
                                                                             <div className='text-sm font-semibold text-gray-900'>Account</div>
                                                                             <div className='text-xs text-gray-500 mt-1'>Quick links</div>
                                                                         </div>
+                                                                            
+                                                                             <div className='p-2'>
 
-                                                                        <div className='p-2'>
+                                                                               {loggedInUser&&  <div className='p-2'>
+
+                                                                                
                                                                             <Link
                                                                                 href={'/orders'}
                                                                                 className='flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-gray-700 hover:bg-gray-50'
@@ -205,8 +209,14 @@ export const Header = () => {
                                                                                 <Heart className='h-4 w-4 text-gray-500' />
                                                                                 SignOut
                                                                             </Link>
+                                                                            </div>
+                                                                        }
 
                                                                             <div className='h-px bg-gray-100 my-2' />
+
+                                                                            
+
+                                                                            
 
                                                                             <a
                                                                                 href={process.env.NEXT_PUBLIC_SELLER_URL || 'http://localhost:3001/login'}
@@ -220,7 +230,7 @@ export const Header = () => {
                                                                                 </span>
                                                                                 <span className='text-xs text-gray-400'>opens</span>
                                                                             </a>
-
+                                                                                
                                                                             {!loggedInUser && !isLoading && (
                                                                                 <>
                                                                                     <Link
