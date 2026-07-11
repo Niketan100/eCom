@@ -1,36 +1,67 @@
 'use client';
 
-import { useQuery } from "@tanstack/react-query";
-import axios, { AxiosError } from "axios";
-import axiosInstance from "../utils/axiosInstance";
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import axiosInstance from '../utils/axiosInstance';
 
-
-const fetchUser = async () => {
-    try {
-        const response = await axiosInstance.get('/auth/logged-in-user');
-        return response.data as { user?: unknown };
-    } catch (error: unknown) {
-        if (axios.isAxiosError(error)) {
-            const status = (error as AxiosError).response?.status;
-            if (status === 401 || status === 403) {
-                return { user: null };
-            }
-            const message = (error as AxiosError<{ message?: string }>).response?.data?.message;
-            throw new Error(message || 'Failed to fetch user data');
-        }
-        throw new Error('Failed to fetch user data');
-    }
+export interface LoggedInUser {
+  id: string;
+  name: string;
+  email: string;
+  avatar?: string | null;
+  following: string[];
+  phone : number,
+  createdAt: string;
+  updatedAt: string;
 }
+
+const fetchUser = async (): Promise<{ user: LoggedInUser | null }> => {
+  try {
+    const { data } = await axiosInstance.get<{ user: LoggedInUser | null }>(
+      '/auth/logged-in-user'
+    );
+
+    return data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      const status = error.response?.status;
+
+      if (status === 401 || status === 403) {
+        return { user: null };
+      }
+
+      throw new Error(
+        (error.response?.data as { message?: string })?.message ??
+          'Failed to fetch user data'
+      );
+    }
+
+    throw new Error('Failed to fetch user data');
+  }
+};
 
 const useUser = () => {
-    const { isLoading, data: loggedInUser, error } = useQuery({
-        queryKey: ['loggedInUser'],
-        queryFn: fetchUser,
-        retry: 5,
-        refetchOnWindowFocus: false,
-        select: (data) => data?.user ?? null
-    });
-    return { loggedInUser, isLoading, error };
-}
+  const {
+    data: loggedInUser,
+    isLoading,
+    error,
+  } = useQuery<
+    { user: LoggedInUser | null }, // queryFn return type
+    Error,                         // error type
+    LoggedInUser | null            // selected type
+  >({
+    queryKey: ['loggedInUser'],
+    queryFn: fetchUser,
+    retry: 5,
+    refetchOnWindowFocus: false,
+    select: (data) => data.user,
+  });
 
-export default useUser; 
+  return {
+    loggedInUser,
+    isLoading,
+    error,
+  };
+};
+
+export default useUser;

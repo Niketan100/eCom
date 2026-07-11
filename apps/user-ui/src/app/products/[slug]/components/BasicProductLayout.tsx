@@ -1,24 +1,13 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-
+import React, { useEffect } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
-import axiosInstance from 'apps/user-ui/src/utils/axiosInstance'
 import { useStore } from 'apps/user-ui/src/store'
-import useUser from 'apps/user-ui/src/hooks/useUSer'
 
 const BasicProductLayout = ({
    product
 }: any) => {
-
-   const user = useUser();
-
-   const deviceInfo = navigator.userAgent;
-   const queryClient = useQueryClient()
-   const router = useRouter()
 
    const Cart = useStore((state) => state.cart);
 

@@ -28,7 +28,6 @@ const useOrder = () => {
   const total_orders = data?.count || 0;
   const pending_orders = data?.orders?.filter((order: any) => order.status === 'PENDING').length || 0;
   const delivered_orders = data?.orders?.filter((order: any) => order.status === 'DELIVERED').length || 0;
-  const delivered_orders_data = data?.orders?.filter((order: any) => order.status === 'DELIVERED') || [];
   const paid_orders_data = data?.orders?.filter((order: any) => order.payment.status === 'PAID') || [];  
   const revenue = paid_orders_data.reduce((acc: number, order: any) => acc + (order.product?.price || 0), 0) || 0;
   const ordersToday = data?.orders?.filter((order: any) => {

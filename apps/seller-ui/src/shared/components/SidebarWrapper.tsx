@@ -12,12 +12,11 @@ import SideItems from './sidebar.items'
 import Logo from '../widget/components/svgs/Logo'
 
 import {
-  controllers,
   items,
   manageShopItems,
   products,
 } from '../../configs/constants'
-import { useQueries, useQuery } from '@tanstack/react-query'
+
 import useOrder from '../../hooks/useOrder'
 
 const SidebarSection = ({ title, children }: any) => {

@@ -8,7 +8,6 @@ import GoogleSignInButton from '../../shared/widget/components/Google'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios, { AxiosError } from 'axios'
 import axiosInstance from '../../utils/axiosInstance'
-import { QueryClient } from '@tanstack/react-query'
 
 type Formdata = {
     email: string

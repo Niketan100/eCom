@@ -1,0 +1,29 @@
+> next build
+
+[33m[1m⚠[22m[39m Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/niketan/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/niketan/Desktop/RealApp/package-lock.json
+
+[1m[38;2;173;127;168m▲ Next.js 16.1.7[39m[22m (Turbopack)
+- Environments: .env
+
+[37m[1m [22m[39m Creating an optimized production build ...
+[32m[1m✓[22m[39m Compiled successfully in 4.5s
+[?25l[37m[1m [22m[39m Running TypeScript  [36m.[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m..[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m...[39m[33m[1m⚠[22m[39m TypeScript project references are not fully supported. Attempting to build in incremental mode.
+[2K[1G[37m[1m [22m[39m Running TypeScript  [36m.[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m..[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m...[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m.[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m..[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m...[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m.[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m..[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m...[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m.[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m..[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m...[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m.[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m..[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m...[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m.[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m..[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m...[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m.[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m..[39m[2K[1G[37m[1m [22m[39m Running TypeScript  [36m...[39m[31mFailed to compile.
+[39m
+[36m./src/app/products/[slug]/components/DetailedProductLayout.tsx[39m:[33m72[39m:[33m10[39m
+[31m[1mType error[22m[39m: 'addToCartMutation' is declared but its value is never read.
+
+[0m [90m 70 |[39m       [33mReact[39m[33m.[39museState[33m<[39m[33many[39m[33m>[39m([36mnull[39m)
+ [90m 71 |[39m
+[31m[1m>[22m[39m[90m 72 |[39m    [36mconst[39m addToCartMutation [33m=[39m useMutation({
+ [90m    |[39m          [31m[1m^[22m[39m
+ [90m 73 |[39m       mutationFn[33m:[39m [36masync[39m () [33m=>[39m {
+ [90m 74 |[39m          [36mawait[39m axiosInstance[33m.[39mpost([32m'/products/cart/add'[39m[33m,[39m {
+ [90m 75 |[39m             productId[33m:[39m product[33m.[39mid[33m,[39m[0m
+[2K[1G[?25hNext.js build worker exited with code: 1 and signal: null
+[?25l [36m.[39m [?25h

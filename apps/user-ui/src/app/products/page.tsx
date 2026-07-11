@@ -1,5 +1,7 @@
 'use client';
 
+import { Suspense } from 'react';
+
 import React from 'react';
 import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
@@ -718,4 +720,11 @@ const products = data?.products ?? [];
   );
 };
 
-export default Page;
+export default function main() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <Page />
+        </Suspense>
+    );
+}
+

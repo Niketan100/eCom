@@ -2,12 +2,7 @@
 
 import React from 'react'
 
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-
-import axiosInstance from 'apps/user-ui/src/utils/axiosInstance'
 
 import ProductGallery from './ProductGallery'
 
@@ -24,8 +19,6 @@ import ProductSeller from './ProductSeller'
 import ProductReviews from './ProductReviews'
 import { useEffect} from 'react'
 import { useStore } from 'apps/user-ui/src/store'
-import useUser from 'apps/user-ui/src/hooks/useUSer'
-import { useLocation } from 'apps/user-ui/src/hooks/useLocation'
 
 const DetailedProductLayout = ({
    product
@@ -33,10 +26,10 @@ const DetailedProductLayout = ({
 
 
       const Cart = useStore((state) => state.cart);
-      const user = useUser();
+      
     
-       const { latitude, longitude } = useLocation();
-       const deviceInfo = navigator.userAgent;
+       
+       
    
       const wishList = useStore((state) => state.wishList);
       console.log(wishList);
@@ -62,41 +55,11 @@ const DetailedProductLayout = ({
       }, [addToWishList, removeFromWishList, wishList]);
    
 
-   const queryClient = useQueryClient()
-   const router = useRouter()
-
    const [quantity, setQuantity] =
       React.useState(1)
 
    const [selectedVariant, setSelectedVariant] =
       React.useState<any>(null)
-
-   const addToCartMutation = useMutation({
-      mutationFn: async () => {
-         await axiosInstance.post('/products/cart/add', {
-            productId: product.id,
-            quantity,
-            variantId: selectedVariant?.id ?? undefined,
-         })
-      },
-      onSuccess: async () => {
-         await queryClient.invalidateQueries({ queryKey: ['cart'] })
-         await queryClient.invalidateQueries({ queryKey: ['cart-count'] })
-         router.push('/cart')
-      },
-   })
-
-   const addToWishlistMutation = useMutation({
-      mutationFn: async () => {
-         await axiosInstance.post('/products/wishlist/add', {
-            productId: product.id,
-         })
-      },
-      onSuccess: async () => {
-         await queryClient.invalidateQueries({ queryKey: ['wishlist'] })
-         await queryClient.invalidateQueries({ queryKey: ['wishlist-count'] })
-      },
-   })
 
    const finalPrice =
       product.discountedPrice ||

@@ -5,17 +5,6 @@ import { useMutation } from '@tanstack/react-query';
 import axiosInstance from 'apps/user-ui/src/utils/axiosInstance';
 import { useStore } from 'apps/user-ui/src/store';
 
-type Product = {
-id: string;
-name: string;
-price: number;
-discountedPrice?: number;
-quantity: number;
-};
-
-type Props = {
-  items: Product[];
-};
 
 export default function CheckoutPage() {
 const items = useStore((state) => state.selectedItems);

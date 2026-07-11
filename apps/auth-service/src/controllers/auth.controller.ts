@@ -212,7 +212,9 @@ export const refreshToken = async (req : Request , res : Response , next : NextF
 
 export const getUser = async(req : any , res : Response , next : NextFunction) =>{
     const user = req.user;
-    const { password, ...safeUser } = user || {};
+    const { password, ...safeUser } = user || null;
+
+
     res.status(200).json({
         user : safeUser
     });

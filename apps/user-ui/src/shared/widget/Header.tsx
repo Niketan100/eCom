@@ -1,11 +1,11 @@
 'use client'
+import React from 'react'
 
 import Link from 'next/link'
-import React, { useEffect } from 'react'
 import axiosInstance from '../../utils/axiosInstance'
 import { useStore } from '../../store'
 import router from 'next/router'
-import { QueryClient, useQueryClient } from '@tanstack/react-query'
+import { useQueryClient } from '@tanstack/react-query'
 
 import { HeaderBottom } from './HeaderBottom'
 import {
@@ -19,7 +19,7 @@ import {
     UserPlus,
 } from 'lucide-react'
 import useUser  from './../../hooks/useUSer'
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 
 export const Header = () => {
 
@@ -30,13 +30,6 @@ export const Header = () => {
         const [accountOpen, setAccountOpen] = React.useState(false)
         const [offersOpen, setOffersOpen] = React.useState(false)
 
-       
-
-        const onAcountClick = (e: React.MouseEvent) => {
-            e.stopPropagation()
-            setAccountOpen((v) => !v)
-            setOffersOpen(false)
-        }
 
         const onOffersClick = (e: React.MouseEvent) => {
             e.stopPropagation()
@@ -56,6 +49,9 @@ export const Header = () => {
 
             await queryClient.invalidateQueries({
                 queryKey: ['loggedInUser'],
+            });
+            await queryClient.invalidateQueries({
+                queryKey: ['orders'],
             });
 
             router.push('/login');

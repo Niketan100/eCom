@@ -1,132 +1,59 @@
 > nx run @real-app/auth-service:serve:development
 
-[36m⠋[39m [2K[1G[36m⠙[39m [2K[1G[36m⠹[39m [2K[1G[36m⠸[39m [2K[1G[36m⠼[39m [2K[1G[36m⠴[39m [2K[1G[36m⠦[39m [2K[1G[36m⠧[39m [2K[1G[36m⠇[39m [2K[1G[36m⠏[39m [2K[1G[36m⠋[39m [2K[1G[36m⠙[39m [2K[1G[36m⠹[39m [2K[1G[36m⠸[39m [2K[1G[36m⠼[39m [2K[1G[36m⠴[39m Creating project graph nodes with 7 plugins
-  - @nx/js/typescript
+[36m⠋[39m Creating project graph nodes with 6 plugins
   - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 7 plugins
-  - @nx/js/typescript
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 6 plugins
   - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 7 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 5 plugins
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 7 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 5 plugins
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 6 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 4 plugins
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 6 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 3 plugins
   - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 6 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 4 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 4 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 3 plugins
-  - @nx/jest/plugin
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 3 plugins
-  - @nx/jest/plugin
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 3 plugins
-  - @nx/jest/plugin
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 3 plugins
-  - @nx/jest/plugin
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 3 plugins
-  - @nx/jest/plugin
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 3 plugins
-  - @nx/jest/plugin
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 3 plugins
-  - @nx/jest/plugin
   - @nx/webpack/plugin
   - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 3 plugins
-  - @nx/jest/plugin
+  - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 2 plugins
-  - @nx/jest/plugin
-  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 2 plugins
-  - @nx/jest/plugin
-  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m [2K[1G[36m⠦[39m Creating project graph dependencies with nx/js/dependencies-and-lockfile[2K[1G[36m⠧[39m [2K[1G[ [32mwatch[39m ] build succeeded, watching for changes...
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 3 plugins
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 2 plugins
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m [2K[1G[ [32mwatch[39m ] build succeeded, watching for changes...
 [1m[31mStarting inspector on localhost:9229 failed: address already in use
 [39m[22m
-◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
-[1m[31m{"level":"WARN","timestamp":"2026-07-07T16:29:29.794Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+[1m[31m{"level":"WARN","timestamp":"2026-07-11T15:15:33.541Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
 [39m[22m
 [ ready ] http://0.0.0.0:6001
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.402Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:34.762Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.404Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":329}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:34.763Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":275}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.405Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:34.764Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.405Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":353}
-[39m[22m
-[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
-    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:34.764Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":271}
 [39m[22m
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
@@ -134,13 +61,16 @@
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.736Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:35.041Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.737Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":676}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:35.042Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":634}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.764Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:31.764Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":786}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:35.042Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[39m[22m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:35.043Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":484}
 [39m[22m
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
@@ -148,34 +78,12 @@
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:32.424Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:35.530Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:32.425Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":1140}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:35.531Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":1016}
 [39m[22m
-[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
-    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:32.554Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:32.554Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":1406}
-[39m[22m
-[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
-    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
-[39m[22m
-SMTP server is ready to send messages.
-[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
-    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:33.568Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:33.569Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":2120}
-[39m[22m
-[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
-    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:33.963Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:33.964Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":2298}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:35.685Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+{"level":"ERROR","timestamp":"2026-07-11T15:15:35.687Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":1164}
 [39m[22m
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
@@ -183,71 +91,71 @@ SMTP server is ready to send messages.
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
-    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:36.550Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:35.692Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:35.693Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":5026}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:36.551Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":1950}
 [39m[22m
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:36.266Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:36.855Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:36.266Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":5074}
-[39m[22m
-[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
-    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:36.856Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":1976}
 [39m[22m
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-127.0.0.1 - - [07/Jul/2026:16:29:37 +0000] "GET /auth/logged-in-user HTTP/1.1" 401 64 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-[0mGET /auth/logged-in-user [33m401[0m 5.154 ms - 64[0m
-[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
-    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
-[39m[22m
-[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
-    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
-[39m[22m
-[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
-    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:40.723Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:40.723Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":11320}
-[39m[22m
-[1m[31mError connecting to Kafka: KafkaJSNonRetriableError
-  Caused by: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
-    at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mkafkajs[24m/src/network/connection.js:210:23[90m)[31m
-[90m    ... 3 lines matching cause stack trace ...[31m
-[90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
-  name: [32m'KafkaJSNumberOfRetriesExceeded'[31m,
-  retriable: [33mfalse[31m,
-  helpUrl: [90mundefined[31m,
-  retryCount: [33m5[31m,
-  retryTime: [33m11320[31m,
-  [cause]: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
-      at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mkafkajs[24m/src/network/connection.js:210:23[90m)[31m
-  [90m    at TLSSocket.emit (node:events:519:28)[31m
-  [90m    at emitErrorNT (node:internal/streams/destroy:170:8)[31m
-  [90m    at emitErrorCloseNT (node:internal/streams/destroy:129:3)[31m
-  [90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
-    retriable: [33mtrue[31m,
-    helpUrl: [90mundefined[31m,
-    broker: [32m'kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456'[31m,
-    code: [32m'ENOTFOUND'[31m,
-    [cause]: [90mundefined[31m
-  }
+[1m[31mSMTP verify failed: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13b659c8665sm51710247c88.10 - gsmtp
+    at SMTPConnection._formatError [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mnodemailer[24m/lib/smtp-connection/index.js:905:19[90m)[31m
+    at SMTPConnection._actionAUTHComplete [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mnodemailer[24m/lib/smtp-connection/index.js:1726:34[90m)[31m
+    at SMTPConnection.<anonymous> [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mnodemailer[24m/lib/smtp-connection/index.js:644:26[90m)[31m
+    at SMTPConnection._processResponse [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mnodemailer[24m/lib/smtp-connection/index.js:1099:20[90m)[31m
+    at SMTPConnection._onData [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mnodemailer[24m/lib/smtp-connection/index.js:865:14[90m)[31m
+    at TLSSocket.SMTPConnection._onSocketData [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mnodemailer[24m/lib/smtp-connection/index.js:224:44[90m)[31m
+[90m    at TLSSocket.emit (node:events:519:28)[31m
+[90m    at addChunk (node:internal/streams/readable:561:12)[31m
+[90m    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)[31m
+[90m    at TLSSocket.Readable.push (node:internal/streams/readable:392:5)[31m {
+  code: [32m'EAUTH'[31m,
+  response: [32m'535-5.7.8 Username and Password not accepted. For more information, go to\n'[31m +
+    [32m'535 5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-13b659c8665sm51710247c88.10 - gsmtp'[31m,
+  responseCode: [33m535[31m,
+  command: [32m'AUTH PLAIN'[31m
 }
 [39m[22m
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:41.343Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-07T16:29:41.343Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":9066}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:38.504Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[39m[22m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:38.505Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":3418}
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:38.835Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[39m[22m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:38.836Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":4294}
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:41.928Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[39m[22m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:41.928Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":6058}
 [39m[22m
 [1m[31mKafkaJSNonRetriableError
   Caused by: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
@@ -258,7 +166,38 @@ SMTP server is ready to send messages.
   retriable: [33mfalse[31m,
   helpUrl: [90mundefined[31m,
   retryCount: [33m5[31m,
-  retryTime: [33m9066[31m,
+  retryTime: [33m6058[31m,
+  [cause]: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
+      at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mkafkajs[24m/src/network/connection.js:210:23[90m)[31m
+  [90m    at TLSSocket.emit (node:events:519:28)[31m
+  [90m    at emitErrorNT (node:internal/streams/destroy:170:8)[31m
+  [90m    at emitErrorCloseNT (node:internal/streams/destroy:129:3)[31m
+  [90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
+    retriable: [33mtrue[31m,
+    helpUrl: [90mundefined[31m,
+    broker: [32m'kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456'[31m,
+    code: [32m'ENOTFOUND'[31m,
+    [cause]: [90mundefined[31m
+  }
+}
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:43.134Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[39m[22m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-11T15:15:43.135Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":8050}
+[39m[22m
+[1m[31mError connecting to Kafka: KafkaJSNonRetriableError
+  Caused by: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
+    at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mkafkajs[24m/src/network/connection.js:210:23[90m)[31m
+[90m    ... 3 lines matching cause stack trace ...[31m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
+  name: [32m'KafkaJSNumberOfRetriesExceeded'[31m,
+  retriable: [33mfalse[31m,
+  helpUrl: [90mundefined[31m,
+  retryCount: [33m5[31m,
+  retryTime: [33m8050[31m,
   [cause]: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
       at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mkafkajs[24m/src/network/connection.js:210:23[90m)[31m
   [90m    at TLSSocket.emit (node:events:519:28)[31m
@@ -339,15 +278,1059 @@ SMTP server is ready to send messages.
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-[1m[31mUnhandled error: MaxRetriesPerRequestError: Reached the max retries per request limit (which is 20). Refer to "maxRetriesPerRequest" option for details.
-    at TLSSocket.<anonymous> [90m(/Users/niketan/Desktop/RealApp/[31mnode_modules/[4mioredis[24m/built/redis/event_handler.js:207:37[90m)[31m
-[90m    at Object.onceWrapper (node:events:634:26)[31m
-[90m    at TLSSocket.emit (node:events:531:35)[31m
-[90m    at node:net:346:12[31m
-[90m    at TCP.done (node:_tls_wrap:650:7)[31m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m
-127.0.0.1 - - [07/Jul/2026:16:30:14 +0000] "POST /auth/register HTTP/1.1" 500 65 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
-[0mPOST /auth/register [31m500[0m 27821.909 ms - 65[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:17:59 +0000] "GET /auth/logged-in-user HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [36m304[0m 818.321 ms - -[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:18:47 +0000] "GET /auth/logged-in-seller HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [36m304[0m 152.826 ms - -[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:19:32 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/logout [32m200[0m 8.197 ms - 37[0m
+127.0.0.1 - - [11/Jul/2026:15:19:32 +0000] "GET /auth/logged-in-user HTTP/1.1" 401 64 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [33m401[0m 0.730 ms - 64[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:19:35 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 86.952 ms - 49[0m
+127.0.0.1 - - [11/Jul/2026:15:19:36 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 92.227 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:19:38 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 77.446 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:19:42 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 108.992 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:19:44 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 94.758 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:19:45 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 93.509 ms - 49[0m
+127.0.0.1 - - [11/Jul/2026:15:19:46 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 71.351 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:19:48 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 77.252 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:19:56 +0000] "POST /auth/login HTTP/1.1" 200 132 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/login [32m200[0m 212.255 ms - 132[0m
+127.0.0.1 - - [11/Jul/2026:15:19:56 +0000] "GET /auth/logged-in-user HTTP/1.1" 200 185 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [32m200[0m 72.434 ms - 185[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:20:02 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/logout [32m200[0m 1.175 ms - 37[0m
+127.0.0.1 - - [11/Jul/2026:15:20:02 +0000] "GET /auth/logged-in-user HTTP/1.1" 401 64 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [33m401[0m 0.749 ms - 64[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:20:07 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 100.207 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:20:08 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 91.837 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:20:10 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 92.115 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:23:18 +0000] "GET /auth/logged-in-user HTTP/1.1" 401 64 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [33m401[0m 1.416 ms - 64[0m
+127.0.0.1 - - [11/Jul/2026:15:23:19 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 115.491 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:23:30 +0000] "POST /auth/login HTTP/1.1" 200 132 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/login [32m200[0m 197.906 ms - 132[0m
+127.0.0.1 - - [11/Jul/2026:15:23:30 +0000] "GET /auth/logged-in-user HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [36m304[0m 92.283 ms - -[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:23:35 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/logout [32m200[0m 0.865 ms - 37[0m
+127.0.0.1 - - [11/Jul/2026:15:23:35 +0000] "GET /auth/logged-in-user HTTP/1.1" 401 64 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [33m401[0m 0.532 ms - 64[0m
+127.0.0.1 - - [11/Jul/2026:15:23:35 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 102.626 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:23:36 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 85.937 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:23:38 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 101.774 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:23:42 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 91.962 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:25:23 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 84.626 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:25:25 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 87.235 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:25:27 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 74.280 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:25:33 +0000] "POST /auth/login HTTP/1.1" 200 132 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/login [32m200[0m 186.603 ms - 132[0m
+127.0.0.1 - - [11/Jul/2026:15:25:33 +0000] "GET /auth/logged-in-user HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [36m304[0m 74.213 ms - -[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:25:43 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/logout [32m200[0m 1.016 ms - 37[0m
+127.0.0.1 - - [11/Jul/2026:15:25:43 +0000] "GET /auth/logged-in-user HTTP/1.1" 401 64 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-user [33m401[0m 0.492 ms - 64[0m
+127.0.0.1 - - [11/Jul/2026:15:25:43 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 82.477 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:25:44 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 102.878 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:25:46 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 88.893 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:25:50 +0000] "POST /auth/refresh-token HTTP/1.1" 200 49 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mPOST /auth/refresh-token [32m200[0m 113.987 ms - 49[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:26:01 +0000] "GET /auth/logged-in-seller HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [36m304[0m 202.536 ms - -[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+127.0.0.1 - - [11/Jul/2026:15:26:22 +0000] "GET /auth/logged-in-seller HTTP/1.1" 304 - "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+[0mGET /auth/logged-in-seller [36m304[0m 170.571 ms - -[0m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
+[1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+[39m[22m
 [1m[31m[ioredis] Unhandled error event: Error: getaddrinfo ENOTFOUND https://golden-rabbit-112895.upstash.io
     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
 [39m[22m

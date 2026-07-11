@@ -18,73 +18,34 @@
   - @nx/webpack/plugin
   - @nx/next/plugin
   - nx/core/package-json
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 5 plugins
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 6 plugins
+  - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
   - nx/core/package-json
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 5 plugins
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 6 plugins
+  - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
   - nx/core/package-json
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 5 plugins
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 6 plugins
+  - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
   - nx/core/package-json
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 5 plugins
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 5 plugins
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
   - nx/core/package-json
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 5 plugins
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 4 plugins
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
-  - nx/core/package-json
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 5 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/core/package-json
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 5 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/core/package-json
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 5 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/core/package-json
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 5 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/core/package-json
-  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 4 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 4 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 4 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 3 plugins
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 3 plugins
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 3 plugins
@@ -96,35 +57,13 @@
   - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 3 plugins
   - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 3 plugins
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 2 plugins
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with @nx/next/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/next/plugin[2K[1G[36m⠸[39m [2K[1G[36m⠼[39m [2K[1G[36m⠴[39m [2K[1G[36m⠦[39m [2K[1G[ [32mwatch[39m ] build succeeded, watching for changes...
-[1m[31mDebugger listening on ws://localhost:9229/9b5f0220-8e38-4c3f-ae2f-d0a0a86d6b84
-Debugger listening on ws://localhost:9229/9b5f0220-8e38-4c3f-ae2f-d0a0a86d6b84
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m [2K[1G[36m⠴[39m [2K[1G[ [32mwatch[39m ] build succeeded, watching for changes...
+[1m[31mDebugger listening on ws://localhost:9229/af6ecd68-faf4-476b-a338-550fb579c6d4
+Debugger listening on ws://localhost:9229/af6ecd68-faf4-476b-a338-550fb579c6d4
 For help, see: https://nodejs.org/en/docs/inspector
 [39m[22m
 [ ready ] http://localhost:7002
