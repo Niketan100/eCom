@@ -1,3 +1,4 @@
+
 name: CI
 
 on:
@@ -7,31 +8,37 @@ on:
   pull_request:
 
 permissions:
-  actions: read
   contents: read
 
 jobs:
   main:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
-       
-      - name: Debugging Check
-        run: |
-          echo "Current directory: $(pwd)"
-          echo "Files in root:"
-          ls -la
-          echo "Checking for lockfile:"
-          if [ -f package-lock.json ]; then echo "Lockfile found!"; else echo "Lockfile MISSING!"; fi
+          node-version: 22
+          cache: npm
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm ci
-      
+
+      - name: Generate Prisma Client
+        run: npm run prisma:generate
+
+      - name: Lint
+        run: npx nx run-many --target=lint --all --parallel=3
+        continue-on-error: true
+
+      - name: Build
+        run: npx nx run-many --target=build --all
+
+      - name: Test
+        run: npx nx run-many --target=test --all --passWithNoTests
+
