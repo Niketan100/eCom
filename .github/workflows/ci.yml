@@ -35,6 +35,3 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Fix CI
-        if: always()
-        run: npx nx fix-ci
