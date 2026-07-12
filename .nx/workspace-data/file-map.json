@@ -71,196 +71,24 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "packages/libs/redis/index.ts",
-        "hash": "17283574269687262107"
-      },
-      {
-        "file": "packages/middleware/isUserAuthenticated.ts",
-        "hash": "8777949928480545615"
-      },
-      {
-        "file": "tmp/@real-app/auth-service/main-with-require-overrides.js",
-        "hash": "3691358310437684392"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "14193060837719538723"
-      },
-      {
-        "file": "prisma/schema.prisma",
-        "hash": "9449295916793354652"
-      },
-      {
-        "file": "docker/Dockerfile.backend",
-        "hash": "4827948392198924514"
-      },
-      {
-        "file": "packages/libs/kafka/service.cert",
-        "hash": "11581950125687669518"
-      },
-      {
-        "file": "jest.config.ts",
-        "hash": "14236175072743533737"
-      },
-      {
-        "file": "generated/prisma/runtime/react-native.js",
-        "hash": "4853633689890394593"
-      },
-      {
-        "file": "generated/prisma/runtime/library.js",
-        "hash": "14098999821647302349"
-      },
-      {
-        "file": "packages/middleware/isAuthanticated.ts",
-        "hash": "9292214953515424836"
-      },
-      {
-        "file": "generated/prisma/runtime/edge.js",
-        "hash": "9304012550562964105"
-      },
-      {
-        "file": "generated/prisma/runtime/edge-esm.js",
-        "hash": "15313229601370783230"
-      },
-      {
-        "file": "Docker-compose.yml",
-        "hash": "14463177507208850128"
-      },
-      {
-        "file": "packages/middleware/isSellerAuthenticated.ts",
-        "hash": "5027552605131509062"
-      },
-      {
-        "file": ".editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
-        "file": "README.md",
-        "hash": "5465119543708020180"
-      },
-      {
-        "file": "package.json",
-        "hash": "2572268302348300082"
-      },
-      {
-        "file": "generated/prisma/index-browser.js",
-        "hash": "16979793033912958464"
-      },
-      {
-        "file": "generated/prisma/runtime/library.d.ts",
-        "hash": "18285273706481052034"
-      },
-      {
         "file": "tmp/@real-app/kafka-service/main-with-require-overrides.js",
         "hash": "14146670801016477015"
-      },
-      {
-        "file": "generated/prisma/wasm.js",
-        "hash": "16979793033912958464"
-      },
-      {
-        "file": "generated/prisma/runtime/index-browser.js",
-        "hash": "10266951411384006616"
-      },
-      {
-        "file": "generated/prisma/default.js",
-        "hash": "2742901603506114256"
-      },
-      {
-        "file": "generated/prisma/schema.prisma",
-        "hash": "16029159962495316111"
-      },
-      {
-        "file": "nx.json",
-        "hash": "8732025309489780116"
-      },
-      {
-        "file": "generated/prisma/default.d.ts",
-        "hash": "6801102947810818358"
-      },
-      {
-        "file": "render.yaml",
-        "hash": "1036072392242542809"
-      },
-      {
-        "file": "generated/prisma/runtime/index-browser.d.ts",
-        "hash": "8428496683677604739"
-      },
-      {
-        "file": "generated/prisma/index.js",
-        "hash": "10915002954579116884"
-      },
-      {
-        "file": "DEPLOYMENT_GUIDE.md",
-        "hash": "6692216286669249181"
-      },
-      {
-        "file": "packages/utils/kafka/index.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "13918962802641506462"
-      },
-      {
-        "file": "packages/libs/kafka/index.ts",
-        "hash": "10991196269332350262"
       },
       {
         "file": "generated/prisma/runtime/wasm.js",
         "hash": "2585500939485510051"
       },
       {
-        "file": "prisma.config.ts",
-        "hash": "12979995078497394287"
-      },
-      {
-        "file": "packages/libs/kafka/service.key",
-        "hash": "9875580579985969016"
-      },
-      {
-        "file": "packages/middleware/express.d.ts",
-        "hash": "3272041670638597322"
-      },
-      {
-        "file": "generated/prisma/package.json",
-        "hash": "690182432886224495"
-      },
-      {
-        "file": "generated/prisma/index.d.ts",
-        "hash": "14729945448642773026"
-      },
-      {
-        "file": "generated/prisma/wasm.d.ts",
-        "hash": "6801102947810818358"
-      },
-      {
-        "file": ".github/workflows/ci.yml",
-        "hash": "10409206540072754948"
-      },
-      {
-        "file": "generated/prisma/libquery_engine-darwin-arm64.dylib.node",
-        "hash": "17675950247762786327"
-      },
-      {
-        "file": "packages/middleware/authorizedRoles.ts",
-        "hash": "3289855189091297067"
-      },
-      {
-        "file": "docker/Dockerfile.frontend",
-        "hash": "7315710689492491817"
-      },
-      {
-        "file": "generated/prisma/edge.d.ts",
-        "hash": "11303388507078878756"
+        "file": "package-lock.json",
+        "hash": "13918962802641506462"
       },
       {
         "file": "packages/libs/kafka/ca.pem",
         "hash": "17036100983355273152"
       },
       {
-        "file": "packages/libs/prisma/index.ts",
-        "hash": "14840617902918851863"
+        "file": "packages/utils/kafka/index.ts",
+        "hash": "3244421341483603138"
       },
       {
         "file": "tsconfig.json",
@@ -271,8 +99,180 @@
         "hash": "12717587329526933124"
       },
       {
+        "file": "generated/prisma/package.json",
+        "hash": "690182432886224495"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "14193060837719538723"
+      },
+      {
+        "file": "tmp/@real-app/auth-service/main-with-require-overrides.js",
+        "hash": "3691358310437684392"
+      },
+      {
+        "file": "packages/libs/kafka/service.cert",
+        "hash": "11581950125687669518"
+      },
+      {
+        "file": "generated/prisma/default.js",
+        "hash": "2742901603506114256"
+      },
+      {
+        "file": "README.md",
+        "hash": "5465119543708020180"
+      },
+      {
+        "file": "package.json",
+        "hash": "2572268302348300082"
+      },
+      {
+        "file": "generated/prisma/default.d.ts",
+        "hash": "6801102947810818358"
+      },
+      {
+        "file": "generated/prisma/runtime/index-browser.d.ts",
+        "hash": "8428496683677604739"
+      },
+      {
+        "file": "generated/prisma/runtime/library.d.ts",
+        "hash": "18285273706481052034"
+      },
+      {
+        "file": "render.yaml",
+        "hash": "1036072392242542809"
+      },
+      {
+        "file": "packages/middleware/isAuthanticated.ts",
+        "hash": "9292214953515424836"
+      },
+      {
+        "file": "generated/prisma/wasm.js",
+        "hash": "16979793033912958464"
+      },
+      {
+        "file": "generated/prisma/runtime/index-browser.js",
+        "hash": "10266951411384006616"
+      },
+      {
+        "file": "packages/libs/kafka/service.key",
+        "hash": "9875580579985969016"
+      },
+      {
+        "file": "packages/middleware/express.d.ts",
+        "hash": "3272041670638597322"
+      },
+      {
+        "file": "generated/prisma/index.d.ts",
+        "hash": "14729945448642773026"
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "hash": "10409206540072754948"
+      },
+      {
+        "file": "docker/Dockerfile.frontend",
+        "hash": "7315710689492491817"
+      },
+      {
         "file": "jest.preset.js",
         "hash": "13737983450217408137"
+      },
+      {
+        "file": "generated/prisma/runtime/react-native.js",
+        "hash": "4853633689890394593"
+      },
+      {
+        "file": "packages/middleware/isSellerAuthenticated.ts",
+        "hash": "5027552605131509062"
+      },
+      {
+        "file": "packages/libs/prisma/index.ts",
+        "hash": "14840617902918851863"
+      },
+      {
+        "file": "docker/Dockerfile.backend",
+        "hash": "4827948392198924514"
+      },
+      {
+        "file": "prisma.config.ts",
+        "hash": "12979995078497394287"
+      },
+      {
+        "file": "Docker-compose.yml",
+        "hash": "14463177507208850128"
+      },
+      {
+        "file": "generated/prisma/index.js",
+        "hash": "10915002954579116884"
+      },
+      {
+        "file": "generated/prisma/wasm.d.ts",
+        "hash": "6801102947810818358"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": "packages/libs/redis/index.ts",
+        "hash": "17283574269687262107"
+      },
+      {
+        "file": "generated/prisma/schema.prisma",
+        "hash": "16029159962495316111"
+      },
+      {
+        "file": "generated/prisma/libquery_engine-darwin-arm64.dylib.node",
+        "hash": "17675950247762786327"
+      },
+      {
+        "file": "generated/prisma/edge.d.ts",
+        "hash": "11303388507078878756"
+      },
+      {
+        "file": "generated/prisma/runtime/edge-esm.js",
+        "hash": "15313229601370783230"
+      },
+      {
+        "file": "packages/middleware/isUserAuthenticated.ts",
+        "hash": "8777949928480545615"
+      },
+      {
+        "file": "generated/prisma/index-browser.js",
+        "hash": "16979793033912958464"
+      },
+      {
+        "file": "nx.json",
+        "hash": "8732025309489780116"
+      },
+      {
+        "file": "generated/prisma/runtime/edge.js",
+        "hash": "9304012550562964105"
+      },
+      {
+        "file": "packages/libs/kafka/index.ts",
+        "hash": "10991196269332350262"
+      },
+      {
+        "file": "packages/middleware/authorizedRoles.ts",
+        "hash": "3289855189091297067"
+      },
+      {
+        "file": "DEPLOYMENT_GUIDE.md",
+        "hash": "6692216286669249181"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "14236175072743533737"
+      },
+      {
+        "file": "prisma/schema.prisma",
+        "hash": "9449295916793354652"
+      },
+      {
+        "file": "generated/prisma/runtime/library.js",
+        "hash": "14098999821647302349"
       }
     ],
     "projectFileMap": {

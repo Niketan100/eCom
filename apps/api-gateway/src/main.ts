@@ -17,6 +17,7 @@ app.use(morgan('combined'));
 // Allow origins used by both UIs during development. Use a dynamic origin in case
 // NEXT_PUBLIC_API_URL or ports change.
 const allowedOrigins = [
+    'https://user-ui-y5m6.onrender.com',
     'http://localhost:3000', // seller-ui / user-ui default
     'http://localhost:3001', // alternate dev port if used
 ];

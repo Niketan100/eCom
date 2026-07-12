@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL : process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080',
+    baseURL : process.env.NEXT_PUBLIC_API_URL || 'https://user-ui-y5m6.onrender.com:8080',
     headers : {     
         'Content-Type' : 'application/json'
     },
     withCredentials : true
 });
 
-const baseURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+const baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://user-ui-y5m6.onrender.com:8080';
 
 // Use a dedicated client for refresh to avoid interceptor recursion.
 const refreshClient = axios.create({

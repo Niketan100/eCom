@@ -20,7 +20,7 @@ const swaggerDocument = JSON.parse(
 
 app.use(morgan('combined'));
 app.use(cors({
-    origin: ['http://localhost:3000','http://localhost:3001' ], // Adjust this to your frontend URL
+    origin: ['https://user-ui-y5m6.onrender.com/','http://localhost:3000','http://localhost:3001' ], // Adjust this to your frontend URL
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }));
