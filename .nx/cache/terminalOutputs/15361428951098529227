@@ -1,14 +1,0 @@
-> tsc --build tsconfig.json --emitDeclarationOnly
-
-[91merror[0m[90m TS6305: [0mOutput file '/Users/niketan/Desktop/RealApp/apps/kafka-service/dist/main.d.ts' has not been built from source file '/Users/niketan/Desktop/RealApp/apps/kafka-service/src/main.ts'.
-  The file is in the program because:
-    Matched by include pattern 'src/**/*.ts' in '/Users/niketan/Desktop/RealApp/apps/kafka-service/tsconfig.json'
-
-  [96mtsconfig.json[0m:[93m4[0m:[93m15[0m
-    [7m4[0m   "include": ["src/**/*.ts"],
-    [7m [0m [96m              ~~~~~~~~~~~~~[0m
-    File is matched by include pattern specified here.
-
-
-Found 1 error.
-

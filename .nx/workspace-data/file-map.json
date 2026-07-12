@@ -71,507 +71,272 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
-        "file": ".github/workflows/ci.yml",
-        "hash": "10409206540072754948"
-      },
-      {
-        "file": "DEPLOYMENT_GUIDE.md",
-        "hash": "6692216286669249181"
-      },
-      {
-        "file": "Docker-compose.yml",
-        "hash": "14463177507208850128"
-      },
-      {
-        "file": "README.md",
-        "hash": "5465119543708020180"
-      },
-      {
-        "file": "docker/Dockerfile.backend",
-        "hash": "4827948392198924514"
-      },
-      {
-        "file": "docker/Dockerfile.frontend",
-        "hash": "7315710689492491817"
-      },
-      {
-        "file": "generated/prisma/default.d.ts",
-        "hash": "6801102947810818358"
-      },
-      {
-        "file": "generated/prisma/default.js",
-        "hash": "2742901603506114256"
-      },
-      {
-        "file": "generated/prisma/edge.d.ts",
-        "hash": "11303388507078878756"
-      },
-      {
-        "file": "generated/prisma/edge.js",
-        "hash": "12022679460245662718"
-      },
-      {
-        "file": "generated/prisma/index-browser.js",
-        "hash": "16979793033912958464"
-      },
-      {
-        "file": "generated/prisma/index.d.ts",
-        "hash": "14729945448642773026"
-      },
-      {
-        "file": "generated/prisma/index.js",
-        "hash": "16562374842568112513"
-      },
-      {
-        "file": "generated/prisma/libquery_engine-darwin-arm64.dylib.node",
-        "hash": "17675950247762786327"
-      },
-      {
-        "file": "generated/prisma/package.json",
-        "hash": "709467775247217570"
-      },
-      {
-        "file": "generated/prisma/runtime/edge-esm.js",
-        "hash": "15313229601370783230"
-      },
-      {
-        "file": "generated/prisma/runtime/edge.js",
-        "hash": "9304012550562964105"
-      },
-      {
-        "file": "generated/prisma/runtime/index-browser.d.ts",
-        "hash": "8428496683677604739"
-      },
-      {
-        "file": "generated/prisma/runtime/index-browser.js",
-        "hash": "10266951411384006616"
-      },
-      {
-        "file": "generated/prisma/runtime/library.d.ts",
-        "hash": "18285273706481052034"
-      },
-      {
-        "file": "generated/prisma/runtime/library.js",
-        "hash": "14098999821647302349"
-      },
-      {
-        "file": "generated/prisma/runtime/react-native.js",
-        "hash": "4853633689890394593"
-      },
-      {
-        "file": "generated/prisma/runtime/wasm.js",
-        "hash": "2585500939485510051"
-      },
-      {
-        "file": "generated/prisma/schema.prisma",
-        "hash": "16550241911178173911"
-      },
-      {
-        "file": "generated/prisma/wasm.d.ts",
-        "hash": "6801102947810818358"
-      },
-      {
-        "file": "generated/prisma/wasm.js",
-        "hash": "16979793033912958464"
-      },
-      {
-        "file": "jest.config.ts",
-        "hash": "14236175072743533737"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "13737983450217408137"
-      },
-      {
-        "file": "nx.json",
-        "hash": "8732025309489780116"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "13918962802641506462"
-      },
-      {
-        "file": "package.json",
-        "hash": "2572268302348300082"
-      },
-      {
-        "file": "packages/libs/kafka/ca.pem",
-        "hash": "17036100983355273152"
-      },
-      {
-        "file": "packages/libs/kafka/index.ts",
-        "hash": "10991196269332350262"
-      },
-      {
-        "file": "packages/libs/kafka/service.cert",
-        "hash": "11581950125687669518"
-      },
-      {
-        "file": "packages/libs/kafka/service.key",
-        "hash": "9875580579985969016"
-      },
-      {
-        "file": "packages/libs/prisma/index.ts",
-        "hash": "14840617902918851863"
-      },
-      {
         "file": "packages/libs/redis/index.ts",
         "hash": "17283574269687262107"
-      },
-      {
-        "file": "packages/middleware/authorizedRoles.ts",
-        "hash": "3289855189091297067"
-      },
-      {
-        "file": "packages/middleware/express.d.ts",
-        "hash": "3272041670638597322"
-      },
-      {
-        "file": "packages/middleware/isAuthanticated.ts",
-        "hash": "9292214953515424836"
-      },
-      {
-        "file": "packages/middleware/isSellerAuthenticated.ts",
-        "hash": "5027552605131509062"
       },
       {
         "file": "packages/middleware/isUserAuthenticated.ts",
         "hash": "8777949928480545615"
       },
       {
-        "file": "packages/utils/kafka/index.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "prisma.config.ts",
-        "hash": "12979995078497394287"
-      },
-      {
-        "file": "prisma/schema.prisma",
-        "hash": "17744238471803422919"
-      },
-      {
-        "file": "render.yaml",
-        "hash": "1036072392242542809"
-      },
-      {
         "file": "tmp/@real-app/auth-service/main-with-require-overrides.js",
         "hash": "3691358310437684392"
-      },
-      {
-        "file": "tmp/@real-app/kafka-service/main-with-require-overrides.js",
-        "hash": "14146670801016477015"
       },
       {
         "file": "tsconfig.base.json",
         "hash": "14193060837719538723"
       },
       {
+        "file": "prisma/schema.prisma",
+        "hash": "9449295916793354652"
+      },
+      {
+        "file": "docker/Dockerfile.backend",
+        "hash": "4827948392198924514"
+      },
+      {
+        "file": "packages/libs/kafka/service.cert",
+        "hash": "11581950125687669518"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "14236175072743533737"
+      },
+      {
+        "file": "generated/prisma/runtime/react-native.js",
+        "hash": "4853633689890394593"
+      },
+      {
+        "file": "generated/prisma/runtime/library.js",
+        "hash": "14098999821647302349"
+      },
+      {
+        "file": "packages/middleware/isAuthanticated.ts",
+        "hash": "9292214953515424836"
+      },
+      {
+        "file": "generated/prisma/runtime/edge.js",
+        "hash": "9304012550562964105"
+      },
+      {
+        "file": "generated/prisma/runtime/edge-esm.js",
+        "hash": "15313229601370783230"
+      },
+      {
+        "file": "Docker-compose.yml",
+        "hash": "14463177507208850128"
+      },
+      {
+        "file": "packages/middleware/isSellerAuthenticated.ts",
+        "hash": "5027552605131509062"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": "README.md",
+        "hash": "5465119543708020180"
+      },
+      {
+        "file": "package.json",
+        "hash": "2572268302348300082"
+      },
+      {
+        "file": "generated/prisma/index-browser.js",
+        "hash": "16979793033912958464"
+      },
+      {
+        "file": "generated/prisma/runtime/library.d.ts",
+        "hash": "18285273706481052034"
+      },
+      {
+        "file": "tmp/@real-app/kafka-service/main-with-require-overrides.js",
+        "hash": "14146670801016477015"
+      },
+      {
+        "file": "generated/prisma/wasm.js",
+        "hash": "16979793033912958464"
+      },
+      {
+        "file": "generated/prisma/runtime/index-browser.js",
+        "hash": "10266951411384006616"
+      },
+      {
+        "file": "generated/prisma/default.js",
+        "hash": "2742901603506114256"
+      },
+      {
+        "file": "generated/prisma/schema.prisma",
+        "hash": "16029159962495316111"
+      },
+      {
+        "file": "nx.json",
+        "hash": "8732025309489780116"
+      },
+      {
+        "file": "generated/prisma/default.d.ts",
+        "hash": "6801102947810818358"
+      },
+      {
+        "file": "render.yaml",
+        "hash": "1036072392242542809"
+      },
+      {
+        "file": "generated/prisma/runtime/index-browser.d.ts",
+        "hash": "8428496683677604739"
+      },
+      {
+        "file": "generated/prisma/index.js",
+        "hash": "10915002954579116884"
+      },
+      {
+        "file": "DEPLOYMENT_GUIDE.md",
+        "hash": "6692216286669249181"
+      },
+      {
+        "file": "packages/utils/kafka/index.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "13918962802641506462"
+      },
+      {
+        "file": "packages/libs/kafka/index.ts",
+        "hash": "10991196269332350262"
+      },
+      {
+        "file": "generated/prisma/runtime/wasm.js",
+        "hash": "2585500939485510051"
+      },
+      {
+        "file": "prisma.config.ts",
+        "hash": "12979995078497394287"
+      },
+      {
+        "file": "packages/libs/kafka/service.key",
+        "hash": "9875580579985969016"
+      },
+      {
+        "file": "packages/middleware/express.d.ts",
+        "hash": "3272041670638597322"
+      },
+      {
+        "file": "generated/prisma/package.json",
+        "hash": "690182432886224495"
+      },
+      {
+        "file": "generated/prisma/index.d.ts",
+        "hash": "14729945448642773026"
+      },
+      {
+        "file": "generated/prisma/wasm.d.ts",
+        "hash": "6801102947810818358"
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "hash": "10409206540072754948"
+      },
+      {
+        "file": "generated/prisma/libquery_engine-darwin-arm64.dylib.node",
+        "hash": "17675950247762786327"
+      },
+      {
+        "file": "packages/middleware/authorizedRoles.ts",
+        "hash": "3289855189091297067"
+      },
+      {
+        "file": "docker/Dockerfile.frontend",
+        "hash": "7315710689492491817"
+      },
+      {
+        "file": "generated/prisma/edge.d.ts",
+        "hash": "11303388507078878756"
+      },
+      {
+        "file": "packages/libs/kafka/ca.pem",
+        "hash": "17036100983355273152"
+      },
+      {
+        "file": "packages/libs/prisma/index.ts",
+        "hash": "14840617902918851863"
+      },
+      {
         "file": "tsconfig.json",
         "hash": "6277006064059295123"
+      },
+      {
+        "file": "generated/prisma/edge.js",
+        "hash": "12717587329526933124"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "13737983450217408137"
       }
     ],
     "projectFileMap": {
-      "@real-app/auth-service-e2e": [
+      "@real-app/product-service": [
         {
-          "file": "apps/auth-service-e2e/.spec.swcrc",
-          "hash": "18201067170784284381"
-        },
-        {
-          "file": "apps/auth-service-e2e/jest.config.cts",
-          "hash": "3366625332126977116"
-        },
-        {
-          "file": "apps/auth-service-e2e/out-tsc/@real-app/auth-service-e2e/src/auth-service/auth-service.spec.d.ts",
-          "hash": "2859583474490244662"
-        },
-        {
-          "file": "apps/auth-service-e2e/out-tsc/@real-app/auth-service-e2e/src/support/global-setup.d.ts",
-          "hash": "9763318087598193617"
-        },
-        {
-          "file": "apps/auth-service-e2e/out-tsc/@real-app/auth-service-e2e/src/support/global-teardown.d.ts",
-          "hash": "4690806229680290917"
-        },
-        {
-          "file": "apps/auth-service-e2e/out-tsc/@real-app/auth-service-e2e/src/support/test-setup.d.ts",
-          "hash": "2576433704293509472"
-        },
-        {
-          "file": "apps/auth-service-e2e/out-tsc/@real-app/auth-service-e2e/tsconfig.tsbuildinfo",
-          "hash": "16435895260789456821"
-        },
-        {
-          "file": "apps/auth-service-e2e/package.json",
-          "hash": "15494474781284751877"
-        },
-        {
-          "file": "apps/auth-service-e2e/src/auth-service/auth-service.spec.ts",
-          "hash": "7531705588582374674",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/auth-service-e2e/src/support/global-setup.ts",
-          "hash": "3444053551545844372",
-          "deps": [
-            "npm:@nx/node"
-          ]
-        },
-        {
-          "file": "apps/auth-service-e2e/src/support/global-teardown.ts",
-          "hash": "18176614999450167852",
-          "deps": [
-            "npm:@nx/node"
-          ]
-        },
-        {
-          "file": "apps/auth-service-e2e/src/support/test-setup.ts",
-          "hash": "11749744855473391997",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/auth-service-e2e/tsconfig.json",
-          "hash": "10978558356039681413"
-        }
-      ],
-      "@real-app/api-gateway": [
-        {
-          "file": "apps/api-gateway/package.json",
-          "hash": "9626556262941411581",
-          "deps": [
-            "npm:cookie-parser",
-            "npm:cors",
-            "npm:express",
-            "npm:express-http-proxy",
-            "npm:express-rate-limit",
-            "npm:morgan"
-          ]
-        },
-        {
-          "file": "apps/api-gateway/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/api-gateway/src/libs/intialize_config.ts",
-          "hash": "10220438311245845835"
-        },
-        {
-          "file": "apps/api-gateway/src/main.ts",
-          "hash": "13027767387759987053",
-          "deps": [
-            "npm:express",
-            "npm:express-http-proxy",
-            "npm:morgan",
-            "npm:cors",
-            "npm:cookie-parser"
-          ]
-        },
-        {
-          "file": "apps/api-gateway/tsconfig.app.json",
-          "hash": "17123118704732776554"
-        },
-        {
-          "file": "apps/api-gateway/tsconfig.json",
-          "hash": "6240538891403235665"
-        },
-        {
-          "file": "apps/api-gateway/webpack.config.js",
-          "hash": "680275878011986087",
-          "deps": [
-            "npm:@nx/webpack"
-          ]
-        }
-      ],
-      "@real-app/product-service-e2e": [
-        {
-          "file": "apps/product-service-e2e/.spec.swcrc",
-          "hash": "18201067170784284381"
-        },
-        {
-          "file": "apps/product-service-e2e/jest.config.cts",
-          "hash": "17052664794397136789"
-        },
-        {
-          "file": "apps/product-service-e2e/package.json",
-          "hash": "914135892224865006"
-        },
-        {
-          "file": "apps/product-service-e2e/src/product-service/product-service.spec.ts",
-          "hash": "7531705588582374674",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/product-service-e2e/src/support/global-setup.ts",
-          "hash": "3444053551545844372",
-          "deps": [
-            "npm:@nx/node"
-          ]
-        },
-        {
-          "file": "apps/product-service-e2e/src/support/global-teardown.ts",
-          "hash": "18176614999450167852",
-          "deps": [
-            "npm:@nx/node"
-          ]
-        },
-        {
-          "file": "apps/product-service-e2e/src/support/test-setup.ts",
-          "hash": "11749744855473391997",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/product-service-e2e/tsconfig.json",
-          "hash": "11909959594214012034"
-        }
-      ],
-      "@real-app/auth-service": [
-        {
-          "file": "apps/auth-service/.spec.swcrc",
-          "hash": "18201067170784284381"
-        },
-        {
-          "file": "apps/auth-service/Dockerfile",
-          "hash": "2181556219191779748"
-        },
-        {
-          "file": "apps/auth-service/jest.config.cts",
-          "hash": "12149352373767607146"
-        },
-        {
-          "file": "apps/auth-service/main.ts",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/auth-service/out-tsc/jest/jest.config.d.cts",
-          "hash": "1275221493180252045"
-        },
-        {
-          "file": "apps/auth-service/out-tsc/jest/tsconfig.spec.tsbuildinfo",
-          "hash": "16396208273428392802"
-        },
-        {
-          "file": "apps/auth-service/package.json",
-          "hash": "15953303062860786054",
+          "file": "apps/product-service/package.json",
+          "hash": "12599311706448231587",
           "deps": [
             "npm:express"
           ]
         },
         {
-          "file": "apps/auth-service/src/assets/.gitkeep",
+          "file": "apps/product-service/src/assets/.gitkeep",
           "hash": "3244421341483603138"
         },
         {
-          "file": "apps/auth-service/src/controllers/auth.controller.ts",
-          "hash": "11527971149955568133",
+          "file": "apps/product-service/src/controllers/product.controller.ts",
+          "hash": "743487454395881578",
           "deps": [
             "npm:express",
-            "@real-app/errorHandler",
-            "npm:bcrypt",
-            "npm:jsonwebtoken",
-            [
-              "npm:stripe",
-              "dynamic"
-            ]
+            "npm:slugify"
           ]
         },
         {
-          "file": "apps/auth-service/src/controllers/user.controller.ts",
-          "hash": "18164486227812464591"
-        },
-        {
-          "file": "apps/auth-service/src/demo.cpp",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/auth-service/src/first.cpp",
-          "hash": "15171688943928463045"
-        },
-        {
-          "file": "apps/auth-service/src/main.ts",
-          "hash": "8064301135904592200",
+          "file": "apps/product-service/src/main.ts",
+          "hash": "12036925089537246502",
           "deps": [
             "npm:express",
             "npm:morgan",
             "npm:cors",
             "npm:express-rate-limit",
             "npm:cookie-parser",
-            "@real-app/errorHandler",
-            "npm:swagger-ui-express"
+            "@real-app/errorHandler"
           ]
         },
         {
-          "file": "apps/auth-service/src/routes/auth.routes.ts",
-          "hash": "2037638092377436699",
+          "file": "apps/product-service/src/routes/router.ts",
+          "hash": "18389177737169080644",
           "deps": [
             "npm:express"
           ]
         },
         {
-          "file": "apps/auth-service/src/swagger-output.json",
-          "hash": "13392626964818998511"
+          "file": "apps/product-service/src/utils/axios.ts",
+          "hash": "3244421341483603138"
         },
         {
-          "file": "apps/auth-service/src/swagger.js",
-          "hash": "2524795188007250317",
-          "deps": [
-            "npm:swagger-autogen"
-          ]
+          "file": "apps/product-service/tsconfig.app.json",
+          "hash": "18082590266009052527"
         },
         {
-          "file": "apps/auth-service/src/utils/auth.helper.ts",
-          "hash": "8325262051288482273",
-          "deps": [
-            "@real-app/errorHandler",
-            "npm:express"
-          ]
-        },
-        {
-          "file": "apps/auth-service/src/utils/cookies/setcookie.ts",
-          "hash": "1227050352156441383",
-          "deps": [
-            "npm:express"
-          ]
-        },
-        {
-          "file": "apps/auth-service/src/utils/email-templates/forgotPasswordTemplate.ejs",
-          "hash": "12779175957437841192"
-        },
-        {
-          "file": "apps/auth-service/src/utils/email-templates/otpTemplate.ejs",
-          "hash": "16235270666937968668"
-        },
-        {
-          "file": "apps/auth-service/src/utils/sendMail/index.ts",
-          "hash": "17022585924003399480",
-          "deps": [
-            "npm:nodemailer",
-            "npm:dotenv",
-            "npm:ejs"
-          ]
-        },
-        {
-          "file": "apps/auth-service/tsconfig.app.json",
-          "hash": "18180407285440011473"
-        },
-        {
-          "file": "apps/auth-service/tsconfig.json",
+          "file": "apps/product-service/tsconfig.json",
           "hash": "9214820933160915425"
         },
         {
-          "file": "apps/auth-service/tsconfig.spec.json",
-          "hash": "3945537111522527339"
+          "file": "apps/product-service/tsconfig.spec.json",
+          "hash": "16878070754889354762"
+        },
+        {
+          "file": "apps/product-service/webpack.config.js",
+          "hash": "4623538111984081959",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
         }
       ],
       "@real-app/user-ui": [
@@ -971,101 +736,236 @@
           "hash": "536004216477311739"
         }
       ],
-      "@real-app/kafka-service": [
+      "@real-app/auth-service": [
         {
-          "file": "apps/kafka-service/package.json",
-          "hash": "14254918811679673399",
+          "file": "apps/auth-service/.spec.swcrc",
+          "hash": "18201067170784284381"
+        },
+        {
+          "file": "apps/auth-service/Dockerfile",
+          "hash": "2181556219191779748"
+        },
+        {
+          "file": "apps/auth-service/jest.config.cts",
+          "hash": "12149352373767607146"
+        },
+        {
+          "file": "apps/auth-service/main.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/auth-service/out-tsc/jest/jest.config.d.cts",
+          "hash": "1275221493180252045"
+        },
+        {
+          "file": "apps/auth-service/out-tsc/jest/tsconfig.spec.tsbuildinfo",
+          "hash": "16396208273428392802"
+        },
+        {
+          "file": "apps/auth-service/package.json",
+          "hash": "15953303062860786054",
           "deps": [
             "npm:express"
           ]
         },
         {
-          "file": "apps/kafka-service/src/assets/.gitkeep",
+          "file": "apps/auth-service/src/assets/.gitkeep",
           "hash": "3244421341483603138"
         },
         {
-          "file": "apps/kafka-service/src/main.ts",
-          "hash": "14824588715505278346",
+          "file": "apps/auth-service/src/controllers/auth.controller.ts",
+          "hash": "11527971149955568133",
           "deps": [
             "npm:express",
-            "npm:morgan",
-            "npm:cors"
+            "@real-app/errorHandler",
+            "npm:bcrypt",
+            "npm:jsonwebtoken",
+            [
+              "npm:stripe",
+              "dynamic"
+            ]
           ]
         },
         {
-          "file": "apps/kafka-service/tsconfig.app.json",
-          "hash": "13217490726692613590"
+          "file": "apps/auth-service/src/controllers/user.controller.ts",
+          "hash": "18164486227812464591"
         },
         {
-          "file": "apps/kafka-service/tsconfig.json",
-          "hash": "15853771622537131501"
-        },
-        {
-          "file": "apps/kafka-service/tsconfig.tsbuildinfo",
-          "hash": "7746054956495391649"
-        }
-      ],
-      "@real-app/product-service": [
-        {
-          "file": "apps/product-service/package.json",
-          "hash": "12599311706448231587",
-          "deps": [
-            "npm:express"
-          ]
-        },
-        {
-          "file": "apps/product-service/src/assets/.gitkeep",
+          "file": "apps/auth-service/src/demo.cpp",
           "hash": "3244421341483603138"
         },
         {
-          "file": "apps/product-service/src/controllers/product.controller.ts",
-          "hash": "743487454395881578",
-          "deps": [
-            "npm:express",
-            "npm:slugify"
-          ]
+          "file": "apps/auth-service/src/first.cpp",
+          "hash": "15171688943928463045"
         },
         {
-          "file": "apps/product-service/src/main.ts",
-          "hash": "12036925089537246502",
+          "file": "apps/auth-service/src/main.ts",
+          "hash": "8064301135904592200",
           "deps": [
             "npm:express",
             "npm:morgan",
             "npm:cors",
             "npm:express-rate-limit",
             "npm:cookie-parser",
-            "@real-app/errorHandler"
+            "@real-app/errorHandler",
+            "npm:swagger-ui-express"
           ]
         },
         {
-          "file": "apps/product-service/src/routes/router.ts",
-          "hash": "18389177737169080644",
+          "file": "apps/auth-service/src/routes/auth.routes.ts",
+          "hash": "2037638092377436699",
           "deps": [
             "npm:express"
           ]
         },
         {
-          "file": "apps/product-service/src/utils/axios.ts",
-          "hash": "3244421341483603138"
+          "file": "apps/auth-service/src/swagger-output.json",
+          "hash": "13392626964818998511"
         },
         {
-          "file": "apps/product-service/tsconfig.app.json",
-          "hash": "18082590266009052527"
+          "file": "apps/auth-service/src/swagger.js",
+          "hash": "2524795188007250317",
+          "deps": [
+            "npm:swagger-autogen"
+          ]
         },
         {
-          "file": "apps/product-service/tsconfig.json",
+          "file": "apps/auth-service/src/utils/auth.helper.ts",
+          "hash": "8325262051288482273",
+          "deps": [
+            "@real-app/errorHandler",
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/auth-service/src/utils/cookies/setcookie.ts",
+          "hash": "1227050352156441383",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/auth-service/src/utils/email-templates/forgotPasswordTemplate.ejs",
+          "hash": "12779175957437841192"
+        },
+        {
+          "file": "apps/auth-service/src/utils/email-templates/otpTemplate.ejs",
+          "hash": "16235270666937968668"
+        },
+        {
+          "file": "apps/auth-service/src/utils/sendMail/index.ts",
+          "hash": "17022585924003399480",
+          "deps": [
+            "npm:nodemailer",
+            "npm:dotenv",
+            "npm:ejs"
+          ]
+        },
+        {
+          "file": "apps/auth-service/tsconfig.app.json",
+          "hash": "18180407285440011473"
+        },
+        {
+          "file": "apps/auth-service/tsconfig.json",
           "hash": "9214820933160915425"
         },
         {
-          "file": "apps/product-service/tsconfig.spec.json",
-          "hash": "16878070754889354762"
+          "file": "apps/auth-service/tsconfig.spec.json",
+          "hash": "3945537111522527339"
+        }
+      ],
+      "@real-app/api-gateway": [
+        {
+          "file": "apps/api-gateway/package.json",
+          "hash": "9626556262941411581",
+          "deps": [
+            "npm:cookie-parser",
+            "npm:cors",
+            "npm:express",
+            "npm:express-http-proxy",
+            "npm:express-rate-limit",
+            "npm:morgan"
+          ]
         },
         {
-          "file": "apps/product-service/webpack.config.js",
-          "hash": "4623538111984081959",
+          "file": "apps/api-gateway/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/api-gateway/src/libs/intialize_config.ts",
+          "hash": "10220438311245845835"
+        },
+        {
+          "file": "apps/api-gateway/src/main.ts",
+          "hash": "15447936469329271583",
+          "deps": [
+            "npm:express",
+            "npm:express-http-proxy",
+            "npm:morgan",
+            "npm:cors",
+            "npm:cookie-parser"
+          ]
+        },
+        {
+          "file": "apps/api-gateway/tsconfig.app.json",
+          "hash": "17123118704732776554"
+        },
+        {
+          "file": "apps/api-gateway/tsconfig.json",
+          "hash": "6240538891403235665"
+        },
+        {
+          "file": "apps/api-gateway/webpack.config.js",
+          "hash": "680275878011986087",
           "deps": [
             "npm:@nx/webpack"
           ]
+        }
+      ],
+      "@real-app/product-service-e2e": [
+        {
+          "file": "apps/product-service-e2e/.spec.swcrc",
+          "hash": "18201067170784284381"
+        },
+        {
+          "file": "apps/product-service-e2e/jest.config.cts",
+          "hash": "17052664794397136789"
+        },
+        {
+          "file": "apps/product-service-e2e/package.json",
+          "hash": "914135892224865006"
+        },
+        {
+          "file": "apps/product-service-e2e/src/product-service/product-service.spec.ts",
+          "hash": "7531705588582374674",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/src/support/global-setup.ts",
+          "hash": "3444053551545844372",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/src/support/global-teardown.ts",
+          "hash": "18176614999450167852",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/src/support/test-setup.ts",
+          "hash": "11749744855473391997",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/tsconfig.json",
+          "hash": "11909959594214012034"
         }
       ],
       "@real-app/seller-ui": [
@@ -1453,6 +1353,106 @@
         {
           "file": "apps/seller-ui/tsconfig.json",
           "hash": "3864959184452153114"
+        }
+      ],
+      "@real-app/kafka-service": [
+        {
+          "file": "apps/kafka-service/package.json",
+          "hash": "14254918811679673399",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/kafka-service/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/kafka-service/src/main.ts",
+          "hash": "14824588715505278346",
+          "deps": [
+            "npm:express",
+            "npm:morgan",
+            "npm:cors"
+          ]
+        },
+        {
+          "file": "apps/kafka-service/tsconfig.app.json",
+          "hash": "13217490726692613590"
+        },
+        {
+          "file": "apps/kafka-service/tsconfig.json",
+          "hash": "15853771622537131501"
+        },
+        {
+          "file": "apps/kafka-service/tsconfig.tsbuildinfo",
+          "hash": "7746054956495391649"
+        }
+      ],
+      "@real-app/auth-service-e2e": [
+        {
+          "file": "apps/auth-service-e2e/.spec.swcrc",
+          "hash": "18201067170784284381"
+        },
+        {
+          "file": "apps/auth-service-e2e/jest.config.cts",
+          "hash": "3366625332126977116"
+        },
+        {
+          "file": "apps/auth-service-e2e/out-tsc/@real-app/auth-service-e2e/src/auth-service/auth-service.spec.d.ts",
+          "hash": "2859583474490244662"
+        },
+        {
+          "file": "apps/auth-service-e2e/out-tsc/@real-app/auth-service-e2e/src/support/global-setup.d.ts",
+          "hash": "9763318087598193617"
+        },
+        {
+          "file": "apps/auth-service-e2e/out-tsc/@real-app/auth-service-e2e/src/support/global-teardown.d.ts",
+          "hash": "4690806229680290917"
+        },
+        {
+          "file": "apps/auth-service-e2e/out-tsc/@real-app/auth-service-e2e/src/support/test-setup.d.ts",
+          "hash": "2576433704293509472"
+        },
+        {
+          "file": "apps/auth-service-e2e/out-tsc/@real-app/auth-service-e2e/tsconfig.tsbuildinfo",
+          "hash": "16435895260789456821"
+        },
+        {
+          "file": "apps/auth-service-e2e/package.json",
+          "hash": "15494474781284751877"
+        },
+        {
+          "file": "apps/auth-service-e2e/src/auth-service/auth-service.spec.ts",
+          "hash": "7531705588582374674",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/auth-service-e2e/src/support/global-setup.ts",
+          "hash": "3444053551545844372",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/auth-service-e2e/src/support/global-teardown.ts",
+          "hash": "18176614999450167852",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/auth-service-e2e/src/support/test-setup.ts",
+          "hash": "11749744855473391997",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/auth-service-e2e/tsconfig.json",
+          "hash": "10978558356039681413"
         }
       ],
       "@real-app/errorHandler": [

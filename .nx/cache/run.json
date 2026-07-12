@@ -1,29 +1,95 @@
 {
   "run": {
-    "command": "nx run api-gateway:serve",
-    "startTime": "2026-07-11T19:12:21.681Z",
-    "endTime": "2026-07-11T19:15:58.103Z",
+    "command": "nx run-many --target=serve --all",
+    "startTime": "2026-07-12T05:34:36.640Z",
+    "endTime": "2026-07-12T05:35:16.030Z",
     "inner": false
   },
   "tasks": [
     {
+      "taskId": "@real-app/kafka-service:build:production",
+      "target": "build",
+      "projectName": "@real-app/kafka-service",
+      "hash": "7377475325747967176",
+      "startTime": "2026-07-12T05:34:37.095Z",
+      "endTime": "2026-07-12T05:34:43.469Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@real-app/auth-service:build:production",
+      "target": "build",
+      "projectName": "@real-app/auth-service",
+      "hash": "4121841201594524544",
+      "startTime": "2026-07-12T05:34:37.095Z",
+      "endTime": "2026-07-12T05:34:55.893Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
       "taskId": "@real-app/api-gateway:build",
       "target": "build",
       "projectName": "@real-app/api-gateway",
-      "hash": "4129160379660198429",
-      "startTime": "2026-07-11T19:12:21.744Z",
-      "endTime": "2026-07-11T19:12:21.747Z",
+      "hash": "6961760238176879953",
+      "startTime": "2026-07-12T05:34:43.562Z",
+      "endTime": "2026-07-12T05:35:07.706Z",
       "params": "",
-      "cacheStatus": "local-cache-hit",
+      "cacheStatus": "cache-miss",
       "status": 0
+    },
+    {
+      "taskId": "@real-app/product-service:build",
+      "target": "build",
+      "projectName": "@real-app/product-service",
+      "hash": "2513740033675476000",
+      "startTime": "2026-07-12T05:34:37.095Z",
+      "endTime": "2026-07-12T05:35:08.125Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@real-app/kafka-service:serve:development",
+      "target": "serve",
+      "projectName": "@real-app/kafka-service",
+      "hash": "18042975874928265468",
+      "startTime": "2026-07-12T05:34:43.562Z",
+      "endTime": "2026-07-12T05:35:16.028Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    },
+    {
+      "taskId": "@real-app/auth-service:serve:development",
+      "target": "serve",
+      "projectName": "@real-app/auth-service",
+      "hash": "18050531931013852255",
+      "startTime": "2026-07-12T05:34:55.959Z",
+      "endTime": "2026-07-12T05:35:16.028Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
     },
     {
       "taskId": "@real-app/api-gateway:serve:development",
       "target": "serve",
       "projectName": "@real-app/api-gateway",
-      "hash": "157215003655304544",
-      "startTime": "2026-07-11T19:12:21.748Z",
-      "endTime": "2026-07-11T19:15:58.102Z",
+      "hash": "3386027318254997527",
+      "startTime": "2026-07-12T05:35:07.719Z",
+      "endTime": "2026-07-12T05:35:16.029Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    },
+    {
+      "taskId": "@real-app/product-service:serve:development",
+      "target": "serve",
+      "projectName": "@real-app/product-service",
+      "hash": "5797351989264659375",
+      "startTime": "2026-07-12T05:35:08.142Z",
+      "endTime": "2026-07-12T05:35:16.029Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 1

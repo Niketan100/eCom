@@ -207,11 +207,12 @@ const host = process.env.HOST ?? '0.0.0.0';
 const port = process.env.PORT ? Number(process.env.PORT) : 8080;
 
 
-app.listen(port, host, () => {
-    try {
-        initializeConfig();
-    } catch (error) {
-        console.error('Error initializing config:', error);
-    }
-    console.log(`[ ready ] http://${host}:${port}`);
-});
+async function start() {
+    await initializeConfig();
+
+    app.listen(port, host , () => {
+        console.log(`Listening on ${port}`);
+    });
+}
+
+start().catch(console.error);

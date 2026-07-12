@@ -1,3 +1,0 @@
-> nx run @real-app/auth-service:build:production
-
-
