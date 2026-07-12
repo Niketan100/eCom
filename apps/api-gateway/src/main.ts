@@ -92,7 +92,7 @@ app.use(
 
     '/auth',
 
-    proxy('http://localhost:6001', {
+    proxy('https://auth-service-ecom.onrender.com', {
 
         proxyReqPathResolver: (req) => {
             return `/auth${req.url}`;
@@ -139,7 +139,7 @@ app.use(
 
     },
 
-    proxy('http://localhost:7001', {
+    proxy('https://ecom-qayj.onrender.com', {
 
         // Preserve POST/PUT/DELETE bodies and forward cookies and headers
         proxyReqPathResolver: (req) => {

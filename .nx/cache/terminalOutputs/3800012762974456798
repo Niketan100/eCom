@@ -1,0 +1,7 @@
+> webpack-cli build --node-env=production
+
+[1m[33mWARNING[39m[22m in [1m../../generated/prisma/runtime/library.js[39m[22m
+[1mModule Warning (from ../../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/niketan/Desktop/RealApp/generated/prisma/runtime/library.js.map' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/niketan/Desktop/RealApp/generated/prisma/runtime/library.js.map'[39m[22m
+
+webpack compiled with [1m[33m1 warning[39m[22m (ca5811d504560532)

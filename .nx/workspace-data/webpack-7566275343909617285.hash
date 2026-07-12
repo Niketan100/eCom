@@ -1,5 +1,5 @@
 {
-  "13904558912088277230": {
+  "4556818385450232590": {
     "targets": {
       "build": {
         "command": "webpack-cli build",
@@ -287,7 +287,151 @@
     },
     "metadata": {}
   },
-  "4556818385450232590": {
+  "8446044645653084678": {
+    "targets": {
+      "build": {
+        "command": "webpack-cli build",
+        "options": {
+          "cwd": "apps/api-gateway",
+          "args": [
+            "--node-env=production"
+          ]
+        },
+        "cache": true,
+        "dependsOn": [
+          "^build"
+        ],
+        "inputs": [
+          "production",
+          "^production",
+          {
+            "externalDependencies": [
+              "webpack-cli"
+            ]
+          },
+          {
+            "json": "{workspaceRoot}/tsconfig.json",
+            "fields": [
+              "extends",
+              "files",
+              "include"
+            ]
+          }
+        ],
+        "outputs": [
+          "{workspaceRoot}/apps/api-gateway/dist"
+        ],
+        "metadata": {
+          "technologies": [
+            "webpack"
+          ],
+          "description": "Runs Webpack build",
+          "help": {
+            "command": "npx webpack-cli build --help",
+            "example": {
+              "options": {
+                "json": "stats.json"
+              },
+              "args": [
+                "--profile"
+              ]
+            }
+          }
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "serve": {
+        "continuous": true,
+        "command": "webpack-cli serve",
+        "options": {
+          "cwd": "apps/api-gateway",
+          "args": [
+            "--node-env=development"
+          ]
+        },
+        "metadata": {
+          "technologies": [
+            "webpack"
+          ],
+          "description": "Starts Webpack dev server",
+          "help": {
+            "command": "npx webpack-cli serve --help",
+            "example": {
+              "options": {
+                "args": [
+                  "--client-progress",
+                  "--history-api-fallback "
+                ]
+              }
+            }
+          }
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "preview": {
+        "continuous": true,
+        "command": "webpack-cli serve",
+        "options": {
+          "cwd": "apps/api-gateway",
+          "args": [
+            "--node-env=production"
+          ]
+        },
+        "metadata": {
+          "technologies": [
+            "webpack"
+          ],
+          "description": "Starts Webpack dev server in production mode",
+          "help": {
+            "command": "npx webpack-cli serve --help",
+            "example": {
+              "options": {
+                "args": [
+                  "--client-progress",
+                  "--history-api-fallback "
+                ]
+              }
+            }
+          }
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "serve-static": {
+        "continuous": true,
+        "dependsOn": [
+          "build"
+        ],
+        "executor": "@nx/web:file-server",
+        "options": {
+          "buildTarget": "build",
+          "spa": true
+        },
+        "syncGenerators": [
+          "@nx/js:typescript-sync"
+        ]
+      },
+      "build-deps": {
+        "dependsOn": [
+          "^build"
+        ]
+      },
+      "watch-deps": {
+        "continuous": true,
+        "dependsOn": [
+          "build-deps"
+        ],
+        "command": "npx nx watch --projects @real-app/api-gateway --includeDependentProjects -- npx nx build-deps @real-app/api-gateway"
+      }
+    },
+    "metadata": {}
+  },
+  "3898270877030787811": {
     "targets": {
       "build": {
         "command": "webpack-cli build",

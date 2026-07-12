@@ -74,157 +74,82 @@
       "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
     }
   },
-  "9512809972790329877": {
-    "build": {
-      "command": "next build",
-      "options": {
-        "cwd": "apps/user-ui",
-        "tty": false
-      },
-      "dependsOn": [
-        "^build"
-      ],
-      "cache": true,
-      "inputs": [
-        "default",
-        "^default",
-        {
-          "externalDependencies": [
-            "next"
-          ]
-        },
-        {
-          "dependentTasksOutputFiles": "**/*.d.ts",
-          "transitive": true
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}/apps/user-ui/.next/!(cache)/**/*",
-        "{workspaceRoot}/apps/user-ui/.next/!(cache)"
-      ],
-      "syncGenerators": [
-        "@nx/js:typescript-sync"
-      ]
-    },
-    "dev": {
-      "continuous": true,
-      "command": "next dev",
-      "options": {
-        "cwd": "apps/user-ui"
-      },
-      "syncGenerators": [
-        "@nx/js:typescript-sync"
-      ]
-    },
-    "start": {
-      "continuous": true,
-      "command": "next start",
-      "options": {
-        "cwd": "apps/user-ui"
-      },
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "serve-static": {
-      "continuous": true,
-      "command": "next start",
-      "options": {
-        "cwd": "apps/user-ui"
-      },
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "build-deps": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "watch-deps": {
-      "continuous": true,
-      "dependsOn": [
-        "build-deps"
-      ],
-      "command": "npx nx watch --projects @real-app/user-ui --includeDependentProjects -- npx nx build-deps @real-app/user-ui"
-    }
-  },
-  "8681670741795059398": {
-    "build": {
-      "command": "next build",
-      "options": {
-        "cwd": "apps/user-ui",
-        "tty": false
-      },
-      "dependsOn": [
-        "^build"
-      ],
-      "cache": true,
-      "inputs": [
-        "default",
-        "^default",
-        {
-          "externalDependencies": [
-            "next"
-          ]
-        },
-        {
-          "dependentTasksOutputFiles": "**/*.d.ts",
-          "transitive": true
-        }
-      ],
-      "outputs": [
-        "{workspaceRoot}/apps/user-ui/.next/!(cache)/**/*",
-        "{workspaceRoot}/apps/user-ui/.next/!(cache)"
-      ],
-      "syncGenerators": [
-        "@nx/js:typescript-sync"
-      ]
-    },
-    "dev": {
-      "continuous": true,
-      "command": "next dev",
-      "options": {
-        "cwd": "apps/user-ui"
-      },
-      "syncGenerators": [
-        "@nx/js:typescript-sync"
-      ]
-    },
-    "start": {
-      "continuous": true,
-      "command": "next start",
-      "options": {
-        "cwd": "apps/user-ui"
-      },
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "serve-static": {
-      "continuous": true,
-      "command": "next start",
-      "options": {
-        "cwd": "apps/user-ui"
-      },
-      "dependsOn": [
-        "build"
-      ]
-    },
-    "build-deps": {
-      "dependsOn": [
-        "^build"
-      ]
-    },
-    "watch-deps": {
-      "continuous": true,
-      "dependsOn": [
-        "build-deps"
-      ],
-      "command": "npx nx watch --projects @real-app/user-ui --includeDependentProjects -- npx nx build-deps @real-app/user-ui"
-    }
-  },
   "5348885077167797919": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/user-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/user-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/user-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/user-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/user-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/user-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/user-ui --includeDependentProjects -- npx nx build-deps @real-app/user-ui"
+    }
+  },
+  "18280887763555631066": {
     "build": {
       "command": "next build",
       "options": {
