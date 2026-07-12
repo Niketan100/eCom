@@ -9,7 +9,7 @@ import authRoutes from './routes/auth.routes';
 import swaggerUi from 'swagger-ui-express';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { kafka } from '../../../packages/libs/kafka';
+
 
 
 const app = express();
@@ -20,7 +20,7 @@ const swaggerDocument = JSON.parse(
 
 app.use(morgan('combined'));
 app.use(cors({
-    origin: ['https://user-ui-y5m6.onrender.com/','http://localhost:3000','http://localhost:3001' ], // Adjust this to your frontend URL
+    origin: ['https://api-gateway-1c6p.onrender.com/','https://user-ui-y5m6.onrender.com/','http://localhost:3000','http://localhost:3001' ], // Adjust this to your frontend URL
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }));
@@ -39,23 +39,6 @@ app.use(rateLimit({
 
 }));
 
-const reciever = async () =>{
-    try {
-        const consumer = kafka.consumer({ groupId: 'auth-service-group' });
-        await consumer.connect();
-        await consumer.subscribe({ topic: 'orders', fromBeginning: true });
-
-        await consumer.run({
-            eachMessage: async ({ topic, partition, message } : {topic : any , partition : any, message : any  }) => {
-                console.log(`Received message: ${message.value?.toString()} from topic: ${topic}`);
-                // Handle the message as needed
-            },
-        });
-    } catch (error) {
-        console.error('Error connecting to Kafka:', error);     
-    }
-}
-
 
 app.use('/auth', authRoutes);
 app.use('/api-docs' , swaggerUi.serve, swaggerUi.setup(swaggerDocument));
@@ -72,7 +55,6 @@ app.get('/', (req, res) => {
 	
 
 app.listen(port, () => {
-    reciever();
     console.log(`[ ready ] http://${host}:${port}`);
 });
 
