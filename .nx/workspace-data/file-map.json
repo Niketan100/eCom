@@ -71,152 +71,24 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "generated/prisma/runtime/index-browser.js",
-        "hash": "10266951411384006616"
-      },
-      {
-        "file": "generated/prisma/wasm.d.ts",
-        "hash": "6801102947810818358"
-      },
-      {
-        "file": "generated/prisma/edge.js",
-        "hash": "12717587329526933124"
-      },
-      {
-        "file": "packages/middleware/authorizedRoles.ts",
-        "hash": "3289855189091297067"
-      },
-      {
-        "file": "packages/libs/kafka/service.key",
-        "hash": "9875580579985969016"
-      },
-      {
-        "file": "packages/libs/kafka/index.ts",
-        "hash": "10991196269332350262"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "14193060837719538723"
-      },
-      {
-        "file": "packages/libs/kafka/ca.pem",
-        "hash": "17036100983355273152"
-      },
-      {
-        "file": "generated/prisma/libquery_engine-darwin-arm64.dylib.node",
-        "hash": "17675950247762786327"
-      },
-      {
-        "file": "packages/middleware/isSellerAuthenticated.ts",
-        "hash": "5027552605131509062"
-      },
-      {
-        "file": "generated/prisma/default.d.ts",
-        "hash": "6801102947810818358"
-      },
-      {
-        "file": "tmp/@real-app/auth-service/main-with-require-overrides.js",
-        "hash": "3691358310437684392"
-      },
-      {
-        "file": "generated/prisma/runtime/edge-esm.js",
-        "hash": "15313229601370783230"
-      },
-      {
-        "file": "docker/Dockerfile.frontend",
-        "hash": "7315710689492491817"
-      },
-      {
-        "file": "packages/utils/kafka/index.ts",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "prisma.config.ts",
-        "hash": "12979995078497394287"
-      },
-      {
-        "file": "generated/prisma/wasm.js",
-        "hash": "16979793033912958464"
-      },
-      {
-        "file": "packages/libs/prisma/index.ts",
-        "hash": "14840617902918851863"
-      },
-      {
-        "file": "generated/prisma/index-browser.js",
-        "hash": "16979793033912958464"
-      },
-      {
-        "file": "nx.json",
-        "hash": "8732025309489780116"
-      },
-      {
-        "file": "Docker-compose.yml",
-        "hash": "14463177507208850128"
-      },
-      {
-        "file": ".editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
-        "file": "prisma/schema.prisma",
-        "hash": "9449295916793354652"
-      },
-      {
-        "file": "package.json",
-        "hash": "2572268302348300082"
-      },
-      {
-        "file": "generated/prisma/index.js",
-        "hash": "10915002954579116884"
-      },
-      {
-        "file": "generated/prisma/runtime/wasm.js",
-        "hash": "2585500939485510051"
-      },
-      {
-        "file": "DEPLOYMENT_GUIDE.md",
-        "hash": "6692216286669249181"
-      },
-      {
-        "file": "packages/middleware/isUserAuthenticated.ts",
-        "hash": "8777949928480545615"
-      },
-      {
-        "file": "packages/middleware/express.d.ts",
-        "hash": "3272041670638597322"
+        "file": "packages/libs/redis/index.ts",
+        "hash": "17283574269687262107"
       },
       {
         "file": "jest.config.ts",
         "hash": "14236175072743533737"
       },
       {
-        "file": "packages/middleware/isAuthanticated.ts",
-        "hash": "9292214953515424836"
+        "file": "tmp/@real-app/auth-service/main-with-require-overrides.js",
+        "hash": "3691358310437684392"
       },
       {
-        "file": "generated/prisma/schema.prisma",
-        "hash": "16029159962495316111"
-      },
-      {
-        "file": ".github/workflows/ci.yml",
-        "hash": "10409206540072754948"
-      },
-      {
-        "file": "generated/prisma/index.d.ts",
-        "hash": "14729945448642773026"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "13737983450217408137"
+        "file": "nx.json",
+        "hash": "8732025309489780116"
       },
       {
         "file": "tmp/@real-app/kafka-service/main-with-require-overrides.js",
         "hash": "14146670801016477015"
-      },
-      {
-        "file": "packages/libs/redis/index.ts",
-        "hash": "17283574269687262107"
       },
       {
         "file": "tsconfig.json",
@@ -227,452 +99,183 @@
         "hash": "14098999821647302349"
       },
       {
-        "file": "generated/prisma/package.json",
-        "hash": "690182432886224495"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "13918962802641506462"
+        "file": "README.md",
+        "hash": "5465119543708020180"
       },
       {
         "file": "generated/prisma/runtime/edge.js",
         "hash": "9304012550562964105"
       },
       {
-        "file": "generated/prisma/default.js",
-        "hash": "2742901603506114256"
+        "file": "packages/middleware/isAuthanticated.ts",
+        "hash": "9292214953515424836"
       },
       {
-        "file": "packages/libs/kafka/service.cert",
-        "hash": "11581950125687669518"
+        "file": "docker/Dockerfile.frontend",
+        "hash": "7315710689492491817"
       },
       {
-        "file": "generated/prisma/runtime/index-browser.d.ts",
-        "hash": "8428496683677604739"
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
       },
       {
-        "file": "generated/prisma/edge.d.ts",
-        "hash": "11303388507078878756"
+        "file": "generated/prisma/default.d.ts",
+        "hash": "6801102947810818358"
       },
       {
-        "file": "generated/prisma/runtime/library.d.ts",
-        "hash": "18285273706481052034"
+        "file": "generated/prisma/runtime/index-browser.js",
+        "hash": "10266951411384006616"
+      },
+      {
+        "file": "generated/prisma/package.json",
+        "hash": "690182432886224495"
+      },
+      {
+        "file": "Docker-compose.yml",
+        "hash": "14463177507208850128"
       },
       {
         "file": "generated/prisma/runtime/react-native.js",
         "hash": "4853633689890394593"
       },
       {
+        "file": "generated/prisma/index.d.ts",
+        "hash": "14729945448642773026"
+      },
+      {
+        "file": "generated/prisma/wasm.js",
+        "hash": "16979793033912958464"
+      },
+      {
+        "file": "packages/libs/kafka/ca.pem",
+        "hash": "17036100983355273152"
+      },
+      {
+        "file": "packages/middleware/isSellerAuthenticated.ts",
+        "hash": "5027552605131509062"
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "hash": "10409206540072754948"
+      },
+      {
+        "file": "packages/libs/kafka/service.cert",
+        "hash": "11581950125687669518"
+      },
+      {
+        "file": "packages/libs/prisma/index.ts",
+        "hash": "14840617902918851863"
+      },
+      {
+        "file": "prisma/schema.prisma",
+        "hash": "9449295916793354652"
+      },
+      {
         "file": "render.yaml",
         "hash": "1036072392242542809"
       },
       {
-        "file": "README.md",
-        "hash": "5465119543708020180"
+        "file": "generated/prisma/edge.js",
+        "hash": "12717587329526933124"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "14193060837719538723"
       },
       {
         "file": "docker/Dockerfile.backend",
         "hash": "4827948392198924514"
+      },
+      {
+        "file": "packages/middleware/isUserAuthenticated.ts",
+        "hash": "8777949928480545615"
+      },
+      {
+        "file": "generated/prisma/schema.prisma",
+        "hash": "16029159962495316111"
+      },
+      {
+        "file": "generated/prisma/runtime/library.d.ts",
+        "hash": "18285273706481052034"
+      },
+      {
+        "file": "generated/prisma/wasm.d.ts",
+        "hash": "6801102947810818358"
+      },
+      {
+        "file": "package.json",
+        "hash": "2572268302348300082"
+      },
+      {
+        "file": "generated/prisma/edge.d.ts",
+        "hash": "11303388507078878756"
+      },
+      {
+        "file": "packages/utils/kafka/index.ts",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "generated/prisma/runtime/index-browser.d.ts",
+        "hash": "8428496683677604739"
+      },
+      {
+        "file": "prisma.config.ts",
+        "hash": "12979995078497394287"
+      },
+      {
+        "file": "generated/prisma/index-browser.js",
+        "hash": "16979793033912958464"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "13918962802641506462"
+      },
+      {
+        "file": "generated/prisma/runtime/edge-esm.js",
+        "hash": "15313229601370783230"
+      },
+      {
+        "file": "packages/middleware/authorizedRoles.ts",
+        "hash": "3289855189091297067"
+      },
+      {
+        "file": "generated/prisma/index.js",
+        "hash": "10915002954579116884"
+      },
+      {
+        "file": "generated/prisma/libquery_engine-darwin-arm64.dylib.node",
+        "hash": "17675950247762786327"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "13737983450217408137"
+      },
+      {
+        "file": "generated/prisma/runtime/wasm.js",
+        "hash": "2585500939485510051"
+      },
+      {
+        "file": "DEPLOYMENT_GUIDE.md",
+        "hash": "6692216286669249181"
+      },
+      {
+        "file": "packages/libs/kafka/service.key",
+        "hash": "9875580579985969016"
+      },
+      {
+        "file": "generated/prisma/default.js",
+        "hash": "2742901603506114256"
+      },
+      {
+        "file": "packages/middleware/express.d.ts",
+        "hash": "3272041670638597322"
+      },
+      {
+        "file": "packages/libs/kafka/index.ts",
+        "hash": "10991196269332350262"
       }
     ],
     "projectFileMap": {
-      "@real-app/user-ui": [
-        {
-          "file": "apps/user-ui/.swcrc",
-          "hash": "17241768775822013643"
-        },
-        {
-          "file": "apps/user-ui/index.d.ts",
-          "hash": "17978550148300837039"
-        },
-        {
-          "file": "apps/user-ui/next-env.d.ts",
-          "hash": "373744204795424001"
-        },
-        {
-          "file": "apps/user-ui/next.config.js",
-          "hash": "227797574239823241",
-          "deps": [
-            "npm:@nx/next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/package.json",
-          "hash": "3613924752765074859",
-          "deps": [
-            "npm:next",
-            "npm:react",
-            "npm:react-dom"
-          ]
-        },
-        {
-          "file": "apps/user-ui/postcss.config.js",
-          "hash": "15972724582657845432"
-        },
-        {
-          "file": "apps/user-ui/public/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/user-ui/public/favicon.ico",
-          "hash": "9303420814833116677"
-        },
-        {
-          "file": "apps/user-ui/public/wallpaper-pattern.svg",
-          "hash": "12371122385859079056"
-        },
-        {
-          "file": "apps/user-ui/src/app/become-seller/page.tsx",
-          "hash": "3199777987695346940",
-          "deps": [
-            "npm:next",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/cart/page.tsx",
-          "hash": "8380276654386192415",
-          "deps": [
-            "npm:react",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/checkout/[slug]/checkoutAdress/page.tsx",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/user-ui/src/app/checkout/[slug]/checkoutSummery/page.tsx",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/user-ui/src/app/checkout/[slug]/deliveryOptions/page.tsx",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/user-ui/src/app/checkout/[slug]/orderReview/page.tsx",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/user-ui/src/app/checkout/[slug]/page.tsx",
-          "hash": "3281603232529525355",
-          "deps": [
-            "npm:react",
-            "npm:next",
-            "npm:@tanstack/react-query"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/checkout/[slug]/paymentInfo/page.tsx",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/user-ui/src/app/checkout/cart/page.tsx",
-          "hash": "18378205053796475134",
-          "deps": [
-            "npm:react",
-            "npm:@tanstack/react-query"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/forgot-password/page.tsx",
-          "hash": "4649952513433646093",
-          "deps": [
-            "npm:react",
-            "npm:next",
-            "npm:react-hook-form",
-            "npm:@tanstack/react-query",
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/global.css",
-          "hash": "9988210208473853354"
-        },
-        {
-          "file": "apps/user-ui/src/app/layout.tsx",
-          "hash": "227684347815598774",
-          "deps": [
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/login/page.tsx",
-          "hash": "15402043847773757146",
-          "deps": [
-            "npm:react",
-            "npm:next",
-            "npm:react-hook-form",
-            "npm:@tanstack/react-query",
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/offers/page.tsx",
-          "hash": "4369355389229592292",
-          "deps": [
-            "npm:next",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/orders/page.tsx",
-          "hash": "5545399594583999690",
-          "deps": [
-            "npm:react",
-            "npm:@tanstack/react-query"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/page.tsx",
-          "hash": "11621590728668884120",
-          "deps": [
-            "npm:next",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/BasicProductLayout.tsx",
-          "hash": "16872675027275433625",
-          "deps": [
-            "npm:react",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/BasicProductLayoutLoading.tsx",
-          "hash": "17067884363355148766",
-          "deps": [
-            "npm:react",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/DetailedProductLayout.tsx",
-          "hash": "13905443833012572149",
-          "deps": [
-            "npm:react",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/DetailedProductLayoutLoading.tsx",
-          "hash": "707934755536356833",
-          "deps": [
-            "npm:react",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/ProductGallery.tsx",
-          "hash": "14806986057016889303",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/ProductHighlights.tsx",
-          "hash": "8553396740366507723",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/ProductReviews.tsx",
-          "hash": "1856762733352271530",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/ProductSeller.tsx",
-          "hash": "16553398790490744460",
-          "deps": [
-            "npm:react",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/ProductShipping.tsx",
-          "hash": "2013961750540555079",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/ProductSpecs.tsx",
-          "hash": "9470867312663367374",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/components/ProductVariants.tsx",
-          "hash": "7791501547685165093"
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/loading.tsx",
-          "hash": "11239385685029312278",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/[slug]/page.tsx",
-          "hash": "3014830158660987195",
-          "deps": [
-            "npm:next",
-            "npm:@tanstack/react-query"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/products/page.tsx",
-          "hash": "18104282551934110295",
-          "deps": [
-            "npm:react",
-            "npm:next",
-            "npm:@tanstack/react-query"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/profile/page.tsx",
-          "hash": "15758678152379021830",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/providers.tsx",
-          "hash": "8749771535992140731",
-          "deps": [
-            "npm:react",
-            "npm:@tanstack/react-query"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/signup/page.tsx",
-          "hash": "13231935791627246358",
-          "deps": [
-            "npm:react",
-            "npm:react-hook-form",
-            "npm:next",
-            "npm:@tanstack/react-query",
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/app/wish-list/page.tsx",
-          "hash": "13757663001271844085",
-          "deps": [
-            "npm:react",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/configs/constants.tsx",
-          "hash": "7728865678232179673"
-        },
-        {
-          "file": "apps/user-ui/src/configs/global.d.ts",
-          "hash": "11586052414788854766"
-        },
-        {
-          "file": "apps/user-ui/src/hooks/useDewviceInfo.ts",
-          "hash": "14524064244339206989",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/hooks/useLocation.ts",
-          "hash": "10010874661287315296",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/hooks/useUSer.ts",
-          "hash": "16062969841968471303",
-          "deps": [
-            "npm:@tanstack/react-query",
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/shared/Footer.tsx",
-          "hash": "11103618403053875190",
-          "deps": [
-            "npm:react",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/shared/components/PageShell.tsx",
-          "hash": "17155567156294629264",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/shared/components/Skeleton.tsx",
-          "hash": "621316030344994067",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/shared/widget/Header.tsx",
-          "hash": "803026520368969161",
-          "deps": [
-            "npm:react",
-            "npm:next",
-            "npm:@tanstack/react-query",
-            "npm:lucide-react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/shared/widget/HeaderBottom.tsx",
-          "hash": "1971845201731871498",
-          "deps": [
-            "npm:lucide-react",
-            "npm:react",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/shared/widget/components/Google.tsx",
-          "hash": "10519962635409542581",
-          "deps": [
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/shared/widget/index.ts",
-          "hash": "1584108228806846271"
-        },
-        {
-          "file": "apps/user-ui/src/store/index.tsx",
-          "hash": "1371085592586443803",
-          "deps": [
-            "npm:zustand"
-          ]
-        },
-        {
-          "file": "apps/user-ui/src/utils/axiosInstance.ts",
-          "hash": "1016988925232528886",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/user-ui/tailwind.config.js",
-          "hash": "5413241632925258966"
-        },
-        {
-          "file": "apps/user-ui/tsconfig.json",
-          "hash": "536004216477311739"
-        }
-      ],
       "@real-app/auth-service-e2e": [
         {
           "file": "apps/auth-service-e2e/.spec.swcrc",
@@ -739,156 +342,6 @@
           "hash": "10978558356039681413"
         }
       ],
-      "@real-app/product-service-e2e": [
-        {
-          "file": "apps/product-service-e2e/.spec.swcrc",
-          "hash": "18201067170784284381"
-        },
-        {
-          "file": "apps/product-service-e2e/jest.config.cts",
-          "hash": "17052664794397136789"
-        },
-        {
-          "file": "apps/product-service-e2e/package.json",
-          "hash": "914135892224865006"
-        },
-        {
-          "file": "apps/product-service-e2e/src/product-service/product-service.spec.ts",
-          "hash": "7531705588582374674",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/product-service-e2e/src/support/global-setup.ts",
-          "hash": "3444053551545844372",
-          "deps": [
-            "npm:@nx/node"
-          ]
-        },
-        {
-          "file": "apps/product-service-e2e/src/support/global-teardown.ts",
-          "hash": "18176614999450167852",
-          "deps": [
-            "npm:@nx/node"
-          ]
-        },
-        {
-          "file": "apps/product-service-e2e/src/support/test-setup.ts",
-          "hash": "11749744855473391997",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/product-service-e2e/tsconfig.json",
-          "hash": "11909959594214012034"
-        }
-      ],
-      "@real-app/api-gateway": [
-        {
-          "file": "apps/api-gateway/package.json",
-          "hash": "9626556262941411581",
-          "deps": [
-            "npm:cookie-parser",
-            "npm:cors",
-            "npm:express",
-            "npm:express-http-proxy",
-            "npm:express-rate-limit",
-            "npm:morgan"
-          ]
-        },
-        {
-          "file": "apps/api-gateway/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/api-gateway/src/libs/intialize_config.ts",
-          "hash": "10220438311245845835"
-        },
-        {
-          "file": "apps/api-gateway/src/main.ts",
-          "hash": "3019727564872308904",
-          "deps": [
-            "npm:express",
-            "npm:express-http-proxy",
-            "npm:morgan",
-            "npm:cors",
-            "npm:cookie-parser"
-          ]
-        },
-        {
-          "file": "apps/api-gateway/tsconfig.app.json",
-          "hash": "17123118704732776554"
-        },
-        {
-          "file": "apps/api-gateway/tsconfig.json",
-          "hash": "6240538891403235665"
-        },
-        {
-          "file": "apps/api-gateway/webpack.config.js",
-          "hash": "680275878011986087",
-          "deps": [
-            "npm:@nx/webpack"
-          ]
-        }
-      ],
-      "@real-app/errorHandler": [
-        {
-          "file": "packages/errorHandler/error-middleware.ts",
-          "hash": "12103438536361582717"
-        },
-        {
-          "file": "packages/errorHandler/index.ts",
-          "hash": "9286766345285097894"
-        },
-        {
-          "file": "packages/errorHandler/package.json",
-          "hash": "7629304636247686325"
-        },
-        {
-          "file": "packages/errorHandler/tsconfig.app.json",
-          "hash": "3679059425125306053"
-        },
-        {
-          "file": "packages/errorHandler/tsconfig.json",
-          "hash": "16148358976294854931"
-        }
-      ],
-      "@real-app/kafka-service": [
-        {
-          "file": "apps/kafka-service/package.json",
-          "hash": "14254918811679673399",
-          "deps": [
-            "npm:express"
-          ]
-        },
-        {
-          "file": "apps/kafka-service/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/kafka-service/src/main.ts",
-          "hash": "14824588715505278346",
-          "deps": [
-            "npm:express",
-            "npm:morgan",
-            "npm:cors"
-          ]
-        },
-        {
-          "file": "apps/kafka-service/tsconfig.app.json",
-          "hash": "13217490726692613590"
-        },
-        {
-          "file": "apps/kafka-service/tsconfig.json",
-          "hash": "15853771622537131501"
-        },
-        {
-          "file": "apps/kafka-service/tsconfig.tsbuildinfo",
-          "hash": "7746054956495391649"
-        }
-      ],
       "@real-app/auth-service": [
         {
           "file": "apps/auth-service/.spec.swcrc",
@@ -953,7 +406,7 @@
         },
         {
           "file": "apps/auth-service/src/main.ts",
-          "hash": "7207841267992047516",
+          "hash": "7431660309187516433",
           "deps": [
             "npm:express",
             "npm:morgan",
@@ -1414,6 +867,497 @@
           "hash": "3864959184452153114"
         }
       ],
+      "@real-app/api-gateway": [
+        {
+          "file": "apps/api-gateway/package.json",
+          "hash": "9626556262941411581",
+          "deps": [
+            "npm:cookie-parser",
+            "npm:cors",
+            "npm:express",
+            "npm:express-http-proxy",
+            "npm:express-rate-limit",
+            "npm:morgan"
+          ]
+        },
+        {
+          "file": "apps/api-gateway/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/api-gateway/src/libs/intialize_config.ts",
+          "hash": "10220438311245845835"
+        },
+        {
+          "file": "apps/api-gateway/src/main.ts",
+          "hash": "3019727564872308904",
+          "deps": [
+            "npm:express",
+            "npm:express-http-proxy",
+            "npm:morgan",
+            "npm:cors",
+            "npm:cookie-parser"
+          ]
+        },
+        {
+          "file": "apps/api-gateway/tsconfig.app.json",
+          "hash": "17123118704732776554"
+        },
+        {
+          "file": "apps/api-gateway/tsconfig.json",
+          "hash": "6240538891403235665"
+        },
+        {
+          "file": "apps/api-gateway/webpack.config.js",
+          "hash": "680275878011986087",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
+        }
+      ],
+      "@real-app/product-service-e2e": [
+        {
+          "file": "apps/product-service-e2e/.spec.swcrc",
+          "hash": "18201067170784284381"
+        },
+        {
+          "file": "apps/product-service-e2e/jest.config.cts",
+          "hash": "17052664794397136789"
+        },
+        {
+          "file": "apps/product-service-e2e/package.json",
+          "hash": "914135892224865006"
+        },
+        {
+          "file": "apps/product-service-e2e/src/product-service/product-service.spec.ts",
+          "hash": "7531705588582374674",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/src/support/global-setup.ts",
+          "hash": "3444053551545844372",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/src/support/global-teardown.ts",
+          "hash": "18176614999450167852",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/src/support/test-setup.ts",
+          "hash": "11749744855473391997",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/product-service-e2e/tsconfig.json",
+          "hash": "11909959594214012034"
+        }
+      ],
+      "@real-app/user-ui": [
+        {
+          "file": "apps/user-ui/.swcrc",
+          "hash": "17241768775822013643"
+        },
+        {
+          "file": "apps/user-ui/index.d.ts",
+          "hash": "17978550148300837039"
+        },
+        {
+          "file": "apps/user-ui/next-env.d.ts",
+          "hash": "18119713333627316080"
+        },
+        {
+          "file": "apps/user-ui/next.config.js",
+          "hash": "227797574239823241",
+          "deps": [
+            "npm:@nx/next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/package.json",
+          "hash": "3613924752765074859",
+          "deps": [
+            "npm:next",
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "apps/user-ui/postcss.config.js",
+          "hash": "15972724582657845432"
+        },
+        {
+          "file": "apps/user-ui/public/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/user-ui/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/user-ui/public/wallpaper-pattern.svg",
+          "hash": "12371122385859079056"
+        },
+        {
+          "file": "apps/user-ui/src/app/become-seller/page.tsx",
+          "hash": "3199777987695346940",
+          "deps": [
+            "npm:next",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/cart/page.tsx",
+          "hash": "8380276654386192415",
+          "deps": [
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/checkout/[slug]/checkoutAdress/page.tsx",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/user-ui/src/app/checkout/[slug]/checkoutSummery/page.tsx",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/user-ui/src/app/checkout/[slug]/deliveryOptions/page.tsx",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/user-ui/src/app/checkout/[slug]/orderReview/page.tsx",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/user-ui/src/app/checkout/[slug]/page.tsx",
+          "hash": "3281603232529525355",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/checkout/[slug]/paymentInfo/page.tsx",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/user-ui/src/app/checkout/cart/page.tsx",
+          "hash": "18378205053796475134",
+          "deps": [
+            "npm:react",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/forgot-password/page.tsx",
+          "hash": "4649952513433646093",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:react-hook-form",
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/global.css",
+          "hash": "9988210208473853354"
+        },
+        {
+          "file": "apps/user-ui/src/app/layout.tsx",
+          "hash": "227684347815598774",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/login/page.tsx",
+          "hash": "15402043847773757146",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:react-hook-form",
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/offers/page.tsx",
+          "hash": "4369355389229592292",
+          "deps": [
+            "npm:next",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/orders/page.tsx",
+          "hash": "5545399594583999690",
+          "deps": [
+            "npm:react",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/page.tsx",
+          "hash": "11621590728668884120",
+          "deps": [
+            "npm:next",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/BasicProductLayout.tsx",
+          "hash": "16872675027275433625",
+          "deps": [
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/BasicProductLayoutLoading.tsx",
+          "hash": "17067884363355148766",
+          "deps": [
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/DetailedProductLayout.tsx",
+          "hash": "13905443833012572149",
+          "deps": [
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/DetailedProductLayoutLoading.tsx",
+          "hash": "707934755536356833",
+          "deps": [
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/ProductGallery.tsx",
+          "hash": "14806986057016889303",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/ProductHighlights.tsx",
+          "hash": "8553396740366507723",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/ProductReviews.tsx",
+          "hash": "1856762733352271530",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/ProductSeller.tsx",
+          "hash": "16553398790490744460",
+          "deps": [
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/ProductShipping.tsx",
+          "hash": "2013961750540555079",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/ProductSpecs.tsx",
+          "hash": "9470867312663367374",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/components/ProductVariants.tsx",
+          "hash": "7791501547685165093"
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/loading.tsx",
+          "hash": "11239385685029312278",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/[slug]/page.tsx",
+          "hash": "3014830158660987195",
+          "deps": [
+            "npm:next",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/products/page.tsx",
+          "hash": "18104282551934110295",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/profile/page.tsx",
+          "hash": "15758678152379021830",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/providers.tsx",
+          "hash": "8749771535992140731",
+          "deps": [
+            "npm:react",
+            "npm:@tanstack/react-query"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/signup/page.tsx",
+          "hash": "13231935791627246358",
+          "deps": [
+            "npm:react",
+            "npm:react-hook-form",
+            "npm:next",
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/app/wish-list/page.tsx",
+          "hash": "13757663001271844085",
+          "deps": [
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/configs/constants.tsx",
+          "hash": "7728865678232179673"
+        },
+        {
+          "file": "apps/user-ui/src/configs/global.d.ts",
+          "hash": "11586052414788854766"
+        },
+        {
+          "file": "apps/user-ui/src/hooks/useDewviceInfo.ts",
+          "hash": "14524064244339206989",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/hooks/useLocation.ts",
+          "hash": "10010874661287315296",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/hooks/useUSer.ts",
+          "hash": "16062969841968471303",
+          "deps": [
+            "npm:@tanstack/react-query",
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/Footer.tsx",
+          "hash": "11103618403053875190",
+          "deps": [
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/components/PageShell.tsx",
+          "hash": "17155567156294629264",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/components/Skeleton.tsx",
+          "hash": "621316030344994067",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/widget/Header.tsx",
+          "hash": "803026520368969161",
+          "deps": [
+            "npm:react",
+            "npm:next",
+            "npm:@tanstack/react-query",
+            "npm:lucide-react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/widget/HeaderBottom.tsx",
+          "hash": "1971845201731871498",
+          "deps": [
+            "npm:lucide-react",
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/widget/components/Google.tsx",
+          "hash": "10519962635409542581",
+          "deps": [
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/shared/widget/index.ts",
+          "hash": "1584108228806846271"
+        },
+        {
+          "file": "apps/user-ui/src/store/index.tsx",
+          "hash": "1371085592586443803",
+          "deps": [
+            "npm:zustand"
+          ]
+        },
+        {
+          "file": "apps/user-ui/src/utils/axiosInstance.ts",
+          "hash": "1016988925232528886",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/user-ui/tailwind.config.js",
+          "hash": "5413241632925258966"
+        },
+        {
+          "file": "apps/user-ui/tsconfig.json",
+          "hash": "536004216477311739"
+        }
+      ],
       "@real-app/product-service": [
         {
           "file": "apps/product-service/package.json",
@@ -1475,6 +1419,62 @@
           "deps": [
             "npm:@nx/webpack"
           ]
+        }
+      ],
+      "@real-app/kafka-service": [
+        {
+          "file": "apps/kafka-service/package.json",
+          "hash": "14254918811679673399",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "apps/kafka-service/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/kafka-service/src/main.ts",
+          "hash": "14824588715505278346",
+          "deps": [
+            "npm:express",
+            "npm:morgan",
+            "npm:cors"
+          ]
+        },
+        {
+          "file": "apps/kafka-service/tsconfig.app.json",
+          "hash": "13217490726692613590"
+        },
+        {
+          "file": "apps/kafka-service/tsconfig.json",
+          "hash": "15853771622537131501"
+        },
+        {
+          "file": "apps/kafka-service/tsconfig.tsbuildinfo",
+          "hash": "7746054956495391649"
+        }
+      ],
+      "@real-app/errorHandler": [
+        {
+          "file": "packages/errorHandler/error-middleware.ts",
+          "hash": "12103438536361582717"
+        },
+        {
+          "file": "packages/errorHandler/index.ts",
+          "hash": "9286766345285097894"
+        },
+        {
+          "file": "packages/errorHandler/package.json",
+          "hash": "7629304636247686325"
+        },
+        {
+          "file": "packages/errorHandler/tsconfig.app.json",
+          "hash": "3679059425125306053"
+        },
+        {
+          "file": "packages/errorHandler/tsconfig.json",
+          "hash": "16148358976294854931"
         }
       ]
     }

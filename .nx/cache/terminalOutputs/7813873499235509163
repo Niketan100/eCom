@@ -1,0 +1,15 @@
+> next start
+
+[1m[38;2;173;127;168m▲ Next.js 16.1.7[39m[22m
+- Local:         http://localhost:3000
+- Network:       http://10.234.34.152:3000
+
+[32m[1m✓[22m[39m Starting...
+[33m[1m⚠[22m[39m Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/niketan/package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /Users/niketan/Desktop/RealApp/package-lock.json
+
+[32m[1m✓[22m[39m Ready in 920ms
