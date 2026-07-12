@@ -71,7 +71,7 @@ app.get('/', (req, res) => {
 });
 	
 
-app.listen(port, host, () => {
+app.listen(port, () => {
     reciever();
     console.log(`[ ready ] http://${host}:${port}`);
 });

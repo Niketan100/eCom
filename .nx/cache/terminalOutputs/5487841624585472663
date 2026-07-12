@@ -1,0 +1,306 @@
+> nx run @real-app/api-gateway:serve:development
+
+[36m⠋[39m [2K[1G[36m⠙[39m [2K[1G[36m⠹[39m [2K[1G[36m⠸[39m [2K[1G[36m⠼[39m [2K[1G[36m⠴[39m [2K[1G[36m⠦[39m [2K[1G[36m⠧[39m [2K[1G[36m⠇[39m [2K[1G[36m⠏[39m [2K[1G[36m⠋[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 5 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 5 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 7 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 6 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 5 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 5 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m [2K[1G[36m⠙[39m Creating project graph dependencies with nx/js/dependencies-and-lockfile[2K[1G[36m⠹[39m Creating project graph dependencies with nx/js/dependencies-and-lockfile[2K[1G[36m⠸[39m [2K[1G[36m⠋[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠙[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠹[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠸[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠼[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 5 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 5 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 4 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m [2K[1G[36m⠦[39m [2K[1G
+[2m> [22m[2mnx run[22m @real-app/api-gateway:build  [2m[existing outputs match the cache, left as is][22m
+
+> webpack-cli build --node-env=production
+
+[1m[33mWARNING[39m[22m in [1m../../generated/prisma/runtime/library.js[39m[22m
+[1mModule Warning (from ../../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/niketan/Desktop/RealApp/generated/prisma/runtime/library.js.map' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/niketan/Desktop/RealApp/generated/prisma/runtime/library.js.map'[39m[22m
+
+webpack compiled with [1m[33m1 warning[39m[22m (b3f686ec5de5265c)
+
+[2m[32m————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project @real-app/api-gateway[39m
+
+[2mNx read the output from the cache instead of running the command for 1 out of 1 tasks.[22m
+
+[1m[31mStarting inspector on localhost:9229 failed: address already in use
+[39m[22m
+Configuration already exists.
+Listening on 8080
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[36m⠋[39m Creating project graph nodes with 5 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠇[39m [2K[1G
+[2m> [22m[2mnx run[22m @real-app/api-gateway:build
+
+> webpack-cli build --node-env=production
+
+[1m[33mWARNING[39m[22m in [1m../../generated/prisma/runtime/library.js[39m[22m
+[1mModule Warning (from ../../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/niketan/Desktop/RealApp/generated/prisma/runtime/library.js.map' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/niketan/Desktop/RealApp/generated/prisma/runtime/library.js.map'[39m[22m
+
+webpack compiled with [1m[33m1 warning[39m[22m (ca5811d504560532)
+
+[2m[32m————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project @real-app/api-gateway[39m
+
+
+[1m[31mStarting inspector on localhost:9229 failed: address already in use
+[39m[22m
+Configuration already exists.
+Listening on 8080
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[36m⠋[39m Creating project graph nodes with 5 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 5 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 4 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠹[39m [2K[1G[36m⠸[39m [2K[1G
+[2m> [22m[2mnx run[22m @real-app/api-gateway:build
+
+> webpack-cli build --node-env=production
+
+[1m[33mWARNING[39m[22m in [1m../../generated/prisma/runtime/library.js[39m[22m
+[1mModule Warning (from ../../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/niketan/Desktop/RealApp/generated/prisma/runtime/library.js.map' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/niketan/Desktop/RealApp/generated/prisma/runtime/library.js.map'[39m[22m
+
+webpack compiled with [1m[33m1 warning[39m[22m (d87377fc528c725e)
+
+[2m[32m————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project @real-app/api-gateway[39m
+
+
+[1m[31mStarting inspector on localhost:9229 failed: address already in use
+[39m[22m
+Configuration already exists.
+Listening on 8080
