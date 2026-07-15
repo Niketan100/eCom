@@ -18,6 +18,7 @@ app.use(morgan('combined'));
 // NEXT_PUBLIC_API_URL or ports change.
 const allowedOrigins = [
     'https://user-ui-y5m6.onrender.com',
+    'https://s-ui-nlpb.onrender.com',
     'http://localhost:3000', // seller-ui / user-ui default
     'http://localhost:3001', // alternate dev port if used
 ];
