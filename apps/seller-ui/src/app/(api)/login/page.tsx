@@ -45,7 +45,7 @@ const Login = () => {
       setSuccessMessage('Login successful!')
 
       setTimeout(() => {
-        router.push('/')
+        router.push('/dashboard')
       }, 800)
     } catch (err: unknown) {
       if (axios.isAxiosError(err)) {

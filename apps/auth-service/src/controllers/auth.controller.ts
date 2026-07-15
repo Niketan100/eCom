@@ -93,6 +93,8 @@ export const userLogin = async (req : Request , res : Response , next : NextFunc
 
    setCookie(res, 'refreshToken', refreshToken);
    setCookie(res, 'accessToken', accessToken);
+
+   
     
     res.status(200).json({
         message: 'User logged in successfully',
@@ -103,6 +105,7 @@ export const userLogin = async (req : Request , res : Response , next : NextFunc
         }
     });
     } catch (error) {
+        console.log(error);
         next(error);
     }
 }
