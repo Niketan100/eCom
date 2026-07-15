@@ -2,7 +2,7 @@
 
 import SidebarWrapper from 'apps/seller-ui/src/shared/components/SidebarWrapper'
 import React from 'react'
-import useSeller from './../../../hooks/useSeller';
+import useSeller from '../../../hooks/useSeller';
 import { Header } from '../../widget'
 import { useRouter } from 'next/navigation'
 
@@ -21,7 +21,7 @@ const Layout = ({children} : {children : React.ReactNode}) => {
     return null;
   }
   return (
-    <div className='flex h-full min-h-screen'>
+    <div className='flex h-full min-h-screen bg-slate-900'>
       
 
       <aside className='w-[420px] min-w-[380px] max-w-[480px] border-r border-white/10 text-white p-5 bg-[#050505]'>

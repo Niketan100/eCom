@@ -1,50 +1,114 @@
 > nx run @real-app/product-service:serve:development
 
-[36m⠋[39m [2K[1G[36m⠙[39m [2K[1G[36m⠹[39m [2K[1G[36m⠸[39m [2K[1G[36m⠼[39m Creating project graph nodes with 6 plugins
-  - @nx/js/typescript
+[36m⠋[39m Creating project graph nodes with 2 plugins
   - @nx/jest/plugin
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin
-  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 5 plugins
-  - @nx/js/typescript
-  - @nx/jest/plugin
-  - @nx/docker
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 3 plugins
-  - @nx/jest/plugin
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 3 plugins
-  - @nx/jest/plugin
-  - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m [2K[1G[36m⠧[39m [2K[1G[36m⠋[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠙[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠹[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠸[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠼[39m Calculating the project graph on the Nx Daemon[2K[1G[36m⠴[39m Creating project graph nodes with 7 plugins
+  - @nx/docker[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m [2K[1G[36m⠦[39m [2K[1G[36m⠧[39m [2K[1G[36m⠋[39m Creating project graph nodes with 7 plugins
   - @nx/js/typescript
   - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
   - @nx/next/plugin
   - nx/js/dependencies-and-lockfile
-  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 5 plugins
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 7 plugins
   - @nx/js/typescript
   - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 5 plugins
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 7 plugins
   - @nx/js/typescript
   - @nx/jest/plugin
   - @nx/docker
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 3 plugins
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 7 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 6 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin
+  - nx/js/dependencies-and-lockfile[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 5 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/docker
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 4 plugins
+  - @nx/js/typescript
   - @nx/jest/plugin
   - @nx/webpack/plugin
-  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with 2 plugins
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 4 plugins
+  - @nx/js/typescript
   - @nx/jest/plugin
-  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m [2K[1G
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 4 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 4 plugins
+  - @nx/js/typescript
+  - @nx/jest/plugin
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 3 plugins
+  - @nx/jest/plugin
+  - @nx/webpack/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 2 plugins
+  - @nx/jest/plugin
+  - @nx/next/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/jest/plugin[2K[1G[36m⠧[39m [2K[1G
 [2m> [22m[2mnx run[22m @real-app/product-service:build  [2m[existing outputs match the cache, left as is][22m
 
 > webpack-cli build --node-env=production
@@ -58,7 +122,7 @@
 
 webpack compiled with [1m[33m2 warnings[39m[22m (a8c6787e42ffd8e1)
 
-[2m[32m—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+[2m[32m—————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
 
 [7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project @real-app/product-service[39m
 
@@ -66,79 +130,49 @@ webpack compiled with [1m[33m2 warnings[39m[22m (a8c6787e42ffd8e1)
 
 [1m[31mStarting inspector on localhost:9229 failed: address already in use
 [39m[22m
-[1m[31m{"level":"WARN","timestamp":"2026-07-13T17:46:23.817Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
+[1m[31m{"level":"WARN","timestamp":"2026-07-15T04:57:50.294Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:24.101Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:51.919Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:24.103Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":338}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:51.921Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":293}
+{"level":"ERROR","timestamp":"2026-07-15T04:57:51.930Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:24.103Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:51.931Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":246}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:24.104Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":0,"retryTime":262}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:52.183Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:24.370Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:52.184Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":446}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:24.371Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":580}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:52.228Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:24.445Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:52.228Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":586}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:24.446Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":1,"retryTime":590}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:52.635Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+{"level":"ERROR","timestamp":"2026-07-15T04:57:52.636Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":748}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:24.956Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:52.821Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:24.957Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":1178}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:52.822Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":1300}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:25.039Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:53.388Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:25.039Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":2,"retryTime":1132}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:53.388Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":1372}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:26.140Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:54.127Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:26.141Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":2502}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:54.127Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":2720}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:26.175Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:54.766Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:26.175Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":3,"retryTime":2436}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:54.767Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":2648}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:28.616Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:56.855Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:28.617Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":4190}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:56.856Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":5832}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:28.647Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:57.418Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
 [39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:28.648Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":4,"retryTime":4922}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:32.812Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:32.812Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":7512}
-[39m[22m
-[1m[31mKafkaJSNonRetriableError
-  Caused by: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
-    at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mapps/product-service/dist/webpack:/node_modules/[4mkafkajs[24m/src/network/connection.js:210:1[90m)[31m
-[90m    ... 3 lines matching cause stack trace ...[31m
-[90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
-  name: [32m'KafkaJSNumberOfRetriesExceeded'[31m,
-  retriable: [33mfalse[31m,
-  helpUrl: [90mundefined[31m,
-  retryCount: [33m5[31m,
-  retryTime: [33m7512[31m,
-  [cause]: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
-      at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mapps/product-service/dist/webpack:/node_modules/[4mkafkajs[24m/src/network/connection.js:210:1[90m)[31m
-  [90m    at TLSSocket.emit (node:events:519:28)[31m
-  [90m    at emitErrorNT (node:internal/streams/destroy:170:8)[31m
-  [90m    at emitErrorCloseNT (node:internal/streams/destroy:129:3)[31m
-  [90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
-    retriable: [33mtrue[31m,
-    helpUrl: [90mundefined[31m,
-    broker: [32m'kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456'[31m,
-    code: [32m'ENOTFOUND'[31m,
-    [cause]: [90mundefined[31m
-  }
-}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:33.575Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
-[39m[22m
-[1m[31m{"level":"ERROR","timestamp":"2026-07-13T17:46:33.575Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":9946}
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:57:57.418Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":5170}
 [39m[22m
 [1m[31mError connecting to Kafka: KafkaJSNonRetriableError
   Caused by: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
@@ -149,7 +183,7 @@ webpack compiled with [1m[33m2 warnings[39m[22m (a8c6787e42ffd8e1)
   retriable: [33mfalse[31m,
   helpUrl: [90mundefined[31m,
   retryCount: [33m5[31m,
-  retryTime: [33m9946[31m,
+  retryTime: [33m5170[31m,
   [cause]: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
       at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mapps/product-service/dist/webpack:/node_modules/[4mkafkajs[24m/src/network/connection.js:210:1[90m)[31m
   [90m    at TLSSocket.emit (node:events:519:28)[31m
@@ -165,3 +199,31 @@ webpack compiled with [1m[33m2 warnings[39m[22m (a8c6787e42ffd8e1)
 }
 [39m[22m
 [ ready ] http://0.0.0.0:7001
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:58:02.692Z","logger":"kafkajs","message":"[Connection] Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","broker":"kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456","clientId":"my-app","stack":"Error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)"}
+[39m[22m
+[1m[31m{"level":"ERROR","timestamp":"2026-07-15T04:58:02.692Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com","retryCount":5,"retryTime":12844}
+[39m[22m
+[1m[31mKafkaJSNonRetriableError
+  Caused by: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
+    at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mapps/product-service/dist/webpack:/node_modules/[4mkafkajs[24m/src/network/connection.js:210:1[90m)[31m
+[90m    ... 3 lines matching cause stack trace ...[31m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
+  name: [32m'KafkaJSNumberOfRetriesExceeded'[31m,
+  retriable: [33mfalse[31m,
+  helpUrl: [90mundefined[31m,
+  retryCount: [33m5[31m,
+  retryTime: [33m12844[31m,
+  [cause]: KafkaJSConnectionError: Connection error: getaddrinfo ENOTFOUND kafka-189c1266-niketankumar12345-6495.h.aivencloud.com
+      at TLSSocket.onError [90m(/Users/niketan/Desktop/RealApp/[31mapps/product-service/dist/webpack:/node_modules/[4mkafkajs[24m/src/network/connection.js:210:1[90m)[31m
+  [90m    at TLSSocket.emit (node:events:519:28)[31m
+  [90m    at emitErrorNT (node:internal/streams/destroy:170:8)[31m
+  [90m    at emitErrorCloseNT (node:internal/streams/destroy:129:3)[31m
+  [90m    at processTicksAndRejections (node:internal/process/task_queues:90:21)[31m {
+    retriable: [33mtrue[31m,
+    helpUrl: [90mundefined[31m,
+    broker: [32m'kafka-189c1266-niketankumar12345-6495.h.aivencloud.com:17456'[31m,
+    code: [32m'ENOTFOUND'[31m,
+    [cause]: [90mundefined[31m
+  }
+}
+[39m[22m
