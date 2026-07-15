@@ -9,7 +9,6 @@ import {
   Clock,
   RefreshCw,
   Search,
-  Filter,
   Download,
   Eye,
   FileText,
@@ -17,8 +16,6 @@ import {
   ChevronRight,
   Loader2,
   XCircle,
-  TrendingUp,
-  TrendingDown,
   CreditCard,
   Calendar
 } from 'lucide-react'
@@ -60,7 +57,6 @@ const PaymentsPage = () => {
   const [search, setSearch] = React.useState('')
   const [statusFilter, setStatusFilter] = React.useState<'ALL' | SellerPayment['status']>('ALL')
   const [page, setPage] = React.useState(1)
-  const [selectedPayment, setSelectedPayment] = React.useState<string | null>(null)
   const limit = 20
 
   const { data, isLoading, isError, refetch } = useQuery<PaymentsResponse>({

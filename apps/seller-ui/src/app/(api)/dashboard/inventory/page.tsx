@@ -2,11 +2,9 @@
 import React from 'react'
 import { useMutation } from '@tanstack/react-query'
 import axiosInstance from 'apps/seller-ui/src/utils/axiosInstance'
-import { 
-  Link as LinkIcon, 
+import {  
   Plus, 
   Search, 
-  Filter, 
   Package, 
   TrendingUp, 
   AlertTriangle, 
@@ -14,8 +12,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Eye,
-  Edit,
-  MoreVertical
+  Edit
 } from 'lucide-react'
 import Link from 'next/link'
 

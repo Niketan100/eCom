@@ -16,8 +16,6 @@ import {
   Shield,
   Layers,
   List,
-  X,
-  ChevronDown,
   AlertCircle
 } from 'lucide-react'
 

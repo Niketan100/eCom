@@ -21,8 +21,7 @@ import {
   XCircle,
   Loader2,
   ChevronRight,
-  Edit,
-  Eye
+  Edit
 } from 'lucide-react'
 
 type OrderStatus = 'PENDING' | 'CONFIRMED' | 'SHIPPED' | 'DELIVERED' | 'CANCELLED'
@@ -153,7 +152,7 @@ export default function ProcessOrderPage() {
     enabled: Boolean(orderId),
   })
 
-  const order = orderQuery.data?.order
+  const order = orderQuery.data?.order;
 
   const updateStatusMutation = useMutation({
     mutationFn: async (status: OrderStatus) => {
@@ -174,16 +173,7 @@ export default function ProcessOrderPage() {
     CANCELLED: [],
   }
 
-  const getNextActionLabel = (status: OrderStatus) => {
-    const labels: Record<OrderStatus, string> = {
-      'PENDING': 'Confirm Order',
-      'CONFIRMED': 'Ship Order',
-      'SHIPPED': 'Mark Delivered',
-      'DELIVERED': '',
-      'CANCELLED': ''
-    }
-    return labels[status] || status
-  }
+  
 
   if (orderQuery.isLoading) {
     return (
@@ -229,8 +219,7 @@ export default function ProcessOrderPage() {
       </div>
     )
   }
-
-  const statusConfig = getStatusConfig(order.status)
+  const isShippedOrDelivered = order.status === 'SHIPPED' || order.status === 'DELIVERED';
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0a0a0f] via-[#0d0d14] to-[#0f0f1a] p-6">
@@ -454,11 +443,15 @@ export default function ProcessOrderPage() {
                     </div>
                   </div>
                 )}
-                {order.status === 'SHIPPED' || order.status === 'DELIVERED' && (
+                
+
+                {isShippedOrDelivered && (
                   <div className="flex items-start gap-3">
                     <div className={`w-2 h-2 mt-1.5 rounded-full ${order.status === 'SHIPPED' ? 'bg-blue-400' : 'bg-green-400'}`} />
                     <div>
-                      <p className="text-sm text-white">Shipped</p>
+                      <p className="text-sm text-white">
+                        {order.status === 'SHIPPED' ? 'Shipped' : 'Delivered'}
+                      </p>
                       <p className="text-xs text-gray-500">{new Date(order.updatedAt).toLocaleString()}</p>
                     </div>
                   </div>

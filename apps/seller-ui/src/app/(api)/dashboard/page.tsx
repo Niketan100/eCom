@@ -43,7 +43,7 @@ export default function SellerDashboard() {
       title: 'Total Revenue',
       value: revenue ? `₹${revenue.toLocaleString()}` : '₹0',
       change: percentage_revenue_today ? `+${percentage_revenue_today}%` : '0%',
-      changeType: percentage_revenue_today > 0 ? 'up' : 'down',
+      changeType: Number(percentage_revenue_today)  > 0 ? 'up' : 'down',
       icon: DollarSign,
       gradient: 'from-green-500 to-emerald-500',
       bgGradient: 'from-green-500/10 to-emerald-500/10',
@@ -52,7 +52,7 @@ export default function SellerDashboard() {
       title: 'Orders',
       value: total_orders ? total_orders.toString() : '0',
       change: percentage_order_today ? `+${percentage_order_today}%` : '0%',
-      changeType: percentage_order_today > 0 ? 'up' : 'down',
+      changeType: Number(percentage_order_today) > 0 ? 'up' : 'down',
       icon: ShoppingBag,
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'from-blue-500/10 to-cyan-500/10',
@@ -70,7 +70,7 @@ export default function SellerDashboard() {
       title: 'Customers',
       value: total_customers ? total_customers.toString() : '0',
       change: `+${percentage_customers_today}%`,
-      changeType: percentage_customers_today > 0 ? 'up' : 'down',
+      changeType: Number(percentage_customers_today) > 0 ? 'up' : 'down',
       icon: Users,
       gradient: 'from-orange-500 to-red-500',
       bgGradient: 'from-orange-500/10 to-red-500/10',
@@ -357,15 +357,10 @@ export default function SellerDashboard() {
                   >
                     <div className="flex items-center gap-4 flex-1">
                       <div className="w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center text-2xl shrink-0">
-                        {product.image ? (
-                          <img 
-                            src={product.image} 
-                            alt={product.name}
-                            className="w-full h-full object-cover rounded-xl"
-                          />
-                        ) : (
+                       
+                        (
                           '📦'
-                        )}
+                        )
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="font-semibold text-white text-sm truncate">

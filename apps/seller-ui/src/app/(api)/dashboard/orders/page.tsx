@@ -10,7 +10,6 @@ import {
   CheckCircle,
   DollarSign,
   Search,
-  Filter,
   Download,
   Eye,
   Edit,
@@ -19,10 +18,7 @@ import {
   Loader2,
   XCircle,
   Package,
-  User,
-  Calendar,
-  TrendingUp,
-  AlertCircle
+  Calendar
 } from 'lucide-react'
 
 const OrdersPage = () => {
@@ -35,7 +31,6 @@ const OrdersPage = () => {
     data,
     isLoading,
     isError,
-    error,
     refetch
   } = useQuery({
     queryKey: ['seller-orders', page, limit],
@@ -97,7 +92,6 @@ const OrdersPage = () => {
   const total_orders = data?.total ?? data?.count ?? 0
   const pending_orders = rawOrders.filter((o: any) => o.status === 'PENDING').length
   const delivered_orders = rawOrders.filter((o: any) => o.status === 'DELIVERED').length
-  const cancelled_orders = rawOrders.filter((o: any) => o.status === 'CANCELLED').length
   const revenue = rawOrders
     .filter((o: any) => o.payment?.status === 'PAID')
     .reduce(

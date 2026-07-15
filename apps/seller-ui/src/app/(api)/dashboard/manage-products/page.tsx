@@ -7,7 +7,6 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import {
   Plus,
   Search,
-  Filter,
   Package,
   TrendingUp,
   AlertTriangle,
@@ -16,12 +15,9 @@ import {
   Trash2,
   RefreshCw,
   MoreVertical,
-  Eye,
   ChevronLeft,
   ChevronRight,
-  Loader2,
-  ShoppingBag,
-  DollarSign
+  Loader2
 } from 'lucide-react'
 
 const ManageProductsPage = () => {

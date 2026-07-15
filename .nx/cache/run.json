@@ -1,21 +1,21 @@
 {
   "run": {
-    "command": "nx run seller-ui:dev",
-    "startTime": "2026-07-15T04:23:38.838Z",
-    "endTime": "2026-07-15T05:27:54.147Z",
+    "command": "nx build",
+    "startTime": "2026-07-15T05:57:28.780Z",
+    "endTime": "2026-07-15T05:57:57.524Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "@real-app/seller-ui:dev",
-      "target": "dev",
+      "taskId": "@real-app/seller-ui:build",
+      "target": "build",
       "projectName": "@real-app/seller-ui",
-      "hash": "18083686737406249358",
-      "startTime": "2026-07-15T04:23:38.904Z",
-      "endTime": "2026-07-15T05:27:54.137Z",
+      "hash": "3049104891866688385",
+      "startTime": "2026-07-15T05:57:28.836Z",
+      "endTime": "2026-07-15T05:57:39.789Z",
       "params": "",
       "cacheStatus": "cache-miss",
-      "status": 1
+      "status": 0
     }
   ]
 }

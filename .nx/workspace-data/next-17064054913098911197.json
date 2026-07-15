@@ -2023,5 +2023,1505 @@
       ],
       "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
     }
+  },
+  "2778781340801268064": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "6077187623318243969": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "9900893630089832305": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "7644172286261279358": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "17895530286029368518": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "14481061953778540461": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "1424895870927222607": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "13569781982929591738": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "8949415052846328972": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "1401157917413720140": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "5509412217531643629": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "11188379993410486825": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "15062267705539050787": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "1919935381525304715": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "10060964058499398692": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "10220829101071133037": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "4472985159071666052": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "16624590938679367350": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "9218076356681230102": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
+  },
+  "7744531874658254626": {
+    "build": {
+      "command": "next build",
+      "options": {
+        "cwd": "apps/seller-ui",
+        "tty": false
+      },
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true,
+      "inputs": [
+        "default",
+        "^default",
+        {
+          "externalDependencies": [
+            "next"
+          ]
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.d.ts",
+          "transitive": true
+        }
+      ],
+      "outputs": [
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)/**/*",
+        "{workspaceRoot}/apps/seller-ui/.next/!(cache)"
+      ],
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "dev": {
+      "continuous": true,
+      "command": "next dev",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "syncGenerators": [
+        "@nx/js:typescript-sync"
+      ]
+    },
+    "start": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "serve-static": {
+      "continuous": true,
+      "command": "next start",
+      "options": {
+        "cwd": "apps/seller-ui"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "build-deps": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "watch-deps": {
+      "continuous": true,
+      "dependsOn": [
+        "build-deps"
+      ],
+      "command": "npx nx watch --projects @real-app/seller-ui --includeDependentProjects -- npx nx build-deps @real-app/seller-ui"
+    }
   }
 }
